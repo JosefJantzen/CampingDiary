@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CampingDiary</string>
+    <string name="no_reisen">Sie haben noch keine Reise gemacht.</string>
+    <string name="new_reise">Reise starten</string>
+    <string name="name">Name</string>
+    <string name="start">Start</string>
+    <string name="today">Heute</string>
+    <string name="custom">Benutzerdefiniert</string>
+    <string name="starting_time">Startpunkt:</string>
+    <string name="no_name">Kein Name</string>
+    <string name="description">Beschreibung</string>
+    <string name="no_name_toast">Die Reise braucht einen Namen.</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="next">Weiter</string>
+    <string name="date">Datum</string>
+    <string name="trip">Reise</string>
+    <string name="activities">Aktivitäten</string>
+    <string name="trips">Reisen</string>
+    <string name="all_reisen">Alle Reisen</string>
+    <string name="all_stats">Gesamtstatistik</string>
+    <string name="other">Anderes</string>
+    <string name="settings">Einstellungen</string>
+    <string name="about">Über</string>
+    <string name="current_trip">Aktuelle Reise</string>
+</resources>
