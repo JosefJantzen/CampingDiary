@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/nav_main">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/showReiseFragment">
+
+    <fragment
+        android:id="@+id/showReiseFragment"
+        android:name="com.jochef2.campingdiary.ui.main.ShowReiseFragment"
+        android:label="fragment_show_reise" />
 
 </navigation>
