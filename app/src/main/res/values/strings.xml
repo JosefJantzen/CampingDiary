@@ -23,11 +23,10 @@
     <string name="about">About</string>
     <string name="current_trip">Current trip</string>
 
-    <string name="cat_card_action_move_top_left" description="A description of an action that a user of an accessibility service can perform to move the card to the top left corner of the screen. [CHAR LIMIT=25]" translatable="false">Move to top left</string>
-    <string name="cat_card_action_move_up" description="A description of an action that a user of an accessibility service can perform to swap the card with the one above it. [CHAR LIMIT=25]" translatable="false">Move Up</string>
-    <string name="cat_card_action_move_down" description="A description of an action that a user of an accessibility service can perform to swap the card with the one below it. [CHAR LIMIT=25]" translatable="false">Move Down</string>
-    <string name="cat_card_action_move_top_right" description="A description of an action that a user of an accessibility service can perform to move the card to the top right corner of the screen. [CHAR LIMIT=25]" translatable="false">Move to top right</string>
-    <string name="cat_card_action_move_bottom_left" description="A description of an action that a user of an accessibility service can perform to move the card to the bottom left corner of the screen. [CHAR LIMIT=25]" translatable="false">Move to bottom left</string>
-    <string name="cat_card_action_move_bottom_right" description="A description of an action that a user of an accessibility service can perform to move the card to the bottom right corner of the screen. [CHAR LIMIT=25]" translatable="false">Move to bottom right</string>
-    <string name="cat_card_action_move_center" description="A description of an action that a user of an accessibility service can perform to move the card to the center of the screen. [CHAR LIMIT=25]" translatable="false">Move to center</string>
+    <string name="days">Days</string>
+    <string name="costs">Costs</string>
+    <string name="fuel">Fuel</string>
+    <string name="distance">Distance</string>
+    <string name="water">Water</string>
+    <string name="countries">Countries</string>
 </resources>

@@ -23,4 +23,10 @@
     <string name="settings">Einstellungen</string>
     <string name="about">Über</string>
     <string name="current_trip">Aktuelle Reise</string>
+    <string name="days">Tage</string>
+    <string name="costs">Kosten</string>
+    <string name="fuel">Fuel</string>
+    <string name="distance">Strecke</string>
+    <string name="water">Wasser</string>
+    <string name="countries">Länder</string>
 </resources>
