@@ -25,8 +25,11 @@
     <string name="current_trip">Aktuelle Reise</string>
     <string name="days">Tage</string>
     <string name="costs">Kosten</string>
-    <string name="fuel">Fuel</string>
+    <string name="fuel">Kraftstoff</string>
     <string name="distance">Strecke</string>
     <string name="water">Wasser</string>
     <string name="countries">Länder</string>
+    <string name="last_night">Letzte Nacht</string>
+    <string name="all_nights">Alle\nNächte</string>
+    <string name="last_event">Last event</string>
 </resources>

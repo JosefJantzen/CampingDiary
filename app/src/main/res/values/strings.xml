@@ -29,4 +29,7 @@
     <string name="distance">Distance</string>
     <string name="water">Water</string>
     <string name="countries">Countries</string>
+    <string name="last_night">Last night</string>
+    <string name="all_nights">All\nnights</string>
+    <string name="last_event">Last event</string>
 </resources>

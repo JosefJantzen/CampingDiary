@@ -19,7 +19,7 @@ public class ShowReiseFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.show_reise_fragment, container, false);
-
+        //System.getProperty("line.separator");
 
 
         return view;
