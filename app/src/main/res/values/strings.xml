@@ -32,4 +32,13 @@
     <string name="last_night">Last night</string>
     <string name="all_nights">All\nnights</string>
     <string name="last_event">Last event</string>
+    <string name="start_reise">Start tour</string>
+    <string name="start_today">Start:</string>
+    <string name="end">End:</string>
+    <string name="one_week">One Week</string>
+    <string name="two_weeks">Two weeks</string>
+    <string name="three_weeks">Three Weeks</string>
+    <string name="four_weeks">Four weeks </string>
+    <string name="err_no_name">Please name the tour.</string>
+    <string name="err_multiple_reisen">Please finish your current Tour first.</string>
 </resources>

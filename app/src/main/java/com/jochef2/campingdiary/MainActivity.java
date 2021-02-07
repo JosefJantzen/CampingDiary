@@ -1,12 +1,16 @@
 package com.jochef2.campingdiary;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
@@ -21,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences preferences = this.getSharedPreferences("DATA", MODE_PRIVATE);
+        Log.d("TAG", preferences.getString("CURRENT_REISE", null));
         setContentView(R.layout.activity_main);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
@@ -31,12 +37,21 @@ public class MainActivity extends AppCompatActivity {
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host);
 
-        /*AppBarConfiguration appBarConfiguration =
-                new AppBarConfiguration.Builder(navController.getGraph())
-     //                   .setDrawerLayout(drawerLayout)
-                        .build();*/
 
-        //NavigationUI.setupWithNavController(navigationView, navController);
+        /*if (preferences.getString("CURRENT_REISE", null) == null && navController.getCurrentDestination().getId() != R.id.allReisenFragment){
+            NavOptions navOptions = new NavOptions.Builder()
+                    .setPopUpTo(R.id.showReiseFragment, true)
+                    .build();
+            navController.navigate(R.id.action_showReiseFragment_to_allReisenFragment, savedInstanceState, navOptions);
+        }*/
+
+
+        AppBarConfiguration appBarConfiguration =
+                new AppBarConfiguration.Builder(R.id.currentReiseFragment, R.id.allReisenFragment)
+                        .setOpenableLayout(drawerLayout)
+                        .build();
+
+        NavigationUI.setupWithNavController(navigationView, navController);
 
         toolbar.setNavigationOnClickListener(v -> {
             drawerLayout.open();
@@ -52,10 +67,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        navigationView.setNavigationItemSelectedListener(menuItem -> {
-
+        navigationView.setNavigationItemSelectedListener(item -> {
             drawerLayout.close();
-            return true;
+            return NavigationUI.onNavDestinationSelected(item, navController)
+                    || super.onOptionsItemSelected(item);
         });
 
     }

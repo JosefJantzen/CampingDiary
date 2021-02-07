@@ -7,11 +7,11 @@
             android:title="@string/trips">
             <menu>
                 <item
-                    android:id="@+id/it_current_reise"
+                    android:id="@+id/currentReiseFragment"
                     android:icon="@drawable/ic_today"
                     android:title="@string/current_trip" />
                 <item
-                    android:id="@+id/it_all_reisen"
+                    android:id="@+id/allReisenFragment"
                     android:icon="@drawable/ic_calendar"
                     android:title="@string/all_reisen" />
                 <item

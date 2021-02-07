@@ -31,5 +31,14 @@
     <string name="countries">Länder</string>
     <string name="last_night">Letzte Nacht</string>
     <string name="all_nights">Alle\nNächte</string>
-    <string name="last_event">Last event</string>
+    <string name="last_event">Letzte Aktivität</string>
+    <string name="start_reise">Starte Reise</string>
+    <string name="start_today">Start:</string>
+    <string name="end">Ende:</string>
+    <string name="one_week">Eine Woche</string>
+    <string name="two_weeks">Zwei Wochen</string>
+    <string name="three_weeks">Drei Wochen</string>
+    <string name="four_weeks">Vier Wochen</string>
+    <string name="err_no_name">Benennen sie bitte die Reise.</string>
+    <string name="err_multiple_reisen">Bitte beenden sie die aktuelle Reise zuerst.</string>
 </resources>

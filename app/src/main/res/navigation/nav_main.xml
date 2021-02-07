@@ -2,11 +2,46 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_main"
-    app:startDestination="@id/showReiseFragment">
+    app:startDestination="@id/currentReiseFragment">
 
     <fragment
-        android:id="@+id/showReiseFragment"
-        android:name="com.jochef2.campingdiary.ui.main.ShowReiseFragment"
-        android:label="fragment_show_reise" />
+        android:id="@+id/allReisenFragment"
+        android:name="com.jochef2.campingdiary.ui.allReisen.AllReisenFragment"
+        android:label="fragment_all_reisen">
+        <action
+            android:id="@+id/action_allReisenFragment_to_currentReiseFragment"
+            app:destination="@id/currentReiseFragment" />
+        <action
+            android:id="@+id/action_allReisenFragment_to_newReisenFragment"
+            app:destination="@id/newReisenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/currentReiseFragment"
+        android:name="com.jochef2.campingdiary.ui.main.CurrentReiseFragment"
+        android:label="fragment_current_reise">
+        <action
+            android:id="@+id/action_currentReiseFragment_to_allReisenFragment"
+            app:destination="@id/allReisenFragment"
+            app:popUpTo="@id/allReisenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_newReisenFragment"
+            app:destination="@id/newReisenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newReisenFragment"
+        android:name="com.jochef2.campingdiary.ui.newReise.NewReiseFragment"
+        android:label="fragment_new_reise">
+        <action
+            android:id="@+id/action_newReisenFragment_to_allReisenFragment"
+            app:destination="@id/allReisenFragment"
+            app:popUpTo="@id/allReisenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_newReisenFragment_to_currentReiseFragment"
+            app:destination="@id/currentReiseFragment" />
+    </fragment>
 
 </navigation>
