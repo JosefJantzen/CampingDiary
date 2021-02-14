@@ -17,14 +17,29 @@ public class CurrentReiseViewModel extends AndroidViewModel {
     public static SharedPreferences mPreferences;
     public MutableLiveData<FullReise> mReise = new MutableLiveData<>();
 
+    /**
+     * Either set's mReise to CurrentReise or empty FullReise = {}
+     * initial mReisenRepository and mPreferences
+     *
+     * @param application current application used for Context
+     */
     public CurrentReiseViewModel(@NonNull Application application) {
         super(application);
         mReisenRepository = new ReisenRepository(application);
         mPreferences = application.getApplicationContext().getSharedPreferences("DATA", Context.MODE_PRIVATE);
-        if (mPreferences.getString("CURRENT_REISE", null) != null) {
-            mReisenRepository.getReise(Integer.parseInt(mPreferences.getString("CURRENT_REISE", null))).observeForever(reise -> {
+        if (!mPreferences.getString("CURRENT_REISE", "-1").equals("-1")) {
+            mReisenRepository.getReise(Integer.parseInt(mPreferences.getString("CURRENT_REISE", "-1"))).observeForever(reise -> {
                 mReise.setValue(reise);
             });
-        } else mReise.setValue(null);
+        } else mReise.setValue(new FullReise());
+    }
+
+    /**
+     * removes the current reise id and sets it to -1
+     */
+    public void clearCurrent() {
+        SharedPreferences.Editor editor = mPreferences.edit();
+        editor.putString("CURRENT_REISE", "-1");
+        editor.apply();
     }
 }

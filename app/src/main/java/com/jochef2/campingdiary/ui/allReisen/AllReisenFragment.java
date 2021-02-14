@@ -45,6 +45,7 @@ public class AllReisenFragment extends Fragment implements LifecycleObserver {
 
         mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(AllReisenViewModel.class);
 
+        // changes recyclerView on reisen changes
         mViewModel.getAllReisen().observe(getViewLifecycleOwner(), reisen -> {
             ReiseAdapter adapter = new ReiseAdapter(mViewModel.getAllReisen(), getContext());
             recyclerView.setAdapter(adapter);
@@ -62,7 +63,7 @@ public class AllReisenFragment extends Fragment implements LifecycleObserver {
         });
 
         fabStartReise.setOnClickListener(v -> {
-            if (mViewModel.getCurrentId() == null) {
+            if (mViewModel.getCurrentId().equals("-1")) {
                 Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_allReisenFragment_to_newReisenFragment);
             } else
                 Toast.makeText(getContext(), getString(R.string.err_multiple_reisen), Toast.LENGTH_SHORT).show();
@@ -71,17 +72,28 @@ public class AllReisenFragment extends Fragment implements LifecycleObserver {
         return view;
     }
 
+    /**
+     * same as onActivityCreated
+     */
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     public void onCreated() {
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.all_reisen);
     }
 
+    /**
+     * for onActivityCreated
+     *
+     * @param context
+     */
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         getLifecycle().addObserver(this);
     }
 
+    /**
+     * for onActivityCreated
+     */
     @Override
     public void onDetach() {
         super.onDetach();

@@ -20,8 +20,8 @@ import java.util.concurrent.Future;
 
 public class ReisenRepository {
 
-    private ReiseDao mReiseDao;
-    private LiveData<List<FullReise>> mAllReisen;
+    private final ReiseDao mReiseDao;
+    private final LiveData<List<FullReise>> mAllReisen;
 
     public ReisenRepository(Application application) {
         RoomDatabase db = RoomDatabase.getDatabase(application);
@@ -41,6 +41,12 @@ public class ReisenRepository {
         return mReiseDao.getCurrentReise();
     }
 
+    /**
+     * inserts new reise
+     *
+     * @param reise new Reise
+     * @return id of new reise
+     */
     public long insertReise(Reise reise) {
         Callable<Long> insertCallable = () -> mReiseDao.insertReise(reise);
         ExecutorService executorService = Executors.newFixedThreadPool(1);
@@ -49,71 +55,52 @@ public class ReisenRepository {
 
         try {
             id = future.get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         return id;
     }
 
     public void insertNight(Night night) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.insertNight(night);
-        });
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.insertNight(night));
     }
 
     public void insertEvent(Event event) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.insertEvent(event);
-        });
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.insertEvent(event));
     }
 
     public void insertSupplyAndDisposal(SupplyAndDisposal supplyAndDisposal) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.insertSupplyAndDisposal(supplyAndDisposal);
-        });
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.insertSupplyAndDisposal(supplyAndDisposal));
     }
 
     public void insertFuel(Fuel fuel) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.insertFuel(fuel);
-        });
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.insertFuel(fuel));
     }
 
     public void updateReise(Reise reise) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.updateReise(reise);
-        });
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.updateReise(reise));
     }
 
     public void updateNight(Night night) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.updateNight();
-        });
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.updateNight(night));
     }
 
     public void updateEvent(Event event) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.updateEvent(event);
-        });
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.updateEvent(event));
     }
 
     public void updateSupplyAndDisposal(SupplyAndDisposal supplyAndDisposal) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.updateSupplyAndDisposal(supplyAndDisposal);
-        });
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.updateSupplyAndDisposal(supplyAndDisposal));
     }
 
     public void updateFuel(Fuel fuel) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.updateFuel(fuel);
-        });
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.updateFuel(fuel));
     }
 
+    /**
+     * deletes all reisen in db
+     */
     public void deleteAllReisen() {
-        RoomDatabase.databaseWriteExecutor.execute(() -> {
-            mReiseDao.deleteAll();
-        });
+        RoomDatabase.databaseWriteExecutor.execute(mReiseDao::deleteAll);
     }
 }

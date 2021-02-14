@@ -15,16 +15,28 @@ import java.util.Calendar;
 public class NewReiseViewModel extends AndroidViewModel {
 
     public MutableLiveData<Reise> mReise = new MutableLiveData<>();
-    private ReisenRepository mReisenRepository;
-    private SharedPreferences mPreferences;
+    private final ReisenRepository mReisenRepository;
+    private final SharedPreferences mPreferences;
 
+    /**
+     * creates new reise with current date as start and day in two weeks as end
+     * initial mReisenRepository and mPreferences
+     *
+     * @param application current application used for Context
+     */
     public NewReiseViewModel(Application application) {
         super(application);
-        mReise.setValue(new Reise("", Calendar.getInstance()));
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DAY_OF_WEEK, 14);
+        mReise.setValue(new Reise("", Calendar.getInstance(), c));
         mReisenRepository = CurrentReiseViewModel.mReisenRepository;
         mPreferences = CurrentReiseViewModel.mPreferences;
     }
 
+    /**
+     * saves reise in db
+     * saves id of new current reise in preferences
+     */
     public void saveReise() {
         long id = mReisenRepository.insertReise(mReise.getValue());
         SharedPreferences.Editor editor = mPreferences.edit();

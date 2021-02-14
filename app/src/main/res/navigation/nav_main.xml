@@ -10,7 +10,9 @@
         android:label="fragment_all_reisen">
         <action
             android:id="@+id/action_allReisenFragment_to_currentReiseFragment"
-            app:destination="@id/currentReiseFragment" />
+            app:destination="@id/currentReiseFragment"
+            app:popUpTo="@id/currentReiseFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_allReisenFragment_to_newReisenFragment"
             app:destination="@id/newReisenFragment" />

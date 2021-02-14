@@ -1,8 +1,6 @@
 package com.jochef2.campingdiary;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SharedPreferences preferences = this.getSharedPreferences("DATA", MODE_PRIVATE);
-        Log.d("TAG", preferences.getString("CURRENT_REISE", null));
         setContentView(R.layout.activity_main);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar);
@@ -36,7 +32,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_drawer);
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host);
-
+        AppBarConfiguration appBarConfiguration =
+                new AppBarConfiguration.Builder(R.id.currentReiseFragment, R.id.allReisenFragment)
+                        .setOpenableLayout(drawerLayout)
+                        .build();
+        NavigationUI.setupWithNavController(navigationView, navController);
 
         /*if (preferences.getString("CURRENT_REISE", null) == null && navController.getCurrentDestination().getId() != R.id.allReisenFragment){
             NavOptions navOptions = new NavOptions.Builder()
@@ -45,18 +45,12 @@ public class MainActivity extends AppCompatActivity {
             navController.navigate(R.id.action_showReiseFragment_to_allReisenFragment, savedInstanceState, navOptions);
         }*/
 
-
-        AppBarConfiguration appBarConfiguration =
-                new AppBarConfiguration.Builder(R.id.currentReiseFragment, R.id.allReisenFragment)
-                        .setOpenableLayout(drawerLayout)
-                        .build();
-
-        NavigationUI.setupWithNavController(navigationView, navController);
-
+        // Open Drawer on icon click
         toolbar.setNavigationOnClickListener(v -> {
             drawerLayout.open();
         });
 
+        // handle menu items
         toolbar.setOnMenuItemClickListener(menuItem -> {
             switch (menuItem.getItemId()) {
                 case R.id.cs:
@@ -67,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // handel drawer selection
         navigationView.setNavigationItemSelectedListener(item -> {
             drawerLayout.close();
             return NavigationUI.onNavDestinationSelected(item, navController)

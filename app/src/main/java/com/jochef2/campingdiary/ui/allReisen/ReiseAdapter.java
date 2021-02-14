@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.FullReise;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> {
@@ -31,13 +32,21 @@ public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> 
         mContext = c;
     }
 
+    /**
+     * sets data into each card and colors current
+     *
+     * @param holder   current card view
+     * @param position position in mDataset
+     */
     @SuppressLint({"ResourceAsColor", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.mName.setText(mDataset.getValue().get(position).mReise.getName());
         holder.mLand.setText(mDataset.getValue().get(position).mReise.getLand());
 
-        if (mDataset.getValue().get(position).mReise.getId() == Integer.parseInt(AllReisenFragment.mViewModel.getCurrentId())) {
+        if (mDataset.getValue().get(position).mReise.getId() == Integer.parseInt(AllReisenFragment.mViewModel.getCurrentId()) &&
+                mDataset.getValue().get(position).mReise.getEnd().getTimeInMillis() > Calendar.getInstance().getTimeInMillis()) {
+
             TypedValue value = new TypedValue();
             mContext.getTheme().resolveAttribute(R.attr.colorPrimaryVariant, value, true);
 
@@ -59,6 +68,9 @@ public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> 
         return new ViewHolder(view);
     }
 
+    /**
+     * @return count of items in recyclerview
+     */
     @Override
     public int getItemCount() {
         return mDataset.getValue().size();

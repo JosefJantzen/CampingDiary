@@ -15,6 +15,12 @@ import java.util.List;
 
 public class Converters {
 
+    /**
+     * converts long to Calendar
+     *
+     * @param value millis
+     * @return Calendar
+     */
     @TypeConverter
     public static Calendar toCalendar(Long value) {
         if (value != null) {
@@ -26,47 +32,101 @@ public class Converters {
         }
     }
 
+    /**
+     * converts calendar to long
+     *
+     * @param calendar Calendar
+     * @return millis
+     */
     @TypeConverter
     public static Long toTimestamp(Calendar calendar) {
         return calendar == null ? null : calendar.getTimeInMillis() / 1000L;
     }
 
+    /**
+     * converts EventCategory Enum to String
+     *
+     * @param eventCategory category
+     * @return string
+     */
     @TypeConverter
     public static String eventCatToString(EventCategory eventCategory) {
         return eventCategory == null ? null : eventCategory.toString();
     }
 
+    /**
+     * converts string to EventCategory Enum
+     *
+     * @param cat string
+     * @return EventCategory
+     */
     @TypeConverter
     public static EventCategory stringToEventCat(String cat) {
         return cat == null ? null : EventCategory.valueOf(cat);
     }
 
+    /**
+     * converts NightCategory Enum to string
+     *
+     * @param nightCategory category
+     * @return string
+     */
     @TypeConverter
     public static String nightCatToString(NightCategory nightCategory) {
         return nightCategory == null ? null : nightCategory.toString();
     }
 
+    /**
+     * converts string to NightCategory Enum
+     *
+     * @param cat category
+     * @return NightCategory Enum
+     */
     @TypeConverter
     public static NightCategory stringToNightCategory(String cat) {
         return cat == null ? null : NightCategory.valueOf(cat);
     }
 
+    /**
+     * converts list of sadCategory Enum to Json String
+     *
+     * @param sadCategories categories
+     * @return Json String
+     */
     @TypeConverter
     public static String sadCatListToString(List<SADCategory> sadCategories) {
         return sadCategories == null ? null : new Gson().toJson(sadCategories);
     }
 
+    /**
+     * converts Json String to sadCategory Enum
+     *
+     * @param cats categories
+     * @return sadCategory Enum
+     */
     @TypeConverter
     public static List<SADCategory> stringToSADCatList(String cats) {
         return cats == null ? null : new Gson().fromJson(cats, new TypeToken<ArrayList<SADCategory>>() {
         }.getType());
     }
 
+    /**
+     * converts ExtendedCurrency to it's name
+     *
+     * @param currency ExtendedCurrency
+     * @return String name of currency
+     */
     @TypeConverter
     public static String extendedCurrencyToString(ExtendedCurrency currency) {
         return currency == null ? null : currency.getName();
     }
 
+    /**
+     * converts currency string name to ExtendedCurrency
+     *
+     * @param name currency string name
+     * @return ExtendedCurrency
+     */
     @TypeConverter
     public static ExtendedCurrency stringToExtendedCurrency(String name) {
         return name == null ? null : ExtendedCurrency.getCurrencyByName(name);

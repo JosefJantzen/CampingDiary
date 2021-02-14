@@ -23,6 +23,12 @@ public class AllReisenViewModel extends AndroidViewModel {
     private final LiveData<List<FullReise>> mAllReisen;
     private SharedPreferences mPreferences;
 
+    /**
+     * initials mAllReisen from db
+     * initials mReisenRepository and mPrefrences
+     *
+     * @param application current application used for Context
+     */
     public AllReisenViewModel(Application application) {
         super(application);
         mReisenRepository = new ReisenRepository(application);
@@ -30,8 +36,11 @@ public class AllReisenViewModel extends AndroidViewModel {
         mPreferences = application.getApplicationContext().getSharedPreferences("DATA", Context.MODE_PRIVATE);
     }
 
+    /**
+     * @return id of current reise
+     */
     public String getCurrentId() {
-        return mPreferences.getString("CURRENT_REISE", null);
+        return mPreferences.getString("CURRENT_REISE", "-1");
     }
 
     LiveData<List<FullReise>> getAllReisen() {

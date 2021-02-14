@@ -114,6 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:tag="7"
             android:text="@string/one_week" />
 
         <com.google.android.material.chip.Chip
@@ -122,6 +123,7 @@
             android:layout_height="wrap_content"
             android:checkable="true"
             android:checked="true"
+            android:tag="14"
             android:text="@string/two_weeks" />
 
         <com.google.android.material.chip.Chip
@@ -129,6 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:tag="21"
             android:text="@string/three_weeks" />
 
         <com.google.android.material.chip.Chip
@@ -136,6 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
+            android:tag="28"
             android:text="@string/four_weeks" />
 
         <com.google.android.material.chip.Chip

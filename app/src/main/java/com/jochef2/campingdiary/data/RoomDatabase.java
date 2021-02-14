@@ -29,6 +29,7 @@ public abstract class RoomDatabase extends androidx.room.RoomDatabase {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
+            // write default data to db
             databaseWriteExecutor.execute(() -> {
 
                 /*ReiseDao dao = INSTANCE.reiseDao();

@@ -31,9 +31,10 @@ public class Reise {
     @ColumnInfo(name = "end")
     public Calendar mEnd;
 
-    public Reise(String name, Calendar begin) {
+    public Reise(String name, Calendar begin, Calendar end) {
         mName = name;
         mBegin = begin;
+        mEnd = end;
     }
 
     @NonNull
@@ -94,5 +95,10 @@ public class Reise {
     public String getBeginDate() {
         SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
         return simpleDate.format(mBegin.getTime());
+    }
+
+    public String getEndDate() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
+        return simpleDate.format(mEnd.getTime());
     }
 }
