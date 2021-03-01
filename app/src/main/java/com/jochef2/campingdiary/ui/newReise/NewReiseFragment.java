@@ -22,6 +22,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
+import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.textfield.TextInputEditText;
 import com.jochef2.campingdiary.R;
@@ -38,6 +39,7 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
     private Button btnCheck;
     private ChipGroup chEnd;
     private TextView txEnd;
+    private Chip chCustom;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -52,12 +54,13 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
         super.onViewCreated(view, savedInstanceState);
 
         etName = view.findViewById(R.id.et_name);
-        btnClose = view.findViewById(R.id.btn_close);
+        btnClose = view.findViewById(R.id.btn_back);
         btnCheck = view.findViewById(R.id.btn_check);
         chEnd = view.findViewById(R.id.end_group);
         txEnd = view.findViewById(R.id.tx_end);
+        chCustom = view.findViewById(R.id.ch_custom);
 
-        mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(NewReiseViewModel.class);
+        mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewReiseViewModel.class);
 
         // save current name e.g. on rotation
         if (savedInstanceState != null) {
@@ -72,28 +75,30 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
         // handle date changes
         chEnd.setOnCheckedChangeListener((group, checkedId) -> {
             Reise reise = mViewModel.mReise.getValue();
-
             // if preconfigured weeks
             if (checkedId != R.id.ch_custom) {
                 Calendar c = Calendar.getInstance();
                 c.add(Calendar.DAY_OF_WEEK, Integer.parseInt((String) view.findViewById(checkedId).getTag()));
                 reise.setEnd(c);
-                mViewModel.mReise.postValue(reise);
+                mViewModel.mReise.setValue(reise);
+                mViewModel.lastChip = checkedId;
             }
-            // if custom date
-            else {
-                Calendar c = Calendar.getInstance();
-                DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), (view1, year, month, dayOfMonth) -> {
-                    Calendar end = Calendar.getInstance();
-                    end.set(year, month, dayOfMonth);
-                    reise.setEnd(end);
-                    mViewModel.mReise.postValue(reise);
-                }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+        });
 
-                datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTimeInMillis() + 24 * 60 * 60 * 1000);
-                datePickerDialog.setOnCancelListener(dialog -> chEnd.check(R.id.ch_two));
-                datePickerDialog.show();
-            }
+        chCustom.setOnClickListener(v -> {
+            Reise reise = mViewModel.mReise.getValue();
+            Calendar c = reise.getEnd();
+            DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), (view1, year, month, dayOfMonth) -> {
+                Calendar end = Calendar.getInstance();
+                end.set(year, month, dayOfMonth);
+                reise.setEnd(end);
+                mViewModel.mReise.setValue(reise);
+                mViewModel.lastChip = R.id.ch_custom;
+            }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+
+            datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTimeInMillis() + 24 * 60 * 60 * 1000);
+            datePickerDialog.setOnCancelListener(dialog -> chEnd.check(mViewModel.lastChip));
+            datePickerDialog.show();
         });
 
         btnClose.setOnClickListener(v -> Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_newReisenFragment_to_allReisenFragment));
@@ -103,7 +108,7 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
             reise.setName(etName.getText().toString());
 
             if (!reise.getName().equals("")) {
-                mViewModel.mReise.postValue(reise);
+                mViewModel.mReise.setValue(reise);
                 mViewModel.saveReise();
 
                 // remove newReiseFragment from BackStack

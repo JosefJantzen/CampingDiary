@@ -30,6 +30,11 @@
         <action
             android:id="@+id/action_currentReiseFragment_to_newReisenFragment"
             app:destination="@id/newReisenFragment" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_newNightFragment"
+            app:destination="@id/newNightFragment"
+            app:popUpTo="@id/currentReiseFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -44,6 +49,19 @@
         <action
             android:id="@+id/action_newReisenFragment_to_currentReiseFragment"
             app:destination="@id/currentReiseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newNightFragment"
+        android:name="com.jochef2.campingdiary.ui.newNight.NewNightFragment"
+        android:label="fragment_new_night">
+        <action
+            android:id="@+id/action_newNightFragment_to_currentReiseFragment"
+            app:destination="@id/currentReiseFragment" />
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
     </fragment>
 
 </navigation>

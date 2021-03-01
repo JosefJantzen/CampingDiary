@@ -382,6 +382,13 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@string/last_night"
+                                android:textSize="24sp" />
+
                             <ImageView
                                 android:id="@+id/im_night"
                                 android:layout_width="0dp"
@@ -392,13 +399,6 @@
                                 app:srcCompat="@drawable/ic_womo"
                                 app:tint="?attr/colorOnBackground" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="start"
-                                android:text="@string/last_night"
-                                android:textSize="24sp" />
-
                         </LinearLayout>
 
                         <TextView
@@ -407,7 +407,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="start"
                             android:maxLines="2"
-                            android:text="Moos am Bodensee"
+                            android:text="@string/none"
                             android:textSize="32sp"
                             app:autoSizeTextType="uniform" />
 
@@ -465,6 +465,13 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@string/last_event"
+                                android:textSize="24sp" />
+
                             <ImageView
                                 android:id="@+id/im_event"
                                 android:layout_width="0dp"
@@ -474,13 +481,6 @@
                                 android:src="@drawable/ic_womo"
                                 app:srcCompat="@drawable/ic_walk"
                                 app:tint="?attr/colorOnBackground" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="start"
-                                android:text="@string/last_event"
-                                android:textSize="24sp" />
 
                         </LinearLayout>
 

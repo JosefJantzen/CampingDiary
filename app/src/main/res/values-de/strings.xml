@@ -19,7 +19,7 @@
     <string name="trips">Reisen</string>
     <string name="all_reisen">Alle Reisen</string>
     <string name="all_stats">Gesamtstatistik</string>
-    <string name="other">Anderes</string>
+    <string name="other">Andere</string>
     <string name="settings">Einstellungen</string>
     <string name="about">Über</string>
     <string name="current_trip">Aktuelle Reise</string>
@@ -41,4 +41,19 @@
     <string name="four_weeks">Vier Wochen</string>
     <string name="err_no_name">Benennen sie bitte die Reise.</string>
     <string name="err_multiple_reisen">Bitte beenden sie die aktuelle Reise zuerst.</string>
+    <string name="one_day">Ein Tag</string>
+    <string name="two_days">Zwei Tage</string>
+    <string name="category">Kategorie</string>
+    <string name="campsite">Campingplatz</string>
+    <string name="motorhome_area">Wohnmobilplatz</string>
+    <string name="parking_area">Parkplatz</string>
+    <string name="resting_spot">Rastplatz</string>
+    <string name="nature">Natur</string>
+    <string name="farm">Bauernhof</string>
+    <string name="off_road">Off Road</string>
+    <string name="price">Preis</string>
+    <string name="change_currency">Währung ändern:</string>
+    <string name="err_no_name_event">Bennen sie bitte die Aktivität</string>
+    <string name="select_currency">Währung wählen</string>
+    <string name="none">None</string>
 </resources>

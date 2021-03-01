@@ -12,6 +12,7 @@ import com.jochef2.campingdiary.data.values.NightCategory;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 @Entity(tableName = "nights_table")
@@ -45,18 +46,20 @@ public class Night {
     @Embedded
     public Price mPrice;
 
-    public Night(int reiseId, String name, Calendar begin, NightCategory cat) {
+    public Night(int reiseId, @NotNull String name, Calendar begin, Calendar end, NightCategory cat) {
         mReiseId = reiseId;
         mName = name;
         mBegin = begin;
+        mEnd = end;
         mCat = cat;
     }
 
     @Ignore
-    public Night(int reiseId, String name, Calendar begin, NightCategory cat, Price price) {
+    public Night(int reiseId, @NotNull String name, Calendar begin, Calendar end, NightCategory cat, Price price) {
         mReiseId = reiseId;
         mName = name;
         mBegin = begin;
+        mEnd = end;
         mCat = cat;
         mPrice = price;
     }
@@ -117,5 +120,18 @@ public class Night {
 
     public void setPrice(Price price) {
         mPrice = price;
+    }
+
+    public void setPriceNumber(double priceNumber) {
+        mPrice.setPrice(priceNumber);
+    }
+
+    public void setCurrency(String ISO) {
+        mPrice.setCurrency(ISO);
+    }
+
+    public String getEndDate() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
+        return simpleDate.format(mEnd.getTime());
     }
 }

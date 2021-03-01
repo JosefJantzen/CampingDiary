@@ -8,14 +8,17 @@
     tools:context=".ui.newReise.NewReiseFragment">
 
     <Button
-        android:id="@+id/btn_close"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
+        android:padding="24dp"
         android:textSize="18sp"
         app:cornerRadius="15dp"
         app:icon="@drawable/ic_close"
-        app:iconSize="100dp"
+        app:iconPadding="0dp"
+        app:iconSize="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/end_group" />
@@ -24,11 +27,14 @@
         android:id="@+id/btn_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
+        android:padding="24dp"
         android:textSize="18sp"
         app:cornerRadius="15dp"
         app:icon="@drawable/ic_check"
-        app:iconSize="100dp"
+        app:iconPadding="0dp"
+        app:iconSize="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/end_group" />

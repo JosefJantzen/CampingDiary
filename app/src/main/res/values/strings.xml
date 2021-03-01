@@ -41,4 +41,19 @@
     <string name="four_weeks">Four weeks </string>
     <string name="err_no_name">Please name the tour.</string>
     <string name="err_multiple_reisen">Please finish your current Tour first.</string>
+    <string name="one_day">One day</string>
+    <string name="two_days">Two days</string>
+    <string name="category">Category</string>
+    <string name="campsite">Campsite</string>
+    <string name="motorhome_area">Motorhome area</string>
+    <string name="parking_area">Parking area</string>
+    <string name="resting_spot">Resting spot</string>
+    <string name="nature">Nature</string>
+    <string name="farm">Farm</string>
+    <string name="off_road">Off road</string>
+    <string name="price">Price</string>
+    <string name="change_currency">Change currency:</string>
+    <string name="err_no_name_event">Please name the event</string>
+    <string name="select_currency">Select currency</string>
+    <string name="none">None</string>
 </resources>

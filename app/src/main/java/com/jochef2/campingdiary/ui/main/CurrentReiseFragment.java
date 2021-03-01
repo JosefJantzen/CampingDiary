@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -22,10 +23,13 @@ import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.jochef2.campingdiary.R;
+import com.jochef2.campingdiary.data.entities.Night;
 
 import java.util.Calendar;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class CurrentReiseFragment extends Fragment implements LifecycleObserver {
@@ -36,6 +40,9 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private LinearLayout noReise;
     private MaterialButton btnStartReise;
     private TextView txDays;
+    private FloatingActionButton fabNight;
+    private TextView txNight;
+    private ImageView imNight;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -53,6 +60,9 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         noReise = view.findViewById(R.id.no_reise);
         btnStartReise = view.findViewById(R.id.btn_start_reise);
         txDays = view.findViewById(R.id.tx_days);
+        fabNight = view.findViewById(R.id.btn_nights);
+        txNight = view.findViewById(R.id.tx_night);
+        imNight = view.findViewById(R.id.im_night);
 
         mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -76,6 +86,15 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 noReise.setVisibility(View.GONE);
 
                 txDays.setText((TimeUnit.MILLISECONDS.toDays(Calendar.getInstance().getTimeInMillis() - reise.mReise.getBegin().getTimeInMillis()) + 1) + " / " + (TimeUnit.MILLISECONDS.toDays(reise.mReise.getEnd().getTimeInMillis() - reise.mReise.getBegin().getTimeInMillis()) + 1));
+                fabNight.setOnClickListener(v -> {
+                    CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToNewNightFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToNewNightFragment();
+                    action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                    Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
+                });
+
+                Night lastNight = reise.mNights.get(reise.mNights.size() - 1);
+                txNight.setText(lastNight.getName());
+                //TODO: lastNight icon
             }
         });
     }

@@ -32,4 +32,8 @@ public class Price {
     public void setCurrency(ExtendedCurrency currency) {
         mCurrency = currency;
     }
+
+    public void setCurrency(String ISO) {
+        mCurrency = ExtendedCurrency.getCurrencyByISO(ISO);
+    }
 }
