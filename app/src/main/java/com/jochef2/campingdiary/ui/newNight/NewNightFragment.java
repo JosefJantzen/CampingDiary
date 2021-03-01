@@ -1,5 +1,6 @@
 package com.jochef2.campingdiary.ui.newNight;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,8 +8,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
@@ -17,7 +22,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.jochef2.campingdiary.R;
 
-public class NewNightFragment extends Fragment {
+public class NewNightFragment extends Fragment implements LifecycleObserver {
 
     public static NewNightViewModel mViewModel;
     private static ViewPager2 viewPager;
@@ -44,6 +49,8 @@ public class NewNightFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.new_night);
 
         viewPager = view.findViewById(R.id.pager);
         viewPager.setAdapter(new ScreenSlidePagerAdapter(requireActivity()));
@@ -78,5 +85,34 @@ public class NewNightFragment extends Fragment {
         public int getItemCount() {
             return 2;
         }
+    }
+
+    /**
+     * Same as onActivityCreated
+     * Set's title to R.string.start_tour
+     */
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    public void onCreated() {
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.new_night);
+    }
+
+    /**
+     * for onActivityCreated
+     *
+     * @param context
+     */
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        getLifecycle().addObserver(this);
+    }
+
+    /**
+     * for onActivityCreated
+     */
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        getLifecycle().removeObserver(this);
     }
 }

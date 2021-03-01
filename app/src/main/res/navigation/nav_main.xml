@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
     app:startDestination="@id/currentReiseFragment">
 
     <fragment
         android:id="@+id/allReisenFragment"
         android:name="com.jochef2.campingdiary.ui.allReisen.AllReisenFragment"
-        android:label="fragment_all_reisen">
+        android:label="fragment_all_reisen"
+        tools:layout="@layout/all_reisen_fragment">
         <action
             android:id="@+id/action_allReisenFragment_to_currentReiseFragment"
             app:destination="@id/currentReiseFragment"
@@ -15,37 +17,39 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_allReisenFragment_to_newReisenFragment"
-            app:destination="@id/newReisenFragment" />
+            app:destination="@id/newReisenFragment"
+            app:popUpTo="@id/currentReiseFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
         android:id="@+id/currentReiseFragment"
         android:name="com.jochef2.campingdiary.ui.main.CurrentReiseFragment"
-        android:label="fragment_current_reise">
+        android:label="fragment_current_reise"
+        tools:layout="@layout/current_reise_fragment">
         <action
             android:id="@+id/action_currentReiseFragment_to_allReisenFragment"
             app:destination="@id/allReisenFragment"
-            app:popUpTo="@id/allReisenFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_currentReiseFragment_to_newReisenFragment"
             app:destination="@id/newReisenFragment" />
         <action
             android:id="@+id/action_currentReiseFragment_to_newNightFragment"
-            app:destination="@id/newNightFragment"
-            app:popUpTo="@id/currentReiseFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/newNightFragment" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_nightsFragment"
+            app:destination="@id/nightsFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/newReisenFragment"
         android:name="com.jochef2.campingdiary.ui.newReise.NewReiseFragment"
-        android:label="fragment_new_reise">
+        android:label="fragment_new_reise"
+        tools:layout="@layout/new_reise_fragment">
         <action
             android:id="@+id/action_newReisenFragment_to_allReisenFragment"
-            app:destination="@id/allReisenFragment"
-            app:popUpTo="@id/allReisenFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/allReisenFragment" />
         <action
             android:id="@+id/action_newReisenFragment_to_currentReiseFragment"
             app:destination="@id/currentReiseFragment" />
@@ -54,9 +58,24 @@
     <fragment
         android:id="@+id/newNightFragment"
         android:name="com.jochef2.campingdiary.ui.newNight.NewNightFragment"
-        android:label="fragment_new_night">
+        android:label="fragment_new_night"
+        tools:layout="@layout/new_night_fragment">
         <action
             android:id="@+id/action_newNightFragment_to_currentReiseFragment"
+            app:destination="@id/currentReiseFragment" />
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nightsFragment"
+        android:name="com.jochef2.campingdiary.ui.nights.NightsFragment"
+        android:label="fragment_nights"
+        tools:layout="@layout/nights_fragment">
+        <action
+            android:id="@+id/action_nightsFragment_to_currentReiseFragment"
             app:destination="@id/currentReiseFragment" />
         <argument
             android:name="reiseId"

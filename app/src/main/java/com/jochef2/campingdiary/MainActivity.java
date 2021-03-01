@@ -37,18 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         .setOpenableLayout(drawerLayout)
                         .build();
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        /*if (preferences.getString("CURRENT_REISE", null) == null && navController.getCurrentDestination().getId() != R.id.allReisenFragment){
-            NavOptions navOptions = new NavOptions.Builder()
-                    .setPopUpTo(R.id.showReiseFragment, true)
-                    .build();
-            navController.navigate(R.id.action_showReiseFragment_to_allReisenFragment, savedInstanceState, navOptions);
-        }*/
-
-        // Open Drawer on icon click
-        toolbar.setNavigationOnClickListener(v -> {
-            drawerLayout.open();
-        });
+        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
 
         // handle menu items
         toolbar.setOnMenuItemClickListener(menuItem -> {

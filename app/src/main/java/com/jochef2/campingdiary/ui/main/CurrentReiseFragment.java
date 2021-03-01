@@ -19,7 +19,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.button.MaterialButton;
@@ -75,10 +74,11 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 btnStartReise.setOnClickListener(v -> Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_currentReiseFragment_to_newReisenFragment));
 
                 mViewModel.clearCurrent();
-                NavOptions navOptions = new NavOptions.Builder()
+                /*NavOptions navOptions = new NavOptions.Builder()
                         .setPopUpTo(R.id.currentReiseFragment, true)
                         .build();
-                Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_currentReiseFragment_to_allReisenFragment, savedInstanceState, navOptions);
+                Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_currentReiseFragment_to_allReisenFragment, savedInstanceState, navOptions);*/
+                //Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_currentReiseFragment_to_allReisenFragment);
             }
             // if current reise is right initial views
             else {
@@ -92,9 +92,11 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                     Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
                 });
 
-                Night lastNight = reise.mNights.get(reise.mNights.size() - 1);
-                txNight.setText(lastNight.getName());
-                //TODO: lastNight icon
+                if (!reise.mNights.isEmpty()) {
+                    Night lastNight = reise.mNights.get(reise.mNights.size() - 1);
+                    txNight.setText(lastNight.getName());
+                    //TODO: lastNight icon
+                }
             }
         });
     }

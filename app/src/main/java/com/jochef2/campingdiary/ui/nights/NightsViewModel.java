@@ -1,7 +1,15 @@
 package com.jochef2.campingdiary.ui.nights;
 
-import androidx.lifecycle.ViewModel;
+import android.app.Application;
 
-public class NightsViewModel extends ViewModel {
-    // TODO: Implement the ViewModel
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
+
+public class NightsViewModel extends AndroidViewModel {
+
+    public NightsViewModel(@NonNull Application application) {
+        super(application);
+
+    }
+
 }

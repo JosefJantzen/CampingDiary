@@ -56,4 +56,5 @@
     <string name="err_no_name_event">Please name the event</string>
     <string name="select_currency">Select currency</string>
     <string name="none">None</string>
+    <string name="new_night">New night</string>
 </resources>

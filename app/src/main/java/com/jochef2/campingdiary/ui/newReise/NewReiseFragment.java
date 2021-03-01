@@ -53,6 +53,7 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
         etName = view.findViewById(R.id.et_name);
         btnClose = view.findViewById(R.id.btn_back);
         btnCheck = view.findViewById(R.id.btn_check);
