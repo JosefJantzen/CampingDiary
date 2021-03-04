@@ -20,17 +20,19 @@ public class NewNightViewModel extends AndroidViewModel {
 
     public MutableLiveData<Night> mNight = new MutableLiveData<>();
     public int reiseId;
-    public int lastChip;
+    public int lastStartChip;
+    public int lastEndChip;
     private ReisenRepository mReisenRepository;
 
     public NewNightViewModel(@NonNull Application application) {
         super(application);
         mReisenRepository = CurrentReiseViewModel.mReisenRepository;
         Calendar c = Calendar.getInstance();
-        c.add(Calendar.DAY_OF_WEEK, 1);
+        c.add(Calendar.DAY_OF_MONTH, 1);
         Night night = new Night(-1, application.getString(R.string.no_name), Calendar.getInstance(), c, NightCategory.MOTORHOME_AREA, new Price(0, ExtendedCurrency.getCurrencyByISO("EUR")));
         mNight.setValue(night);
-        lastChip = R.id.ch_one;
+        lastEndChip = R.id.ch_one;
+        lastStartChip = R.id.ch_today;
     }
 
     public void setReiseId(int reiseId) {

@@ -22,10 +22,12 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Night;
+import com.jochef2.campingdiary.utils.Sort;
 
 import java.util.Calendar;
 import java.util.Objects;
@@ -42,6 +44,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private FloatingActionButton fabNight;
     private TextView txNight;
     private ImageView imNight;
+    private MaterialCardView cardNight;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -62,6 +65,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         fabNight = view.findViewById(R.id.btn_nights);
         txNight = view.findViewById(R.id.tx_night);
         imNight = view.findViewById(R.id.im_night);
+        cardNight = view.findViewById(R.id.card_night);
 
         mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -93,8 +97,13 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 });
 
                 if (!reise.mNights.isEmpty()) {
-                    Night lastNight = reise.mNights.get(reise.mNights.size() - 1);
+                    Night lastNight = Sort.getLastNight(reise.mNights);
                     txNight.setText(lastNight.getName());
+                    cardNight.setOnClickListener(v -> {
+                        CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToAllNightsFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToAllNightsFragment();
+                        action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                        Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
+                    });
                     //TODO: lastNight icon
                 }
             }

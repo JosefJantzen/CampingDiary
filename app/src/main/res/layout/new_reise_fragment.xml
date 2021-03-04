@@ -149,7 +149,7 @@
             android:text="@string/four_weeks" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/ch_custom"
+            android:id="@+id/ch_end_custom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"

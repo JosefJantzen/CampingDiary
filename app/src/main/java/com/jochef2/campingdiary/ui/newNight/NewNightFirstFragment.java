@@ -28,13 +28,16 @@ import java.util.Objects;
 public class NewNightFirstFragment extends Fragment {
 
     private TextInputEditText etName;
-    private ChipGroup chDuration;
+    private ChipGroup chEnd;
     private TextInputEditText etPrice;
     private MaterialButton btnCurrency;
     private MaterialButton btnClose;
     private MaterialButton btnNext;
     private TextView txEnd;
-    private Chip chCustom;
+    private Chip chEndCustom;
+    private ChipGroup chStart;
+    private Chip chStartCustom;
+    private TextView txStart;
 
     private CurrencyPicker currencyPicker;
 
@@ -49,13 +52,16 @@ public class NewNightFirstFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         etName = view.findViewById(R.id.et_name);
-        chDuration = view.findViewById(R.id.ch_end);
+        chEnd = view.findViewById(R.id.ch_end);
         etPrice = view.findViewById(R.id.et_price);
         btnCurrency = view.findViewById(R.id.btn_currency);
         btnClose = view.findViewById(R.id.btn_back);
         btnNext = view.findViewById(R.id.btn_check);
         txEnd = view.findViewById(R.id.tx_end);
-        chCustom = view.findViewById(R.id.ch_custom);
+        chEndCustom = view.findViewById(R.id.ch_end_custom);
+        chStart = view.findViewById(R.id.ch_start);
+        chStartCustom = view.findViewById(R.id.ch_start_custom);
+        txStart = view.findViewById(R.id.tx_start);
 
         if (savedInstanceState != null) {
             etName.setText(savedInstanceState.getString("name"));
@@ -66,7 +72,6 @@ public class NewNightFirstFragment extends Fragment {
             txEnd.setText(night.getEndDate());
             btnCurrency.setText(night.getPrice().getCurrency().getCode());
         });
-
 
         currencyPicker = CurrencyPicker.newInstance(getString(R.string.select_currency));
 
@@ -99,31 +104,77 @@ public class NewNightFirstFragment extends Fragment {
             }
         });
 
-        chDuration.setOnCheckedChangeListener((group, checkedId) -> {
+        chStart.setOnCheckedChangeListener(((group, checkedId) -> {
             Night night = NewNightFragment.mViewModel.mNight.getValue();
+            if (checkedId != R.id.ch_start_custom) {
+                Objects.requireNonNull(night).setBegin(Calendar.getInstance());
+                NewNightFragment.mViewModel.mNight.setValue(night);
+                NewNightFragment.mViewModel.lastStartChip = checkedId;
+                txStart.setText(getString(R.string.today));
 
-            if (checkedId != R.id.ch_custom) {
-                Calendar c = Calendar.getInstance();
-                c.add(Calendar.DAY_OF_WEEK, Integer.parseInt(view.findViewById(checkedId).getTag().toString()));
+                if (chEnd.getCheckedChipId() == R.id.ch_one || chEnd.getCheckedChipId() == R.id.ch_two) {
+                    Calendar c = Calendar.getInstance();
+                    c.add(Calendar.DAY_OF_MONTH, Integer.parseInt(view.findViewById(chEnd.getCheckedChipId()).getTag().toString()));
+                    night.setEnd(c);
+                }
+            }
+        }));
+
+        chEnd.setOnCheckedChangeListener((group, checkedId) -> {
+
+            if (checkedId != R.id.ch_end_custom) {
+                Night night = NewNightFragment.mViewModel.mNight.getValue();
+                Calendar c = night.getBegin();
+                c.add(Calendar.DAY_OF_MONTH, Integer.parseInt(view.findViewById(checkedId).getTag().toString()));
                 night.setEnd(c);
                 NewNightFragment.mViewModel.mNight.setValue(night);
-                NewNightFragment.mViewModel.lastChip = checkedId;
+                NewNightFragment.mViewModel.lastEndChip = checkedId;
             }
         });
 
-        chCustom.setOnClickListener(v -> {
+        chStartCustom.setOnClickListener(v -> {
             Night night = NewNightFragment.mViewModel.mNight.getValue();
-            Calendar c = night.getEnd();
+            DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), (view1, year, month, dayOfMonth) -> {
+                Calendar begin = Calendar.getInstance();
+                begin.set(year, month, dayOfMonth);
+                Objects.requireNonNull(night).setBegin(begin);
+
+                if (begin.after(night.getEnd())) {
+                    Calendar calendar = night.getBegin();
+                    calendar.setTimeInMillis(night.getBegin().getTimeInMillis());
+                    int addDays = 1;
+                    if (chEnd.getCheckedChipId() == R.id.ch_two) {
+                        addDays = 2;
+                    } else if (chEnd.getCheckedChipId() == R.id.ch_end_custom) {
+                        chEnd.check(R.id.ch_one);
+                    }
+                    calendar.add(Calendar.DAY_OF_MONTH, addDays);
+                    night.setEnd(calendar);
+                }
+
+                txStart.setText(night.getBeginDate());
+                NewNightFragment.mViewModel.mNight.setValue(night);
+                NewNightFragment.mViewModel.lastStartChip = R.id.ch_start_custom;
+
+            }, Objects.requireNonNull(night).getBegin().get(Calendar.YEAR), night.getBegin().get(Calendar.MONTH), night.getBegin().get(Calendar.DAY_OF_MONTH));
+
+            datePickerDialog.setOnCancelListener(dialog -> chStart.check(NewNightFragment.mViewModel.lastStartChip));
+            datePickerDialog.show();
+        });
+
+        chEndCustom.setOnClickListener(v -> {
+            Night night = NewNightFragment.mViewModel.mNight.getValue();
+            Calendar c = Objects.requireNonNull(night).getEnd();
             DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), (view1, year, month, dayOfMonth) -> {
                 Calendar end = Calendar.getInstance();
                 end.set(year, month, dayOfMonth);
                 night.setEnd(end);
                 NewNightFragment.mViewModel.mNight.setValue(night);
-                NewNightFragment.mViewModel.lastChip = R.id.ch_custom;
+                NewNightFragment.mViewModel.lastEndChip = R.id.ch_end_custom;
             }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
 
-            datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTimeInMillis() + 24 * 60 * 60 * 1000);
-            datePickerDialog.setOnCancelListener(dialog -> chDuration.check(NewNightFragment.mViewModel.lastChip));
+            datePickerDialog.getDatePicker().setMinDate(night.getBegin().getTimeInMillis() + 24 * 60 * 60 * 1000);
+            datePickerDialog.setOnCancelListener(dialog -> chEnd.check(NewNightFragment.mViewModel.lastEndChip));
             datePickerDialog.show();
         });
     }

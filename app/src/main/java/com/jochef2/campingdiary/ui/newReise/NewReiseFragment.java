@@ -59,7 +59,7 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
         btnCheck = view.findViewById(R.id.btn_check);
         chEnd = view.findViewById(R.id.end_group);
         txEnd = view.findViewById(R.id.tx_end);
-        chCustom = view.findViewById(R.id.ch_custom);
+        chCustom = view.findViewById(R.id.ch_end_custom);
 
         mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewReiseViewModel.class);
 
@@ -77,7 +77,7 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
         chEnd.setOnCheckedChangeListener((group, checkedId) -> {
             Reise reise = mViewModel.mReise.getValue();
             // if preconfigured weeks
-            if (checkedId != R.id.ch_custom) {
+            if (checkedId != R.id.ch_end_custom) {
                 Calendar c = Calendar.getInstance();
                 c.add(Calendar.DAY_OF_WEEK, Integer.parseInt((String) view.findViewById(checkedId).getTag()));
                 reise.setEnd(c);
@@ -94,7 +94,7 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
                 end.set(year, month, dayOfMonth);
                 reise.setEnd(end);
                 mViewModel.mReise.setValue(reise);
-                mViewModel.lastChip = R.id.ch_custom;
+                mViewModel.lastChip = R.id.ch_end_custom;
             }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
 
             datePickerDialog.getDatePicker().setMinDate(Calendar.getInstance().getTimeInMillis() + 24 * 60 * 60 * 1000);

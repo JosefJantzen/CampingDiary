@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
         NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
 
+
         // handle menu items
         toolbar.setOnMenuItemClickListener(menuItem -> {
             switch (menuItem.getItemId()) {
@@ -55,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
             drawerLayout.close();
             return NavigationUI.onNavDestinationSelected(item, navController)
                     || super.onOptionsItemSelected(item);
+        });
+
+        navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+            if (appBarConfiguration.getTopLevelDestinations().contains(destination.getId())) {
+                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+            } else {
+                drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+            }
         });
 
     }

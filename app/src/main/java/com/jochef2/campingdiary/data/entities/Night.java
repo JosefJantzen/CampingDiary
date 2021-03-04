@@ -99,7 +99,7 @@ public class Night {
     }
 
     public Calendar getBegin() {
-        return mBegin;
+        return (Calendar) mBegin.clone();
     }
 
     public void setBegin(Calendar begin) {
@@ -107,7 +107,7 @@ public class Night {
     }
 
     public Calendar getEnd() {
-        return mEnd;
+        return (Calendar) mEnd.clone();
     }
 
     public void setEnd(Calendar end) {
@@ -130,8 +130,22 @@ public class Night {
         mPrice.setCurrency(ISO);
     }
 
+    public String getBeginDate() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
+        return simpleDate.format(mBegin.getTime());
+    }
+
     public String getEndDate() {
         SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
         return simpleDate.format(mEnd.getTime());
+    }
+
+    public String getDates() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
+        String end = "in die Ewigkeit";
+        if (mEnd != null) {
+            end = simpleDate.format(mEnd.getTime());
+        }
+        return simpleDate.format(mBegin.getTime()) + " - " + end;
     }
 }

@@ -15,7 +15,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
@@ -34,10 +33,7 @@ public class NewNightFragment extends Fragment implements LifecycleObserver {
     }
 
     public static void navigateBack() {
-        NavOptions navOptions = new NavOptions.Builder()
-                .setPopUpTo(R.id.newNightFragment, true)
-                .build();
-        Navigation.findNavController(activity, R.id.nav_host).navigate(R.id.action_newNightFragment_to_currentReiseFragment, saved, navOptions);
+        Navigation.findNavController(activity, R.id.nav_host).popBackStack();
     }
 
     @Override
@@ -49,8 +45,6 @@ public class NewNightFragment extends Fragment implements LifecycleObserver {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.new_night);
 
         viewPager = view.findViewById(R.id.pager);
         viewPager.setAdapter(new ScreenSlidePagerAdapter(requireActivity()));

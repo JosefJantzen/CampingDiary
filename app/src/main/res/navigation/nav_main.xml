@@ -38,8 +38,8 @@
             android:id="@+id/action_currentReiseFragment_to_newNightFragment"
             app:destination="@id/newNightFragment" />
         <action
-            android:id="@+id/action_currentReiseFragment_to_nightsFragment"
-            app:destination="@id/nightsFragment" />
+            android:id="@+id/action_currentReiseFragment_to_allNightsFragment"
+            app:destination="@id/allNightsFragment" />
     </fragment>
 
     <fragment
@@ -60,9 +60,6 @@
         android:name="com.jochef2.campingdiary.ui.newNight.NewNightFragment"
         android:label="fragment_new_night"
         tools:layout="@layout/new_night_fragment">
-        <action
-            android:id="@+id/action_newNightFragment_to_currentReiseFragment"
-            app:destination="@id/currentReiseFragment" />
         <argument
             android:name="reiseId"
             android:defaultValue="-1"
@@ -70,15 +67,37 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nightsFragment"
-        android:name="com.jochef2.campingdiary.ui.nights.NightsFragment"
-        android:label="fragment_nights"
-        tools:layout="@layout/nights_fragment">
+        android:id="@+id/allNightsFragment"
+        android:name="com.jochef2.campingdiary.ui.allNights.AllNightsFragment"
+        android:label="fragment_all_nights"
+        tools:layout="@layout/all_nights_fragment">
         <action
-            android:id="@+id/action_nightsFragment_to_currentReiseFragment"
+            android:id="@+id/action_allNightsFragment_to_currentReiseFragment"
             app:destination="@id/currentReiseFragment" />
         <argument
             android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_allNightsFragment_to_newNightFragment"
+            app:destination="@id/newNightFragment" />
+        <action
+            android:id="@+id/action_allNightsFragment_to_showNightFragment"
+            app:destination="@id/showNightFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/showNightFragment"
+        android:name="com.jochef2.campingdiary.ui.showNight.ShowNightFragment"
+        android:label="fragment_show_night"
+        tools:layout="@layout/show_night_fragment">
+
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="nightPosition"
             android:defaultValue="-1"
             app:argType="integer" />
     </fragment>

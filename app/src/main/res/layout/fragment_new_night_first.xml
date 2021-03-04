@@ -67,7 +67,7 @@
         android:text="@string/end"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/ch_start" />
 
     <TextView
         android:id="@+id/tx_end"
@@ -150,7 +150,35 @@
             android:text="@string/two_days" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/ch_custom"
+            android:id="@+id/ch_end_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/custom" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/ch_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:clipChildren="true"
+        app:checkedChip="@id/ch_today"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:selectionRequired="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ch_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="@string/today" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ch_start_custom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"

@@ -57,4 +57,5 @@
     <string name="select_currency">Select currency</string>
     <string name="none">None</string>
     <string name="new_night">New night</string>
+    <string name="nights">Nights</string>
 </resources>

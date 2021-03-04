@@ -2,46 +2,34 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/all_reisen"
+    android:id="@+id/nights"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.allReisen.AllReisenFragment">
+    tools:context=".ui.allNights.AllNightsFragment">
 
-    <LinearLayout
-        android:id="@+id/no_reise"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/tx_no_reisen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="@string/no_reisen"
-            android:textSize="24sp" />
+        <FrameLayout
+            android:id="@+id/bottomSheet"
+            style="?attr/bottomSheetStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:theme="@style/Theme.MaterialComponents.DayNight.BottomSheetDialog"
+            app:behavior_hideable="true"
+            app:behavior_peekHeight="200dp"
+            app:behavior_skipCollapsed="true"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_start_reise"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:text="@string/start_reise"
-            android:textSize="24sp"
-            app:cornerRadius="15dp" />
-    </LinearLayout>
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
@@ -52,12 +40,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/reise_item">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        tools:listitem="@layout/night_item" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_start_reise"
+        android:id="@+id/fab_new_night"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
@@ -66,5 +52,4 @@
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
