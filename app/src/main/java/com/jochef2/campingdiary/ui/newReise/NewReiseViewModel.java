@@ -42,8 +42,10 @@ public class NewReiseViewModel extends AndroidViewModel {
      */
     public void saveReise() {
         long id = mReisenRepository.insertReise(mReise.getValue());
+        /*Log.d("TAG", "model id " + id);
         SharedPreferences.Editor editor = mPreferences.edit();
         editor.putString("CURRENT_REISE", String.valueOf((int) id));
         editor.apply();
+        Log.d("TAG", "model2 id " + mPreferences.getString("CURRENT_REISE", "blöd"));*/
     }
 }

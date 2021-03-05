@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.lifecycle.LiveData;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,10 +23,10 @@ import java.util.List;
 
 public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> {
 
-    private LiveData<List<FullReise>> mDataset;
+    private List<FullReise> mDataset;
     private Context mContext;
 
-    public ReiseAdapter(LiveData<List<FullReise>> dataset, Context c) {
+    public ReiseAdapter(List<FullReise> dataset, Context c) {
         mDataset = dataset;
         mContext = c;
     }
@@ -41,21 +40,20 @@ public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> 
     @SuppressLint({"ResourceAsColor", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.mName.setText(mDataset.getValue().get(position).mReise.getName());
-        holder.mLand.setText(mDataset.getValue().get(position).mReise.getLand());
+        holder.mName.setText(mDataset.get(position).mReise.getName());
+        holder.mLand.setText(mDataset.get(position).mReise.getLand());
 
-        if (mDataset.getValue().get(position).mReise.getId() == Integer.parseInt(AllReisenFragment.mViewModel.getCurrentId()) &&
-                mDataset.getValue().get(position).mReise.getEnd().getTimeInMillis() > Calendar.getInstance().getTimeInMillis()) {
+        if (position == mDataset.size() - 1 && mDataset.get(position).mReise.getBegin().before(Calendar.getInstance()) && mDataset.get(position).mReise.getEnd().after(Calendar.getInstance())) {
 
             TypedValue value = new TypedValue();
             mContext.getTheme().resolveAttribute(R.attr.colorPrimaryVariant, value, true);
 
             holder.mCard.setCardBackgroundColor(value.data);
             holder.mCard.setOnClickListener(v -> Navigation.findNavController((Activity) mContext, R.id.nav_host).navigate(R.id.action_allReisenFragment_to_currentReiseFragment));
-            holder.mDate.setText(mContext.getString(R.string.starting_time) + " " + mDataset.getValue().get(position).mReise.getBeginDate());
+            holder.mDate.setText(mContext.getString(R.string.starting_time) + " " + mDataset.get(position).mReise.getBeginDate());
 
         } else {
-            holder.mDate.setText(mDataset.getValue().get(position).mReise.getDates());
+            holder.mDate.setText(mDataset.get(position).mReise.getDates());
             // TODO: new Activity: ShowReise for old Reisen
         }
     }
@@ -73,7 +71,7 @@ public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> 
      */
     @Override
     public int getItemCount() {
-        return mDataset.getValue().size();
+        return mDataset.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

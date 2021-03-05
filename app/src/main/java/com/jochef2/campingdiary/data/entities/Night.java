@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
 @Entity(tableName = "nights_table")
 public class Night {
 

@@ -24,6 +24,8 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jochef2.campingdiary.R;
 
+import java.util.Calendar;
+
 public class AllReisenFragment extends Fragment implements LifecycleObserver {
 
     public static AllReisenViewModel mViewModel;
@@ -47,7 +49,7 @@ public class AllReisenFragment extends Fragment implements LifecycleObserver {
 
         // changes recyclerView on reisen changes
         mViewModel.getAllReisen().observe(getViewLifecycleOwner(), reisen -> {
-            ReiseAdapter adapter = new ReiseAdapter(mViewModel.getAllReisen(), getContext());
+            ReiseAdapter adapter = new ReiseAdapter(reisen, getContext());
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -60,14 +62,15 @@ public class AllReisenFragment extends Fragment implements LifecycleObserver {
                 recyclerView.setVisibility(View.VISIBLE);
                 noReisen.setVisibility(View.GONE);
             }
+
+            fabStartReise.setOnClickListener(v -> {
+                if (reisen.get(reisen.size() - 1).mReise.getBegin().before(Calendar.getInstance()) && reisen.get(reisen.size() - 1).mReise.getEnd().after(Calendar.getInstance()))
+                    Toast.makeText(getContext(), getString(R.string.err_multiple_reisen), Toast.LENGTH_SHORT).show();
+                else
+                    Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_allReisenFragment_to_newReisenFragment);
+            });
         });
 
-        fabStartReise.setOnClickListener(v -> {
-            if (mViewModel.getCurrentId().equals("-1")) {
-                Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_allReisenFragment_to_newReisenFragment);
-            } else
-                Toast.makeText(getContext(), getString(R.string.err_multiple_reisen), Toast.LENGTH_SHORT).show();
-        });
 
         return view;
     }

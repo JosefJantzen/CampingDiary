@@ -29,7 +29,7 @@ public interface ReiseDao {
     LiveData<FullReise> getReise(int reiseId);
 
     @Transaction
-    @Query("SELECT * FROM reisen_table ORDER BY ID DESC LIMIT 1")
+    @Query("SELECT * FROM reisen_table ORDER BY id DESC LIMIT 1")
     LiveData<FullReise> getCurrentReise();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

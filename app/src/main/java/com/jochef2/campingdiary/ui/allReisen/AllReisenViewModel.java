@@ -1,8 +1,6 @@
 package com.jochef2.campingdiary.ui.allReisen;
 
 import android.app.Application;
-import android.content.Context;
-import android.content.SharedPreferences;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -14,14 +12,15 @@ import com.jochef2.campingdiary.data.entities.Reise;
 import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
 import com.jochef2.campingdiary.data.relations.FullReise;
 import com.jochef2.campingdiary.data.repositories.ReisenRepository;
+import com.jochef2.campingdiary.ui.main.CurrentReiseViewModel;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class AllReisenViewModel extends AndroidViewModel {
 
     public static ReisenRepository mReisenRepository;
     private final LiveData<List<FullReise>> mAllReisen;
-    private SharedPreferences mPreferences;
 
     /**
      * initials mAllReisen from db
@@ -31,16 +30,21 @@ public class AllReisenViewModel extends AndroidViewModel {
      */
     public AllReisenViewModel(Application application) {
         super(application);
-        mReisenRepository = new ReisenRepository(application);
+        mReisenRepository = CurrentReiseViewModel.mReisenRepository;
         mAllReisen = mReisenRepository.getAllReisen();
-        mPreferences = application.getApplicationContext().getSharedPreferences("DATA", Context.MODE_PRIVATE);
     }
 
-    /**
-     * @return id of current reise
-     */
-    public String getCurrentId() {
-        return mPreferences.getString("CURRENT_REISE", "-1");
+    public boolean hasCurrentReise() {
+        final boolean[] state = {false};
+        mReisenRepository.getCurrentReise().observeForever(fullReise -> {
+            if (fullReise != null && fullReise.mReise.getBegin().before(Calendar.getInstance()) && fullReise.mReise.getEnd().after(Calendar.getInstance())) {
+                state[0] = true;
+            } else {
+                state[0] = false;
+            }
+        });
+        return state[0];
+
     }
 
     LiveData<List<FullReise>> getAllReisen() {
