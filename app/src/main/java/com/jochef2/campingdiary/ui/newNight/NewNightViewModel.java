@@ -7,9 +7,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.jochef2.campingdiary.R;
-import com.jochef2.campingdiary.data.ReisenRepository;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.models.Price;
+import com.jochef2.campingdiary.data.repositories.ReisenRepository;
 import com.jochef2.campingdiary.data.values.NightCategory;
 import com.jochef2.campingdiary.ui.main.CurrentReiseViewModel;
 import com.mynameismidori.currencypicker.ExtendedCurrency;

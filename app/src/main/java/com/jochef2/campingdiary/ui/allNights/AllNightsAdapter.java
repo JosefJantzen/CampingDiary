@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.jochef2.campingdiary.R;
-import com.jochef2.campingdiary.data.entities.FullReise;
+import com.jochef2.campingdiary.data.relations.FullReise;
 import com.jochef2.campingdiary.utils.Sort;
 
 import java.util.Objects;

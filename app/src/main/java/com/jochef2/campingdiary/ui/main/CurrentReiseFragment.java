@@ -3,6 +3,7 @@ package com.jochef2.campingdiary.ui.main;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,12 +68,13 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         imNight = view.findViewById(R.id.im_night);
         cardNight = view.findViewById(R.id.card_night);
 
-        mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
         mViewModel.mReise.observe(getViewLifecycleOwner(), reise -> {
-
+            Log.d("TAG", new Gson().toJson(reise));
             // if there isn't a current reise saved
-            if (new Gson().toJson(reise).equals("{}") || reise.mReise.getEnd().getTimeInMillis() < Calendar.getInstance().getTimeInMillis()) {
+            if (new Gson().toJson(reise).equals("{}") || reise.mReise.getEnd().after(Calendar.getInstance())) {
+                //Log.d("TAG", "ok " + reise.mReise.getEnd().getTimeInMillis() + " d " + Calendar.getInstance().getTimeInMillis());
                 reiseContainer.setVisibility(View.GONE);
                 noReise.setVisibility(View.VISIBLE);
                 btnStartReise.setOnClickListener(v -> Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_currentReiseFragment_to_newReisenFragment));
@@ -88,6 +90,8 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
             else {
                 reiseContainer.setVisibility(View.VISIBLE);
                 noReise.setVisibility(View.GONE);
+
+                Log.d("TAG", "FSD");
 
                 txDays.setText((TimeUnit.MILLISECONDS.toDays(Calendar.getInstance().getTimeInMillis() - reise.mReise.getBegin().getTimeInMillis()) + 1) + " / " + (TimeUnit.MILLISECONDS.toDays(reise.mReise.getEnd().getTimeInMillis() - reise.mReise.getBegin().getTimeInMillis()) + 1));
                 fabNight.setOnClickListener(v -> {

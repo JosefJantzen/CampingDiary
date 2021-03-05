@@ -50,7 +50,7 @@ public class NewNightFragment extends Fragment implements LifecycleObserver {
         viewPager.setAdapter(new ScreenSlidePagerAdapter(requireActivity()));
         viewPager.setUserInputEnabled(false);
 
-        mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewNightViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewNightViewModel.class);
         mViewModel.setReiseId(NewNightFragmentArgs.fromBundle(requireArguments()).getReiseId());
 
         saved = savedInstanceState;

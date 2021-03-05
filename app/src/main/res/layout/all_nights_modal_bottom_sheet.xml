@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="Ansehen"
+            android:text="@string/inspect"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="Auf Karte anzeigen"
+            android:text="@string/show_on_map"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="Bearbeiten"
+            android:text="@string/edit"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -124,7 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:paddingLeft="20dp"
-            android:text="Löschen"
+            android:text="@string/delete"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -133,7 +133,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:gravity="center_vertical"
-        android:text="Aktion"
+        android:text="@string/action"
         android:textSize="18sp" />
 
 </LinearLayout>

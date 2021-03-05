@@ -7,13 +7,13 @@ import android.content.SharedPreferences;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.jochef2.campingdiary.data.ReisenRepository;
 import com.jochef2.campingdiary.data.entities.Event;
 import com.jochef2.campingdiary.data.entities.Fuel;
-import com.jochef2.campingdiary.data.entities.FullReise;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.entities.Reise;
 import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
+import com.jochef2.campingdiary.data.relations.FullReise;
+import com.jochef2.campingdiary.data.repositories.ReisenRepository;
 
 import java.util.List;
 

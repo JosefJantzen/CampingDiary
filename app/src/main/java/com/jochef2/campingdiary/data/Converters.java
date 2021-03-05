@@ -1,10 +1,13 @@
 package com.jochef2.campingdiary.data;
 
+import android.location.Address;
+
 import androidx.room.TypeConverter;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jochef2.campingdiary.data.values.EventCategory;
+import com.jochef2.campingdiary.data.values.Events;
 import com.jochef2.campingdiary.data.values.NightCategory;
 import com.jochef2.campingdiary.data.values.SADCategory;
 import com.mynameismidori.currencypicker.ExtendedCurrency;
@@ -108,6 +111,26 @@ public class Converters {
     public static List<SADCategory> stringToSADCatList(String cats) {
         return cats == null ? null : new Gson().fromJson(cats, new TypeToken<ArrayList<SADCategory>>() {
         }.getType());
+    }
+
+    @TypeConverter
+    public static String EventsToString(Events events) {
+        return events == null ? null : events.toString();
+    }
+
+    @TypeConverter
+    public static Events StringToEvents(String events) {
+        return events == null ? null : Events.valueOf(events);
+    }
+
+    @TypeConverter
+    public static String AddressToString(Address address) {
+        return address == null ? null : new Gson().toJson(address);
+    }
+
+    @TypeConverter
+    public static Address StringToAddress(String address) {
+        return address == null ? null : new Gson().fromJson(address, Address.class);
     }
 
     /**

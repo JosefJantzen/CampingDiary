@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.ChipGroup;
@@ -26,6 +27,7 @@ public class NewNightSecondFragment extends Fragment {
     private TextInputEditText etDescription;
     private MaterialButton btnBack;
     private MaterialButton btnCheck;
+    private MaterialButton btnChoosePlace;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +44,7 @@ public class NewNightSecondFragment extends Fragment {
         etDescription = view.findViewById(R.id.et_description);
         btnBack = view.findViewById(R.id.btn_back);
         btnCheck = view.findViewById(R.id.btn_check);
+        btnChoosePlace = view.findViewById(R.id.btn_choose_place);
 
         if (savedInstanceState != null) {
             etDescription.setText(savedInstanceState.getString("description"));
@@ -64,6 +67,10 @@ public class NewNightSecondFragment extends Fragment {
         btnCheck.setOnClickListener(v -> {
             NewNightFragment.mViewModel.saveNight();
             NewNightFragment.navigateBack();
+        });
+
+        btnChoosePlace.setOnClickListener(v -> {
+            Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(R.id.action_global_getPlaceFragment);
         });
     }
 

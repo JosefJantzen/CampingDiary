@@ -7,8 +7,8 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.jochef2.campingdiary.R;
-import com.jochef2.campingdiary.data.ReisenRepository;
 import com.jochef2.campingdiary.data.entities.Reise;
+import com.jochef2.campingdiary.data.repositories.ReisenRepository;
 import com.jochef2.campingdiary.ui.main.CurrentReiseViewModel;
 
 import java.util.Calendar;

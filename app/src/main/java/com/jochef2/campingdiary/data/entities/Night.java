@@ -14,7 +14,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
 @Entity(tableName = "nights_table")
 public class Night {
 
@@ -45,6 +44,9 @@ public class Night {
 
     @Embedded
     public Price mPrice;
+
+    @ColumnInfo(name = "placeId")
+    public int mPlaceId;
 
     public Night(int reiseId, @NotNull String name, Calendar begin, Calendar end, NightCategory cat) {
         mReiseId = reiseId;

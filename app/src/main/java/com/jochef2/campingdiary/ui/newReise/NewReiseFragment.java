@@ -61,7 +61,7 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
         txEnd = view.findViewById(R.id.tx_end);
         chCustom = view.findViewById(R.id.ch_end_custom);
 
-        mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewReiseViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewReiseViewModel.class);
 
         // save current name e.g. on rotation
         if (savedInstanceState != null) {

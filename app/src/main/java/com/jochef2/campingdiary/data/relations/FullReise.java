@@ -1,7 +1,13 @@
-package com.jochef2.campingdiary.data.entities;
+package com.jochef2.campingdiary.data.relations;
 
 import androidx.room.Embedded;
 import androidx.room.Relation;
+
+import com.jochef2.campingdiary.data.entities.Event;
+import com.jochef2.campingdiary.data.entities.Fuel;
+import com.jochef2.campingdiary.data.entities.Night;
+import com.jochef2.campingdiary.data.entities.Reise;
+import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
 
 import java.util.List;
 

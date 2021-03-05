@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.jochef2.campingdiary.data.ReisenRepository;
-import com.jochef2.campingdiary.data.entities.FullReise;
+import com.jochef2.campingdiary.data.relations.FullReise;
+import com.jochef2.campingdiary.data.repositories.ReisenRepository;
 import com.jochef2.campingdiary.ui.main.CurrentReiseViewModel;
 
 public class AllNightsViewModel extends AndroidViewModel {

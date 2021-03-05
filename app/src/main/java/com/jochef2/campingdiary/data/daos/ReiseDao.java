@@ -1,4 +1,4 @@
-package com.jochef2.campingdiary.data;
+package com.jochef2.campingdiary.data.daos;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -10,10 +10,10 @@ import androidx.room.Update;
 
 import com.jochef2.campingdiary.data.entities.Event;
 import com.jochef2.campingdiary.data.entities.Fuel;
-import com.jochef2.campingdiary.data.entities.FullReise;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.entities.Reise;
 import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
+import com.jochef2.campingdiary.data.relations.FullReise;
 
 import java.util.List;
 

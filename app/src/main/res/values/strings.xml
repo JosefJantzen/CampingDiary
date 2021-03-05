@@ -58,4 +58,12 @@
     <string name="none">None</string>
     <string name="new_night">New night</string>
     <string name="nights">Nights</string>
+    <string name="inspect">Inspect</string>
+    <string name="show_on_map">Show on map</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="action">Action</string>
+    <string name="place">Place</string>
+    <string name="place_dots">Place:</string>
+    <string name="select_place">Select Place</string>
 </resources>

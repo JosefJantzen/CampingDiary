@@ -1,15 +1,17 @@
-package com.jochef2.campingdiary.data;
+package com.jochef2.campingdiary.data.repositories;
 
 import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
+import com.jochef2.campingdiary.data.RoomDatabase;
+import com.jochef2.campingdiary.data.daos.ReiseDao;
 import com.jochef2.campingdiary.data.entities.Event;
 import com.jochef2.campingdiary.data.entities.Fuel;
-import com.jochef2.campingdiary.data.entities.FullReise;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.entities.Reise;
 import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
+import com.jochef2.campingdiary.data.relations.FullReise;
 
 import java.util.List;
 import java.util.concurrent.Callable;

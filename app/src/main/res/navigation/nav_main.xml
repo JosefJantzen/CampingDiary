@@ -102,4 +102,15 @@
             app:argType="integer" />
     </fragment>
 
+    <action
+        android:id="@+id/action_global_getPlaceFragment"
+        app:destination="@id/getPlaceFragment" />
+    <fragment
+        android:id="@+id/getPlaceFragment"
+        android:name="com.jochef2.campingdiary.ui.getPlace.GetPlaceFragment"
+        android:label="fragment_get_place"
+        tools:layout="@layout/get_place_fragment">
+
+    </fragment>
+
 </navigation>

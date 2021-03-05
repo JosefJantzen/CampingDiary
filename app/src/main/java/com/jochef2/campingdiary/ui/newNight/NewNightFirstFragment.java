@@ -108,15 +108,15 @@ public class NewNightFirstFragment extends Fragment {
             Night night = NewNightFragment.mViewModel.mNight.getValue();
             if (checkedId != R.id.ch_start_custom) {
                 Objects.requireNonNull(night).setBegin(Calendar.getInstance());
-                NewNightFragment.mViewModel.mNight.setValue(night);
-                NewNightFragment.mViewModel.lastStartChip = checkedId;
-                txStart.setText(getString(R.string.today));
 
                 if (chEnd.getCheckedChipId() == R.id.ch_one || chEnd.getCheckedChipId() == R.id.ch_two) {
                     Calendar c = Calendar.getInstance();
                     c.add(Calendar.DAY_OF_MONTH, Integer.parseInt(view.findViewById(chEnd.getCheckedChipId()).getTag().toString()));
                     night.setEnd(c);
                 }
+                NewNightFragment.mViewModel.mNight.setValue(night);
+                NewNightFragment.mViewModel.lastStartChip = checkedId;
+                txStart.setText(getString(R.string.today));
             }
         }));
 
@@ -149,6 +149,15 @@ public class NewNightFirstFragment extends Fragment {
                         chEnd.check(R.id.ch_one);
                     }
                     calendar.add(Calendar.DAY_OF_MONTH, addDays);
+                    night.setEnd(calendar);
+                }
+                if (chEnd.getCheckedChipId() == R.id.ch_one && begin.get(Calendar.DAY_OF_YEAR) != (night.getEnd().get(Calendar.DAY_OF_YEAR) - 1)) { // !!! Neujahr funktioniert nicht
+                    Calendar calendar = night.getBegin();
+                    calendar.add(Calendar.DAY_OF_MONTH, 1);
+                    night.setEnd(calendar);
+                } else if (chEnd.getCheckedChipId() == R.id.ch_two && begin.get(Calendar.DAY_OF_YEAR) != (night.getEnd().get(Calendar.DAY_OF_YEAR) - 2)) {
+                    Calendar calendar = night.getBegin();
+                    calendar.add(Calendar.DAY_OF_MONTH, 2);
                     night.setEnd(calendar);
                 }
 

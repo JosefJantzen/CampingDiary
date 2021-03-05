@@ -43,7 +43,7 @@ public class AllReisenFragment extends Fragment implements LifecycleObserver {
         noReisen = view.findViewById(R.id.no_reise);
         fabStartReise = view.findViewById(R.id.fab_start_reise);
 
-        mViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(AllReisenViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(AllReisenViewModel.class);
 
         // changes recyclerView on reisen changes
         mViewModel.getAllReisen().observe(getViewLifecycleOwner(), reisen -> {

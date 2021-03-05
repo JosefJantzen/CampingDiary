@@ -43,7 +43,7 @@ public class AllNightsFragment extends Fragment implements LifecycleObserver {
         recyclerView = view.findViewById(R.id.recycler);
         fabNewNight = view.findViewById(R.id.fab_new_night);
 
-        mViewModel = new ViewModelProvider(this, new AllNightsViewModelFactory(getActivity().getApplication(), AllNightsFragmentArgs.fromBundle(requireArguments()).getReiseId())).get(AllNightsViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity(), new AllNightsViewModelFactory(getActivity().getApplication(), AllNightsFragmentArgs.fromBundle(requireArguments()).getReiseId())).get(AllNightsViewModel.class);
 
         mViewModel.mReise.observe(getViewLifecycleOwner(), reise -> {
             AllNightsAdapter adapter = new AllNightsAdapter(mViewModel.mReise, getContext(), getChildFragmentManager());

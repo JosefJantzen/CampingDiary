@@ -17,7 +17,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jochef2.campingdiary.R;
-import com.jochef2.campingdiary.data.entities.FullReise;
+import com.jochef2.campingdiary.data.relations.FullReise;
 
 import java.util.Calendar;
 import java.util.List;
