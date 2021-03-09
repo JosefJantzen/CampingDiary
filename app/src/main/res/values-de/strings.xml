@@ -66,4 +66,14 @@
     <string name="place">Ort</string>
     <string name="place_dots">Ort:</string>
     <string name="select_place">Ort auswählen</string>
+    <string name="search">Suche</string>
+    <string name="new_place">Neuen Ort</string>
+    <string name="choose_place">Ort wählen</string>
+    <string name="suggestions">Vorschläge</string>
+    <string name="gps">GPS</string>
+    <string name="google">Google</string>
+    <string name="coordinates">Koordinaten</string>
+    <string name="latitude">Breitengrad:</string>
+    <string name="longitude">Längengrad:</string>
+    <string name="only_cords">Nur Koordinaten</string>
 </resources>

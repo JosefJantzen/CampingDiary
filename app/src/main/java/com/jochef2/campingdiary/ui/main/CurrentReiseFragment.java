@@ -24,7 +24,6 @@ import androidx.navigation.Navigation;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.gson.Gson;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.utils.Sort;
@@ -45,6 +44,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private TextView txNight;
     private ImageView imNight;
     private MaterialCardView cardNight;
+    private FloatingActionButton fabEvent;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -66,6 +66,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         txNight = view.findViewById(R.id.tx_night);
         imNight = view.findViewById(R.id.im_night);
         cardNight = view.findViewById(R.id.card_night);
+        fabEvent = view.findViewById(R.id.btn_event);
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -92,7 +93,12 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 fabNight.setOnClickListener(v -> {
                     CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToNewNightFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToNewNightFragment();
                     action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
-                    Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
+                    Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(action);
+                });
+
+                fabEvent.setOnClickListener(v -> {
+                    //TODO: remove this and set navigation to new Event
+                    Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(R.id.action_global_choosePlaceFragment);
                 });
 
                 if (!reise.mNights.isEmpty()) {
@@ -116,7 +122,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     public void onCreated() {
         mViewModel.mReise.observe(getViewLifecycleOwner(), reise -> {
-            if (!new Gson().toJson(reise).equals("{}")) {
+            if (reise != null) {
                 ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(reise.mReise.getName());
             } else {
                 ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.start_reise));

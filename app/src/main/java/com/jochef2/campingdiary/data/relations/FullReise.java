@@ -17,10 +17,11 @@ public class FullReise {
     public Reise mReise;
 
     @Relation(
+            entity = Night.class,
             parentColumn = "id",
             entityColumn = "reiseId"
     )
-    public List<Night> mNights;
+    public List<NightAndPlace> mNights;
 
     @Relation(
             parentColumn = "id",

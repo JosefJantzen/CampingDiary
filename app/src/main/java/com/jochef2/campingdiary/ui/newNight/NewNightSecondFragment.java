@@ -70,7 +70,7 @@ public class NewNightSecondFragment extends Fragment {
         });
 
         btnChoosePlace.setOnClickListener(v -> {
-            Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(R.id.action_global_getPlaceFragment);
+            Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(R.id.action_global_choosePlaceFragment);
         });
     }
 

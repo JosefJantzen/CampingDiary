@@ -48,8 +48,8 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull AllNightsAdapter.ViewHolder holder, int position) {
-        holder.mName.setText(Objects.requireNonNull(mDataset.getValue()).mNights.get(position).getName());
-        holder.mDate.setText(mDataset.getValue().mNights.get(position).getDates());
+        holder.mName.setText(Objects.requireNonNull(mDataset.getValue()).mNights.get(position).mNight.getName());
+        holder.mDate.setText(mDataset.getValue().mNights.get(position).mNight.getDates());
 
         if (Sort.getCurrentNightIds(mDataset.getValue().mNights).contains(position)) {
             TypedValue value = new TypedValue();

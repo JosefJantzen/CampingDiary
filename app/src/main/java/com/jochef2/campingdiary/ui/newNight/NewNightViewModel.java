@@ -15,6 +15,7 @@ import com.jochef2.campingdiary.ui.main.CurrentReiseViewModel;
 import com.mynameismidori.currencypicker.ExtendedCurrency;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 public class NewNightViewModel extends AndroidViewModel {
 
@@ -22,7 +23,7 @@ public class NewNightViewModel extends AndroidViewModel {
     public int reiseId;
     public int lastStartChip;
     public int lastEndChip;
-    private ReisenRepository mReisenRepository;
+    private final ReisenRepository mReisenRepository;
 
     public NewNightViewModel(@NonNull Application application) {
         super(application);
@@ -37,7 +38,7 @@ public class NewNightViewModel extends AndroidViewModel {
 
     public void setReiseId(int reiseId) {
         Night night = mNight.getValue();
-        night.setReiseId(reiseId);
+        Objects.requireNonNull(night).setReiseId(reiseId);
         mNight.setValue(night);
     }
 

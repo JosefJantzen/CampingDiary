@@ -7,6 +7,7 @@ import androidx.room.TypeConverter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jochef2.campingdiary.data.values.EventCategory;
+import com.jochef2.campingdiary.data.values.Events;
 import com.jochef2.campingdiary.data.values.NightCategory;
 import com.jochef2.campingdiary.data.values.SADCategory;
 import com.mynameismidori.currencypicker.ExtendedCurrency;
@@ -112,7 +113,7 @@ public class Converters {
         }.getType());
     }
 
-    /*@TypeConverter
+    @TypeConverter
     public static String EventsToString(Events events) {
         return events == null ? null : events.toString();
     }
@@ -120,7 +121,7 @@ public class Converters {
     @TypeConverter
     public static Events StringToEvents(String events) {
         return events == null ? null : Events.valueOf(events);
-    }*/
+    }
 
     @TypeConverter
     public static String AddressToString(Address address) {
