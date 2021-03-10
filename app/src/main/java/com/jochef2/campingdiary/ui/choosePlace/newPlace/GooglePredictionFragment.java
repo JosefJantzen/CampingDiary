@@ -4,14 +4,23 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.jochef2.campingdiary.R;
+import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 
 public class GooglePredictionFragment extends Fragment {
+
+    private ChoosePlaceViewModel mViewModel;
+
+    private RecyclerView mRecyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -24,6 +33,18 @@ public class GooglePredictionFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(ChoosePlaceViewModel.class);
 
+        mRecyclerView = view.findViewById(R.id.recycler);
+
+        mViewModel.getPlacePredictions().observe(getViewLifecycleOwner(), places -> {
+            if (places != null) {
+                GooglePredictionAdapter googlePredictionAdapter = new GooglePredictionAdapter(places);
+                mRecyclerView.setAdapter(googlePredictionAdapter);
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+            } else {
+                Toast.makeText(requireContext(), "Keine place predicitons", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

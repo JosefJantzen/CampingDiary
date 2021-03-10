@@ -2,7 +2,9 @@ package com.jochef2.campingdiary.ui.choosePlace.newPlace;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +18,19 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
+import com.google.android.libraries.places.api.net.FindCurrentPlaceResponse;
 import com.google.android.libraries.places.api.net.PlacesClient;
+import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.android.material.textfield.TextInputEditText;
@@ -41,12 +50,16 @@ public class NewPlaceFragment extends Fragment {
 
     public static List<Place.Field> mPlaceFields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG, Place.Field.ADDRESS);
     private final int REQUEST_LOCATION_PERMISSION = 1;
+    private static int AUTOCOMPLETE_REQUEST_CODE = 1;
+    private PlacesClient placesClient;
+
     private ViewPager2 mPredictionsPager;
     private AutocompleteSupportFragment mAutocompleteFragment;
     private TabLayout mTabLayout;
     private TextView txLatitude;
     private TextView txLongitude;
     private TextInputEditText etName;
+    private MaterialButton btnAutocomplete;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,6 +80,7 @@ public class NewPlaceFragment extends Fragment {
         txLatitude = view.findViewById(R.id.tx_latitude);
         txLongitude = view.findViewById(R.id.tx_longitude);
         etName = view.findViewById(R.id.et_name);
+        btnAutocomplete = view.findViewById(R.id.btn_autocomplete);
 
         if (savedInstanceState != null) {
             etName.setText(savedInstanceState.getString("NAME"));
@@ -87,15 +101,22 @@ public class NewPlaceFragment extends Fragment {
 
         }).attach();
 
+        //TODO: API-KEY
+        Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
+        placesClient = Places.createClient(requireActivity());
+
+        btnAutocomplete.setOnClickListener(v -> {
+            Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, mPlaceFields)
+                    .build(requireContext());
+            startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+        });
+
         requestLocatoinPermission();
 
         mViewModel.getCurrentLocation().observe(getViewLifecycleOwner(), location -> {
             txLatitude.setText(Double.toString(location.getLatitude()));
             txLongitude.setText(Double.toString(location.getLongitude()));
         });
-
-        Places.initialize(requireActivity().getApplicationContext(), "sa");
-        PlacesClient placesClient = Places.createClient(requireActivity());
 
         /*mAutocompleteFragment = (AutocompleteSupportFragment) getChildFragmentManager().findFragmentById(R.id.autocomplete_fragment);
         mAutocompleteFragment.setPlaceFields(mPlaceFields);
@@ -118,6 +139,7 @@ public class NewPlaceFragment extends Fragment {
         String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
         if (EasyPermissions.hasPermissions(requireContext(), perms)) {
             getLocation();
+            getCurrentPlace();
         } else {
             EasyPermissions.requestPermissions(this, getString(R.string.please_allow_gps), REQUEST_LOCATION_PERMISSION, perms);
         }
@@ -127,6 +149,24 @@ public class NewPlaceFragment extends Fragment {
     private void getLocation() {
         FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
         fusedLocationClient.getLastLocation().addOnSuccessListener(requireActivity(), location -> mViewModel.setCurrentLocation(location));
+    }
+
+    private void getCurrentPlace() {
+        FindCurrentPlaceRequest request = FindCurrentPlaceRequest.newInstance(mPlaceFields);
+
+        @SuppressLint("MissingPermission") Task<FindCurrentPlaceResponse> placeResponse = placesClient.findCurrentPlace(request);
+        placeResponse.addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                FindCurrentPlaceResponse response = task.getResult();
+                mViewModel.setPlacePredictions(response.getPlaceLikelihoods());
+            } else {
+                Exception exception = task.getException();
+                if (exception instanceof ApiException) {
+                    ApiException apiException = (ApiException) exception;
+                    Log.e("TAG", "Place not found: " + apiException.getStatusCode());
+                }
+            }
+        });
     }
 
     @Override

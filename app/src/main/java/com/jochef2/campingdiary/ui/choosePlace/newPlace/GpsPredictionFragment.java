@@ -3,7 +3,6 @@ package com.jochef2.campingdiary.ui.choosePlace.newPlace;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,10 +49,10 @@ public class GpsPredictionFragment extends Fragment {
                 try {
                     List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 5);
 
-                    List<Address> addresses1 = geocoder.getFromLocationName("Langenbeker Friedhofsweg 5, 21079 Hamburg, Deutschland", 5);
+                    /*List<Address> addresses1 = geocoder.getFromLocationName("Langenbeker Friedhofsweg 5, 21079 Hamburg, Deutschland", 5);
                     for (Address address : addresses1) {
                         Log.d("TAG", address.getAddressLine(0));
-                    }
+                    }*/
 
                     GpsPredictionsAdapter gpsPredictionsAdapter = new GpsPredictionsAdapter(addresses);
                     mRecyclerView.setAdapter(gpsPredictionsAdapter);

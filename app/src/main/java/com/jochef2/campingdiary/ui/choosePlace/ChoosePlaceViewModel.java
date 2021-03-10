@@ -36,4 +36,12 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
     public void setCurrentLocation(Location currentLocation) {
         mCurrentLocation.setValue(currentLocation);
     }
+
+    public MutableLiveData<List<PlaceLikelihood>> getPlacePredictions() {
+        return mPlacePredictions;
+    }
+
+    public void setPlacePredictions(List<PlaceLikelihood> placePredictions) {
+        mPlacePredictions.setValue(placePredictions);
+    }
 }

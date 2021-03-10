@@ -80,4 +80,5 @@
     <string name="please_allow_gps">Bitte erlauben sie den Standortzugriff</string>
     <string name="n_a">N/A</string>
     <string name="not_selected">Nicht ausgewählt</string>
+    <string name="pick_on_map">Auf Karte wählen</string>
 </resources>
