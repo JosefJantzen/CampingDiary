@@ -71,6 +71,7 @@ dependencies {
     implementation 'com.google.android.libraries.places:places:2.4.0'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    implementation 'pub.devrel:easypermissions:3.0.0'
 
     implementation 'com.github.JoChef2:currency-picker-android-german:1.2.20'
 }
