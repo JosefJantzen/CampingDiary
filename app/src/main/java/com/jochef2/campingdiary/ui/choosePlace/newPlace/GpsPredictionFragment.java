@@ -54,9 +54,19 @@ public class GpsPredictionFragment extends Fragment {
                         Log.d("TAG", address.getAddressLine(0));
                     }*/
 
-                    GpsPredictionsAdapter gpsPredictionsAdapter = new GpsPredictionsAdapter(addresses);
+                    mViewModel.setAddressPredictions(addresses);
+
+                    GpsPredictionsAdapter gpsPredictionsAdapter = new GpsPredictionsAdapter(addresses, requireActivity());
+
                     mRecyclerView.setAdapter(gpsPredictionsAdapter);
                     mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+                    gpsPredictionsAdapter.setOnSelectListener((position, card) -> {
+                        //MaterialCardView card = mRecyclerView.findViewWithTag(position);
+                        gpsPredictionsAdapter.notifyItemChanged(position);
+                        card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
+                        gpsPredictionsAdapter.notifyItemChanged(position);
+                    });
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

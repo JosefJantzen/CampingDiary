@@ -28,14 +28,17 @@ import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
 import com.google.android.libraries.places.api.net.FindCurrentPlaceResponse;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
+import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel.FIELDS;
 
 import java.util.Arrays;
 import java.util.List;
@@ -54,12 +57,20 @@ public class NewPlaceFragment extends Fragment {
     private PlacesClient placesClient;
 
     private ViewPager2 mPredictionsPager;
-    private AutocompleteSupportFragment mAutocompleteFragment;
     private TabLayout mTabLayout;
+    private TextInputEditText etName;
+
+    private MaterialCardView cardAutocomplete;
+    private AutocompleteSupportFragment mAutocompleteFragment;
+    private MaterialButton btnAutocomplete;
+    private TextView txAutocomplete;
+
+    private MaterialCardView cardCords;
+
+    private MaterialCardView cardMap;
+    private MaterialButton btnMap;
     private TextView txLatitude;
     private TextView txLongitude;
-    private TextInputEditText etName;
-    private MaterialButton btnAutocomplete;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,6 +78,8 @@ public class NewPlaceFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_new_place, container, false);
     }
+
+    private FIELDS lastField = FIELDS.NULL;
 
     @SuppressLint({"MissingPermission", "SetTextI18n"})
     @Override
@@ -81,6 +94,11 @@ public class NewPlaceFragment extends Fragment {
         txLongitude = view.findViewById(R.id.tx_longitude);
         etName = view.findViewById(R.id.et_name);
         btnAutocomplete = view.findViewById(R.id.btn_autocomplete);
+        txAutocomplete = view.findViewById(R.id.tx_autocomplete);
+        cardAutocomplete = view.findViewById(R.id.card_autocomplete);
+        cardCords = view.findViewById(R.id.card_cords);
+        cardMap = view.findViewById(R.id.card_map);
+        btnMap = view.findViewById(R.id.btn_map);
 
         if (savedInstanceState != null) {
             etName.setText(savedInstanceState.getString("NAME"));
@@ -101,9 +119,47 @@ public class NewPlaceFragment extends Fragment {
 
         }).attach();
 
+        mViewModel.mField.observe(getViewLifecycleOwner(), field -> {
+            unselect();
+            switch (field) {
+                case GPS_PREDICTION:
+
+                    break;
+                case GOOGLE_PREDICTION:
+
+                    break;
+                case AUTOCOMPLETE:
+                    cardAutocomplete.setCardBackgroundColor(R.attr.colorPrimaryVariant);
+                    break;
+                case CORDS:
+                    cardCords.setCardBackgroundColor(R.attr.colorPrimaryVariant);
+                    break;
+                case MAP:
+                    cardMap.setCardBackgroundColor(R.attr.colorPrimaryVariant);
+                    break;
+            }
+        });
+
         //TODO: API-KEY
         Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
         placesClient = Places.createClient(requireActivity());
+
+        requestLocatoinPermission();
+
+
+        cardAutocomplete.setOnClickListener(v -> {
+            if (txAutocomplete.getText() == getString(R.string.not_selected)) {
+                Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, mPlaceFields)
+                        .build(requireContext());
+                startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
+            } else if (cardAutocomplete.getCardBackgroundColor().getDefaultColor() == R.attr.colorPrimaryVariant) {
+                //cardAutocomplete.setCardBackgroundColor(-15592942);
+                mViewModel.setField(FIELDS.NULL);
+            } else {
+                cardAutocomplete.setCardBackgroundColor(R.attr.colorPrimaryVariant);
+                mViewModel.setField(FIELDS.AUTOCOMPLETE);
+            }
+        });
 
         btnAutocomplete.setOnClickListener(v -> {
             Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, mPlaceFields)
@@ -111,26 +167,69 @@ public class NewPlaceFragment extends Fragment {
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
         });
 
-        requestLocatoinPermission();
-
-        mViewModel.getCurrentLocation().observe(getViewLifecycleOwner(), location -> {
-            txLatitude.setText(Double.toString(location.getLatitude()));
-            txLongitude.setText(Double.toString(location.getLongitude()));
+        mViewModel.getSelectedAutocompletePlace().observe(getViewLifecycleOwner(), place -> {
+            txAutocomplete.setText(place.getName());
         });
 
-        /*mAutocompleteFragment = (AutocompleteSupportFragment) getChildFragmentManager().findFragmentById(R.id.autocomplete_fragment);
-        mAutocompleteFragment.setPlaceFields(mPlaceFields);
-        mAutocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-            @Override
-            public void onPlaceSelected(@NonNull Place place) {
-                Log.d("TAG", "Place: " + place.getName());
-            }
+        cardCords.setOnClickListener(v -> {
+            if (mViewModel.mField.getValue() != FIELDS.CORDS) {
+                mViewModel.setField(FIELDS.CORDS);
+            } else mViewModel.setField(FIELDS.NULL);
+        });
 
-            @Override
-            public void onError(@NonNull Status status) {
-                Log.e("TAG", "Error: " + status);
+        cardMap.setOnClickListener(v -> {
+            mViewModel.setField(FIELDS.MAP);
+        });
+
+        btnMap.setOnClickListener(v -> {
+            //TODO: run ChoosePlaceOnMap
+        });
+
+        mViewModel.getSelectedMap().observe(getViewLifecycleOwner(), latLng -> {
+            txLatitude.setText(Double.toString(latLng.latitude));
+            txLongitude.setText(Double.toString(latLng.longitude));
+        });
+    }
+
+    private void unselect() {
+        switch (lastField) {
+            case GPS_PREDICTION:
+                // GPS_PREDICTION reset
+                break;
+            case GOOGLE_PREDICTION:
+                //GOOGLE_PREDICTION reset
+                break;
+            case AUTOCOMPLETE:
+                cardAutocomplete.setCardBackgroundColor(-15592942);
+                break;
+            case CORDS:
+                cardCords.setCardBackgroundColor(-15592942);
+                break;
+            case MAP:
+                cardMap.setCardBackgroundColor(-15592942);
+                break;
+            default:
+                break;
+        }
+        lastField = mViewModel.getField().getValue();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
+            if (resultCode == AutocompleteActivity.RESULT_OK) {
+
+                Place place = Autocomplete.getPlaceFromIntent(data);
+                mViewModel.setSelectedAutocompletePlace(place);
+                mViewModel.setField(FIELDS.AUTOCOMPLETE);
+            } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
+                Log.e("TAG", "Autocomplete Error: " + Autocomplete.getStatusFromIntent(data).getStatusMessage());
+            } else if (resultCode == AutocompleteActivity.RESULT_CANCELED) {
+                //do something when cancel
             }
-        });*/
+            return;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     @SuppressLint("MissingPermission")

@@ -6,19 +6,31 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.libraries.places.api.model.PlaceLikelihood;
+import com.google.android.material.card.MaterialCardView;
 import com.jochef2.campingdiary.R;
+import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
+import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel.FIELDS;
 
 import java.util.List;
 
 public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredictionAdapter.ViewHolder> {
 
-    private List<PlaceLikelihood> mDataset;
+    private ChoosePlaceViewModel mViewModel;
 
-    public GooglePredictionAdapter(List<PlaceLikelihood> dataset) {
+    private List<PlaceLikelihood> mDataset;
+    private FragmentActivity mFragmentActivity;
+
+    private int lastSelected = -1;
+
+    public GooglePredictionAdapter(List<PlaceLikelihood> dataset, FragmentActivity fragmentActivity) {
         mDataset = dataset;
+        mFragmentActivity = fragmentActivity;
+        mViewModel = new ViewModelProvider(mFragmentActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(mFragmentActivity.getApplication())).get(ChoosePlaceViewModel.class);
     }
 
     @NonNull
@@ -32,6 +44,12 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txName.setText(mDataset.get(position).getPlace().getName());
+
+        if (position == lastSelected) {
+            holder.card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
+        } else {
+            holder.card.setCardBackgroundColor(-15592942);
+        }
     }
 
     @Override
@@ -39,12 +57,33 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
         return mDataset.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txName;
+        private MaterialCardView card;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txName = itemView.findViewById(R.id.tx_name);
+            card = itemView.findViewById(R.id.card);
+
+            card.setOnClickListener(v -> {
+                int copyLastSelected = lastSelected;
+                lastSelected = getAdapterPosition();
+
+                if (copyLastSelected == lastSelected) {
+                    card.setCardBackgroundColor(-15592942);
+                    lastSelected = -1;
+                    notifyItemChanged(copyLastSelected);
+                    mViewModel.setField(FIELDS.NULL);
+                } else {
+                    card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
+                    notifyItemChanged(copyLastSelected);
+                    notifyItemChanged(lastSelected);
+
+                    mViewModel.setSelectedGooglePrediction(mDataset.get(lastSelected).getPlace());
+                    mViewModel.setField(FIELDS.GOOGLE_PREDICTION);
+                }
+            });
         }
     }
 }

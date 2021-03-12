@@ -39,7 +39,7 @@ public class GooglePredictionFragment extends Fragment {
 
         mViewModel.getPlacePredictions().observe(getViewLifecycleOwner(), places -> {
             if (places != null) {
-                GooglePredictionAdapter googlePredictionAdapter = new GooglePredictionAdapter(places);
+                GooglePredictionAdapter googlePredictionAdapter = new GooglePredictionAdapter(places, requireActivity());
                 mRecyclerView.setAdapter(googlePredictionAdapter);
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
             } else {

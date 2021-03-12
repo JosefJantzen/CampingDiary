@@ -75,7 +75,7 @@
     <string name="coordinates">Koordinaten</string>
     <string name="latitude">Breitengrad:</string>
     <string name="longitude">Längengrad:</string>
-    <string name="only_cords">Nur Koordinaten</string>
+    <string name="only_cords">Nur aktuelle Koordinaten</string>
     <string name="google_search">Google Suche</string>
     <string name="please_allow_gps">Bitte erlauben sie den Standortzugriff</string>
     <string name="n_a">N/A</string>
