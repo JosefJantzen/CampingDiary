@@ -7,12 +7,13 @@ import java.util.List;
 
 public class Convert {
 
-    public static List<String> removeCountries(List<Address> addresses) {
-        List<String> strings = new ArrayList<>();
+    public static List<Address> removeCountries(List<Address> addresses) {
+        List<Address> newAddresses = new ArrayList<>();
         for (int i = 0; i < addresses.size(); i++) {
             String[] parts = addresses.get(i).getAddressLine(0).split(",");
-            strings.add(i, parts[0] + "," + parts[1]);
+            Address address = addresses.get(i);
+            address.setAddressLine(0, parts[0] + "," + parts[1]);
         }
-        return strings;
+        return newAddresses;
     }
 }

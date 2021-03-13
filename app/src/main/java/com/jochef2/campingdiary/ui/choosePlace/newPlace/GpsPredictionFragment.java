@@ -24,15 +24,20 @@ import java.util.Locale;
 
 public class GpsPredictionFragment extends Fragment {
 
-    private ChoosePlaceViewModel mViewModel;
+    private static ChoosePlaceViewModel mViewModel;
 
-    private RecyclerView mRecyclerView;
+    private static RecyclerView mRecyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_gps_prediction, container, false);
+    }
+
+    public static void unselect() {
+        GpsPredictionsAdapter adapter = (GpsPredictionsAdapter) mRecyclerView.getAdapter();
+        adapter.unselect();
     }
 
     @Override
@@ -60,20 +65,12 @@ public class GpsPredictionFragment extends Fragment {
 
                     mRecyclerView.setAdapter(gpsPredictionsAdapter);
                     mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-                    gpsPredictionsAdapter.setOnSelectListener((position, card) -> {
-                        //MaterialCardView card = mRecyclerView.findViewWithTag(position);
-                        gpsPredictionsAdapter.notifyItemChanged(position);
-                        card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
-                        gpsPredictionsAdapter.notifyItemChanged(position);
-                    });
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             } else {
-                Toast.makeText(requireActivity(), "no location", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireActivity(), getString(R.string.err_gps_disabled), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }

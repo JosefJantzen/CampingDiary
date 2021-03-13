@@ -2,13 +2,19 @@ package com.jochef2.campingdiary.ui.choosePlace.newPlace;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -40,9 +46,9 @@ import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel.FIELDS;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
@@ -71,6 +77,7 @@ public class NewPlaceFragment extends Fragment {
     private MaterialButton btnMap;
     private TextView txLatitude;
     private TextView txLongitude;
+    private TextView txDistance;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -99,10 +106,7 @@ public class NewPlaceFragment extends Fragment {
         cardCords = view.findViewById(R.id.card_cords);
         cardMap = view.findViewById(R.id.card_map);
         btnMap = view.findViewById(R.id.btn_map);
-
-        if (savedInstanceState != null) {
-            etName.setText(savedInstanceState.getString("NAME"));
-        }
+        txDistance = view.findViewById(R.id.tx_distance);
 
         mPredictionsPager.setAdapter(new PredictionsPagerAdapter(requireActivity()));
         new TabLayoutMediator(mTabLayout, mPredictionsPager, (tab, position) -> {
@@ -116,17 +120,41 @@ public class NewPlaceFragment extends Fragment {
                     tab.setText(R.string.google);
                     break;
             }
-
         }).attach();
 
+        if (savedInstanceState != null) {
+            etName.setText(savedInstanceState.getString("NAME"));
+        }
+
+        final LocationManager manager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
+        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            /*MaterialAlertDialogBuilder  alertDialogBuilder = new MaterialAlertDialogBuilder(requireActivity());
+            alertDialogBuilder.
+                    setTitle(getString(R.string.no_gps))
+                    .setMessage(getString(R.string.err_gps_disabled))
+                    .setCancelable(false)
+                    .setPositiveButton(getString(android.R.string.yes), ((dialog, which) -> {
+                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                        requestLocatoinPermission();
+                    }))
+                    .setNegativeButton(getString(android.R.string.no), ((dialog, which) -> {
+                        //TOD O: disable all selections except map
+                        dialog.cancel();
+                    }))
+                    .show();*/
+            Toast.makeText(requireActivity(), getString(R.string.err_gps_disabled), Toast.LENGTH_LONG).show();
+        } else {
+            requestLocatoinPermission();
+        }
+
         mViewModel.mField.observe(getViewLifecycleOwner(), field -> {
-            unselect();
+            unselect(field);
             switch (field) {
                 case GPS_PREDICTION:
-
+                    //GpsPredictionFragment.select();
                     break;
                 case GOOGLE_PREDICTION:
-
+                    //GooglePredictionFragment.select();
                     break;
                 case AUTOCOMPLETE:
                     cardAutocomplete.setCardBackgroundColor(R.attr.colorPrimaryVariant);
@@ -137,14 +165,28 @@ public class NewPlaceFragment extends Fragment {
                 case MAP:
                     cardMap.setCardBackgroundColor(R.attr.colorPrimaryVariant);
                     break;
+                default:
+                    break;
             }
+            //Log.d("TAG", "Selected field: " + field.toString());
         });
 
-        //TODO: API-KEY
-        Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
-        placesClient = Places.createClient(requireActivity());
+        etName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        requestLocatoinPermission();
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mViewModel.setName(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
 
         cardAutocomplete.setOnClickListener(v -> {
@@ -153,7 +195,6 @@ public class NewPlaceFragment extends Fragment {
                         .build(requireContext());
                 startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
             } else if (cardAutocomplete.getCardBackgroundColor().getDefaultColor() == R.attr.colorPrimaryVariant) {
-                //cardAutocomplete.setCardBackgroundColor(-15592942);
                 mViewModel.setField(FIELDS.NULL);
             } else {
                 cardAutocomplete.setCardBackgroundColor(R.attr.colorPrimaryVariant);
@@ -172,13 +213,15 @@ public class NewPlaceFragment extends Fragment {
         });
 
         cardCords.setOnClickListener(v -> {
-            if (mViewModel.mField.getValue() != FIELDS.CORDS) {
+            if (mViewModel.getField() != FIELDS.CORDS) {
                 mViewModel.setField(FIELDS.CORDS);
             } else mViewModel.setField(FIELDS.NULL);
         });
 
         cardMap.setOnClickListener(v -> {
-            mViewModel.setField(FIELDS.MAP);
+            if (mViewModel.getField() != FIELDS.MAP) {
+                mViewModel.setField(FIELDS.MAP);
+            } else mViewModel.setField(FIELDS.NULL);
         });
 
         btnMap.setOnClickListener(v -> {
@@ -188,16 +231,26 @@ public class NewPlaceFragment extends Fragment {
         mViewModel.getSelectedMap().observe(getViewLifecycleOwner(), latLng -> {
             txLatitude.setText(Double.toString(latLng.latitude));
             txLongitude.setText(Double.toString(latLng.longitude));
+
+            Location location = new Location("");
+            location.setLatitude(latLng.latitude);
+            location.setLongitude(latLng.longitude);
+            double distance = mViewModel.mCurrentLocation.getValue().distanceTo(location);
+            if (distance >= 1000) {
+                txDistance.setText(new BigDecimal(distance / 1000).setScale(1, BigDecimal.ROUND_HALF_EVEN) + " km");
+            } else {
+                txDistance.setText(new BigDecimal(distance).setScale(2, BigDecimal.ROUND_HALF_EVEN) + " m");
+            }
         });
     }
 
-    private void unselect() {
+    private void unselect(FIELDS field) {
         switch (lastField) {
             case GPS_PREDICTION:
-                // GPS_PREDICTION reset
+                GpsPredictionFragment.unselect();
                 break;
             case GOOGLE_PREDICTION:
-                //GOOGLE_PREDICTION reset
+                GooglePredictionFragment.unselect();
                 break;
             case AUTOCOMPLETE:
                 cardAutocomplete.setCardBackgroundColor(-15592942);
@@ -211,7 +264,7 @@ public class NewPlaceFragment extends Fragment {
             default:
                 break;
         }
-        lastField = mViewModel.getField().getValue();
+        lastField = field;
     }
 
     @Override
@@ -251,6 +304,10 @@ public class NewPlaceFragment extends Fragment {
     }
 
     private void getCurrentPlace() {
+        //TODO: API-KEY
+        Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
+        placesClient = Places.createClient(requireActivity());
+
         FindCurrentPlaceRequest request = FindCurrentPlaceRequest.newInstance(mPlaceFields);
 
         @SuppressLint("MissingPermission") Task<FindCurrentPlaceResponse> placeResponse = placesClient.findCurrentPlace(request);
@@ -277,7 +334,7 @@ public class NewPlaceFragment extends Fragment {
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("NAME", Objects.requireNonNull(etName.getText()).toString());
+        outState.putString("NAME", etName.getText().toString());
     }
 
     /**

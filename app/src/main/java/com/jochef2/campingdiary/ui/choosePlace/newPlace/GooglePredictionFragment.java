@@ -18,9 +18,9 @@ import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 
 public class GooglePredictionFragment extends Fragment {
 
-    private ChoosePlaceViewModel mViewModel;
+    private static ChoosePlaceViewModel mViewModel;
 
-    private RecyclerView mRecyclerView;
+    private static RecyclerView mRecyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,5 +46,10 @@ public class GooglePredictionFragment extends Fragment {
                 Toast.makeText(requireContext(), "Keine place predicitons", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public static void unselect() {
+        GooglePredictionAdapter adapter = (GooglePredictionAdapter) mRecyclerView.getAdapter();
+        adapter.unselect();
     }
 }

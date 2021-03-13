@@ -25,7 +25,7 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
     private List<PlaceLikelihood> mDataset;
     private FragmentActivity mFragmentActivity;
 
-    private int lastSelected = -1;
+    //private int lastSelected = -1;
 
     public GooglePredictionAdapter(List<PlaceLikelihood> dataset, FragmentActivity fragmentActivity) {
         mDataset = dataset;
@@ -45,11 +45,17 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.txName.setText(mDataset.get(position).getPlace().getName());
 
-        if (position == lastSelected) {
+        if (position == mViewModel.getSelectedGooglePrediction()) {
             holder.card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
         } else {
             holder.card.setCardBackgroundColor(-15592942);
         }
+    }
+
+    public void unselect() {
+        int copy = mViewModel.getSelectedGooglePrediction();
+        mViewModel.setSelectedGooglePrediction(-1);
+        notifyItemChanged(copy);
     }
 
     @Override
@@ -67,20 +73,21 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
             card = itemView.findViewById(R.id.card);
 
             card.setOnClickListener(v -> {
-                int copyLastSelected = lastSelected;
-                lastSelected = getAdapterPosition();
+                int copyLastSelected = mViewModel.getSelectedGooglePrediction();
+                mViewModel.setSelectedGooglePrediction(getAdapterPosition());
 
-                if (copyLastSelected == lastSelected) {
+                if (copyLastSelected == mViewModel.getSelectedGooglePrediction()) {
                     card.setCardBackgroundColor(-15592942);
-                    lastSelected = -1;
+                    mViewModel.setSelectedGooglePrediction(-1);
                     notifyItemChanged(copyLastSelected);
+                    //mViewModel.setSelectedGooglePrediction(mViewModel.getSelectedGooglePrediction());
                     mViewModel.setField(FIELDS.NULL);
                 } else {
                     card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
                     notifyItemChanged(copyLastSelected);
-                    notifyItemChanged(lastSelected);
+                    notifyItemChanged(mViewModel.getSelectedGooglePrediction());
 
-                    mViewModel.setSelectedGooglePrediction(mDataset.get(lastSelected).getPlace());
+                    //mViewModel.setSelectedGooglePrediction(lastSelected);
                     mViewModel.setField(FIELDS.GOOGLE_PREDICTION);
                 }
             });

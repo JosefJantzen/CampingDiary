@@ -20,6 +20,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.ui.choosePlace.newPlace.NewPlaceFragment;
 import com.jochef2.campingdiary.ui.choosePlace.searchPlace.SearchPlaceFragment;
@@ -30,6 +31,7 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
 
     private BottomNavigationView mBottomNav;
     private ViewPager2 mViewPager;
+    private FloatingActionButton fabCheck;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -46,6 +48,7 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
 
         mBottomNav = view.findViewById(R.id.bottom_nav_menu);
         mViewPager = view.findViewById(R.id.viewpager);
+        fabCheck = view.findViewById(R.id.fab_check);
 
         mViewPager.setAdapter(new ScreenPagerAdapter(requireActivity()));
         mViewPager.setUserInputEnabled(false);
@@ -65,6 +68,9 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
             return true;
         });
 
+        fabCheck.setOnClickListener(v -> {
+            mViewModel.save();
+        });
     }
 
     /**

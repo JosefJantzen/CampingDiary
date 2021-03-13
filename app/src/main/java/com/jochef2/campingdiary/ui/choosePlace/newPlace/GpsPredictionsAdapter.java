@@ -1,5 +1,6 @@
 package com.jochef2.campingdiary.ui.choosePlace.newPlace;
 
+import android.annotation.SuppressLint;
 import android.location.Address;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +16,6 @@ import com.google.android.material.card.MaterialCardView;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel.FIELDS;
-import com.jochef2.campingdiary.utils.Convert;
 
 import java.util.List;
 
@@ -23,14 +23,13 @@ public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAd
 
     private ChoosePlaceViewModel mViewModel;
 
-    private List<String> mDataset;
+    private List<Address> mDataset;
     private FragmentActivity mFragmentActivity;
 
-    private Listener mListener;
-    private int lastSelected = -1;
+    //private int lastSelected = -1;
 
     public GpsPredictionsAdapter(List<Address> dataset, FragmentActivity fragmentActivity) {
-        mDataset = Convert.removeCountries(dataset);
+        mDataset = dataset;
         mFragmentActivity = fragmentActivity;
         mViewModel = new ViewModelProvider(mFragmentActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(mFragmentActivity.getApplication())).get(ChoosePlaceViewModel.class);
     }
@@ -43,23 +42,24 @@ public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAd
         return new ViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txAddress.setText(mDataset.get(position));
+        String address = mDataset.get(position).getAddressLine(0);
+        String[] parts = address.split(",");
+        holder.txAddress.setText(parts[0] + "," + parts[1]);
 
-        if (position == lastSelected) {
+        if (position == mViewModel.getSelectedGpsPrediction()) {
             holder.card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
         } else {
             holder.card.setCardBackgroundColor(-15592942);
         }
     }
 
-    public void setOnSelectListener(Listener listener) {
-        this.mListener = listener;
-    }
-
-    public interface Listener {
-        void onSelect(int position, MaterialCardView cardView);
+    public void unselect() {
+        int copy = mViewModel.getSelectedGpsPrediction();
+        mViewModel.setSelectedGpsPrediction(-1);
+        notifyItemChanged(copy);
     }
 
     @Override
@@ -77,20 +77,21 @@ public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAd
             card = itemView.findViewById(R.id.card);
 
             card.setOnClickListener(v -> {
-                int copyLastSelected = lastSelected;
-                lastSelected = getAdapterPosition();
+                int copyLastSelected = mViewModel.getSelectedGpsPrediction();
+                mViewModel.setSelectedGpsPrediction(getAdapterPosition());
 
-                if (copyLastSelected == lastSelected) {
+                if (copyLastSelected == mViewModel.getSelectedGpsPrediction()) {
                     card.setCardBackgroundColor(-15592942);
-                    lastSelected = -1;
+                    mViewModel.setSelectedGpsPrediction(-1);
                     notifyItemChanged(copyLastSelected);
+                    //mViewModel.setSelectedGpsPrediction(lastSelected);
                     mViewModel.setField(FIELDS.NULL);
                 } else {
                     card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
                     notifyItemChanged(copyLastSelected);
-                    notifyItemChanged(lastSelected);
+                    notifyItemChanged(mViewModel.getSelectedGpsPrediction());
 
-                    mViewModel.setSelectedGpsPrediction(mDataset.get(lastSelected));
+                    //mViewModel.setSelectedGpsPrediction(lastSelected);
                     mViewModel.setField(FIELDS.GPS_PREDICTION);
                 }
             });

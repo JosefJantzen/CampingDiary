@@ -83,4 +83,8 @@
     <string name="n_a">N/A</string>
     <string name="not_selected">Not selected</string>
     <string name="pick_on_map">Pick on map</string>
+    <string name="no_gps">No GPS</string>
+    <string name="err_gps_disabled">Your GPS seems to be disabled</string>
+    <string name="err_no_place_selected">Please select or create a place</string>
+    <string name="err_no_name_place">Please name the place</string>
 </resources>

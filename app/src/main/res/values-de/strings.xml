@@ -26,7 +26,7 @@
     <string name="days">Tage</string>
     <string name="costs">Kosten</string>
     <string name="fuel">Kraftstoff</string>
-    <string name="distance">Strecke</string>
+    <string name="distance">Entfernung</string>
     <string name="water">Wasser</string>
     <string name="countries">Länder</string>
     <string name="last_night">Letzte Nacht</string>
@@ -81,4 +81,8 @@
     <string name="n_a">N/A</string>
     <string name="not_selected">Nicht ausgewählt</string>
     <string name="pick_on_map">Auf Karte wählen</string>
+    <string name="no_gps">Kein GPS</string>
+    <string name="err_gps_disabled">Ihr GPS scheint ausgeschaltet zu sein.</string>
+    <string name="err_no_place_selected">Bitte wählen sie einen Ort aus oder erstellen sie einen neuen</string>
+    <string name="err_no_name_place">Bennenen sie bitte den Ort</string>
 </resources>

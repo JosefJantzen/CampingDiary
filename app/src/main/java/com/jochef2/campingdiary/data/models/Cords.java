@@ -1,6 +1,11 @@
 package com.jochef2.campingdiary.data.models;
 
+import android.location.Location;
+
 import androidx.room.ColumnInfo;
+import androidx.room.Ignore;
+
+import com.google.android.gms.maps.model.LatLng;
 
 public class Cords {
 
@@ -10,9 +15,26 @@ public class Cords {
     @ColumnInfo(name = "longitude")
     public double mLongitude;
 
-    public Cords(double latitude, double longitude) {
+    @ColumnInfo(name = "altitude")
+    public double mAltitude;
+
+    public Cords(double latitude, double longitude, double altitude) {
         mLatitude = latitude;
         mLongitude = longitude;
+        mAltitude = altitude;
+    }
+
+    @Ignore
+    public Cords(Location location) {
+        mLatitude = location.getLatitude();
+        mLongitude = location.getLongitude();
+        mAltitude = location.getAltitude();
+    }
+
+    @Ignore
+    public Cords(LatLng latLng) {
+        mLatitude = latLng.latitude;
+        mLongitude = latLng.longitude;
     }
 
     public double getLatitude() {
@@ -29,5 +51,13 @@ public class Cords {
 
     public void setLongitude(double longitude) {
         mLongitude = longitude;
+    }
+
+    public double getAltitude() {
+        return mAltitude;
+    }
+
+    public void setAltitude(double altitude) {
+        mAltitude = altitude;
     }
 }
