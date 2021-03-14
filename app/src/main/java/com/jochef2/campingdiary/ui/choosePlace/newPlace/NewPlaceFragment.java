@@ -168,7 +168,6 @@ public class NewPlaceFragment extends Fragment {
                 default:
                     break;
             }
-            //Log.d("TAG", "Selected field: " + field.toString());
         });
 
         etName.addTextChangedListener(new TextWatcher() {

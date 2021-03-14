@@ -1,5 +1,6 @@
 package com.jochef2.campingdiary.data.models;
 
+import android.location.Address;
 import android.location.Location;
 
 import androidx.room.ColumnInfo;
@@ -35,6 +36,14 @@ public class Cords {
     public Cords(LatLng latLng) {
         mLatitude = latLng.latitude;
         mLongitude = latLng.longitude;
+    }
+
+    @Ignore
+    public Cords(Address address) {
+        if (address.hasLatitude() && address.hasLongitude()) {
+            mLatitude = address.getLatitude();
+            mLongitude = address.getLongitude();
+        }
     }
 
     public double getLatitude() {

@@ -69,7 +69,7 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
         });
 
         fabCheck.setOnClickListener(v -> {
-            mViewModel.save();
+            int id = mViewModel.save();
         });
     }
 

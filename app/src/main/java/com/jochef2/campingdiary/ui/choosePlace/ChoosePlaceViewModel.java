@@ -34,25 +34,26 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> mSelectedSearchPlaceId = new MutableLiveData<>(-1);
 
     public MutableLiveData<String> mName = new MutableLiveData<>("");
-    //public MutableLiveData<Place> mPlace = new MutableLiveData<>();
-    private PlaceRepository mPlaceRepository;
+    public final PlaceRepository mPlaceRepository;
 
     public ChoosePlaceViewModel(@NonNull Application application) {
         super(application);
-        // TODO: mPlaceRepository = new PlaceRepository(application);
+        mPlaceRepository = new PlaceRepository(application);
     }
 
-    public void save() {
+    public int save() {
         if (getField() != FIELDS.NULL) {
             if (getField() == FIELDS.SEARCH) {
-                //TODO: implement search
+                return mSelectedSearchPlaceId.getValue();
             } else {
                 if (!getName().isEmpty()) {
                     com.jochef2.campingdiary.data.entities.Place place = new com.jochef2.campingdiary.data.entities.Place(mName.getValue(), new Cords(getCurrentLocation().getValue()));
                     switch (getField()) {
                         case GPS_PREDICTION:
                             Address address = mAddressPredictions.getValue().get(mSelectedGpsPrediction.getValue());
-                            place.setAddressObject(address);
+                            com.jochef2.campingdiary.data.models.Address address1 = new com.jochef2.campingdiary.data.models.Address(address);
+                            place.setAddressObject(address1);
+                            place.setCords(new Cords(address));
                             break;
                         case GOOGLE_PREDICTION:
                             place.setByPlace(mPlacePredictions.getValue().get(mSelectedGooglePrediction.getValue()).getPlace());
@@ -66,6 +67,7 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
                             place.setCords(new Cords(mSelectedMap.getValue()));
                             break;
                     }
+                    return savePlace(place);
                 } else {
                     Toast.makeText(getApplication(), getApplication().getString(R.string.err_no_name_place), Toast.LENGTH_SHORT).show();
                 }
@@ -73,10 +75,11 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
         } else {
             Toast.makeText(getApplication(), getApplication().getString(R.string.err_no_place_selected), Toast.LENGTH_LONG).show();
         }
+        return -1;
     }
 
-    public void savePlace() {
-        //TODO: save Place to Database and return id
+    public int savePlace(com.jochef2.campingdiary.data.entities.Place place) {
+        return (int) mPlaceRepository.insertPlace(place);
     }
 
     public MutableLiveData<Location> getCurrentLocation() {

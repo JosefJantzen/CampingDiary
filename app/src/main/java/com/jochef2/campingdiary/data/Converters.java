@@ -1,6 +1,6 @@
 package com.jochef2.campingdiary.data;
 
-import android.location.Address;
+import android.os.Bundle;
 
 import androidx.room.TypeConverter;
 
@@ -15,6 +15,7 @@ import com.mynameismidori.currencypicker.ExtendedCurrency;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class Converters {
 
@@ -124,13 +125,33 @@ public class Converters {
     }
 
     @TypeConverter
-    public static String AddressToString(Address address) {
-        return address == null ? null : new Gson().toJson(address);
+    public static String LocaleToString(Locale locale) {
+        return locale == null ? null : locale.getISO3Language();
     }
 
     @TypeConverter
-    public static Address StringToAddress(String address) {
-        return address == null ? null : new Gson().fromJson(address, Address.class);
+    public static Locale StringToLocale(String locale) {
+        return locale == null ? null : new Locale(locale);
+    }
+
+    @TypeConverter
+    public static String ListToString(List<String> list) {
+        return list == null ? null : new Gson().toJson(list);
+    }
+
+    @TypeConverter
+    public static List<String> StringToHashMap(String list) {
+        return list == null ? null : new Gson().fromJson(list, List.class);
+    }
+
+    @TypeConverter
+    public static String BundleToString(Bundle bundle) {
+        return bundle == null ? null : new Gson().toJson(bundle);
+    }
+
+    @TypeConverter
+    public static Bundle StringToBundle(String bundle) {
+        return bundle == null ? null : new Gson().fromJson(bundle, Bundle.class);
     }
 
     /**

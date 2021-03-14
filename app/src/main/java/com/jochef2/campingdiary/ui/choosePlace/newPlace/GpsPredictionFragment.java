@@ -52,12 +52,7 @@ public class GpsPredictionFragment extends Fragment {
             if (location != null) {
                 Geocoder geocoder = new Geocoder(requireActivity().getApplicationContext(), Locale.getDefault());
                 try {
-                    List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 5);
-
-                    /*List<Address> addresses1 = geocoder.getFromLocationName("Langenbeker Friedhofsweg 5, 21079 Hamburg, Deutschland", 5);
-                    for (Address address : addresses1) {
-                        Log.d("TAG", address.getAddressLine(0));
-                    }*/
+                    List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 10);
 
                     mViewModel.setAddressPredictions(addresses);
 

@@ -1,13 +1,12 @@
 package com.jochef2.campingdiary.data.entities;
 
-import android.location.Address;
-
 import androidx.room.ColumnInfo;
 import androidx.room.Embedded;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import com.jochef2.campingdiary.data.models.Address;
 import com.jochef2.campingdiary.data.models.Cords;
 
 @Entity(tableName = "places_table")
@@ -26,7 +25,7 @@ public class Place {
     @ColumnInfo(name = "address_string")
     public String mAddressString;
 
-    @ColumnInfo(name = "address_object")
+    @Embedded
     public Address mAddressObject;
 
     @Embedded
@@ -50,10 +49,6 @@ public class Place {
 
     public String getPlaceId() {
         return mPlaceId;
-    }
-
-    public void setPlaceId(String placeId) {
-        mPlaceId = placeId;
     }
 
     public String getPlaceName() {

@@ -24,9 +24,10 @@ public class ReisenRepository {
 
     private final ReiseDao mReiseDao;
     private final LiveData<List<FullReise>> mAllReisen;
+    public static RoomDatabase db;
 
     public ReisenRepository(Application application) {
-        RoomDatabase db = RoomDatabase.getDatabase(application);
+        db = RoomDatabase.getDatabase(application);
         mReiseDao = db.reiseDao();
         mAllReisen = mReiseDao.getAllReisen();
     }
@@ -47,14 +48,13 @@ public class ReisenRepository {
      * inserts new reise
      *
      * @param reise new Reise
-     * @return id of new reise
+     * @return id of new Reise
      */
     public long insertReise(Reise reise) {
         Callable<Long> insertCallable = () -> mReiseDao.insertReise(reise);
         ExecutorService executorService = Executors.newFixedThreadPool(1);
         long id = -1;
         Future<Long> future = executorService.submit(insertCallable);
-
         try {
             id = future.get();
         } catch (InterruptedException | ExecutionException e) {
