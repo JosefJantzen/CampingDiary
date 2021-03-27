@@ -98,7 +98,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
 
                 fabEvent.setOnClickListener(v -> {
                     //TODO: remove this and set navigation to new Event
-                    Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(R.id.action_global_choosePlaceFragment);
+
                 });
 
                 if (!reise.mNights.isEmpty()) {

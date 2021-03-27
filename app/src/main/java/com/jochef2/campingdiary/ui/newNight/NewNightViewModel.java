@@ -9,6 +9,8 @@ import androidx.lifecycle.MutableLiveData;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.models.Price;
+import com.jochef2.campingdiary.data.relations.FullPlace;
+import com.jochef2.campingdiary.data.repositories.PlaceRepository;
 import com.jochef2.campingdiary.data.repositories.ReisenRepository;
 import com.jochef2.campingdiary.data.values.NightCategory;
 import com.jochef2.campingdiary.ui.main.CurrentReiseViewModel;
@@ -23,11 +25,14 @@ public class NewNightViewModel extends AndroidViewModel {
     public int reiseId;
     public int lastStartChip;
     public int lastEndChip;
+    private final PlaceRepository mPlaceRepository;
     private final ReisenRepository mReisenRepository;
+    public MutableLiveData<FullPlace> mPlace = new MutableLiveData<>();
 
     public NewNightViewModel(@NonNull Application application) {
         super(application);
         mReisenRepository = CurrentReiseViewModel.mReisenRepository;
+        mPlaceRepository = new PlaceRepository(application);
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_MONTH, 1);
         Night night = new Night(-1, application.getString(R.string.no_name), Calendar.getInstance(), c, NightCategory.MOTORHOME_AREA, new Price(0, ExtendedCurrency.getCurrencyByISO("EUR")));
@@ -44,5 +49,15 @@ public class NewNightViewModel extends AndroidViewModel {
 
     public void saveNight() {
         mReisenRepository.insertNight(mNight.getValue());
+    }
+
+    public MutableLiveData<FullPlace> getPlace() {
+        return mPlace;
+    }
+
+    public void setPlace(int placeId) {
+        mPlaceRepository.getPlace(placeId).observeForever(place -> {
+            mPlace.setValue(place);
+        });
     }
 }

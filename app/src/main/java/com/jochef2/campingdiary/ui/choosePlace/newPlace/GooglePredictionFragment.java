@@ -1,10 +1,10 @@
 package com.jochef2.campingdiary.ui.choosePlace.newPlace;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -29,6 +29,14 @@ public class GooglePredictionFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_google_prediction, container, false);
     }
 
+    /**
+     * unselects selected card in recycler
+     */
+    public static void unselect() {
+        GooglePredictionAdapter adapter = (GooglePredictionAdapter) mRecyclerView.getAdapter();
+        adapter.unselect();
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -43,13 +51,8 @@ public class GooglePredictionFragment extends Fragment {
                 mRecyclerView.setAdapter(googlePredictionAdapter);
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
             } else {
-                Toast.makeText(requireContext(), "Keine place predicitons", Toast.LENGTH_SHORT).show();
+                Log.e("TAG", "Keine place predicitons");
             }
         });
-    }
-
-    public static void unselect() {
-        GooglePredictionAdapter adapter = (GooglePredictionAdapter) mRecyclerView.getAdapter();
-        adapter.unselect();
     }
 }

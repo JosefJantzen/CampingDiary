@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -15,10 +16,15 @@ import com.google.android.libraries.places.api.model.PlaceLikelihood;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.models.Cords;
 import com.jochef2.campingdiary.data.repositories.PlaceRepository;
+import com.jochef2.campingdiary.data.values.Events;
 
 import java.util.List;
+import java.util.Objects;
 
+@SuppressWarnings("ConstantConditions")
 public class ChoosePlaceViewModel extends AndroidViewModel {
+
+    public LiveData<List<com.jochef2.campingdiary.data.entities.Place>> mAllPlaces;
 
     public MutableLiveData<Location> mCurrentLocation = new MutableLiveData<>();
     public MutableLiveData<List<Address>> mAddressPredictions = new MutableLiveData<>();
@@ -35,12 +41,20 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
 
     public MutableLiveData<String> mName = new MutableLiveData<>("");
     public final PlaceRepository mPlaceRepository;
+    public Events mEvent = Events.NIGHT;
 
     public ChoosePlaceViewModel(@NonNull Application application) {
         super(application);
         mPlaceRepository = new PlaceRepository(application);
+        mAllPlaces = mPlaceRepository.getAllShortPlaces();
     }
 
+    /**
+     * adds selected place to DB
+     *
+     * @return id of new place
+     */
+    @SuppressWarnings("ConstantConditions")
     public int save() {
         if (getField() != FIELDS.NULL) {
             if (getField() == FIELDS.SEARCH) {
@@ -50,21 +64,21 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
                     com.jochef2.campingdiary.data.entities.Place place = new com.jochef2.campingdiary.data.entities.Place(mName.getValue(), new Cords(getCurrentLocation().getValue()));
                     switch (getField()) {
                         case GPS_PREDICTION:
-                            Address address = mAddressPredictions.getValue().get(mSelectedGpsPrediction.getValue());
+                            Address address = Objects.requireNonNull(mAddressPredictions.getValue()).get(mSelectedGpsPrediction.getValue());
                             com.jochef2.campingdiary.data.models.Address address1 = new com.jochef2.campingdiary.data.models.Address(address);
                             place.setAddressObject(address1);
                             place.setCords(new Cords(address));
                             break;
                         case GOOGLE_PREDICTION:
-                            place.setByPlace(mPlacePredictions.getValue().get(mSelectedGooglePrediction.getValue()).getPlace());
+                            place.setByPlace(Objects.requireNonNull(mPlacePredictions.getValue()).get(mSelectedGooglePrediction.getValue()).getPlace());
                             break;
                         case AUTOCOMPLETE:
-                            place.setByPlace(mSelectedAutocompletePlace.getValue());
+                            place.setByPlace(Objects.requireNonNull(mSelectedAutocompletePlace.getValue()));
                             break;
                         case CORDS:
                             break;
                         case MAP:
-                            place.setCords(new Cords(mSelectedMap.getValue()));
+                            place.setCords(new Cords(Objects.requireNonNull(mSelectedMap.getValue())));
                             break;
                     }
                     return savePlace(place);
@@ -78,6 +92,12 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
         return -1;
     }
 
+    /**
+     * insert place into DB
+     *
+     * @param place to insert
+     * @return id of new place
+     */
     public int savePlace(com.jochef2.campingdiary.data.entities.Place place) {
         return (int) mPlaceRepository.insertPlace(place);
     }
@@ -99,6 +119,14 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
 
     public void setPlacePredictions(List<PlaceLikelihood> placePredictions) {
         mPlacePredictions.setValue(placePredictions);
+    }
+
+    public Events getEvent() {
+        return mEvent;
+    }
+
+    public void setEvent(Events event) {
+        mEvent = event;
     }
 
     public String getName() {
@@ -155,6 +183,10 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
 
     public void setSelectedMap(LatLng selectedMap) {
         mSelectedMap.setValue(selectedMap);
+    }
+
+    public LiveData<List<com.jochef2.campingdiary.data.entities.Place>> getAllPlaces() {
+        return mAllPlaces;
     }
 
     public enum FIELDS {

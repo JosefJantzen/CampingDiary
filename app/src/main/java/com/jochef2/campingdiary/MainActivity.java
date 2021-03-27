@@ -43,9 +43,7 @@ public class MainActivity extends AppCompatActivity {
         // handle menu items
         toolbar.setOnMenuItemClickListener(menuItem -> {
             switch (menuItem.getItemId()) {
-                case R.id.cs:
 
-                    return true;
                 default:
                     return false;
             }

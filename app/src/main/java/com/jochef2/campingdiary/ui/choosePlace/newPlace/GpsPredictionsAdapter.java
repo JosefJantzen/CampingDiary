@@ -21,12 +21,10 @@ import java.util.List;
 
 public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAdapter.ViewHolder> {
 
-    private ChoosePlaceViewModel mViewModel;
+    private final ChoosePlaceViewModel mViewModel;
 
-    private List<Address> mDataset;
-    private FragmentActivity mFragmentActivity;
-
-    //private int lastSelected = -1;
+    private final List<Address> mDataset;
+    private final FragmentActivity mFragmentActivity;
 
     public GpsPredictionsAdapter(List<Address> dataset, FragmentActivity fragmentActivity) {
         mDataset = dataset;
@@ -69,7 +67,7 @@ public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView txAddress;
-        private MaterialCardView card;
+        private final MaterialCardView card;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -84,14 +82,13 @@ public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAd
                     card.setCardBackgroundColor(-15592942);
                     mViewModel.setSelectedGpsPrediction(-1);
                     notifyItemChanged(copyLastSelected);
-                    //mViewModel.setSelectedGpsPrediction(lastSelected);
+
                     mViewModel.setField(FIELDS.NULL);
                 } else {
                     card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
                     notifyItemChanged(copyLastSelected);
                     notifyItemChanged(mViewModel.getSelectedGpsPrediction());
 
-                    //mViewModel.setSelectedGpsPrediction(lastSelected);
                     mViewModel.setField(FIELDS.GPS_PREDICTION);
                 }
             });

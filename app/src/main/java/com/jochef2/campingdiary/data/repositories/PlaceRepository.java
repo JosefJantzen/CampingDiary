@@ -20,15 +20,21 @@ public class PlaceRepository {
 
     private final PlaceDao mPlaceDao;
     private final LiveData<List<FullPlace>> mAllPlaces;
+    private final LiveData<List<Place>> mAllShortPlaces;
 
     public PlaceRepository(Application application) {
         RoomDatabase db = RoomDatabase.getDatabase(application);
         mPlaceDao = db.placeDao();
         mAllPlaces = mPlaceDao.getAllPlaces();
+        mAllShortPlaces = mPlaceDao.getAllShortPlaces();
     }
 
     public LiveData<List<FullPlace>> getAllPlaces() {
         return mAllPlaces;
+    }
+
+    public LiveData<List<Place>> getAllShortPlaces() {
+        return mAllShortPlaces;
     }
 
     public LiveData<FullPlace> getPlace(int id) {

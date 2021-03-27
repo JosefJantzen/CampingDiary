@@ -110,9 +110,6 @@
         android:name="com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceFragment"
         android:label="fragment_choose_place"
         tools:layout="@layout/choose_place_fragment">
-        <action
-            android:id="@+id/action_choosePlaceFragment_to_newNightFragment"
-            app:destination="@id/newNightFragment" />
         <argument
             android:name="cat"
             android:defaultValue="EVENT"

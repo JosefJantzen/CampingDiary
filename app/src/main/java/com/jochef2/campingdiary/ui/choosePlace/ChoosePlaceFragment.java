@@ -16,6 +16,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -24,6 +25,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.ui.choosePlace.newPlace.NewPlaceFragment;
 import com.jochef2.campingdiary.ui.choosePlace.searchPlace.SearchPlaceFragment;
+import com.jochef2.campingdiary.ui.newNight.NewNightViewModel;
+
+import java.util.Objects;
 
 public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
 
@@ -45,6 +49,7 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
         super.onViewCreated(view, savedInstanceState);
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(ChoosePlaceViewModel.class);
+        mViewModel.setEvent(ChoosePlaceFragmentArgs.fromBundle(requireArguments()).getCat());
 
         mBottomNav = view.findViewById(R.id.bottom_nav_menu);
         mViewPager = view.findViewById(R.id.viewpager);
@@ -53,8 +58,9 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
         mViewPager.setAdapter(new ScreenPagerAdapter(requireActivity()));
         mViewPager.setUserInputEnabled(false);
 
-        mViewPager.setCurrentItem(1, false);
-        mBottomNav.setSelectedItemId(R.id.mn_new_place);
+        // sets selected tab at startup
+        //mViewPager.setCurrentItem(1, false);
+        //mBottomNav.setSelectedItemId(R.id.mn_new_place);
 
         mBottomNav.setOnNavigationItemSelectedListener(item -> {
             switch (item.getItemId()) {
@@ -68,8 +74,17 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
             return true;
         });
 
+        // saves selected place and gives place id to the ViewModel of requested Fragment
         fabCheck.setOnClickListener(v -> {
             int id = mViewModel.save();
+            if (id != -1) {
+                switch (mViewModel.getEvent()) {
+                    case NIGHT:
+                        new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewNightViewModel.class).setPlace(id);
+                        break;
+                }
+                Navigation.findNavController(requireActivity(), R.id.nav_host).popBackStack();
+            }
         });
     }
 
@@ -79,7 +94,7 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
      */
     @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
     public void onCreated() {
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string.choose_place);
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle(R.string.choose_place);
     }
 
     /**

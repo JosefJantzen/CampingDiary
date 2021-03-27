@@ -20,6 +20,9 @@ public interface PlaceDao {
     @Query("SELECT * FROM places_table ORDER BY id")
     LiveData<List<FullPlace>> getAllPlaces();
 
+    @Query("SELECT * FROM places_table ORDER BY id")
+    LiveData<List<Place>> getAllShortPlaces();
+
     @Transaction
     @Query("SELECT * FROM places_table WHERE id = :placeId")
     LiveData<FullPlace> getPlace(int placeId);

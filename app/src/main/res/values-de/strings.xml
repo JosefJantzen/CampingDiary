@@ -85,4 +85,8 @@
     <string name="err_gps_disabled">Ihr GPS scheint ausgeschaltet zu sein.</string>
     <string name="err_no_place_selected">Bitte wählen sie einen Ort aus oder erstellen sie einen neuen</string>
     <string name="err_no_name_place">Bennenen sie bitte den Ort</string>
+    <string name="overview">Übersicht</string>
+    <string name="current_nights">Aktuelle Nächte</string>
+    <string name="current_events">Aktuelle Aktivitäten</string>
+    <string name="distance_points">Entfernung:</string>
 </resources>

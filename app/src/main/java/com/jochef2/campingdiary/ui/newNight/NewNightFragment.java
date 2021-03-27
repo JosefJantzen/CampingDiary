@@ -33,6 +33,7 @@ public class NewNightFragment extends Fragment implements LifecycleObserver {
     }
 
     public static void navigateBack() {
+        activity.getViewModelStore().clear();
         Navigation.findNavController(activity, R.id.nav_host).popBackStack();
     }
 

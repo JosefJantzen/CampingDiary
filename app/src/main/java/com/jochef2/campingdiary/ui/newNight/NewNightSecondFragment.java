@@ -10,7 +10,6 @@ import android.view.inputmethod.InputMethodManager;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.ChipGroup;
@@ -18,6 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.values.NightCategory;
+import com.mynameismidori.currencypicker.CurrencyPicker;
 
 import java.util.Objects;
 
@@ -27,7 +27,10 @@ public class NewNightSecondFragment extends Fragment {
     private TextInputEditText etDescription;
     private MaterialButton btnBack;
     private MaterialButton btnCheck;
-    private MaterialButton btnChoosePlace;
+    private TextInputEditText etPrice;
+    private MaterialButton btnCurrency;
+
+    private CurrencyPicker currencyPicker;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,11 +47,31 @@ public class NewNightSecondFragment extends Fragment {
         etDescription = view.findViewById(R.id.et_description);
         btnBack = view.findViewById(R.id.btn_back);
         btnCheck = view.findViewById(R.id.btn_check);
-        btnChoosePlace = view.findViewById(R.id.btn_choose_place);
+        etPrice = view.findViewById(R.id.et_price);
+        btnCurrency = view.findViewById(R.id.btn_currency);
 
         if (savedInstanceState != null) {
             etDescription.setText(savedInstanceState.getString("description"));
+            etPrice.setText(savedInstanceState.getString("price"));
         }
+
+        NewNightFragment.mViewModel.mNight.observe(getViewLifecycleOwner(), night -> {
+            btnCurrency.setText(night.getPrice().getCurrency().getCode());
+        });
+
+        currencyPicker = CurrencyPicker.newInstance(getString(R.string.select_currency));
+
+        btnCurrency.setOnClickListener(v -> {
+            currencyPicker.show(getChildFragmentManager(), "CURRENCY_PICKER");
+        });
+
+        currencyPicker.setListener((name, code, symbol, slug, flagDrawableResID, pos) -> {
+            btnCurrency.setText(code);
+            Night night = NewNightFragment.mViewModel.mNight.getValue();
+            night.setCurrency(code);
+            NewNightFragment.mViewModel.mNight.setValue(night);
+            currencyPicker.dismiss();
+        });
 
         chCategory.setOnCheckedChangeListener(((group, checkedId) -> {
             Night night = NewNightFragment.mViewModel.mNight.getValue();
@@ -68,19 +91,16 @@ public class NewNightSecondFragment extends Fragment {
             NewNightFragment.mViewModel.saveNight();
             NewNightFragment.navigateBack();
         });
-
-        btnChoosePlace.setOnClickListener(v -> {
-            Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(R.id.action_global_choosePlaceFragment);
-        });
     }
 
     private void save() {
+        Night night = NewNightFragment.mViewModel.mNight.getValue();
         if (!etDescription.getText().toString().isEmpty()) {
-            Night night = NewNightFragment.mViewModel.mNight.getValue();
             night.setDescription(etDescription.getText().toString());
-            NewNightFragment.mViewModel.mNight.setValue(night);
         }
-
+        if (!etPrice.getText().toString().isEmpty())
+            night.setPriceNumber(Double.parseDouble(etPrice.getText().toString().replace(",", ".")));
+        NewNightFragment.mViewModel.mNight.setValue(night);
     }
 
     @Override
@@ -88,5 +108,6 @@ public class NewNightSecondFragment extends Fragment {
         super.onSaveInstanceState(outState);
 
         outState.putString("description", Objects.requireNonNull(etDescription.getText().toString()));
+        outState.putString("price", Objects.requireNonNull(etPrice.getText()).toString());
     }
 }

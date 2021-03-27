@@ -30,7 +30,7 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
 
     private static LiveData<FullReise> mDataset;
     private static Context mContext;
-    private FragmentManager mFragmentManager;
+    private final FragmentManager mFragmentManager;
 
     public AllNightsAdapter(LiveData<FullReise> dataset, Context c, FragmentManager fragmentManager) {
         mDataset = dataset;
@@ -43,7 +43,7 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.night_item, parent, false);
-        return new AllNightsAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
@@ -78,7 +78,7 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
 
     public static class ModalBottomSheet extends BottomSheetDialogFragment {
 
-        private int mPosition;
+        private final int mPosition;
 
         private LinearLayout open;
         private LinearLayout map;
@@ -126,12 +126,12 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
         }
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private MaterialCardView mCard;
-        private TextView mName;
-        private TextView mDate;
-        private ImageView mIcon;
+        private final MaterialCardView mCard;
+        private final TextView mName;
+        private final TextView mDate;
+        private final ImageView mIcon;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -20,12 +20,10 @@ import java.util.List;
 
 public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredictionAdapter.ViewHolder> {
 
-    private ChoosePlaceViewModel mViewModel;
+    private final ChoosePlaceViewModel mViewModel;
 
-    private List<PlaceLikelihood> mDataset;
-    private FragmentActivity mFragmentActivity;
-
-    //private int lastSelected = -1;
+    private final List<PlaceLikelihood> mDataset;
+    private final FragmentActivity mFragmentActivity;
 
     public GooglePredictionAdapter(List<PlaceLikelihood> dataset, FragmentActivity fragmentActivity) {
         mDataset = dataset;
@@ -64,8 +62,8 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView txName;
-        private MaterialCardView card;
+        private final TextView txName;
+        private final MaterialCardView card;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -80,14 +78,13 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
                     card.setCardBackgroundColor(-15592942);
                     mViewModel.setSelectedGooglePrediction(-1);
                     notifyItemChanged(copyLastSelected);
-                    //mViewModel.setSelectedGooglePrediction(mViewModel.getSelectedGooglePrediction());
+
                     mViewModel.setField(FIELDS.NULL);
                 } else {
                     card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
                     notifyItemChanged(copyLastSelected);
                     notifyItemChanged(mViewModel.getSelectedGooglePrediction());
 
-                    //mViewModel.setSelectedGooglePrediction(lastSelected);
                     mViewModel.setField(FIELDS.GOOGLE_PREDICTION);
                 }
             });

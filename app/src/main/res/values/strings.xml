@@ -77,8 +77,6 @@
     <string name="longitude">Longitude:</string>
     <string name="only_cords">Only current coordinates</string>
     <string name="google_search">Google search</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="please_allow_gps">Please grant the location permission</string>
     <string name="n_a">N/A</string>
     <string name="not_selected">Not selected</string>
@@ -87,4 +85,8 @@
     <string name="err_gps_disabled">Your GPS seems to be disabled</string>
     <string name="err_no_place_selected">Please select or create a place</string>
     <string name="err_no_name_place">Please name the place</string>
+    <string name="overview">Overview</string>
+    <string name="current_nights">Current nights</string>
+    <string name="current_events">Current events</string>
+    <string name="distance_points">Distance</string>
 </resources>

@@ -35,6 +35,9 @@ public class GpsPredictionFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_gps_prediction, container, false);
     }
 
+    /**
+     * unselects the the selected card in recycler
+     */
     public static void unselect() {
         GpsPredictionsAdapter adapter = (GpsPredictionsAdapter) mRecyclerView.getAdapter();
         adapter.unselect();
