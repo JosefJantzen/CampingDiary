@@ -89,4 +89,5 @@
     <string name="current_nights">Aktuelle Nächte</string>
     <string name="current_events">Aktuelle Aktivitäten</string>
     <string name="distance_points">Entfernung:</string>
+    <string name="filter">Filter</string>
 </resources>

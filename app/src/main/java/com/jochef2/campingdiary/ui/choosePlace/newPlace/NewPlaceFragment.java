@@ -11,6 +11,8 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -42,8 +44,10 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.jochef2.campingdiary.R;
+import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceFragment;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel.FIELDS;
+import com.jochef2.campingdiary.ui.choosePlace.searchPlace.SearchPlaceFragment;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -77,6 +81,24 @@ public class NewPlaceFragment extends Fragment {
     private TextView txLatitude;
     private TextView txLongitude;
     private TextView txDistance;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
+        inflater.inflate(R.menu.new_place_menu, menu);
+        menu.findItem(R.id.it_search).setOnMenuItemClickListener(item -> {
+            ChoosePlaceFragment.setFirstPage();
+            SearchPlaceFragment.search();
+            return true;
+        });
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -156,7 +178,8 @@ public class NewPlaceFragment extends Fragment {
             switch (field) {
                 case GPS_PREDICTION:
                     //if (Objects.requireNonNull(etName.getText()).toString().isEmpty()){
-                    etName.setText(Objects.requireNonNull(mViewModel.mAddressPredictions.getValue()).get(mViewModel.mSelectedGpsPrediction.getValue()).getFeatureName());
+                    String name = mViewModel.mAddressPredictions.getValue().get(mViewModel.mSelectedGpsPrediction.getValue()).getFeatureName();
+                    if (name != null) etName.setText(Objects.requireNonNull(name));
                     //}
                     break;
                 case GOOGLE_PREDICTION:
@@ -264,6 +287,8 @@ public class NewPlaceFragment extends Fragment {
      * @param field name of field that should unselect
      */
     private void unselect(FIELDS field) {
+        MaterialCardView cardView = new MaterialCardView(requireContext());
+        int defaultColor = cardView.getCardBackgroundColor().getDefaultColor();
         switch (lastField) {
             case GPS_PREDICTION:
                 GpsPredictionFragment.unselect();
@@ -272,13 +297,13 @@ public class NewPlaceFragment extends Fragment {
                 GooglePredictionFragment.unselect();
                 break;
             case AUTOCOMPLETE:
-                cardAutocomplete.setCardBackgroundColor(-15592942);
+                cardAutocomplete.setCardBackgroundColor(defaultColor);
                 break;
             case CORDS:
-                cardCords.setCardBackgroundColor(-15592942);
+                cardCords.setCardBackgroundColor(defaultColor);
                 break;
             case MAP:
-                cardMap.setCardBackgroundColor(-15592942);
+                cardMap.setCardBackgroundColor(defaultColor);
                 break;
             default:
                 break;

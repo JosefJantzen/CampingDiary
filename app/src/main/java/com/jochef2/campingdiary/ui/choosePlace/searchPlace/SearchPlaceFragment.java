@@ -5,6 +5,9 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -23,6 +26,8 @@ import com.jochef2.campingdiary.data.entities.Place;
 import com.jochef2.campingdiary.databinding.FragmentSearchPlaceBinding;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -34,11 +39,21 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
             .setOrderForModel(Place.class, (a, b) -> Integer.signum(a.mId - b.mId))
             .build();
     private ChoosePlaceViewModel mViewModel;
-    private SearchView mSearchView;
+    private static SearchView mSearchView;
     private SearchAdapter mAdapter;
     private FragmentSearchPlaceBinding mBinding;
     private Animator mAnimator;
 
+    private static boolean requestSearch = false;
+    private String lastQuery = "";
+
+    /**
+     * filters  list of places for query
+     *
+     * @param places list of places to filter
+     * @param query  folr filter
+     * @return filterds list of places
+     */
     private static List<Place> filter(List<Place> places, String query) {
         final String lowerCaseQuery = query.toLowerCase();
 
@@ -46,26 +61,63 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         for (Place place : places) {
             final String name = place.getPlaceName().toLowerCase();
             String address = "";
+            String country = "";
+
             if (place.getAddressString() != null) {
                 address = place.getAddressString().toLowerCase();
+            } else if (place.getAddressObject() != null) {
+                if (place.getAddressObject().getAddressLine(0) != null) {
+                    address = place.getAddressObject().getAddressLine(0);
+                } else if (place.getAddressObject().getCountryName() != null) {
+                    country = place.getAddressObject().getCountryName();
+                }
             }
 
-            if (name.contains(lowerCaseQuery) || address.contains(lowerCaseQuery)) {
+            if (name.contains(lowerCaseQuery) || address.contains(lowerCaseQuery) || country.contains(lowerCaseQuery)) {
                 filteredModelList.add(place);
             }
         }
         return filteredModelList;
     }
 
+    public static void search() {
+        requestSearch = true;
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        menu.clear();
+        inflater.inflate(R.menu.search_place_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.it_search);
+        mSearchView = (SearchView) searchItem.getActionView();
+        mSearchView.setOnQueryTextListener(this);
+        mSearchView.setMaxWidth((int) (250 * getResources().getDisplayMetrics().density));
+        if (requestSearch) {
+            mSearchView.setIconified(false);
+            requestSearch = false;
+            if (!lastQuery.equals("")) {
+                mSearchView.setIconified(false);
+                mSearchView.setQuery(lastQuery, false);
+            }
+        } else if (!lastQuery.equals("")) {
+            mSearchView.setIconified(false);
+            mSearchView.setQuery(lastQuery, true);
+        }
+    }
+
+    @Override
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_search_place, container, false);
-        View view = mBinding.getRoot();
-
-        return view;
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_search_place, container, false);
+        return mBinding.getRoot();
     }
 
     @Override
@@ -74,12 +126,7 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(ChoosePlaceViewModel.class);
 
-
-        mSearchView = view.findViewById(R.id.search);
-        mSearchView.setOnClickListener(v -> mSearchView.onActionViewExpanded());
-        mSearchView.setOnQueryTextListener(this);
-
-        mAdapter = new SearchAdapter(requireContext(), COMPARATOR);
+        mAdapter = new SearchAdapter(requireContext(), COMPARATOR, requireActivity());
         mAdapter.addCallback(this);
 
 
@@ -91,6 +138,8 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
                     .replaceAll(places)
                     .commit();
         });
+
+        mViewModel.mCurrentLocation.observe(getViewLifecycleOwner(), location -> mAdapter.notifyDataSetChanged());
     }
 
     @Override
@@ -104,6 +153,7 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         mAdapter.edit()
                 .replaceAll(filteredPlaceList)
                 .commit();
+        lastQuery = query;
         return true;
     }
 

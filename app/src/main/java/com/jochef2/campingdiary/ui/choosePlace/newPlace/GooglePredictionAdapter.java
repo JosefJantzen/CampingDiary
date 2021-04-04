@@ -1,5 +1,6 @@
 package com.jochef2.campingdiary.ui.choosePlace.newPlace;
 
+import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,10 +26,16 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
     private final List<PlaceLikelihood> mDataset;
     private final FragmentActivity mFragmentActivity;
 
+    MaterialCardView cardView;
+    ColorStateList defaultColor;
+
     public GooglePredictionAdapter(List<PlaceLikelihood> dataset, FragmentActivity fragmentActivity) {
         mDataset = dataset;
         mFragmentActivity = fragmentActivity;
         mViewModel = new ViewModelProvider(mFragmentActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(mFragmentActivity.getApplication())).get(ChoosePlaceViewModel.class);
+
+        cardView = new MaterialCardView(mFragmentActivity);
+        defaultColor = cardView.getCardBackgroundColor();
     }
 
     @NonNull
@@ -46,13 +53,15 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
         if (position == mViewModel.getSelectedGooglePrediction()) {
             holder.card.setCardBackgroundColor(R.attr.colorPrimaryVariant);
         } else {
-            holder.card.setCardBackgroundColor(-15592942);
+            holder.card.setCardBackgroundColor(defaultColor);
         }
     }
 
     public void unselect() {
         int copy = mViewModel.getSelectedGooglePrediction();
-        mViewModel.setSelectedGooglePrediction(-1);
+        if (mViewModel.mField.getValue() != FIELDS.GOOGLE_PREDICTION) {
+            mViewModel.setSelectedGooglePrediction(-1);
+        }
         notifyItemChanged(copy);
     }
 
@@ -75,7 +84,7 @@ public class GooglePredictionAdapter extends RecyclerView.Adapter<GooglePredicti
                 mViewModel.setSelectedGooglePrediction(getAdapterPosition());
 
                 if (copyLastSelected == mViewModel.getSelectedGooglePrediction()) {
-                    card.setCardBackgroundColor(-15592942);
+                    card.setCardBackgroundColor(defaultColor);
                     mViewModel.setSelectedGooglePrediction(-1);
                     notifyItemChanged(copyLastSelected);
 

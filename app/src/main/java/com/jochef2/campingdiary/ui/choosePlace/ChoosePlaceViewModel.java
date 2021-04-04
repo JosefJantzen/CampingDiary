@@ -70,15 +70,17 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
                             place.setCords(new Cords(address));
                             break;
                         case GOOGLE_PREDICTION:
-                            place.setByPlace(Objects.requireNonNull(mPlacePredictions.getValue()).get(mSelectedGooglePrediction.getValue()).getPlace());
+                            place.setByPlace(Objects.requireNonNull(mPlacePredictions.getValue()).get(mSelectedGooglePrediction.getValue()).getPlace(), getApplication().getApplicationContext());
                             break;
                         case AUTOCOMPLETE:
-                            place.setByPlace(Objects.requireNonNull(mSelectedAutocompletePlace.getValue()));
+                            place.setByPlace(Objects.requireNonNull(mSelectedAutocompletePlace.getValue()), getApplication().getApplicationContext());
                             break;
                         case CORDS:
+                            place.predictAddress(getApplication().getApplicationContext());
                             break;
                         case MAP:
                             place.setCords(new Cords(Objects.requireNonNull(mSelectedMap.getValue())));
+                            place.predictAddress(getApplication().getApplicationContext());
                             break;
                     }
                     return savePlace(place);

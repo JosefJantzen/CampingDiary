@@ -1,5 +1,9 @@
 package com.jochef2.campingdiary.data.entities;
 
+import android.content.Context;
+import android.location.Geocoder;
+import android.location.Location;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Embedded;
@@ -11,6 +15,10 @@ import com.github.wrdlbrnft.sortedlistadapter.SortedListAdapter;
 import com.jochef2.campingdiary.data.models.Address;
 import com.jochef2.campingdiary.data.models.Cords;
 
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 @Entity(tableName = "places_table")
@@ -45,10 +53,59 @@ public class Place implements SortedListAdapter.ViewModel {
         mCords = cords;
     }
 
-    public void setByPlace(com.google.android.libraries.places.api.model.Place place) {
+    public void setByPlace(com.google.android.libraries.places.api.model.Place place, Context context) {
         mPlaceId = place.getId();
         setCords(new Cords(place.getLatLng()));
         setAddressString(place.getAddress());
+
+        predictAddress(context);
+    }
+
+    public String distanceTo(Place place) {
+        Location one = new Location("");
+        one.setLatitude(this.getCords().getLatitude());
+        one.setLongitude(this.getCords().getLongitude());
+        Location two = new Location("");
+        one.setLatitude(place.getCords().getLatitude());
+        one.setLongitude(place.getCords().getLongitude());
+        double distance = one.distanceTo(two);
+        if (distance >= 1000) {
+            return new BigDecimal(distance / 1000).setScale(1, BigDecimal.ROUND_HALF_EVEN) + " km";
+        } else {
+            return new BigDecimal(distance).setScale(2, BigDecimal.ROUND_HALF_EVEN) + " m";
+        }
+    }
+
+    public String distanceTo(Location two) {
+        Location one = new Location("");
+        one.setLatitude(this.getCords().getLatitude());
+        one.setLongitude(this.getCords().getLongitude());
+
+        if (two != null) {
+            double distance = one.distanceTo(two);
+            if (distance >= 1000) {
+                return (new BigDecimal(distance / 1000).setScale(1, BigDecimal.ROUND_HALF_EVEN) + " km").replace(".", ",");
+            } else {
+                return (new BigDecimal(distance).setScale(2, BigDecimal.ROUND_HALF_EVEN) + " m").replace(".", ",");
+            }
+        } else {
+            return "NaN";
+        }
+    }
+
+    public void predictAddress(Context context) {
+        Location location = new Location("");
+        location.setLatitude(getCords().getLatitude());
+        location.setLongitude(getCords().getLongitude());
+        Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+        try {
+            List<android.location.Address> addresse = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+            if (!addresse.isEmpty()) {
+                this.setAddressObject(new Address(addresse.get(0)));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getPlaceId() {
@@ -81,6 +138,10 @@ public class Place implements SortedListAdapter.ViewModel {
 
     public Cords getCords() {
         return mCords;
+    }
+
+    public String getCordsString() {
+        return getCords().getLatitude() + ", " + getCords().getLongitude() + " (lat, lng)";
     }
 
     public void setCords(Cords cords) {
