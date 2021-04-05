@@ -51,20 +51,12 @@ public class SearchAdapter extends SortedListAdapter<Place> {
         @Override
         protected void performBind(@NonNull Place item) {
             mBinding.setModel(item);
-            mBinding.txDistance.setText(item.distanceTo(mCurrentLocation));
-            if (item.getAddressObject() != null) {
-                mBinding.imCountry.setImageResource(mFragmentActivity.getResources().getIdentifier(item.getAddressObject().getCountryCode().toLowerCase(), "drawable", "com.jochef2.countries"));
+            mBinding.txDistance.setText(item.getDistanceString());
 
-                if (item.getAddressObject().getThoroughfare() != null && item.getAddressObject().getSubThoroughfare() != null && item.getAddressObject().getLocality() != null) {
-                    mBinding.txPlace.setText(item.getAddressObject().getThoroughfare() + " " + item.getAddressObject().getSubThoroughfare() + ", " + item.getAddressObject().getLocality());
-                } else if (item.getAddressObject().getAddressLine(0) != null) {
-                    mBinding.txPlace.setText(item.getAddressObject().getAddressLine(0));
-                }
-            } else if (item.getAddressString() != null) {
-                mBinding.txPlace.setText(item.getAddressString());
-            } else if (item.getCords() != null) {
-                mBinding.txPlace.setText(item.getCordsString());
+            if (item.getAddressString() == null || item.getAddressString().isEmpty()) {
+                item.generateAddressString();
             }
+            mBinding.txPlace.setText(item.getAddressString());
         }
     }
 }

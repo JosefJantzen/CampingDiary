@@ -90,4 +90,13 @@
     <string name="current_events">Current events</string>
     <string name="distance_points">Distance</string>
     <string name="filter">Filter</string>
+    <string name="sort_by">Sort by</string>
+    <string-array name="sort_by_values">
+        <item>name</item>
+        <item>address</item>
+        <item>distance</item>
+        <item>creation date</item>
+        <item>number of visits</item>
+        <item>last visited</item>
+    </string-array>
 </resources>

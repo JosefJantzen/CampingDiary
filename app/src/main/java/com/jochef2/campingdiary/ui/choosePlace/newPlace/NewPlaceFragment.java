@@ -344,7 +344,6 @@ public class NewPlaceFragment extends Fragment {
     public void requestLocationPermission() {
         String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
         if (EasyPermissions.hasPermissions(requireContext(), perms)) {
-            getLocation();
             getCurrentPlace();
         } else {
             EasyPermissions.requestPermissions(this, getString(R.string.please_allow_gps), REQUEST_LOCATION_PERMISSION, perms);

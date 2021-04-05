@@ -17,6 +17,7 @@ import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.models.Cords;
 import com.jochef2.campingdiary.data.repositories.PlaceRepository;
 import com.jochef2.campingdiary.data.values.Events;
+import com.jochef2.campingdiary.data.values.PlaceSortBy;
 
 import java.util.List;
 import java.util.Objects;
@@ -42,6 +43,10 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
     public MutableLiveData<String> mName = new MutableLiveData<>("");
     public final PlaceRepository mPlaceRepository;
     public Events mEvent = Events.NIGHT;
+
+    public MutableLiveData<PlaceSortBy> mPlaceSortBy = new MutableLiveData<>(PlaceSortBy.NAME);
+    public MutableLiveData<String> mSearchQuery = new MutableLiveData<>("");
+    public MutableLiveData<List<com.jochef2.campingdiary.data.entities.Place>> mShownPlaces = new MutableLiveData<>();
 
     public ChoosePlaceViewModel(@NonNull Application application) {
         super(application);
@@ -83,6 +88,7 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
                             place.predictAddress(getApplication().getApplicationContext());
                             break;
                     }
+                    place.generateAddressString();
                     return savePlace(place);
                 } else {
                     Toast.makeText(getApplication(), getApplication().getString(R.string.err_no_name_place), Toast.LENGTH_SHORT).show();
@@ -102,6 +108,10 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
      */
     public int savePlace(com.jochef2.campingdiary.data.entities.Place place) {
         return (int) mPlaceRepository.insertPlace(place);
+    }
+
+    public void updatePlaces(List<com.jochef2.campingdiary.data.entities.Place> places) {
+        mPlaceRepository.updatePlace(places);
     }
 
     public MutableLiveData<Location> getCurrentLocation() {

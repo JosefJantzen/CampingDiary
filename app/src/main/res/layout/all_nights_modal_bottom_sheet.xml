@@ -9,6 +9,14 @@
     android:paddingEnd="16dp"
     android:paddingBottom="8dp">
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:text="@string/action"
+        android:textSize="18sp" />
+
     <LinearLayout
         android:id="@+id/ll_open"
         android:layout_width="match_parent"
@@ -127,13 +135,5 @@
             android:text="@string/delete"
             android:textSize="18sp" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:gravity="center_vertical"
-        android:text="@string/action"
-        android:textSize="18sp" />
 
 </LinearLayout>

@@ -60,7 +60,9 @@ public class PlaceRepository {
         return id;
     }
 
-    public void updatePlace(Place place) {
-        RoomDatabase.databaseWriteExecutor.execute(() -> mPlaceDao.insertPlace(place));
+    public void updatePlace(List<Place> places) {
+        for (Place place : places) {
+            RoomDatabase.databaseWriteExecutor.execute(() -> mPlaceDao.updatePlace(place));
+        }
     }
 }

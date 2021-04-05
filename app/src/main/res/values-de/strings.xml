@@ -90,4 +90,13 @@
     <string name="current_events">Aktuelle Aktivitäten</string>
     <string name="distance_points">Entfernung:</string>
     <string name="filter">Filter</string>
+    <string name="sort_by">Sortieren nach</string>
+    <string-array name="sort_by_values">
+        <item>Name</item>
+        <item>Adresse</item>
+        <item>Entfernung</item>
+        <item>Erstellungsdatum</item>
+        <item>Anzahl der Besuche</item>
+        <item>Zuletzt besucht</item>
+    </string-array>
 </resources>

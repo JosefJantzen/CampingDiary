@@ -43,6 +43,9 @@ public class Place implements SortedListAdapter.ViewModel {
     @Embedded
     public Cords mCords;
 
+    @Ignore
+    public double mDistance = -1;
+
     public Place(String placeName) {
         mPlaceName = placeName;
     }
@@ -93,6 +96,33 @@ public class Place implements SortedListAdapter.ViewModel {
         }
     }
 
+    public boolean setDistanceTo(Location two) {
+        Location one = new Location("");
+        one.setLatitude(this.getCords().getLatitude());
+        one.setLongitude(this.getCords().getLongitude());
+
+        if (two != null) {
+            setDistance(one.distanceTo(two));
+            return true;
+        } else {
+            setDistance(-1);
+            return false;
+        }
+    }
+
+    public String getDistanceString() {
+        if (getDistance() != -1) {
+            double distance = getDistance();
+            if (distance >= 1000) {
+                return (new BigDecimal(distance / 1000).setScale(1, BigDecimal.ROUND_HALF_EVEN) + " km").replace(".", ",");
+            } else {
+                return (new BigDecimal(distance).setScale(2, BigDecimal.ROUND_HALF_EVEN) + " m").replace(".", ",");
+            }
+        } else {
+            return "NaN";
+        }
+    }
+
     public void predictAddress(Context context) {
         Location location = new Location("");
         location.setLatitude(getCords().getLatitude());
@@ -105,6 +135,22 @@ public class Place implements SortedListAdapter.ViewModel {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void generateAddressString() {
+        if (this.getAddressString() == null || this.getAddressString().isEmpty()) {
+            String address = "";
+            if (this.getAddressObject() != null) {
+                if (this.getAddressObject().getThoroughfare() != null && this.getAddressObject().getSubThoroughfare() != null && this.getAddressObject().getLocality() != null) {
+                    address = this.getAddressObject().getThoroughfare() + " " + this.getAddressObject().getSubThoroughfare() + ", " + this.getAddressObject().getLocality();
+                } else if (this.getAddressObject().getAddressLine(0) != null) {
+                    address = this.getAddressObject().getAddressLine(0);
+                }
+            } else if (this.getCords() != null) {
+                address = this.getCordsString();
+            }
+            setAddressString(address);
         }
     }
 
@@ -146,6 +192,14 @@ public class Place implements SortedListAdapter.ViewModel {
 
     public void setCords(Cords cords) {
         mCords = cords;
+    }
+
+    public double getDistance() {
+        return mDistance;
+    }
+
+    public void setDistance(double distance) {
+        mDistance = distance;
     }
 
     @Override
