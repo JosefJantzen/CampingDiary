@@ -15,6 +15,7 @@ import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.model.PlaceLikelihood;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.models.Cords;
+import com.jochef2.campingdiary.data.relations.FullPlace;
 import com.jochef2.campingdiary.data.repositories.PlaceRepository;
 import com.jochef2.campingdiary.data.values.Events;
 import com.jochef2.campingdiary.data.values.PlaceSortBy;
@@ -25,7 +26,7 @@ import java.util.Objects;
 @SuppressWarnings("ConstantConditions")
 public class ChoosePlaceViewModel extends AndroidViewModel {
 
-    public LiveData<List<com.jochef2.campingdiary.data.entities.Place>> mAllPlaces;
+    public LiveData<List<FullPlace>> mAllPlaces;
 
     public MutableLiveData<Location> mCurrentLocation = new MutableLiveData<>();
     public MutableLiveData<List<Address>> mAddressPredictions = new MutableLiveData<>();
@@ -46,12 +47,12 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
 
     public MutableLiveData<PlaceSortBy> mPlaceSortBy = new MutableLiveData<>(PlaceSortBy.NAME);
     public MutableLiveData<String> mSearchQuery = new MutableLiveData<>("");
-    public MutableLiveData<List<com.jochef2.campingdiary.data.entities.Place>> mShownPlaces = new MutableLiveData<>();
+    public MutableLiveData<List<FullPlace>> mShownPlaces = new MutableLiveData<>();
 
     public ChoosePlaceViewModel(@NonNull Application application) {
         super(application);
         mPlaceRepository = new PlaceRepository(application);
-        mAllPlaces = mPlaceRepository.getAllShortPlaces();
+        mAllPlaces = mPlaceRepository.getAllPlaces();
     }
 
     /**
@@ -197,7 +198,7 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
         mSelectedMap.setValue(selectedMap);
     }
 
-    public LiveData<List<com.jochef2.campingdiary.data.entities.Place>> getAllPlaces() {
+    public LiveData<List<FullPlace>> getAllPlaces() {
         return mAllPlaces;
     }
 

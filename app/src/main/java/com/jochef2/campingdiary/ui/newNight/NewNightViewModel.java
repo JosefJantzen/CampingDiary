@@ -56,6 +56,9 @@ public class NewNightViewModel extends AndroidViewModel {
     }
 
     public void setPlace(int placeId) {
+        Night night = mNight.getValue();
+        night.setPlaceId(placeId);
+        mNight.setValue(night);
         mPlaceRepository.getPlace(placeId).observeForever(place -> {
             mPlace.setValue(place);
         });

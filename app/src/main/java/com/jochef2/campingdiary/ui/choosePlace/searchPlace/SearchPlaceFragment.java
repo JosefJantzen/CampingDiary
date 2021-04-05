@@ -27,7 +27,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.github.wrdlbrnft.sortedlistadapter.SortedListAdapter;
 import com.google.android.material.button.MaterialButton;
 import com.jochef2.campingdiary.R;
-import com.jochef2.campingdiary.data.entities.Place;
+import com.jochef2.campingdiary.data.relations.FullPlace;
 import com.jochef2.campingdiary.data.values.PlaceSortBy;
 import com.jochef2.campingdiary.databinding.FragmentSearchPlaceBinding;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
@@ -44,21 +44,29 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryTextListener, SortedListAdapter.Callback {
 
-    private static final Comparator<Place> COMPARATOR_CREATION_DATE = new SortedListAdapter.ComparatorBuilder<Place>()
-            .setOrderForModel(Place.class, (a, b) -> Integer.signum(a.mId - b.mId))
-            .build();
+    private static final Comparator<FullPlace> COMPARATOR_CREATION_DATE = new SortedListAdapter.ComparatorBuilder<FullPlace>()
+            .setOrderForModel(FullPlace.class, (a, b) -> Integer.signum(a.mPlace.mId - b.mPlace.mId))
+            .build().reversed();
 
-    private static final Comparator<Place> COMPARATOR_NAME = new SortedListAdapter.ComparatorBuilder<Place>()
-            .setOrderForModel(Place.class, (o1, o2) -> o1.getPlaceName().compareTo(o2.mPlaceName))
+    private static final Comparator<FullPlace> COMPARATOR_NAME = new SortedListAdapter.ComparatorBuilder<FullPlace>()
+            .setOrderForModel(FullPlace.class, (o1, o2) -> o1.mPlace.getPlaceName().compareTo(o2.mPlace.mPlaceName))
             .build().thenComparing(COMPARATOR_CREATION_DATE);
 
-    private static final Comparator<Place> COMPARATOR_ADDRESS = new SortedListAdapter.ComparatorBuilder<Place>()
-            .setOrderForModel(Place.class, (o1, o2) -> o1.getAddressString().compareTo(o2.getAddressString()))
+    private static final Comparator<FullPlace> COMPARATOR_ADDRESS = new SortedListAdapter.ComparatorBuilder<FullPlace>()
+            .setOrderForModel(FullPlace.class, (o1, o2) -> o1.mPlace.getAddressString().compareTo(o2.mPlace.getAddressString()))
             .build().thenComparing(COMPARATOR_NAME);
 
-    private static final Comparator<Place> COMPARATOR_DISTANCE = new SortedListAdapter.ComparatorBuilder<Place>()
-            .setOrderForModel(Place.class, (o1, o2) -> Double.compare(o1.getDistance(), o2.getDistance()))
+    private static final Comparator<FullPlace> COMPARATOR_DISTANCE = new SortedListAdapter.ComparatorBuilder<FullPlace>()
+            .setOrderForModel(FullPlace.class, (o1, o2) -> Double.compare(o1.mPlace.getDistance(), o2.mPlace.getDistance()))
             .build().thenComparing(COMPARATOR_NAME);
+
+    private static final Comparator<FullPlace> COMPARATOR_NUMBER_OF_VISITS = new SortedListAdapter.ComparatorBuilder<FullPlace>()
+            .setOrderForModel(FullPlace.class, (o1, o2) -> Integer.signum(o1.getNumberOfVisits() - o2.getNumberOfVisits()))
+            .build().reversed();
+
+    private static final Comparator<FullPlace> COMPARATOR_LAST_VISITED = new SortedListAdapter.ComparatorBuilder<FullPlace>()
+            .setOrderForModel(FullPlace.class, (o1, o2) -> Long.compare(o1.getLastEventDateInMillis(), o2.getLastEventDateInMillis()))
+            .build().reversed();
 
     private static ChoosePlaceViewModel mViewModel;
     private static SearchView mSearchView;
@@ -75,18 +83,17 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
     /**
      * filters  list of places for query
      *
-     * @param places list of places to filter
-     * @param query  folr filter
+     * @param query for filter
      * @return filters list of places
      */
     private void filter(String query) {
-        List<Place> places = mViewModel.getAllPlaces().getValue();
+        List<FullPlace> places = mViewModel.getAllPlaces().getValue();
         if (places != null) {
             final String lowerCaseQuery = query.toLowerCase();
 
-            final List<Place> filteredModelList = new ArrayList<>();
-            for (Place place : places) {
-                final String name = place.getPlaceName().toLowerCase();
+            final List<FullPlace> filteredModelList = new ArrayList<>();
+            for (FullPlace place : places) {
+                final String name = place.mPlace.getPlaceName().toLowerCase();
                 String address = "";
                 String locality = "";
                 String subLocality = "";
@@ -98,39 +105,39 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
                 String phone = "";
                 String url = "";
 
-                if (place.getAddressString() != null) {
-                    address = place.getAddressString().toLowerCase();
-                } else if (place.getAddressObject() != null) {
-                    if (place.getAddressObject().getAddressLine(0) != null) {
-                        address = place.getAddressObject().getAddressLine(0);
+                if (place.mPlace.getAddressString() != null) {
+                    address = place.mPlace.getAddressString().toLowerCase();
+                } else if (place.mPlace.getAddressObject() != null) {
+                    if (place.mPlace.getAddressObject().getAddressLine(0) != null) {
+                        address = place.mPlace.getAddressObject().getAddressLine(0);
                     } else {
-                        if (place.getAddressObject().getLocality() != null) {
-                            locality = place.getAddressObject().getLocality();
+                        if (place.mPlace.getAddressObject().getLocality() != null) {
+                            locality = place.mPlace.getAddressObject().getLocality();
                         }
-                        if (place.getAddressObject().getSubLocality() != null) {
-                            subLocality = place.getAddressObject().getSubLocality();
+                        if (place.mPlace.getAddressObject().getSubLocality() != null) {
+                            subLocality = place.mPlace.getAddressObject().getSubLocality();
                         }
-                        if (place.getAddressObject().getThoroughfare() != null) {
-                            thoroughfare = place.getAddressObject().getThoroughfare();
+                        if (place.mPlace.getAddressObject().getThoroughfare() != null) {
+                            thoroughfare = place.mPlace.getAddressObject().getThoroughfare();
                         }
-                        if (place.getAddressObject().getSubThoroughfare() != null) {
-                            subThoroghfare = place.getAddressObject().getSubThoroughfare();
+                        if (place.mPlace.getAddressObject().getSubThoroughfare() != null) {
+                            subThoroghfare = place.mPlace.getAddressObject().getSubThoroughfare();
                         }
-                        if (place.getAddressObject().getPremises() != null) {
-                            premises = place.getAddressObject().getPremises();
+                        if (place.mPlace.getAddressObject().getPremises() != null) {
+                            premises = place.mPlace.getAddressObject().getPremises();
                         }
-                        if (place.getAddressObject().getPostalCode() != null) {
-                            postalCode = place.getAddressObject().getPostalCode();
+                        if (place.mPlace.getAddressObject().getPostalCode() != null) {
+                            postalCode = place.mPlace.getAddressObject().getPostalCode();
                         }
-                        if (place.getAddressObject().getCountryName() != null) {
-                            country = place.getAddressObject().getCountryName();
+                        if (place.mPlace.getAddressObject().getCountryName() != null) {
+                            country = place.mPlace.getAddressObject().getCountryName();
                         }
                     }
-                    if (place.getAddressObject().getPhone() != null) {
-                        phone = place.getAddressObject().getPhone();
+                    if (place.mPlace.getAddressObject().getPhone() != null) {
+                        phone = place.mPlace.getAddressObject().getPhone();
                     }
-                    if (place.getAddressObject().getUrl() != null) {
-                        url = place.getAddressObject().getUrl();
+                    if (place.mPlace.getAddressObject().getUrl() != null) {
+                        url = place.mPlace.getAddressObject().getUrl();
                     }
                 }
 
@@ -206,23 +213,23 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         AtomicBoolean distances = new AtomicBoolean(false);
 
         mViewModel.getAllPlaces().observe(getViewLifecycleOwner(), places -> {
-            /*if (!distances.get() && places.get(0).getDistance() == -1){
+            if (!distances.get() && places.get(0).mPlace.getDistance() == -1) {
                 List<Boolean> success = new ArrayList<>();
-                for (Place place : places) {
-                    success.add(place.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
+                for (FullPlace place : places) {
+                    success.add(place.mPlace.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
                 }
                 if (success.contains(true)) distances.set(true);
-            }*/
+            }
             filter(mViewModel.mSearchQuery.getValue());
         });
 
         mViewModel.mCurrentLocation.observe(getViewLifecycleOwner(), location -> {
             if (!distances.get() && location != null) {
-                List<Place> places = mViewModel.getAllPlaces().getValue();
+                List<FullPlace> places = mViewModel.getAllPlaces().getValue();
                 if (places != null) {
                     List<Boolean> success = new ArrayList<>();
-                    for (Place place : places) {
-                        success.add(place.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
+                    for (FullPlace place : places) {
+                        success.add(place.mPlace.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
                     }
                     if (success.contains(true)) distances.set(true);
                 }
@@ -321,7 +328,7 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         mAnimator.start();
     }
 
-    private void sort(List<Place> places) {
+    private void sort(List<FullPlace> places) {
         if (places != null && mViewModel.mPlaceSortBy.getValue() != null) {
             switch (mViewModel.mPlaceSortBy.getValue()) {
                 case NAME:
@@ -337,10 +344,10 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
                     mAdapter = new SearchAdapter(requireContext(), COMPARATOR_CREATION_DATE, requireActivity());
                     break;
                 case NUMBER_OF_VISITS:
-
+                    mAdapter = new SearchAdapter(requireContext(), COMPARATOR_NUMBER_OF_VISITS, requireActivity());
                     break;
                 case LAST_VISITED:
-
+                    mAdapter = new SearchAdapter(requireContext(), COMPARATOR_LAST_VISITED, requireActivity());
                     break;
             }
             mBinding.recycler.swapAdapter(mAdapter, true);

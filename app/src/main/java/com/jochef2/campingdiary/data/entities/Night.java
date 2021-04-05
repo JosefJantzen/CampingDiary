@@ -133,6 +133,14 @@ public class Night {
         mPrice.setCurrency(ISO);
     }
 
+    public int getPlaceId() {
+        return mPlaceId;
+    }
+
+    public void setPlaceId(int placeId) {
+        mPlaceId = placeId;
+    }
+
     public String getBeginDate() {
         SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
         return simpleDate.format(mBegin.getTime());

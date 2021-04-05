@@ -64,7 +64,7 @@
                 android:layout_marginEnd="8dp"
                 android:gravity="center_vertical"
                 android:maxLines="1"
-                android:text="@{model.mPlaceName}"
+                android:text="@{model.mPlace.mPlaceName}"
                 android:textSize="24sp"
                 app:autoSizeTextType="uniform"
                 app:layout_constraintEnd_toStartOf="@+id/im_country"
@@ -85,8 +85,9 @@
     </com.google.android.material.card.MaterialCardView>
 
     <data>
+
         <variable
             name="model"
-            type="com.jochef2.campingdiary.data.entities.Place" />
+            type="com.jochef2.campingdiary.data.relations.FullPlace" />
     </data>
 </layout>
