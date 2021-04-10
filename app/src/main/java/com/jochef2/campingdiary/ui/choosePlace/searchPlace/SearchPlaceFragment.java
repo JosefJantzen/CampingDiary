@@ -224,16 +224,17 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         });
 
         mViewModel.mCurrentLocation.observe(getViewLifecycleOwner(), location -> {
-            if (!distances.get() && location != null) {
-                List<FullPlace> places = mViewModel.getAllPlaces().getValue();
-                if (places != null) {
-                    List<Boolean> success = new ArrayList<>();
-                    for (FullPlace place : places) {
-                        success.add(place.mPlace.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
-                    }
-                    if (success.contains(true)) distances.set(true);
-                }
-            }
+                        if (!distances.get() && location != null) {
+                            List<FullPlace> places = mViewModel.getAllPlaces().getValue();
+                            if (places != null) {
+                                List<Boolean> success = new ArrayList<>();
+                                for (FullPlace place : places) {
+                                    success.add(place.mPlace.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
+                                }
+                                if (success.contains(true)) distances.set(true);
+                            }
+                            mAdapter.notifyDataSetChanged();
+                        }
         });
 
         List<String> sortByStrings = Arrays.asList(getResources().getStringArray(R.array.sort_by_values));
@@ -280,16 +281,16 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
 
     @Override
     public void onEditStarted() {
-        if (mBinding.progressBar.getVisibility() != View.VISIBLE) {
-            mBinding.progressBar.setVisibility(View.VISIBLE);
-            mBinding.progressBar.setAlpha(0.0f);
+        if (mBinding.progressSearchPlace.getVisibility() != View.VISIBLE) {
+            mBinding.progressSearchPlace.setVisibility(View.VISIBLE);
+            mBinding.progressSearchPlace.setAlpha(0.0f);
         }
 
         if (mAnimator != null) {
             mAnimator.cancel();
         }
 
-        mAnimator = ObjectAnimator.ofFloat(mBinding.progressBar, View.ALPHA, 1.0f);
+        mAnimator = ObjectAnimator.ofFloat(mBinding.progressSearchPlace, View.ALPHA, 1.0f);
         mAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
         mAnimator.start();
 
@@ -305,7 +306,7 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
             mAnimator.cancel();
         }
 
-        mAnimator = ObjectAnimator.ofFloat(mBinding.progressBar, View.ALPHA, 0.0f);
+        mAnimator = ObjectAnimator.ofFloat(mBinding.progressSearchPlace, View.ALPHA, 0.0f);
         mAnimator.setInterpolator(new AccelerateDecelerateInterpolator());
         mAnimator.addListener(new AnimatorListenerAdapter() {
 
@@ -321,7 +322,7 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
                 if (!mCanceled) {
-                    mBinding.progressBar.setVisibility(View.GONE);
+                    mBinding.progressSearchPlace.setVisibility(View.GONE);
                 }
             }
         });

@@ -82,7 +82,7 @@
     <string name="not_selected">Not selected</string>
     <string name="pick_on_map">Pick on map</string>
     <string name="no_gps">No GPS</string>
-    <string name="err_gps_disabled">Your GPS seems to be disabled</string>
+    <string name="err_gps_disabled">Your GPS seems to be disabled. Do you want to turn it on?</string>
     <string name="err_no_place_selected">Please select or create a place</string>
     <string name="err_no_name_place">Please name the place</string>
     <string name="overview">Overview</string>
@@ -91,6 +91,8 @@
     <string name="distance_points">Distance</string>
     <string name="filter">Filter</string>
     <string name="sort_by">Sort by</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string-array name="sort_by_values">
         <item>name</item>
         <item>address</item>

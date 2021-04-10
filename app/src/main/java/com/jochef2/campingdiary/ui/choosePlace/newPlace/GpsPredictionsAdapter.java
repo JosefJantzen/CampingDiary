@@ -18,16 +18,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
 import com.jochef2.campingdiary.R;
+import com.jochef2.campingdiary.data.entities.Place;
+import com.jochef2.campingdiary.data.models.Cords;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel.FIELDS;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAdapter.ViewHolder> {
 
     private final ChoosePlaceViewModel mViewModel;
 
-    private final List<Address> mDataset;
+    private final List<Place> mDataset = new ArrayList<>();
     private final FragmentActivity mFragmentActivity;
 
     MaterialCardView cardView;
@@ -36,13 +39,19 @@ public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAd
     @SuppressLint("ResourceType")
     @RequiresApi(api = Build.VERSION_CODES.M)
     public GpsPredictionsAdapter(List<Address> dataset, FragmentActivity fragmentActivity) {
-        mDataset = dataset;
         mFragmentActivity = fragmentActivity;
         mViewModel = new ViewModelProvider(mFragmentActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(mFragmentActivity.getApplication())).get(ChoosePlaceViewModel.class);
 
         cardView = new MaterialCardView(new ContextThemeWrapper(mFragmentActivity, R.style.Widget_MaterialComponents_CardView));
         defaultColor = R.attr.colorSurface;
-        //Log.d("TAG", defaultColor.getDefaultColor() + "");
+
+        for (Address address : dataset) {
+            Place place = new Place("EMPTY");
+            place.setAddressObject(new com.jochef2.campingdiary.data.models.Address(address));
+            place.generateAddressString();
+            place.setCords(new Cords(address));
+            mDataset.add(place);
+        }
     }
 
     @NonNull
@@ -56,28 +65,7 @@ public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAd
     @SuppressLint({"SetTextI18n", "ResourceAsColor", "ResourceType"})
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        //String address = mDataset.get(position).getAddressLine(0);
-        String address = "N/A";
-
-        if (mDataset.get(0).getFeatureName() != null) {
-            address = mDataset.get(0).getFeatureName();
-        } else if (mDataset.get(0).getThoroughfare() != null) {
-            address = mDataset.get(0).getThoroughfare();
-            if (mDataset.get(0).getSubThoroughfare() != null) {
-                address += " " + mDataset.get(0).getSubThoroughfare();
-            }
-
-            if (mDataset.get(0).getLocality() != null) {
-                address += ", " + mDataset.get(0).getLocality();
-            }
-        } else if (mDataset.get(0).getLocality() != null) {
-            address = mDataset.get(0).getLocality();
-        } else if (mDataset.get(0).hasLatitude() && mDataset.get(0).hasLongitude()) {
-            address = mDataset.get(0).getLatitude() + ", " + mDataset.get(0).getLongitude() + " (lat, lng)";
-        }
-
-
-        holder.txAddress.setText(address);
+        holder.txAddress.setText(mDataset.get(position).getAddressString());
 
         if (position == mViewModel.getSelectedGpsPrediction()) {
             holder.card.setCardBackgroundColor(2130903247);

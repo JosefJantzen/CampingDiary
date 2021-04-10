@@ -1,13 +1,10 @@
 package com.jochef2.campingdiary.utils;
 
 import com.jochef2.campingdiary.data.entities.Night;
-import com.jochef2.campingdiary.data.entities.Place;
 import com.jochef2.campingdiary.data.relations.NightAndPlace;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class Sort {
@@ -33,16 +30,5 @@ public class Sort {
             }
         }
         return currentNightIds;
-    }
-
-    public static List<Place> placesByName(List<Place> places) {
-        Collections.sort(places, new Comparator<Place>() {
-            @Override
-            public int compare(Place o1, Place o2) {
-                return o1.getPlaceName().compareTo(o2.mPlaceName);
-            }
-        });
-
-        return places;
     }
 }

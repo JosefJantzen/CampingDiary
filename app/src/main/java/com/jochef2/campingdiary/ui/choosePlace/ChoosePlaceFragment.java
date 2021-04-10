@@ -3,15 +3,19 @@ package com.jochef2.campingdiary.ui.choosePlace;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -24,8 +28,12 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.ui.choosePlace.newPlace.NewPlaceFragment;
@@ -41,11 +49,22 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
 
     private static BottomNavigationView mBottomNav;
 
-    private ChoosePlaceViewModel mViewModel;
+    private static final int REQUEST_LOCATION_PERMISSION = 1;
     private static ViewPager2 mViewPager;
-    private final int REQUEST_LOCATION_PERMISSION = 1;
+    private static ChoosePlaceViewModel mViewModel;
+    private static LocationCallback mLocationCallback;
+    private static FusedLocationProviderClient mFusedLocationClient;
+    private static LocationRequest mLocationRequest;
+
     private FloatingActionButton fabCheck;
 
+    private static Context sContext;
+    private static ChoosePlaceFragment sThis;
+    private static FragmentActivity sFragmentActivity;
+
+    /**
+     * sets ViewPager to first Page: SearchFragment
+     */
     public static void setFirstPage() {
         mViewPager.setCurrentItem(0);
         mBottomNav.setSelectedItemId(R.id.mn_search);
@@ -57,15 +76,44 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
         return inflater.inflate(R.layout.choose_place_fragment, container, false);
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    /**
+     * requests location permission
+     */
+    @SuppressLint("MissingPermission")
+    @AfterPermissionGranted(REQUEST_LOCATION_PERMISSION)
+    public static void requestLocationPermission() {
+        String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+        mFusedLocationClient.removeLocationUpdates(mLocationCallback);
+        if (EasyPermissions.hasPermissions(sContext, perms)) {
+            getLocation();
+        } else {
+            EasyPermissions.requestPermissions(sThis, sContext.getString(R.string.please_allow_gps), REQUEST_LOCATION_PERMISSION, perms);
+        }
     }
 
-    @SuppressLint("NonConstantResourceId")
+    /**
+     * initializes cords of current location in ViewModel
+     */
+    @SuppressLint("MissingPermission")
+    private static void getLocation() {
+        mFusedLocationClient.getLastLocation().addOnSuccessListener(sFragmentActivity, location -> {
+            if (location != null) {
+                mViewModel.setCurrentLocation(location);
+            } else {
+                Log.e("TAG", "getLastLocation = null");
+                mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.getMainLooper());
+            }
+        });
+    }
+
+    @SuppressLint({"NonConstantResourceId", "MissingPermission"})
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        sContext = requireContext();
+        sThis = this;
+        sFragmentActivity = requireActivity();
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(ChoosePlaceViewModel.class);
         mViewModel.setEvent(ChoosePlaceFragmentArgs.fromBundle(requireArguments()).getCat());
@@ -107,50 +155,44 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
             }
         });
 
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
+        mLocationRequest = LocationRequest.create();
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        mLocationRequest.setInterval(1000);
+
+        mLocationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(@NonNull LocationResult locationResult) {
+                super.onLocationResult(locationResult);
+                if (locationResult == null) {
+                    Log.e("TAG", "Location Callback Request Result is null");
+                    return;
+                }
+                requestLocationPermission();
+            }
+        };
+
         // Check if GPS is available
         final LocationManager manager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
         if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            /*MaterialAlertDialogBuilder  alertDialogBuilder = new MaterialAlertDialogBuilder(requireActivity());
+            MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(requireActivity());
             alertDialogBuilder.
                     setTitle(getString(R.string.no_gps))
                     .setMessage(getString(R.string.err_gps_disabled))
                     .setCancelable(false)
-                    .setPositiveButton(getString(android.R.string.yes), ((dialog, which) -> {
+                    .setPositiveButton(getString(R.string.yes), ((dialog, which) -> {
                         startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-                        requestLocatoinPermission();
+                        requestLocationPermission();
                     }))
-                    .setNegativeButton(getString(android.R.string.no), ((dialog, which) -> {
-                        //TOD O: disable all selections except map
+                    .setNegativeButton(getString(R.string.no), ((dialog, which) -> {
+                        //TODO: disable all selections except map
                         dialog.cancel();
+                        mFusedLocationClient.requestLocationUpdates(mLocationRequest, mLocationCallback, Looper.getMainLooper());
                     }))
-                    .show();*/
-            Toast.makeText(requireActivity(), getString(R.string.err_gps_disabled), Toast.LENGTH_LONG).show();
+                    .show();
         } else {
             requestLocationPermission();
         }
-    }
-
-    /**
-     * requests location permission
-     */
-    @SuppressLint("MissingPermission")
-    @AfterPermissionGranted(REQUEST_LOCATION_PERMISSION)
-    public void requestLocationPermission() {
-        String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
-        if (EasyPermissions.hasPermissions(requireContext(), perms)) {
-            getLocation();
-        } else {
-            EasyPermissions.requestPermissions(this, getString(R.string.please_allow_gps), REQUEST_LOCATION_PERMISSION, perms);
-        }
-    }
-
-    /**
-     * initializes cords of current location in ViewModel
-     */
-    @SuppressLint("MissingPermission")
-    private void getLocation() {
-        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
-        fusedLocationClient.getLastLocation().addOnSuccessListener(requireActivity(), location -> mViewModel.setCurrentLocation(location));
     }
 
     /**
@@ -201,6 +243,7 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
             super(fragmentActivity);
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.N)
         @NonNull
         @Override
         public Fragment createFragment(int position) {

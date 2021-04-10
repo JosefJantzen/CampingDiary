@@ -1,11 +1,9 @@
 package com.jochef2.campingdiary.ui.choosePlace.newPlace;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
-import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,25 +14,17 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.Task;
-import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.api.net.FindCurrentPlaceRequest;
-import com.google.android.libraries.places.api.net.FindCurrentPlaceResponse;
-import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
@@ -54,17 +44,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import pub.devrel.easypermissions.AfterPermissionGranted;
-import pub.devrel.easypermissions.EasyPermissions;
-
 public class NewPlaceFragment extends Fragment {
 
     private ChoosePlaceViewModel mViewModel;
 
     public static List<Place.Field> mPlaceFields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG, Place.Field.ADDRESS);
-    private final int REQUEST_LOCATION_PERMISSION = 1;
     private static final int AUTOCOMPLETE_REQUEST_CODE = 1;
-    private PlacesClient placesClient;
 
     private ViewPager2 mPredictionsPager;
     private TabLayout mTabLayout;
@@ -88,6 +73,7 @@ public class NewPlaceFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
@@ -148,28 +134,6 @@ public class NewPlaceFragment extends Fragment {
         // reset things on devices changes
         if (savedInstanceState != null) {
             etName.setText(savedInstanceState.getString("NAME"));
-        }
-
-        // Check if GPS is available
-        final LocationManager manager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
-        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            /*MaterialAlertDialogBuilder  alertDialogBuilder = new MaterialAlertDialogBuilder(requireActivity());
-            alertDialogBuilder.
-                    setTitle(getString(R.string.no_gps))
-                    .setMessage(getString(R.string.err_gps_disabled))
-                    .setCancelable(false)
-                    .setPositiveButton(getString(android.R.string.yes), ((dialog, which) -> {
-                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-                        requestLocatoinPermission();
-                    }))
-                    .setNegativeButton(getString(android.R.string.no), ((dialog, which) -> {
-                        //TOD O: disable all selections except map
-                        dialog.cancel();
-                    }))
-                    .show();*/
-            Toast.makeText(requireActivity(), getString(R.string.err_gps_disabled), Toast.LENGTH_LONG).show();
-        } else {
-            requestLocationPermission();
         }
 
         // selects the card
@@ -334,67 +298,6 @@ public class NewPlaceFragment extends Fragment {
             return;
         }
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    /**
-     * requests location permission
-     */
-    @SuppressLint("MissingPermission")
-    @AfterPermissionGranted(REQUEST_LOCATION_PERMISSION)
-    public void requestLocationPermission() {
-        String[] perms = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
-        if (EasyPermissions.hasPermissions(requireContext(), perms)) {
-            getCurrentPlace();
-        } else {
-            EasyPermissions.requestPermissions(this, getString(R.string.please_allow_gps), REQUEST_LOCATION_PERMISSION, perms);
-        }
-    }
-
-    /**
-     * initializes cords of current location in ViewModel
-     */
-    @SuppressLint("MissingPermission")
-    private void getLocation() {
-        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
-        fusedLocationClient.getLastLocation().addOnSuccessListener(requireActivity(), location -> mViewModel.setCurrentLocation(location));
-    }
-
-    /**
-     * initializes List of Places from Places Api prediction in ViewModel
-     */
-    private void getCurrentPlace() {
-        //TODO: API-KEY
-        Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
-        placesClient = Places.createClient(requireActivity());
-
-        FindCurrentPlaceRequest request = FindCurrentPlaceRequest.newInstance(mPlaceFields);
-
-        @SuppressLint("MissingPermission") Task<FindCurrentPlaceResponse> placeResponse = placesClient.findCurrentPlace(request);
-        placeResponse.addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                FindCurrentPlaceResponse response = task.getResult();
-                mViewModel.setPlacePredictions(response.getPlaceLikelihoods());
-            } else {
-                Exception exception = task.getException();
-                if (exception instanceof ApiException) {
-                    ApiException apiException = (ApiException) exception;
-                    Log.e("TAG", "Place not found: " + apiException.getStatusCode());
-                }
-            }
-        });
-    }
-
-    /**
-     * called if permission result is selected
-     *
-     * @param requestCode  code to identify request
-     * @param permissions  permissions given
-     * @param grantResults result
-     */
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
 
     /**
