@@ -42,10 +42,15 @@ public class NewReiseFragment extends Fragment implements LifecycleObserver {
     private Chip chCustom;
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+    }
+
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.new_reise_fragment, container, false);
-        return view;
+        return inflater.inflate(R.layout.new_reise_fragment, container, false);
     }
 
     @SuppressLint("NonConstantResourceId")

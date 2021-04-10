@@ -22,7 +22,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.relations.FullReise;
-import com.jochef2.campingdiary.utils.Sort;
 
 import java.util.Objects;
 
@@ -51,7 +50,7 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
         holder.mName.setText(Objects.requireNonNull(mDataset.getValue()).mNights.get(position).mNight.getName());
         holder.mDate.setText(mDataset.getValue().mNights.get(position).mNight.getDates());
 
-        if (Sort.getCurrentNightIds(mDataset.getValue().mNights).contains(position)) {
+        if (mDataset.getValue().getCurrentNightIds().contains(position)) {
             TypedValue value = new TypedValue();
             mContext.getTheme().resolveAttribute(R.attr.colorPrimaryVariant, value, true);
             holder.mCard.setCardBackgroundColor(value.data);

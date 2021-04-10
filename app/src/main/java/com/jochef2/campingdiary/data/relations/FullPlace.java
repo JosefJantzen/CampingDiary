@@ -25,10 +25,20 @@ public class FullPlace implements SortedListAdapter.ViewModel {
     )
     public List<Night> mNights;
 
+    /**
+     * counts number of all events with this FullPlace
+     *
+     * @return Integer with that number
+     */
     public int getNumberOfVisits() {
         return mNights.size(); //TODO: add sizes of other event types
     }
 
+    /**
+     * searches for the last Event
+     *
+     * @return Millis of last Event End
+     */
     public Long getLastEventDateInMillis() {
         List<Long> lasts = new ArrayList<>();
         if (!mNights.isEmpty()) {

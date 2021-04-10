@@ -31,6 +31,12 @@ public class AllNightsFragment extends Fragment implements LifecycleObserver {
     private FloatingActionButton fabNewNight;
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+    }
+
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.all_nights_fragment, container, false);

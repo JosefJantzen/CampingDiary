@@ -16,10 +16,6 @@ public class ShowNightFragment extends Fragment {
 
     private ShowNightViewModel mViewModel;
 
-    public static ShowNightFragment newInstance() {
-        return new ShowNightFragment();
-    }
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {

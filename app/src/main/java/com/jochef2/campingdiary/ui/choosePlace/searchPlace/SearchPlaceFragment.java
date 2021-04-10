@@ -42,8 +42,11 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @RequiresApi(api = Build.VERSION_CODES.N)
-public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryTextListener, SortedListAdapter.Callback {
+public class SearchPlaceFragment extends Fragment implements SortedListAdapter.Callback {
 
+    /**
+     * Comparator for different SortBy
+     */
     private static final Comparator<FullPlace> COMPARATOR_CREATION_DATE = new SortedListAdapter.ComparatorBuilder<FullPlace>()
             .setOrderForModel(FullPlace.class, (a, b) -> Integer.signum(a.mPlace.mId - b.mPlace.mId))
             .build().reversed();
@@ -69,7 +72,6 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
             .build().reversed();
 
     private static ChoosePlaceViewModel mViewModel;
-    private static SearchView mSearchView;
     private static SearchAdapter mAdapter;
     private FragmentSearchPlaceBinding mBinding;
     private Animator mAnimator;
@@ -77,8 +79,16 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
     private static boolean requestSearch = false;
     private String lastQuery = "";
 
+    private SearchView mSearchView;
     private AutoCompleteTextView txSortBy;
     private MaterialButton btnSort;
+
+    /**
+     * sets requestSearch to true -> needed for onCreateOptionsMenu
+     */
+    public static void search() {
+        requestSearch = true;
+    }
 
     /**
      * filters  list of places for query
@@ -98,7 +108,7 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
                 String locality = "";
                 String subLocality = "";
                 String thoroughfare = "";
-                String subThoroghfare = "";
+                String subThoroughfare = "";
                 String premises = "";
                 String postalCode = "";
                 String country = "";
@@ -121,7 +131,7 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
                             thoroughfare = place.mPlace.getAddressObject().getThoroughfare();
                         }
                         if (place.mPlace.getAddressObject().getSubThoroughfare() != null) {
-                            subThoroghfare = place.mPlace.getAddressObject().getSubThoroughfare();
+                            subThoroughfare = place.mPlace.getAddressObject().getSubThoroughfare();
                         }
                         if (place.mPlace.getAddressObject().getPremises() != null) {
                             premises = place.mPlace.getAddressObject().getPremises();
@@ -143,7 +153,7 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
 
                 if (name.contains(lowerCaseQuery) || address.contains(lowerCaseQuery)
                         || locality.contains(lowerCaseQuery) || subLocality.contains(lowerCaseQuery)
-                        || thoroughfare.contains(lowerCaseQuery) || subThoroghfare.contains(lowerCaseQuery)
+                        || thoroughfare.contains(lowerCaseQuery) || subThoroughfare.contains(lowerCaseQuery)
                         || premises.contains(lowerCaseQuery) || postalCode.contains(lowerCaseQuery)
                         || country.contains(lowerCaseQuery) || phone.contains(lowerCaseQuery)
                         || url.contains(lowerCaseQuery)) {
@@ -154,15 +164,10 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         }
     }
 
-    public static void search() {
-        requestSearch = true;
-    }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-
     }
 
     @Override
@@ -172,7 +177,20 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
 
         MenuItem searchItem = menu.findItem(R.id.it_search);
         mSearchView = (SearchView) searchItem.getActionView();
-        mSearchView.setOnQueryTextListener(this);
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                mViewModel.mSearchQuery.setValue(query);
+                lastQuery = query;
+                return true;
+            }
+        });
+
         mSearchView.setMaxWidth((int) (250 * getResources().getDisplayMetrics().density));
         if (requestSearch) {
             mSearchView.setIconified(false);
@@ -206,10 +224,12 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         mAdapter = new SearchAdapter(requireContext(), COMPARATOR_CREATION_DATE, requireActivity());
         mAdapter.addCallback(this);
 
-
         mBinding.recycler.setLayoutManager(new LinearLayoutManager(requireContext()));
         mBinding.recycler.setAdapter(mAdapter);
 
+        /**
+         * sets distances for places
+         */
         AtomicBoolean distances = new AtomicBoolean(false);
 
         mViewModel.getAllPlaces().observe(getViewLifecycleOwner(), places -> {
@@ -224,19 +244,20 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         });
 
         mViewModel.mCurrentLocation.observe(getViewLifecycleOwner(), location -> {
-                        if (!distances.get() && location != null) {
-                            List<FullPlace> places = mViewModel.getAllPlaces().getValue();
-                            if (places != null) {
-                                List<Boolean> success = new ArrayList<>();
-                                for (FullPlace place : places) {
-                                    success.add(place.mPlace.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
-                                }
-                                if (success.contains(true)) distances.set(true);
-                            }
-                            mAdapter.notifyDataSetChanged();
-                        }
+            if (location != null) {
+                List<FullPlace> places = mViewModel.getAllPlaces().getValue();
+                if (places != null) {
+                    List<Boolean> success = new ArrayList<>();
+                    for (FullPlace place : places) {
+                        success.add(place.mPlace.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
+                    }
+                    if (success.contains(true)) distances.set(true);
+                }
+                mAdapter.notifyDataSetChanged();
+            }
         });
 
+        // initialize SortBy View
         List<String> sortByStrings = Arrays.asList(getResources().getStringArray(R.array.sort_by_values));
         ArrayAdapter adapter = new ArrayAdapter(requireContext(), R.layout.list_item, sortByStrings);
         txSortBy.setAdapter(adapter);
@@ -259,26 +280,18 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
             mBinding.recycler.setLayoutManager(layoutManager);
         });
 
+        // calls filter on search query change
         mViewModel.mSearchQuery.observe(getViewLifecycleOwner(), this::filter);
 
-
-        mViewModel.mPlaceSortBy.observe(getViewLifecycleOwner(), placeSortBy -> {
-            sort(mViewModel.mShownPlaces.getValue());
-        });
+        // sorts places when SortBy changes
+        mViewModel.mPlaceSortBy.observe(getViewLifecycleOwner(), placeSortBy ->
+                sort(mViewModel.mShownPlaces.getValue()));
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String query) {
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String query) {
-        mViewModel.mSearchQuery.setValue(query);
-        lastQuery = query;
-        return true;
-    }
-
+    /**
+     * Callback from SearchAdapter when edit in SearchView starts
+     * handles progressBar animations
+     */
     @Override
     public void onEditStarted() {
         if (mBinding.progressSearchPlace.getVisibility() != View.VISIBLE) {
@@ -297,6 +310,10 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         mBinding.recycler.animate().alpha(0.5f);
     }
 
+    /**
+     * Callback from SearchAdapter when edit in SearchView finish
+     * handles progressBar animations
+     */
     @Override
     public void onEditFinished() {
         mBinding.recycler.scrollToPosition(0);
@@ -329,6 +346,11 @@ public class SearchPlaceFragment extends Fragment implements SearchView.OnQueryT
         mAnimator.start();
     }
 
+    /**
+     * Sets the adapter or the recycler based on the given SortBy selection and replaces all places
+     *
+     * @param places filtered List of Place for the recycler
+     */
     private void sort(List<FullPlace> places) {
         if (places != null && mViewModel.mPlaceSortBy.getValue() != null) {
             switch (mViewModel.mPlaceSortBy.getValue()) {

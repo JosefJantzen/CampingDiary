@@ -156,6 +156,8 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
         });
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
+
+        // gets current location if last know location is null
         mLocationRequest = LocationRequest.create();
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         mLocationRequest.setInterval(1000);
@@ -172,7 +174,7 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
             }
         };
 
-        // Check if GPS is available
+        // Checks if GPS is available
         final LocationManager manager = (LocationManager) requireActivity().getSystemService(Context.LOCATION_SERVICE);
         if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             MaterialAlertDialogBuilder alertDialogBuilder = new MaterialAlertDialogBuilder(requireActivity());

@@ -3,7 +3,6 @@ package com.jochef2.campingdiary.ui.choosePlace.newPlace;
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.location.Address;
-import android.os.Build;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,7 +35,6 @@ public class GpsPredictionsAdapter extends RecyclerView.Adapter<GpsPredictionsAd
     int defaultColor;
 
     @SuppressLint("ResourceType")
-    @RequiresApi(api = Build.VERSION_CODES.M)
     public GpsPredictionsAdapter(List<Address> dataset, FragmentActivity fragmentActivity) {
         mFragmentActivity = fragmentActivity;
         mViewModel = new ViewModelProvider(mFragmentActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(mFragmentActivity.getApplication())).get(ChoosePlaceViewModel.class);

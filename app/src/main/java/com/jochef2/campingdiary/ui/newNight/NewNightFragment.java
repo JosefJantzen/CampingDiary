@@ -28,13 +28,27 @@ public class NewNightFragment extends Fragment implements LifecycleObserver {
     private static Bundle saved;
     private static FragmentActivity activity;
 
+    /**
+     * sets Tab of ViewPager
+     *
+     * @param postion of tab
+     */
     public static void setTab(int postion) {
         viewPager.setCurrentItem(postion, true);
     }
 
+    /**
+     * pops BackStack to navigate back
+     */
     public static void navigateBack() {
         activity.getViewModelStore().clear();
         Navigation.findNavController(activity, R.id.nav_host).popBackStack();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
     }
 
     @Override

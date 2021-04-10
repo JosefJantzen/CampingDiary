@@ -26,7 +26,6 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Night;
-import com.jochef2.campingdiary.utils.Sort;
 
 import java.util.Calendar;
 import java.util.Objects;
@@ -47,10 +46,15 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private FloatingActionButton fabEvent;
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+    }
+
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.current_reise_fragment, container, false);
-        return view;
+        return inflater.inflate(R.layout.current_reise_fragment, container, false);
     }
 
     @SuppressLint("SetTextI18n")
@@ -102,7 +106,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 });
 
                 if (!reise.mNights.isEmpty()) {
-                    Night lastNight = Sort.getLastNight(reise.mNights);
+                    Night lastNight = reise.getLastNight();
                     txNight.setText(lastNight.getName());
                     cardNight.setOnClickListener(v -> {
                         CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToAllNightsFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToAllNightsFragment();

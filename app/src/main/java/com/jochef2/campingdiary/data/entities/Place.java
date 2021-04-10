@@ -53,6 +53,12 @@ public class Place {
         mCords = cords;
     }
 
+    /**
+     * initializes this by Google Place
+     *
+     * @param place   of Google request
+     * @param context for address prediction
+     */
     public void setByPlace(com.google.android.libraries.places.api.model.Place place, Context context) {
         mPlaceId = place.getId();
         setCords(new Cords(place.getLatLng()));
@@ -61,6 +67,12 @@ public class Place {
         predictAddress(context);
     }
 
+    /**
+     * calculates distance to another place
+     *
+     * @param place for the calc
+     * @return String with distance either in km or m
+     */
     public String distanceTo(Place place) {
         Location one = new Location("");
         one.setLatitude(this.getCords().getLatitude());
@@ -76,6 +88,12 @@ public class Place {
         }
     }
 
+    /**
+     * calculates distance to another place
+     *
+     * @param two Location for the calc
+     * @return String with distance either in km or m
+     */
     public String distanceTo(Location two) {
         Location one = new Location("");
         one.setLatitude(this.getCords().getLatitude());
@@ -93,6 +111,12 @@ public class Place {
         }
     }
 
+    /**
+     * calcs distance to another Location and sets distance into variable
+     *
+     * @param two Location for the calc
+     * @return Boolean for success indication
+     */
     public boolean setDistanceTo(Location two) {
         Location one = new Location("");
         one.setLatitude(this.getCords().getLatitude());
@@ -107,6 +131,11 @@ public class Place {
         }
     }
 
+    /**
+     * formats distance Double to String either in km or in m
+     *
+     * @return formatted String or NaN
+     */
     public String getDistanceString() {
         if (getDistance() != -1) {
             double distance = getDistance();
@@ -120,6 +149,11 @@ public class Place {
         }
     }
 
+    /**
+     * predicts Address based on Cords using Geocoder
+     *
+     * @param context for the Geocoder
+     */
     public void predictAddress(Context context) {
         Location location = new Location("");
         location.setLatitude(getCords().getLatitude());
@@ -135,6 +169,12 @@ public class Place {
         }
     }
 
+    /**
+     * generates AddressString based on given values (chooses best)
+     * 1. from AddressObject Thoroughfare + SubThoroughfare + Locality
+     * 2. from AddressObject first AddressLine
+     * 3. Cords
+     */
     public void generateAddressString() {
         if (this.getAddressString() == null || this.getAddressString().isEmpty()) {
             String address = "";

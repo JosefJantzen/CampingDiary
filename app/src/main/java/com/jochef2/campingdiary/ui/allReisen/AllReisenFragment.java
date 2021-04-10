@@ -36,9 +36,20 @@ public class AllReisenFragment extends Fragment implements LifecycleObserver {
     private FloatingActionButton fabStartReise;
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(false);
+    }
+
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.all_reisen_fragment, container, false);
+        return inflater.inflate(R.layout.all_reisen_fragment, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.recycler_view);
         btnStartReise = view.findViewById(R.id.btn_start_reise);
@@ -70,9 +81,6 @@ public class AllReisenFragment extends Fragment implements LifecycleObserver {
                     Navigation.findNavController(getActivity(), R.id.nav_host).navigate(R.id.action_allReisenFragment_to_newReisenFragment);
             });
         });
-
-
-        return view;
     }
 
     /**
