@@ -22,6 +22,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.card.MaterialCardView;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.relations.FullReise;
+import com.jochef2.campingdiary.ui.maps.showPlace.MapShowPlaceDialogFragment;
 
 import java.util.Objects;
 
@@ -112,7 +113,8 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
             });
 
             map.setOnClickListener(v -> {
-                //TODO: navigate to fullscreen Map with Marker
+                MapShowPlaceDialogFragment.newInstance(getParentFragmentManager(), Objects.requireNonNull(mDataset.getValue()).mNights.get(mPosition).mPlace);
+                this.dismiss();
             });
 
             edit.setOnClickListener(v -> {

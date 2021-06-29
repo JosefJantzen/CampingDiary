@@ -34,12 +34,13 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceFragment;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel.FIELDS;
 import com.jochef2.campingdiary.ui.choosePlace.searchPlace.SearchPlaceFragment;
-import com.jochef2.campingdiary.ui.maps.MapPlaceSelectFragment;
+import com.jochef2.campingdiary.ui.maps.placeSelect.MapPlaceSelectDialogFragment;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -56,6 +57,7 @@ public class NewPlaceFragment extends Fragment {
     private ViewPager2 mPredictionsPager;
     private TabLayout mTabLayout;
     private TextInputEditText etName;
+    private TextInputLayout tilName;
 
     private MaterialCardView cardAutocomplete;
     private MaterialButton btnAutocomplete;
@@ -110,6 +112,7 @@ public class NewPlaceFragment extends Fragment {
         txLatitude = view.findViewById(R.id.tx_latitude);
         txLongitude = view.findViewById(R.id.tx_longitude);
         etName = view.findViewById(R.id.et_name);
+        tilName = view.findViewById(R.id.til_name);
         btnAutocomplete = view.findViewById(R.id.btn_autocomplete);
         txAutocomplete = view.findViewById(R.id.tx_autocomplete);
         cardAutocomplete = view.findViewById(R.id.card_autocomplete);
@@ -189,6 +192,11 @@ public class NewPlaceFragment extends Fragment {
             }
         });
 
+        tilName.setEndIconOnClickListener(v -> {
+            etName.setText("");
+            mViewModel.mName.setValue("");
+        });
+
         cardAutocomplete.setOnClickListener(v -> {
             // select card and open AutoCompleteDialog if nothing yet selected
             if (txAutocomplete.getText() == getString(R.string.not_selected)) {
@@ -232,10 +240,11 @@ public class NewPlaceFragment extends Fragment {
             if (name.equals("")) {
                 name = getString(R.string.unnammed);
             }
-            MapPlaceSelectFragment.showDialog(getChildFragmentManager(), name, mViewModel.mSelectedMap.getValue().latLng).setInterface((poi) -> {
+            MapPlaceSelectDialogFragment.newInstance(getChildFragmentManager(), name, mViewModel.mSelectedMap.getValue().latLng).setInterface((poi) -> {
                 mViewModel.mSelectedMap.setValue(poi);
                 if (poi.name != null && mViewModel.mName.getValue().equals("")) {
                     mViewModel.mName.setValue(poi.name);
+                    etName.setText(poi.name);
                 }
                 if (mViewModel.getField() != FIELDS.MAP) {
                     mViewModel.setField(FIELDS.MAP);

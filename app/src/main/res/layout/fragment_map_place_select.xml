@@ -5,7 +5,7 @@
     android:id="@+id/mapPlaceSelection"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.maps.MapPlaceSelectFragment">
+    tools:context=".ui.maps.placeSelect.MapPlaceSelectDialogFragment">
 
     <Button
         android:id="@+id/btn_select"

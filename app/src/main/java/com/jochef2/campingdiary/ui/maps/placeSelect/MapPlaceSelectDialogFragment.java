@@ -1,4 +1,4 @@
-package com.jochef2.campingdiary.ui.maps;
+package com.jochef2.campingdiary.ui.maps.placeSelect;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -33,7 +33,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class MapPlaceSelectFragment extends DialogFragment implements OnMapReadyCallback, GoogleMap.OnMyLocationClickListener, GoogleMap.OnPoiClickListener {
+public class MapPlaceSelectDialogFragment extends DialogFragment implements OnMapReadyCallback, GoogleMap.OnMyLocationClickListener, GoogleMap.OnPoiClickListener {
 
     private static LatLng mLatLng;
     private static String mTitle;
@@ -52,11 +52,11 @@ public class MapPlaceSelectFragment extends DialogFragment implements OnMapReady
      * @param latLng          Cords of current selected place on map of current location
      * @return The new instance of the DialogFragment
      */
-    public static MapPlaceSelectFragment showDialog(FragmentManager fragmentManager, String title, LatLng latLng) {
+    public static MapPlaceSelectDialogFragment newInstance(FragmentManager fragmentManager, String title, LatLng latLng) {
         mLatLng = latLng;
         mTitle = title;
 
-        MapPlaceSelectFragment newFragment = new MapPlaceSelectFragment();
+        MapPlaceSelectDialogFragment newFragment = new MapPlaceSelectDialogFragment();
         newFragment.show(fragmentManager, "MapPlaceSelectDialogFragment");
         return newFragment;
     }
@@ -144,8 +144,8 @@ public class MapPlaceSelectFragment extends DialogFragment implements OnMapReady
         settings.setCompassEnabled(true);
         settings.setZoomControlsEnabled(true);
 
-        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
             return;
         } else {
             mMap.setMyLocationEnabled(true);
@@ -179,7 +179,7 @@ public class MapPlaceSelectFragment extends DialogFragment implements OnMapReady
     /**
      * Adds marker when click on my location
      *
-     * @param location
+     * @param location My location
      */
     @Override
     public void onMyLocationClick(@NonNull @NotNull Location location) {
