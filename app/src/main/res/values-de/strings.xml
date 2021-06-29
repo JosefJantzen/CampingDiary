@@ -93,6 +93,10 @@
     <string name="sort_by">Sortieren nach</string>
     <string name="yes">Ja</string>
     <string name="no">Nein</string>
+    <string name="apply">Anwenden</string>
+    <string name="distance_in_km">Entfernung in km</string>
+    <string name="unnammed">Unbenannt</string>
+    <string name="select">Auswählen</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

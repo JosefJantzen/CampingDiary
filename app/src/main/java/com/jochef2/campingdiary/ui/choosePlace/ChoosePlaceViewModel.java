@@ -11,6 +11,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.PointOfInterest;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.model.PlaceLikelihood;
 import com.jochef2.campingdiary.R;
@@ -37,7 +38,7 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
     public MutableLiveData<Place> mSelectedAutocompletePlace = new MutableLiveData<>();
     public MutableLiveData<Integer> mSelectedGpsPrediction = new MutableLiveData<>(-1);
     public MutableLiveData<Integer> mSelectedGooglePrediction = new MutableLiveData<>(-1);
-    public MutableLiveData<LatLng> mSelectedMap = new MutableLiveData<>();
+    public MutableLiveData<PointOfInterest> mSelectedMap = new MutableLiveData<>();
 
     public MutableLiveData<Integer> mSelectedSearchPlaceId = new MutableLiveData<>(-1);
 
@@ -85,7 +86,11 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
                             place.predictAddress(getApplication().getApplicationContext());
                             break;
                         case MAP:
-                            place.setCords(new Cords(Objects.requireNonNull(mSelectedMap.getValue())));
+                            PointOfInterest poi = mSelectedMap.getValue();
+                            if (poi.name == null || poi.placeId == null) {
+                                place.setPlaceId(poi.placeId);
+                            }
+                            place.setCords(new Cords(poi.latLng));
                             place.predictAddress(getApplication().getApplicationContext());
                             break;
                     }
@@ -122,7 +127,7 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
     public void setCurrentLocation(Location currentLocation) {
         mCurrentLocation.setValue(currentLocation);
         if (currentLocation != null) {
-            setSelectedMap(new LatLng(mCurrentLocation.getValue().getLatitude(), mCurrentLocation.getValue().getLongitude()));
+            setSelectedMap(new PointOfInterest(new LatLng(mCurrentLocation.getValue().getLatitude(), mCurrentLocation.getValue().getLongitude()), "", ""));
         }
     }
 
@@ -190,11 +195,11 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
         mSelectedGooglePrediction.setValue(selectedGooglePrediction);
     }
 
-    public MutableLiveData<LatLng> getSelectedMap() {
+    public MutableLiveData<PointOfInterest> getSelectedMap() {
         return mSelectedMap;
     }
 
-    public void setSelectedMap(LatLng selectedMap) {
+    public void setSelectedMap(PointOfInterest selectedMap) {
         mSelectedMap.setValue(selectedMap);
     }
 

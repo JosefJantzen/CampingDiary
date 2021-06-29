@@ -46,12 +46,6 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private FloatingActionButton fabEvent;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(false);
-    }
-
-    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.current_reise_fragment, container, false);

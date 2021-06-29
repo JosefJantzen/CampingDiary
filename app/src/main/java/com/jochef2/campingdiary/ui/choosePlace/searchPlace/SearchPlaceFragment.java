@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -83,6 +84,10 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
     private AutoCompleteTextView txSortBy;
     private MaterialButton btnSort;
 
+    private final AtomicBoolean distances = new AtomicBoolean(false);
+
+    private FilterDialogFragment mFilterDialogFragment;
+
     /**
      * sets requestSearch to true -> needed for onCreateOptionsMenu
      */
@@ -96,7 +101,7 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
      * @param query for filter
      * @return filters list of places
      */
-    private void filter(String query) {
+    private void searchFilter(String query) {
         List<FullPlace> places = mViewModel.getAllPlaces().getValue();
         if (places != null) {
             final String lowerCaseQuery = query.toLowerCase();
@@ -203,6 +208,24 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
             mSearchView.setIconified(false);
             mSearchView.setQuery(lastQuery, true);
         }
+
+        MenuItem filterItem = menu.findItem(R.id.it_filter);
+        filterItem.setOnMenuItemClickListener(item -> {
+            mFilterDialogFragment = new FilterDialogFragment(getMinAndMaxDistance(mViewModel.getAllPlaces().getValue()));
+            mFilterDialogFragment.setListener(new FilterDialogFragment.PlaceFilterListener() {
+                @Override
+                public void onResult(float distanceMin, float distanceMax) {
+                    Log.d("TAG", "min: " + distanceMin + " max: " + distanceMax);
+                }
+
+                @Override
+                public void onCancel() {
+
+                }
+            });
+            mFilterDialogFragment.show(getChildFragmentManager(), "SEARCH_PLACE_FILTER");
+            return true;
+        });
     }
 
     @Override
@@ -230,8 +253,6 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
         /**
          * sets distances for places
          */
-        AtomicBoolean distances = new AtomicBoolean(false);
-
         mViewModel.getAllPlaces().observe(getViewLifecycleOwner(), places -> {
             if (!distances.get() && places.get(0).mPlace.getDistance() == -1) {
                 List<Boolean> success = new ArrayList<>();
@@ -240,7 +261,7 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
                 }
                 if (success.contains(true)) distances.set(true);
             }
-            filter(mViewModel.mSearchQuery.getValue());
+            searchFilter(mViewModel.mSearchQuery.getValue());
         });
 
         mViewModel.mCurrentLocation.observe(getViewLifecycleOwner(), location -> {
@@ -281,7 +302,7 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
         });
 
         // calls filter on search query change
-        mViewModel.mSearchQuery.observe(getViewLifecycleOwner(), this::filter);
+        mViewModel.mSearchQuery.observe(getViewLifecycleOwner(), this::searchFilter);
 
         // sorts places when SortBy changes
         mViewModel.mPlaceSortBy.observe(getViewLifecycleOwner(), placeSortBy ->
@@ -379,5 +400,18 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
                     .commit();
             mViewModel.mShownPlaces.setValue(places);
         }
+    }
+
+    private List<Float> getMinAndMaxDistance(List<FullPlace> places) {
+        if (places != null && distances.get() && places.size() > 1) {
+            places.sort(COMPARATOR_DISTANCE);
+            List<Float> distances = new ArrayList<>();
+            distances.add(0, (float) places.get(0).mPlace.getDistance());
+            distances.add(1, (float) places.get(places.size() - 1).mPlace.getDistance());
+            if (!distances.contains(null)) {
+                return distances;
+            }
+        }
+        return null;
     }
 }

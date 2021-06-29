@@ -69,4 +69,8 @@ public class Cords {
     public void setAltitude(double altitude) {
         mAltitude = altitude;
     }
+
+    public LatLng toLatLng() {
+        return new LatLng(mLatitude, mLongitude);
+    }
 }

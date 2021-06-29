@@ -1,0 +1,1827 @@
+[
+  {
+    "mISO": "AED",
+    "mISONum": 784,
+    "mSymbol": "د.إ",
+    "mSubunit": "fils",
+    "mDecimals": 2,
+    "mCountries": [
+      "ae"
+    ]
+  },
+  {
+    "mISO": "AFN",
+    "mISONum": 971,
+    "mSymbol": "؋",
+    "mSubunit": "pul",
+    "mDecimals": 2,
+    "mCountries": [
+      "af"
+    ]
+  },
+  {
+    "mISO": "ALL",
+    "mISONum": 8,
+    "mSymbol": "L",
+    "mSubunit": "qindarkë",
+    "mDecimals": 2,
+    "mCountries": [
+      "al"
+    ]
+  },
+  {
+    "mISO": "AMD",
+    "mISONum": 51,
+    "mSymbol": "դր.",
+    "mSubunit": "luma",
+    "mDecimals": 2,
+    "mCountries": [
+      "am"
+    ]
+  },
+  {
+    "mISO": "ANG",
+    "mISONum": 532,
+    "mSymbol": "ƒ",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "cw",
+      "sx"
+    ]
+  },
+  {
+    "mISO": "AOA",
+    "mISONum": 973,
+    "mSymbol": "Kz",
+    "mSubunit": "cêntimo",
+    "mDecimals": 2,
+    "mCountries": [
+      "ao"
+    ]
+  },
+  {
+    "mISO": "ARS",
+    "mISONum": 32,
+    "mSymbol": "$",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "ar"
+    ]
+  },
+  {
+    "mISO": "AUD",
+    "mISONum": 36,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "au",
+      "cc",
+      "cx",
+      "hm",
+      "ki",
+      "nf",
+      "nr",
+      "tv"
+    ]
+  },
+  {
+    "mISO": "AWG",
+    "mISONum": 533,
+    "mSymbol": "ƒ",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "aw"
+    ]
+  },
+  {
+    "mISO": "AZN",
+    "mISONum": 944,
+    "mSymbol": "m",
+    "mSubunit": "qəpik",
+    "mDecimals": 2,
+    "mCountries": [
+      "az"
+    ]
+  },
+  {
+    "mISO": "BAM",
+    "mISONum": 977,
+    "mSymbol": "КМ",
+    "mSubunit": "fening",
+    "mDecimals": 2,
+    "mCountries": [
+      "ba"
+    ]
+  },
+  {
+    "mISO": "BBD",
+    "mISONum": 52,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "bb"
+    ]
+  },
+  {
+    "mISO": "BDT",
+    "mISONum": 50,
+    "mSymbol": "৳",
+    "mSubunit": "paisa",
+    "mDecimals": 2,
+    "mCountries": [
+      "bd"
+    ]
+  },
+  {
+    "mISO": "BGN",
+    "mISONum": 975,
+    "mSymbol": "лв",
+    "mSubunit": "stotinka",
+    "mDecimals": 2,
+    "mCountries": [
+      "bg"
+    ]
+  },
+  {
+    "mISO": "BHD",
+    "mISONum": 48,
+    "mSymbol": ".د.ب",
+    "mSubunit": "fils",
+    "mDecimals": 3,
+    "mCountries": [
+      "bh"
+    ]
+  },
+  {
+    "mISO": "BIF",
+    "mISONum": 108,
+    "mSymbol": "Fr",
+    "mSubunit": "centime",
+    "mDecimals": 0,
+    "mCountries": [
+      "bi"
+    ]
+  },
+  {
+    "mISO": "BMD",
+    "mISONum": 60,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "bm"
+    ]
+  },
+  {
+    "mISO": "BND",
+    "mISONum": 96,
+    "mSymbol": "$",
+    "mSubunit": "sen",
+    "mDecimals": 2,
+    "mCountries": [
+      "bn"
+    ]
+  },
+  {
+    "mISO": "BOB",
+    "mISONum": 68,
+    "mSymbol": "Bs.",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "bo"
+    ]
+  },
+  {
+    "mISO": "BOV",
+    "mISONum": 984,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "BRL",
+    "mISONum": 986,
+    "mSymbol": "R$",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "br"
+    ]
+  },
+  {
+    "mISO": "BSD",
+    "mISONum": 44,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "bs"
+    ]
+  },
+  {
+    "mISO": "BTN",
+    "mISONum": 64,
+    "mSymbol": "Nu.",
+    "mSubunit": "chetrum",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "BWP",
+    "mISONum": 72,
+    "mSymbol": "P",
+    "mSubunit": "thebe",
+    "mDecimals": 2,
+    "mCountries": [
+      "bw"
+    ]
+  },
+  {
+    "mISO": "BYN",
+    "mISONum": 933,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": [
+      "by"
+    ]
+  },
+  {
+    "mISO": "BZD",
+    "mISONum": 84,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "bz"
+    ]
+  },
+  {
+    "mISO": "CAD",
+    "mISONum": 124,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "ca"
+    ]
+  },
+  {
+    "mISO": "CDF",
+    "mISONum": 976,
+    "mSymbol": "Fr",
+    "mSubunit": "centime",
+    "mDecimals": 2,
+    "mCountries": [
+      "cd"
+    ]
+  },
+  {
+    "mISO": "CHE",
+    "mISONum": 947,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "CHF",
+    "mISONum": 756,
+    "mSymbol": "Fr",
+    "mSubunit": "rappen",
+    "mDecimals": 2,
+    "mCountries": [
+      "ch",
+      "li"
+    ]
+  },
+  {
+    "mISO": "CHW",
+    "mISONum": 948,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "CLF",
+    "mISONum": 990,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 4,
+    "mCountries": []
+  },
+  {
+    "mISO": "CLP",
+    "mISONum": 152,
+    "mSymbol": "$",
+    "mSubunit": "centavo",
+    "mDecimals": 0,
+    "mCountries": [
+      "cl"
+    ]
+  },
+  {
+    "mISO": "CNY",
+    "mISONum": 156,
+    "mSymbol": "¥",
+    "mSubunit": "fen",
+    "mDecimals": 2,
+    "mCountries": [
+      "cn"
+    ]
+  },
+  {
+    "mISO": "COP",
+    "mISONum": 170,
+    "mSymbol": "$",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "co"
+    ]
+  },
+  {
+    "mISO": "COU",
+    "mISONum": 970,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "CRC",
+    "mISONum": 188,
+    "mSymbol": "₡",
+    "mSubunit": "cêntimo",
+    "mDecimals": 2,
+    "mCountries": [
+      "cr"
+    ]
+  },
+  {
+    "mISO": "CUC",
+    "mISONum": 931,
+    "mSymbol": "$",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "CUP",
+    "mISONum": 192,
+    "mSymbol": "$",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "cu"
+    ]
+  },
+  {
+    "mISO": "CVE",
+    "mISONum": 132,
+    "mSymbol": "Esc or $",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "cv"
+    ]
+  },
+  {
+    "mISO": "CZK",
+    "mISONum": 203,
+    "mSymbol": "Kč",
+    "mSubunit": "haléř",
+    "mDecimals": 2,
+    "mCountries": [
+      "cz"
+    ]
+  },
+  {
+    "mISO": "DJF",
+    "mISONum": 262,
+    "mSymbol": "Fr",
+    "mSubunit": "centime",
+    "mDecimals": 0,
+    "mCountries": [
+      "dj"
+    ]
+  },
+  {
+    "mISO": "DKK",
+    "mISONum": 208,
+    "mSymbol": "kr",
+    "mSubunit": "øre",
+    "mDecimals": 2,
+    "mCountries": [
+      "dk",
+      "fo",
+      "gl"
+    ]
+  },
+  {
+    "mISO": "DOP",
+    "mISONum": 214,
+    "mSymbol": "$",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "do"
+    ]
+  },
+  {
+    "mISO": "DZD",
+    "mISONum": 12,
+    "mSymbol": "د.ج",
+    "mSubunit": "Santeem",
+    "mDecimals": 2,
+    "mCountries": [
+      "dz"
+    ]
+  },
+  {
+    "mISO": "EGP",
+    "mISONum": 818,
+    "mSymbol": "ج.م",
+    "mSubunit": "piaster",
+    "mDecimals": 2,
+    "mCountries": [
+      "eg"
+    ]
+  },
+  {
+    "mISO": "ERN",
+    "mISONum": 232,
+    "mSymbol": "Nfk",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "er"
+    ]
+  },
+  {
+    "mISO": "ETB",
+    "mISONum": 230,
+    "mSymbol": "Br",
+    "mSubunit": "santim",
+    "mDecimals": 2,
+    "mCountries": [
+      "et"
+    ]
+  },
+  {
+    "mISO": "EUR",
+    "mISONum": 978,
+    "mSymbol": "€",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "ad",
+      "at",
+      "ax",
+      "be",
+      "bl",
+      "cy",
+      "de",
+      "ee",
+      "es",
+      "fi",
+      "fr",
+      "gf",
+      "gp",
+      "gr",
+      "ie",
+      "it",
+      "lt",
+      "lu",
+      "lv",
+      "mc",
+      "me",
+      "mf",
+      "mq",
+      "mt",
+      "nl",
+      "pm",
+      "pt",
+      "re",
+      "si",
+      "sk",
+      "sm",
+      "tf",
+      "va",
+      "ws",
+      "yt"
+    ]
+  },
+  {
+    "mISO": "FJD",
+    "mISONum": 242,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "fj"
+    ]
+  },
+  {
+    "mISO": "FKP",
+    "mISONum": 238,
+    "mSymbol": "£",
+    "mSubunit": "penny",
+    "mDecimals": 2,
+    "mCountries": [
+      "fk"
+    ]
+  },
+  {
+    "mISO": "GBP",
+    "mISONum": 826,
+    "mSymbol": "£",
+    "mSubunit": "penny",
+    "mDecimals": 2,
+    "mCountries": [
+      "gb",
+      "gs",
+      "im",
+      "je"
+    ]
+  },
+  {
+    "mISO": "GEL",
+    "mISONum": 981,
+    "mSymbol": "ლ",
+    "mSubunit": "tetri",
+    "mDecimals": 2,
+    "mCountries": [
+      "ge"
+    ]
+  },
+  {
+    "mISO": "GHS",
+    "mISONum": 936,
+    "mSymbol": "₵",
+    "mSubunit": "pesewa",
+    "mDecimals": 2,
+    "mCountries": [
+      "gh"
+    ]
+  },
+  {
+    "mISO": "GIP",
+    "mISONum": 292,
+    "mSymbol": "£",
+    "mSubunit": "penny",
+    "mDecimals": 2,
+    "mCountries": [
+      "gi"
+    ]
+  },
+  {
+    "mISO": "GMD",
+    "mISONum": 270,
+    "mSymbol": "D",
+    "mSubunit": "butut",
+    "mDecimals": 2,
+    "mCountries": [
+      "gm"
+    ]
+  },
+  {
+    "mISO": "GNF",
+    "mISONum": 324,
+    "mSymbol": "Fr",
+    "mSubunit": "centime",
+    "mDecimals": 0,
+    "mCountries": [
+      "gn"
+    ]
+  },
+  {
+    "mISO": "GTQ",
+    "mISONum": 320,
+    "mSymbol": "Q",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "gt"
+    ]
+  },
+  {
+    "mISO": "GYD",
+    "mISONum": 328,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "gy"
+    ]
+  },
+  {
+    "mISO": "HKD",
+    "mISONum": 344,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "hk"
+    ]
+  },
+  {
+    "mISO": "HNL",
+    "mISONum": 340,
+    "mSymbol": "L",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "hn"
+    ]
+  },
+  {
+    "mISO": "HRK",
+    "mISONum": 191,
+    "mSymbol": "kn",
+    "mSubunit": "lipa",
+    "mDecimals": 2,
+    "mCountries": [
+      "hr"
+    ]
+  },
+  {
+    "mISO": "HTG",
+    "mISONum": 332,
+    "mSymbol": "G",
+    "mSubunit": "centime",
+    "mDecimals": 2,
+    "mCountries": [
+      "ht"
+    ]
+  },
+  {
+    "mISO": "HUF",
+    "mISONum": 348,
+    "mSymbol": "Ft",
+    "mSubunit": "fillér",
+    "mDecimals": 2,
+    "mCountries": [
+      "hu"
+    ]
+  },
+  {
+    "mISO": "IDR",
+    "mISONum": 360,
+    "mSymbol": "Rp",
+    "mSubunit": "sen",
+    "mDecimals": 2,
+    "mCountries": [
+      "id"
+    ]
+  },
+  {
+    "mISO": "ILS",
+    "mISONum": 376,
+    "mSymbol": "₪",
+    "mSubunit": "agora",
+    "mDecimals": 2,
+    "mCountries": [
+      "il"
+    ]
+  },
+  {
+    "mISO": "INR",
+    "mISONum": 356,
+    "mSymbol": "₹",
+    "mSubunit": "paisa",
+    "mDecimals": 2,
+    "mCountries": [
+      "bt",
+      "in"
+    ]
+  },
+  {
+    "mISO": "IQD",
+    "mISONum": 368,
+    "mSymbol": "ع.د",
+    "mSubunit": "fils",
+    "mDecimals": 3,
+    "mCountries": [
+      "iq"
+    ]
+  },
+  {
+    "mISO": "IRR",
+    "mISONum": 364,
+    "mSymbol": "﷼",
+    "mSubunit": "NULL",
+    "mDecimals": 2,
+    "mCountries": [
+      "ir"
+    ]
+  },
+  {
+    "mISO": "ISK",
+    "mISONum": 352,
+    "mSymbol": "kr",
+    "mSubunit": "eyrir",
+    "mDecimals": 0,
+    "mCountries": [
+      "is"
+    ]
+  },
+  {
+    "mISO": "JMD",
+    "mISONum": 388,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "jm"
+    ]
+  },
+  {
+    "mISO": "JOD",
+    "mISONum": 400,
+    "mSymbol": "د.ا",
+    "mSubunit": "piastre",
+    "mDecimals": 3,
+    "mCountries": [
+      "jo",
+      "ps"
+    ]
+  },
+  {
+    "mISO": "JPY",
+    "mISONum": 392,
+    "mSymbol": "¥",
+    "mSubunit": "sen",
+    "mDecimals": 0,
+    "mCountries": [
+      "jp"
+    ]
+  },
+  {
+    "mISO": "KES",
+    "mISONum": 404,
+    "mSymbol": "Sh",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "ke"
+    ]
+  },
+  {
+    "mISO": "KGS",
+    "mISONum": 417,
+    "mSymbol": "лв",
+    "mSubunit": "tyiyn",
+    "mDecimals": 2,
+    "mCountries": [
+      "kg"
+    ]
+  },
+  {
+    "mISO": "KHR",
+    "mISONum": 116,
+    "mSymbol": "៛",
+    "mSubunit": "sen",
+    "mDecimals": 2,
+    "mCountries": [
+      "kh"
+    ]
+  },
+  {
+    "mISO": "KMF",
+    "mISONum": 174,
+    "mSymbol": "Fr",
+    "mSubunit": "centime",
+    "mDecimals": 0,
+    "mCountries": [
+      "km"
+    ]
+  },
+  {
+    "mISO": "KPW",
+    "mISONum": 408,
+    "mSymbol": "₩",
+    "mSubunit": "chon",
+    "mDecimals": 2,
+    "mCountries": [
+      "kp"
+    ]
+  },
+  {
+    "mISO": "KRW",
+    "mISONum": 410,
+    "mSymbol": "₩",
+    "mSubunit": "jeon",
+    "mDecimals": 0,
+    "mCountries": [
+      "kr"
+    ]
+  },
+  {
+    "mISO": "KWD",
+    "mISONum": 414,
+    "mSymbol": "د.ك",
+    "mSubunit": "fils",
+    "mDecimals": 3,
+    "mCountries": [
+      "kw"
+    ]
+  },
+  {
+    "mISO": "KYD",
+    "mISONum": 136,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "ky"
+    ]
+  },
+  {
+    "mISO": "KZT",
+    "mISONum": 398,
+    "mSymbol": "₸",
+    "mSubunit": "tïın",
+    "mDecimals": 2,
+    "mCountries": [
+      "kz"
+    ]
+  },
+  {
+    "mISO": "LAK",
+    "mISONum": 418,
+    "mSymbol": "₭",
+    "mSubunit": "att",
+    "mDecimals": 2,
+    "mCountries": [
+      "la"
+    ]
+  },
+  {
+    "mISO": "LBP",
+    "mISONum": 422,
+    "mSymbol": "ل.ل",
+    "mSubunit": "piastre",
+    "mDecimals": 2,
+    "mCountries": [
+      "lb"
+    ]
+  },
+  {
+    "mISO": "LKR",
+    "mISONum": 144,
+    "mSymbol": "Rs",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "lk"
+    ]
+  },
+  {
+    "mISO": "LRD",
+    "mISONum": 430,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "lr"
+    ]
+  },
+  {
+    "mISO": "LSL",
+    "mISONum": 426,
+    "mSymbol": "L",
+    "mSubunit": "sente",
+    "mDecimals": 2,
+    "mCountries": [
+      "ls"
+    ]
+  },
+  {
+    "mISO": "LYD",
+    "mISONum": 434,
+    "mSymbol": "ل.د",
+    "mSubunit": "dirham",
+    "mDecimals": 3,
+    "mCountries": [
+      "ly"
+    ]
+  },
+  {
+    "mISO": "MAD",
+    "mISONum": 504,
+    "mSymbol": "د.م.",
+    "mSubunit": "centime",
+    "mDecimals": 2,
+    "mCountries": [
+      "eh",
+      "ma"
+    ]
+  },
+  {
+    "mISO": "MDL",
+    "mISONum": 498,
+    "mSymbol": "L",
+    "mSubunit": "ban",
+    "mDecimals": 2,
+    "mCountries": [
+      "md"
+    ]
+  },
+  {
+    "mISO": "MGA",
+    "mISONum": 969,
+    "mSymbol": "Ar",
+    "mSubunit": "iraimbilanja",
+    "mDecimals": 2,
+    "mCountries": [
+      "mg"
+    ]
+  },
+  {
+    "mISO": "MKD",
+    "mISONum": 807,
+    "mSymbol": "ден",
+    "mSubunit": "deni",
+    "mDecimals": 2,
+    "mCountries": [
+      "mk"
+    ]
+  },
+  {
+    "mISO": "MMK",
+    "mISONum": 104,
+    "mSymbol": "Ks",
+    "mSubunit": "pya",
+    "mDecimals": 2,
+    "mCountries": [
+      "mm"
+    ]
+  },
+  {
+    "mISO": "MNT",
+    "mISONum": 496,
+    "mSymbol": "₮",
+    "mSubunit": "möngö",
+    "mDecimals": 2,
+    "mCountries": [
+      "mn"
+    ]
+  },
+  {
+    "mISO": "MOP",
+    "mISONum": 446,
+    "mSymbol": "P",
+    "mSubunit": "avo",
+    "mDecimals": 2,
+    "mCountries": [
+      "mo"
+    ]
+  },
+  {
+    "mISO": "MRU",
+    "mISONum": 929,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "MUR",
+    "mISONum": 480,
+    "mSymbol": "₨",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "mu"
+    ]
+  },
+  {
+    "mISO": "MVR",
+    "mISONum": 462,
+    "mSymbol": ".ރ",
+    "mSubunit": "laari",
+    "mDecimals": 2,
+    "mCountries": [
+      "mv"
+    ]
+  },
+  {
+    "mISO": "MWK",
+    "mISONum": 454,
+    "mSymbol": "MK",
+    "mSubunit": "tambala",
+    "mDecimals": 2,
+    "mCountries": [
+      "mw"
+    ]
+  },
+  {
+    "mISO": "MXN",
+    "mISONum": 484,
+    "mSymbol": "$",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "mx"
+    ]
+  },
+  {
+    "mISO": "MXV",
+    "mISONum": 979,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "MYR",
+    "mISONum": 458,
+    "mSymbol": "RM",
+    "mSubunit": "sen",
+    "mDecimals": 2,
+    "mCountries": [
+      "my"
+    ]
+  },
+  {
+    "mISO": "MZN",
+    "mISONum": 943,
+    "mSymbol": "MT",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "mz"
+    ]
+  },
+  {
+    "mISO": "NAD",
+    "mISONum": 516,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "na"
+    ]
+  },
+  {
+    "mISO": "NGN",
+    "mISONum": 566,
+    "mSymbol": "₦",
+    "mSubunit": "kobo",
+    "mDecimals": 2,
+    "mCountries": [
+      "ng"
+    ]
+  },
+  {
+    "mISO": "NIO",
+    "mISONum": 558,
+    "mSymbol": "C$",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "ni"
+    ]
+  },
+  {
+    "mISO": "NOK",
+    "mISONum": 578,
+    "mSymbol": "kr",
+    "mSubunit": "øre",
+    "mDecimals": 2,
+    "mCountries": [
+      "bv",
+      "no",
+      "sj"
+    ]
+  },
+  {
+    "mISO": "NPR",
+    "mISONum": 524,
+    "mSymbol": "₨",
+    "mSubunit": "paisa",
+    "mDecimals": 2,
+    "mCountries": [
+      "np"
+    ]
+  },
+  {
+    "mISO": "NZD",
+    "mISONum": 554,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "ck",
+      "nu",
+      "nz",
+      "pn",
+      "tk"
+    ]
+  },
+  {
+    "mISO": "OMR",
+    "mISONum": 512,
+    "mSymbol": "ر.ع.",
+    "mSubunit": "Baisa",
+    "mDecimals": 3,
+    "mCountries": [
+      "om"
+    ]
+  },
+  {
+    "mISO": "PAB",
+    "mISONum": 590,
+    "mSymbol": "B/.",
+    "mSubunit": "centésimo",
+    "mDecimals": 2,
+    "mCountries": [
+      "pa"
+    ]
+  },
+  {
+    "mISO": "PEN",
+    "mISONum": 604,
+    "mSymbol": "S/.",
+    "mSubunit": "cêntimo",
+    "mDecimals": 2,
+    "mCountries": [
+      "pe"
+    ]
+  },
+  {
+    "mISO": "PGK",
+    "mISONum": 598,
+    "mSymbol": "K",
+    "mSubunit": "toea",
+    "mDecimals": 2,
+    "mCountries": [
+      "pg"
+    ]
+  },
+  {
+    "mISO": "PHP",
+    "mISONum": 608,
+    "mSymbol": "₱",
+    "mSubunit": "centavo",
+    "mDecimals": 2,
+    "mCountries": [
+      "ph"
+    ]
+  },
+  {
+    "mISO": "PKR",
+    "mISONum": 586,
+    "mSymbol": "₨",
+    "mSubunit": "paisa",
+    "mDecimals": 2,
+    "mCountries": [
+      "pk"
+    ]
+  },
+  {
+    "mISO": "PLN",
+    "mISONum": 985,
+    "mSymbol": "zł",
+    "mSubunit": "grosz",
+    "mDecimals": 2,
+    "mCountries": [
+      "pl"
+    ]
+  },
+  {
+    "mISO": "PYG",
+    "mISONum": 600,
+    "mSymbol": "₲",
+    "mSubunit": "cêntimo",
+    "mDecimals": 0,
+    "mCountries": [
+      "py"
+    ]
+  },
+  {
+    "mISO": "QAR",
+    "mISONum": 634,
+    "mSymbol": "ر.ق",
+    "mSubunit": "dirham",
+    "mDecimals": 2,
+    "mCountries": [
+      "qa"
+    ]
+  },
+  {
+    "mISO": "RON",
+    "mISONum": 946,
+    "mSymbol": "L",
+    "mSubunit": "ban",
+    "mDecimals": 2,
+    "mCountries": [
+      "ro"
+    ]
+  },
+  {
+    "mISO": "RSD",
+    "mISONum": 941,
+    "mSymbol": "дин.",
+    "mSubunit": "para",
+    "mDecimals": 2,
+    "mCountries": [
+      "rs"
+    ]
+  },
+  {
+    "mISO": "RUB",
+    "mISONum": 643,
+    "mSymbol": "руб.",
+    "mSubunit": "kopek",
+    "mDecimals": 2,
+    "mCountries": [
+      "ru"
+    ]
+  },
+  {
+    "mISO": "RWF",
+    "mISONum": 646,
+    "mSymbol": "Fr",
+    "mSubunit": "centime",
+    "mDecimals": 0,
+    "mCountries": [
+      "rw"
+    ]
+  },
+  {
+    "mISO": "SAR",
+    "mISONum": 682,
+    "mSymbol": "ر.س",
+    "mSubunit": "halala",
+    "mDecimals": 2,
+    "mCountries": [
+      "sa"
+    ]
+  },
+  {
+    "mISO": "SBD",
+    "mISONum": 90,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "sb"
+    ]
+  },
+  {
+    "mISO": "SCR",
+    "mISONum": 690,
+    "mSymbol": "₨",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "sc"
+    ]
+  },
+  {
+    "mISO": "SDG",
+    "mISONum": 938,
+    "mSymbol": "£",
+    "mSubunit": "piastre",
+    "mDecimals": 2,
+    "mCountries": [
+      "sd"
+    ]
+  },
+  {
+    "mISO": "SEK",
+    "mISONum": 752,
+    "mSymbol": "kr",
+    "mSubunit": "öre",
+    "mDecimals": 2,
+    "mCountries": [
+      "se"
+    ]
+  },
+  {
+    "mISO": "SGD",
+    "mISONum": 702,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "sg"
+    ]
+  },
+  {
+    "mISO": "SHP",
+    "mISONum": 654,
+    "mSymbol": "£",
+    "mSubunit": "penny",
+    "mDecimals": 2,
+    "mCountries": [
+      "sh"
+    ]
+  },
+  {
+    "mISO": "SLL",
+    "mISONum": 694,
+    "mSymbol": "Le",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "sl"
+    ]
+  },
+  {
+    "mISO": "SOS",
+    "mISONum": 706,
+    "mSymbol": "Sh",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "so"
+    ]
+  },
+  {
+    "mISO": "SRD",
+    "mISONum": 968,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "sr"
+    ]
+  },
+  {
+    "mISO": "SSP",
+    "mISONum": 728,
+    "mSymbol": "£",
+    "mSubunit": "piastre",
+    "mDecimals": 2,
+    "mCountries": [
+      "ss"
+    ]
+  },
+  {
+    "mISO": "STN",
+    "mISONum": 930,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "SVC",
+    "mISONum": 222,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "SYP",
+    "mISONum": 760,
+    "mSymbol": "ل.س",
+    "mSubunit": "piastre",
+    "mDecimals": 2,
+    "mCountries": [
+      "sy"
+    ]
+  },
+  {
+    "mISO": "SZL",
+    "mISONum": 748,
+    "mSymbol": "L",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "sz"
+    ]
+  },
+  {
+    "mISO": "THB",
+    "mISONum": 764,
+    "mSymbol": "฿",
+    "mSubunit": "satang",
+    "mDecimals": 2,
+    "mCountries": [
+      "th"
+    ]
+  },
+  {
+    "mISO": "TJS",
+    "mISONum": 972,
+    "mSymbol": "ЅМ",
+    "mSubunit": "diram",
+    "mDecimals": 2,
+    "mCountries": [
+      "tj"
+    ]
+  },
+  {
+    "mISO": "TMT",
+    "mISONum": 934,
+    "mSymbol": "m",
+    "mSubunit": "tennesi",
+    "mDecimals": 2,
+    "mCountries": [
+      "tm"
+    ]
+  },
+  {
+    "mISO": "TND",
+    "mISONum": 788,
+    "mSymbol": "د.ت",
+    "mSubunit": "millime",
+    "mDecimals": 3,
+    "mCountries": [
+      "tn"
+    ]
+  },
+  {
+    "mISO": "TOP",
+    "mISONum": 776,
+    "mSymbol": "T$",
+    "mSubunit": "seniti",
+    "mDecimals": 2,
+    "mCountries": [
+      "to"
+    ]
+  },
+  {
+    "mISO": "TRY",
+    "mISONum": 949,
+    "mSymbol": "NULL",
+    "mSubunit": "kuruş",
+    "mDecimals": 2,
+    "mCountries": [
+      "tr"
+    ]
+  },
+  {
+    "mISO": "TTD",
+    "mISONum": 780,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "tt"
+    ]
+  },
+  {
+    "mISO": "TWD",
+    "mISONum": 901,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "tw"
+    ]
+  },
+  {
+    "mISO": "TZS",
+    "mISONum": 834,
+    "mSymbol": "Sh",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "tz"
+    ]
+  },
+  {
+    "mISO": "UAH",
+    "mISONum": 980,
+    "mSymbol": "₴",
+    "mSubunit": "kopiyka",
+    "mDecimals": 2,
+    "mCountries": [
+      "ua"
+    ]
+  },
+  {
+    "mISO": "UGX",
+    "mISONum": 800,
+    "mSymbol": "Sh",
+    "mSubunit": "cent",
+    "mDecimals": 0,
+    "mCountries": [
+      "ug"
+    ]
+  },
+  {
+    "mISO": "USD",
+    "mISONum": 840,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "as",
+      "bq",
+      "ec",
+      "fm",
+      "gu",
+      "io",
+      "mh",
+      "mp",
+      "pr",
+      "pw",
+      "sv",
+      "tc",
+      "tl",
+      "um",
+      "us",
+      "vg",
+      "vi",
+      "zw"
+    ]
+  },
+  {
+    "mISO": "USN",
+    "mISONum": 997,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "UYI",
+    "mISONum": 940,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 0,
+    "mCountries": []
+  },
+  {
+    "mISO": "UYU",
+    "mISONum": 858,
+    "mSymbol": "$",
+    "mSubunit": "centésimo",
+    "mDecimals": 2,
+    "mCountries": [
+      "uy"
+    ]
+  },
+  {
+    "mISO": "UYW",
+    "mISONum": 927,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 4,
+    "mCountries": []
+  },
+  {
+    "mISO": "UZS",
+    "mISONum": 860,
+    "mSymbol": "лв",
+    "mSubunit": "tiyin",
+    "mDecimals": 2,
+    "mCountries": [
+      "uz"
+    ]
+  },
+  {
+    "mISO": "VES",
+    "mISONum": 928,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "VND",
+    "mISONum": 704,
+    "mSymbol": "₫",
+    "mSubunit": "hào",
+    "mDecimals": 0,
+    "mCountries": [
+      "vn"
+    ]
+  },
+  {
+    "mISO": "VUV",
+    "mISONum": 548,
+    "mSymbol": "Vt",
+    "mSubunit": "NULL",
+    "mDecimals": 0,
+    "mCountries": [
+      "vu"
+    ]
+  },
+  {
+    "mISO": "WST",
+    "mISONum": 882,
+    "mSymbol": "T",
+    "mSubunit": "sene",
+    "mDecimals": 2,
+    "mCountries": []
+  },
+  {
+    "mISO": "XAF",
+    "mISONum": 950,
+    "mSymbol": "Fr",
+    "mSubunit": "centime",
+    "mDecimals": 0,
+    "mCountries": [
+      "cf",
+      "cg",
+      "cm",
+      "ga",
+      "gq",
+      "td"
+    ]
+  },
+  {
+    "mISO": "XAG",
+    "mISONum": 961,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XAU",
+    "mISONum": 959,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XBA",
+    "mISONum": 955,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XBB",
+    "mISONum": 956,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XBC",
+    "mISONum": 957,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XBD",
+    "mISONum": 958,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XCD",
+    "mISONum": 951,
+    "mSymbol": "$",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "ag",
+      "ai",
+      "dm",
+      "gd",
+      "kn",
+      "lc",
+      "ms",
+      "vc"
+    ]
+  },
+  {
+    "mISO": "XDR",
+    "mISONum": 960,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XOF",
+    "mISONum": 952,
+    "mSymbol": "Fr",
+    "mSubunit": "centime",
+    "mDecimals": 0,
+    "mCountries": [
+      "bf",
+      "bj",
+      "ci",
+      "gw",
+      "ml",
+      "ne",
+      "sn",
+      "tg"
+    ]
+  },
+  {
+    "mISO": "XPD",
+    "mISONum": 964,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XPF",
+    "mISONum": 953,
+    "mSymbol": "Fr",
+    "mSubunit": "centime",
+    "mDecimals": 0,
+    "mCountries": [
+      "nc",
+      "pf",
+      "wf"
+    ]
+  },
+  {
+    "mISO": "XPT",
+    "mISONum": 962,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XSU",
+    "mISONum": 994,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XTS",
+    "mISONum": 963,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XUA",
+    "mISONum": 965,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "XXX",
+    "mISONum": 999,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": -1,
+    "mCountries": []
+  },
+  {
+    "mISO": "YER",
+    "mISONum": 886,
+    "mSymbol": "﷼",
+    "mSubunit": "fils",
+    "mDecimals": 2,
+    "mCountries": [
+      "ye"
+    ]
+  },
+  {
+    "mISO": "ZAR",
+    "mISONum": 710,
+    "mSymbol": "R",
+    "mSubunit": "cent",
+    "mDecimals": 2,
+    "mCountries": [
+      "za"
+    ]
+  },
+  {
+    "mISO": "ZMW",
+    "mISONum": 967,
+    "mSymbol": "ZK",
+    "mSubunit": "ngwee",
+    "mDecimals": 2,
+    "mCountries": [
+      "zm"
+    ]
+  },
+  {
+    "mISO": "ZWL",
+    "mISONum": 932,
+    "mSymbol": "",
+    "mSubunit": "",
+    "mDecimals": 2,
+    "mCountries": []
+  }
+]

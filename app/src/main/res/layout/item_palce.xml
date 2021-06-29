@@ -23,7 +23,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/tx_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tx_name"
-                app:srcCompat="@drawable/de" />
+                app:srcCompat="@drawable/unknown_flag" />
 
             <ImageView
                 android:id="@+id/imageView4"

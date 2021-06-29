@@ -1,0 +1,4693 @@
+[
+  {
+    "mISO2": "af",
+    "mISO3": "afg",
+    "mISONum": 4,
+    "mTLD": ".af",
+    "mCallingCode": "+93",
+    "mLatitude": 33.83523073,
+    "mLongitude": 66.00473366,
+    "mTimezone": "Asia/Kabul",
+    "mLanguages": [
+      "fa",
+      "ps"
+    ],
+    "mContinent": "as",
+    "mCurrency": "afn",
+    "mLocalNames": [
+      "د افغانستان اسلامي جمهوریت",
+      "جمهوری اسلامی افغانستان"
+    ]
+  },
+  {
+    "mISO2": "ax",
+    "mISO3": "ala",
+    "mISONum": 248,
+    "mTLD": ".ax",
+    "mCallingCode": "+358-18",
+    "mLatitude": 60.21488688,
+    "mLongitude": 19.95328768,
+    "mTimezone": "Europe/Mariehamn",
+    "mLanguages": [
+      "sv"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Åland"
+    ]
+  },
+  {
+    "mISO2": "al",
+    "mISO3": "alb",
+    "mISONum": 8,
+    "mTLD": ".al",
+    "mCallingCode": "+355",
+    "mLatitude": 41.14244989,
+    "mLongitude": 20.04983396,
+    "mTimezone": "Europe/Tirane",
+    "mLanguages": [
+      "sq"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "all",
+    "mLocalNames": [
+      "Shqipëria"
+    ]
+  },
+  {
+    "mISO2": "dz",
+    "mISO3": "dza",
+    "mISONum": 12,
+    "mTLD": ".dz",
+    "mCallingCode": "+213",
+    "mLatitude": 28.15893849,
+    "mLongitude": 2.617323009,
+    "mTimezone": "Africa/Algiers",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "af",
+    "mCurrency": "dzd",
+    "mLocalNames": [
+      "الجزائر"
+    ]
+  },
+  {
+    "mISO2": "as",
+    "mISO3": "asm",
+    "mISONum": 16,
+    "mTLD": ".as",
+    "mCallingCode": "+1-684",
+    "mLatitude": -14.30445997,
+    "mLongitude": -170.7180257,
+    "mTimezone": "Pacific/Pago_Pago",
+    "mLanguages": [
+      "en",
+      "sm"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "American Samoa"
+    ]
+  },
+  {
+    "mISO2": "ad",
+    "mISO3": "and",
+    "mISONum": 20,
+    "mTLD": ".ad",
+    "mCallingCode": "+376",
+    "mLatitude": 42.54229102,
+    "mLongitude": 1.560543779,
+    "mTimezone": "Europe/Andorra",
+    "mLanguages": [
+      "ca"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Andorra"
+    ]
+  },
+  {
+    "mISO2": "ao",
+    "mISO3": "ago",
+    "mISONum": 24,
+    "mTLD": ".ao",
+    "mCallingCode": "+244",
+    "mLatitude": -12.29336054,
+    "mLongitude": 17.53736768,
+    "mTimezone": "Africa/Luanda",
+    "mLanguages": [
+      "pt"
+    ],
+    "mContinent": "af",
+    "mCurrency": "aoa",
+    "mLocalNames": [
+      "Angola"
+    ]
+  },
+  {
+    "mISO2": "ai",
+    "mISO3": "aia",
+    "mISONum": 660,
+    "mTLD": ".ai",
+    "mCallingCode": "+1-264",
+    "mLatitude": 18.2239595,
+    "mLongitude": -63.06498927,
+    "mTimezone": "America/Anguilla",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "xcd",
+    "mLocalNames": [
+      "Anguilla"
+    ]
+  },
+  {
+    "mISO2": "aq",
+    "mISO3": "ata",
+    "mISONum": 10,
+    "mTLD": ".aq",
+    "mCallingCode": "+672",
+    "mLatitude": -80.50857913,
+    "mLongitude": 19.92108951,
+    "mTimezone": "Antarctica/Casey",
+    "mLanguages": [
+      "en",
+      "es",
+      "fr",
+      "ru"
+    ],
+    "mContinent": "an",
+    "mCurrency": "",
+    "mLocalNames": [
+      "Antarctica",
+      "Antártico",
+      "Antarctique",
+      "Антарктике"
+    ]
+  },
+  {
+    "mISO2": "ag",
+    "mISO3": "atg",
+    "mISONum": 28,
+    "mTLD": ".ag",
+    "mCallingCode": "+1-268",
+    "mLatitude": 17.2774996,
+    "mLongitude": -61.79469343,
+    "mTimezone": "America/Antigua",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "xcd",
+    "mLocalNames": [
+      "Antigua and Barbuda"
+    ]
+  },
+  {
+    "mISO2": "ar",
+    "mISO3": "arg",
+    "mISONum": 32,
+    "mTLD": ".ar",
+    "mCallingCode": "+54",
+    "mLatitude": -35.3813488,
+    "mLongitude": -65.17980693,
+    "mTimezone": "America/Argentina/Buenos_Aires",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "ars",
+    "mLocalNames": [
+      "Argentina"
+    ]
+  },
+  {
+    "mISO2": "am",
+    "mISO3": "arm",
+    "mISONum": 51,
+    "mTLD": ".am",
+    "mCallingCode": "+374",
+    "mLatitude": 40.28952569,
+    "mLongitude": 44.92993276,
+    "mTimezone": "Asia/Yerevan",
+    "mLanguages": [
+      "hy"
+    ],
+    "mContinent": "as",
+    "mCurrency": "amd",
+    "mLocalNames": [
+      "Հայաստան"
+    ]
+  },
+  {
+    "mISO2": "aw",
+    "mISO3": "abw",
+    "mISONum": 533,
+    "mTLD": ".aw",
+    "mCallingCode": "+297",
+    "mLatitude": 12.52088038,
+    "mLongitude": -69.98267711,
+    "mTimezone": "America/Aruba",
+    "mLanguages": [
+      "nl",
+      "pap"
+    ],
+    "mContinent": "na",
+    "mCurrency": "awg",
+    "mLocalNames": [
+      "Aruba"
+    ]
+  },
+  {
+    "mISO2": "au",
+    "mISO3": "aus",
+    "mISONum": 36,
+    "mTLD": ".au",
+    "mCallingCode": "+61",
+    "mLatitude": -25.73288704,
+    "mLongitude": 134.4910001,
+    "mTimezone": "Antarctica/Macquarie",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "aud",
+    "mLocalNames": [
+      "Australia"
+    ]
+  },
+  {
+    "mISO2": "at",
+    "mISO3": "aut",
+    "mISONum": 40,
+    "mTLD": ".at",
+    "mCallingCode": "+43",
+    "mLatitude": 47.58549439,
+    "mLongitude": 14.1264761,
+    "mTimezone": "Europe/Vienna",
+    "mLanguages": [
+      "de"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Österreich"
+    ]
+  },
+  {
+    "mISO2": "az",
+    "mISO3": "aze",
+    "mISONum": 31,
+    "mTLD": ".az",
+    "mCallingCode": "+994",
+    "mLatitude": 40.28827235,
+    "mLongitude": 47.54599879,
+    "mTimezone": "Asia/Baku",
+    "mLanguages": [
+      "az"
+    ],
+    "mContinent": "as",
+    "mCurrency": "azn",
+    "mLocalNames": [
+      "Azərbaycan"
+    ]
+  },
+  {
+    "mISO2": "bs",
+    "mISO3": "bhs",
+    "mISONum": 44,
+    "mTLD": ".bs",
+    "mCallingCode": "+1-242",
+    "mLatitude": 24.29036702,
+    "mLongitude": -76.62843038,
+    "mTimezone": "America/Nassau",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "bsd",
+    "mLocalNames": [
+      "Bahamas"
+    ]
+  },
+  {
+    "mISO2": "bh",
+    "mISO3": "bhr",
+    "mISONum": 48,
+    "mTLD": ".bh",
+    "mCallingCode": "+973",
+    "mLatitude": 26.04205135,
+    "mLongitude": 50.54196932,
+    "mTimezone": "Asia/Bahrain",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "as",
+    "mCurrency": "bhd",
+    "mLocalNames": [
+      "البحرين"
+    ]
+  },
+  {
+    "mISO2": "bd",
+    "mISO3": "bgd",
+    "mISONum": 50,
+    "mTLD": ".bd",
+    "mCallingCode": "+880",
+    "mLatitude": 23.86731158,
+    "mLongitude": 90.23812743,
+    "mTimezone": "Asia/Dacca",
+    "mLanguages": [
+      "bn"
+    ],
+    "mContinent": "as",
+    "mCurrency": "bdt",
+    "mLocalNames": [
+      "গণপ্রজাতন্ত্রী বাংলাদেশ"
+    ]
+  },
+  {
+    "mISO2": "bb",
+    "mISO3": "brb",
+    "mISONum": 52,
+    "mTLD": ".bb",
+    "mCallingCode": "+1-246",
+    "mLatitude": 13.18145428,
+    "mLongitude": -59.559797,
+    "mTimezone": "America/Barbados",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "bbd",
+    "mLocalNames": [
+      "Barbados"
+    ]
+  },
+  {
+    "mISO2": "by",
+    "mISO3": "blr",
+    "mISONum": 112,
+    "mTLD": ".by",
+    "mCallingCode": "+375",
+    "mLatitude": 53.53131377,
+    "mLongitude": 28.03209307,
+    "mTimezone": "Europe/Minsk",
+    "mLanguages": [
+      "be",
+      "ru"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "byn",
+    "mLocalNames": [
+      "Беларусь"
+    ]
+  },
+  {
+    "mISO2": "be",
+    "mISO3": "bel",
+    "mISONum": 56,
+    "mTLD": ".be",
+    "mCallingCode": "+32",
+    "mLatitude": 50.63981576,
+    "mLongitude": 4.640651139,
+    "mTimezone": "Europe/Brussels",
+    "mLanguages": [
+      "nl",
+      "fr",
+      "de"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "België",
+      "Belgique",
+      "Belgien"
+    ]
+  },
+  {
+    "mISO2": "bz",
+    "mISO3": "blz",
+    "mISONum": 84,
+    "mTLD": ".bz",
+    "mCallingCode": "+501",
+    "mLatitude": 17.20027509,
+    "mLongitude": -88.71010486,
+    "mTimezone": "America/Belize",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "bzd",
+    "mLocalNames": [
+      "Belize"
+    ]
+  },
+  {
+    "mISO2": "bj",
+    "mISO3": "ben",
+    "mISONum": 204,
+    "mTLD": ".bj",
+    "mCallingCode": "+229",
+    "mLatitude": 9.641759702,
+    "mLongitude": 2.327852544,
+    "mTimezone": "Africa/Porto-Novo",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xof",
+    "mLocalNames": [
+      "Bénin"
+    ]
+  },
+  {
+    "mISO2": "bm",
+    "mISO3": "bmu",
+    "mISONum": 60,
+    "mTLD": ".bm",
+    "mCallingCode": "+1-441",
+    "mLatitude": 32.31367802,
+    "mLongitude": -64.7545589,
+    "mTimezone": "Atlantic/Bermuda",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "bmd",
+    "mLocalNames": [
+      "Bermuda"
+    ]
+  },
+  {
+    "mISO2": "bt",
+    "mISO3": "btn",
+    "mISONum": 64,
+    "mTLD": ".bt",
+    "mCallingCode": "+975",
+    "mLatitude": 27.41106589,
+    "mLongitude": 90.40188155,
+    "mTimezone": "Asia/Thimbu",
+    "mLanguages": [
+      "dz"
+    ],
+    "mContinent": "as",
+    "mCurrency": "inr",
+    "mLocalNames": [
+      "འབྲུག་ཡུལ"
+    ]
+  },
+  {
+    "mISO2": "bo",
+    "mISO3": "bol",
+    "mISONum": 68,
+    "mTLD": ".bo",
+    "mCallingCode": "+591",
+    "mLatitude": -16.70814787,
+    "mLongitude": -64.68538645,
+    "mTimezone": "America/La_Paz",
+    "mLanguages": [
+      "es",
+      "qu",
+      "gn",
+      "ay"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "bob",
+    "mLocalNames": [
+      "Bolivia",
+      "Bulibiya",
+      "Volívia",
+      "Wuliwya"
+    ]
+  },
+  {
+    "mISO2": "bq",
+    "mISO3": "bes",
+    "mISONum": 535,
+    "mTLD": ".bq .nl",
+    "mCallingCode": "+599",
+    "mLatitude": 12.1683718,
+    "mLongitude": -68.308183,
+    "mTimezone": "America/Kralendijk",
+    "mLanguages": [
+      "nl"
+    ],
+    "mContinent": "na",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Caribisch Nederland"
+    ]
+  },
+  {
+    "mISO2": "ba",
+    "mISO3": "bih",
+    "mISONum": 70,
+    "mTLD": ".ba",
+    "mCallingCode": "+387",
+    "mLatitude": 44.17450125,
+    "mLongitude": 17.76876733,
+    "mTimezone": "Europe/Sarajevo",
+    "mLanguages": [
+      "bs",
+      "hr",
+      "sr"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "bam",
+    "mLocalNames": [
+      "Bosna i Hercegovina"
+    ]
+  },
+  {
+    "mISO2": "bw",
+    "mISO3": "bwa",
+    "mISONum": 72,
+    "mTLD": ".bw",
+    "mCallingCode": "+267",
+    "mLatitude": -22.18403213,
+    "mLongitude": 23.79853368,
+    "mTimezone": "Africa/Gaborone",
+    "mLanguages": [
+      "en",
+      "tn"
+    ],
+    "mContinent": "af",
+    "mCurrency": "bwp",
+    "mLocalNames": [
+      "Botswana"
+    ]
+  },
+  {
+    "mISO2": "bv",
+    "mISO3": "bvt",
+    "mISONum": 74,
+    "mTLD": "",
+    "mCallingCode": "+47",
+    "mLatitude": -54.433333,
+    "mLongitude": 3.4,
+    "mTimezone": "Europe/Oslo",
+    "mLanguages": [
+      "no"
+    ],
+    "mContinent": "an",
+    "mCurrency": "nok",
+    "mLocalNames": [
+      "Bouvetøya"
+    ]
+  },
+  {
+    "mISO2": "br",
+    "mISO3": "bra",
+    "mISONum": 76,
+    "mTLD": ".br",
+    "mCallingCode": "+55",
+    "mLatitude": -10.78777702,
+    "mLongitude": -53.09783113,
+    "mTimezone": "America/Araguaina",
+    "mLanguages": [
+      "pt"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "brl",
+    "mLocalNames": [
+      "Brasil"
+    ]
+  },
+  {
+    "mISO2": "io",
+    "mISO3": "iot",
+    "mISONum": 86,
+    "mTLD": ".io",
+    "mCallingCode": "+246",
+    "mLatitude": -7.330597507,
+    "mLongitude": 72.44541229,
+    "mTimezone": "Indian/Chagos",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "as",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "British Indian Ocean Territory"
+    ]
+  },
+  {
+    "mISO2": "bn",
+    "mISO3": "brn",
+    "mISONum": 96,
+    "mTLD": ".bn",
+    "mCallingCode": "+673",
+    "mLatitude": 4.519689575,
+    "mLongitude": 114.7220304,
+    "mTimezone": "Asia/Brunei",
+    "mLanguages": [
+      "ms"
+    ],
+    "mContinent": "as",
+    "mCurrency": "bnd",
+    "mLocalNames": [
+      "Brunei Darussalam"
+    ]
+  },
+  {
+    "mISO2": "bg",
+    "mISO3": "bgr",
+    "mISONum": 100,
+    "mTLD": ".bg",
+    "mCallingCode": "+359",
+    "mLatitude": 42.76890318,
+    "mLongitude": 25.21552909,
+    "mTimezone": "Europe/Sofia",
+    "mLanguages": [
+      "bg"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "bgn",
+    "mLocalNames": [
+      "България"
+    ]
+  },
+  {
+    "mISO2": "bf",
+    "mISO3": "bfa",
+    "mISONum": 854,
+    "mTLD": ".bf",
+    "mCallingCode": "+226",
+    "mLatitude": 12.26953846,
+    "mLongitude": -1.754566009,
+    "mTimezone": "Africa/Ouagadougou",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xof",
+    "mLocalNames": [
+      "Burkina Faso"
+    ]
+  },
+  {
+    "mISO2": "bi",
+    "mISO3": "bdi",
+    "mISONum": 108,
+    "mTLD": ".bi",
+    "mCallingCode": "+257",
+    "mLatitude": -3.359396657,
+    "mLongitude": 29.87512156,
+    "mTimezone": "Africa/Bujumbura",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "bif",
+    "mLocalNames": [
+      "Burundi"
+    ]
+  },
+  {
+    "mISO2": "cv",
+    "mISO3": "cpv",
+    "mISONum": 132,
+    "mTLD": ".cv",
+    "mCallingCode": "+238",
+    "mLatitude": 15.95523324,
+    "mLongitude": -23.9598882,
+    "mTimezone": "Atlantic/Cape_Verde",
+    "mLanguages": [
+      "pt"
+    ],
+    "mContinent": "af",
+    "mCurrency": "cve",
+    "mLocalNames": [
+      "Cabo Verde"
+    ]
+  },
+  {
+    "mISO2": "kh",
+    "mISO3": "khm",
+    "mISONum": 116,
+    "mTLD": ".kh",
+    "mCallingCode": "+855",
+    "mLatitude": 12.72004786,
+    "mLongitude": 104.9069432,
+    "mTimezone": "Asia/Phnom_Penh",
+    "mLanguages": [
+      "km"
+    ],
+    "mContinent": "as",
+    "mCurrency": "khr",
+    "mLocalNames": [
+      "កម្ពុជា"
+    ]
+  },
+  {
+    "mISO2": "cm",
+    "mISO3": "cmr",
+    "mISONum": 120,
+    "mTLD": ".cm",
+    "mCallingCode": "+237",
+    "mLatitude": 5.69109849,
+    "mLongitude": 12.73964156,
+    "mTimezone": "Africa/Douala",
+    "mLanguages": [
+      "fr",
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xaf",
+    "mLocalNames": [
+      "Cameroun",
+      "Cameroon"
+    ]
+  },
+  {
+    "mISO2": "ca",
+    "mISO3": "can",
+    "mISONum": 124,
+    "mTLD": ".ca",
+    "mCallingCode": "+1",
+    "mLatitude": 61.36206324,
+    "mLongitude": -98.30777028,
+    "mTimezone": "America/Atikokan",
+    "mLanguages": [
+      "en",
+      "fr"
+    ],
+    "mContinent": "na",
+    "mCurrency": "cad",
+    "mLocalNames": [
+      "Canada"
+    ]
+  },
+  {
+    "mISO2": "ky",
+    "mISO3": "cym",
+    "mISONum": 136,
+    "mTLD": ".ky",
+    "mCallingCode": "+1-345",
+    "mLatitude": 19.42896497,
+    "mLongitude": -80.91213321,
+    "mTimezone": "America/Cayman",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "kyd",
+    "mLocalNames": [
+      "Cayman Islands"
+    ]
+  },
+  {
+    "mISO2": "cf",
+    "mISO3": "caf",
+    "mISONum": 140,
+    "mTLD": ".cf",
+    "mCallingCode": "+236",
+    "mLatitude": 6.56823297,
+    "mLongitude": 20.46826831,
+    "mTimezone": "Africa/Bangui",
+    "mLanguages": [
+      "fr",
+      "sg"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xaf",
+    "mLocalNames": [
+      "République centrafricaine",
+      "Ködörösêse tî Bêafrîka"
+    ]
+  },
+  {
+    "mISO2": "td",
+    "mISO3": "tcd",
+    "mISONum": 148,
+    "mTLD": ".td",
+    "mCallingCode": "+235",
+    "mLatitude": 15.33333759,
+    "mLongitude": 18.64492513,
+    "mTimezone": "Africa/Ndjamena",
+    "mLanguages": [
+      "fr",
+      "ar"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xaf",
+    "mLocalNames": [
+      "Tchad",
+      "تشاد"
+    ]
+  },
+  {
+    "mISO2": "cl",
+    "mISO3": "chl",
+    "mISONum": 152,
+    "mTLD": ".cl",
+    "mCallingCode": "+56",
+    "mLatitude": -37.73070989,
+    "mLongitude": -71.38256213,
+    "mTimezone": "America/Punta_Arenas",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "clp",
+    "mLocalNames": [
+      "Chile"
+    ]
+  },
+  {
+    "mISO2": "cn",
+    "mISO3": "chn",
+    "mISONum": 156,
+    "mTLD": ".cn",
+    "mCallingCode": "+86",
+    "mLatitude": 36.56176546,
+    "mLongitude": 103.8190735,
+    "mTimezone": "Asia/Chongqing",
+    "mLanguages": [
+      "zh"
+    ],
+    "mContinent": "as",
+    "mCurrency": "cny",
+    "mLocalNames": [
+      "中国"
+    ]
+  },
+  {
+    "mISO2": "cx",
+    "mISO3": "cxr",
+    "mISONum": 162,
+    "mTLD": ".cx",
+    "mCallingCode": "+53",
+    "mLatitude": -10.4912311,
+    "mLongitude": 105.6229817,
+    "mTimezone": "Indian/Christmas",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "as",
+    "mCurrency": "aud",
+    "mLocalNames": [
+      "Christmas Island"
+    ]
+  },
+  {
+    "mISO2": "cc",
+    "mISO3": "cck",
+    "mISONum": 166,
+    "mTLD": ".cc",
+    "mCallingCode": "+61",
+    "mLatitude": -12.1708739,
+    "mLongitude": 96.8417393,
+    "mTimezone": "Indian/Cocos",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "as",
+    "mCurrency": "aud",
+    "mLocalNames": [
+      "Cocos (Keeling) Islands"
+    ]
+  },
+  {
+    "mISO2": "co",
+    "mISO3": "col",
+    "mISONum": 170,
+    "mTLD": ".co",
+    "mCallingCode": "+57",
+    "mLatitude": 3.913834307,
+    "mLongitude": -73.08114582,
+    "mTimezone": "America/Bogota",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "cop",
+    "mLocalNames": [
+      "Colombia"
+    ]
+  },
+  {
+    "mISO2": "km",
+    "mISO3": "com",
+    "mISONum": 174,
+    "mTLD": ".km",
+    "mCallingCode": "+269",
+    "mLatitude": -11.87783444,
+    "mLongitude": 43.68253968,
+    "mTimezone": "Indian/Comoro",
+    "mLanguages": [
+      "ar",
+      "fr",
+      "sw"
+    ],
+    "mContinent": "af",
+    "mCurrency": "kmf",
+    "mLocalNames": [
+      "ﺍﻟﻘﻤﺮي",
+      "Comores",
+      "Komori"
+    ]
+  },
+  {
+    "mISO2": "cd",
+    "mISO3": "cod",
+    "mISONum": 180,
+    "mTLD": ".cd",
+    "mCallingCode": "+243",
+    "mLatitude": -2.87746289,
+    "mLongitude": 23.64396107,
+    "mTimezone": "Africa/Kinshasa",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "cdf",
+    "mLocalNames": [
+      "République Démocratique du Congo"
+    ]
+  },
+  {
+    "mISO2": "cg",
+    "mISO3": "cog",
+    "mISONum": 178,
+    "mTLD": ".cg",
+    "mCallingCode": "+242",
+    "mLatitude": -0.837874631,
+    "mLongitude": 15.21965762,
+    "mTimezone": "Africa/Brazzaville",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xaf",
+    "mLocalNames": [
+      "République du Congo"
+    ]
+  },
+  {
+    "mISO2": "ck",
+    "mISO3": "cok",
+    "mISONum": 184,
+    "mTLD": ".ck",
+    "mCallingCode": "+682",
+    "mLatitude": -21.21927288,
+    "mLongitude": -159.7872422,
+    "mTimezone": "Pacific/Rarotonga",
+    "mLanguages": [
+      "en",
+      "rar"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "nzd",
+    "mLocalNames": [
+      "Cook Islands",
+      "Kūki ʻĀirani"
+    ]
+  },
+  {
+    "mISO2": "cr",
+    "mISO3": "cri",
+    "mISONum": 188,
+    "mTLD": ".cr",
+    "mCallingCode": "+506",
+    "mLatitude": 9.976344638,
+    "mLongitude": -84.19208768,
+    "mTimezone": "America/Costa_Rica",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "na",
+    "mCurrency": "crc",
+    "mLocalNames": [
+      "Costa Rica"
+    ]
+  },
+  {
+    "mISO2": "ci",
+    "mISO3": "civ",
+    "mISONum": 384,
+    "mTLD": ".ci",
+    "mCallingCode": "+225",
+    "mLatitude": 7.628426202,
+    "mLongitude": -5.5692157,
+    "mTimezone": "Africa/Abidjan",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xof",
+    "mLocalNames": [
+      "Côte d'Ivoire"
+    ]
+  },
+  {
+    "mISO2": "hr",
+    "mISO3": "hrv",
+    "mISONum": 191,
+    "mTLD": ".hr",
+    "mCallingCode": "+385",
+    "mLatitude": 45.08047631,
+    "mLongitude": 16.40412899,
+    "mTimezone": "Europe/Zagreb",
+    "mLanguages": [
+      "hr"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "hrk",
+    "mLocalNames": [
+      "Hrvatska"
+    ]
+  },
+  {
+    "mISO2": "cu",
+    "mISO3": "cub",
+    "mISONum": 192,
+    "mTLD": ".cu",
+    "mCallingCode": "+53",
+    "mLatitude": 21.62289528,
+    "mLongitude": -79.01605384,
+    "mTimezone": "America/Havana",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "na",
+    "mCurrency": "cup",
+    "mLocalNames": [
+      "Cuba"
+    ]
+  },
+  {
+    "mISO2": "cw",
+    "mISO3": "cuw",
+    "mISONum": 531,
+    "mTLD": ".cw",
+    "mCallingCode": "+599-9",
+    "mLatitude": 12.19551675,
+    "mLongitude": -68.97119369,
+    "mTimezone": "America/Curacao",
+    "mLanguages": [
+      "nl",
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "ang",
+    "mLocalNames": [
+      "Curaçao"
+    ]
+  },
+  {
+    "mISO2": "cy",
+    "mISO3": "cyp",
+    "mISONum": 196,
+    "mTLD": ".cy",
+    "mCallingCode": "+357",
+    "mLatitude": 34.91667211,
+    "mLongitude": 33.0060022,
+    "mTimezone": "Asia/Famagusta",
+    "mLanguages": [
+      "el",
+      "tr"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Κύπρος",
+      "Kibris"
+    ]
+  },
+  {
+    "mISO2": "cz",
+    "mISO3": "cze",
+    "mISONum": 203,
+    "mTLD": ".cz",
+    "mCallingCode": "+420",
+    "mLatitude": 49.73341233,
+    "mLongitude": 15.31240163,
+    "mTimezone": "Europe/Prague",
+    "mLanguages": [
+      "cs"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "czk",
+    "mLocalNames": [
+      "Česká republika"
+    ]
+  },
+  {
+    "mISO2": "dk",
+    "mISO3": "dnk",
+    "mISONum": 208,
+    "mTLD": ".dk",
+    "mCallingCode": "+45",
+    "mLatitude": 55.98125296,
+    "mLongitude": 10.02800992,
+    "mTimezone": "Europe/Copenhagen",
+    "mLanguages": [
+      "da"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "dkk",
+    "mLocalNames": [
+      "Danmark"
+    ]
+  },
+  {
+    "mISO2": "dj",
+    "mISO3": "dji",
+    "mISONum": 262,
+    "mTLD": ".dj",
+    "mCallingCode": "+253",
+    "mLatitude": 11.74871806,
+    "mLongitude": 42.5606754,
+    "mTimezone": "Africa/Djibouti",
+    "mLanguages": [
+      "fr",
+      "ar",
+      "so",
+      "aa"
+    ],
+    "mContinent": "af",
+    "mCurrency": "djf",
+    "mLocalNames": [
+      "Djibouti",
+      "جيبوتي",
+      "Jabuuti",
+      "Gabuutih"
+    ]
+  },
+  {
+    "mISO2": "dm",
+    "mISO3": "dma",
+    "mISONum": 212,
+    "mTLD": ".dm",
+    "mCallingCode": "+1-767",
+    "mLatitude": 15.4394702,
+    "mLongitude": -61.357726,
+    "mTimezone": "America/Dominica",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "xcd",
+    "mLocalNames": [
+      "Dominica"
+    ]
+  },
+  {
+    "mISO2": "do",
+    "mISO3": "dom",
+    "mISONum": 214,
+    "mTLD": ".do",
+    "mCallingCode": "+1-809; +1-829; +1-849",
+    "mLatitude": 18.89433082,
+    "mLongitude": -70.50568896,
+    "mTimezone": "America/Santo_Domingo",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "na",
+    "mCurrency": "dop",
+    "mLocalNames": [
+      "República Dominicana"
+    ]
+  },
+  {
+    "mISO2": "ec",
+    "mISO3": "ecu",
+    "mISONum": 218,
+    "mTLD": ".ec",
+    "mCallingCode": "+593",
+    "mLatitude": -1.423816125,
+    "mLongitude": -78.75201923,
+    "mTimezone": "America/Guayaquil",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Ecuador"
+    ]
+  },
+  {
+    "mISO2": "eg",
+    "mISO3": "egy",
+    "mISONum": 818,
+    "mTLD": ".eg",
+    "mCallingCode": "+20",
+    "mLatitude": 26.49593311,
+    "mLongitude": 29.86190099,
+    "mTimezone": "Africa/Cairo",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "af",
+    "mCurrency": "egp",
+    "mLocalNames": [
+      "مصر"
+    ]
+  },
+  {
+    "mISO2": "sv",
+    "mISO3": "slv",
+    "mISONum": 222,
+    "mTLD": ".sv",
+    "mCallingCode": "+503",
+    "mLatitude": 13.73943744,
+    "mLongitude": -88.87164469,
+    "mTimezone": "America/El_Salvador",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "na",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "El Salvador"
+    ]
+  },
+  {
+    "mISO2": "gq",
+    "mISO3": "gnq",
+    "mISONum": 226,
+    "mTLD": ".gq",
+    "mCallingCode": "+240",
+    "mLatitude": 1.705551355,
+    "mLongitude": 10.34137924,
+    "mTimezone": "Africa/Malabo",
+    "mLanguages": [
+      "es",
+      "fr",
+      "pt"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xaf",
+    "mLocalNames": [
+      "Guiena ecuatorial",
+      "Guinée équatoriale",
+      "Guiné Equatorial"
+    ]
+  },
+  {
+    "mISO2": "er",
+    "mISO3": "eri",
+    "mISONum": 232,
+    "mTLD": ".er",
+    "mCallingCode": "+291",
+    "mLatitude": 15.36186618,
+    "mLongitude": 38.84617011,
+    "mTimezone": "Africa/Asmara",
+    "mLanguages": [
+      "ti",
+      "ar",
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "ern",
+    "mLocalNames": [
+      "ኤርትራ",
+      "إرتريا",
+      "Eritrea"
+    ]
+  },
+  {
+    "mISO2": "ee",
+    "mISO3": "est",
+    "mISONum": 233,
+    "mTLD": ".ee",
+    "mCallingCode": "+372",
+    "mLatitude": 58.67192972,
+    "mLongitude": 25.54248537,
+    "mTimezone": "Europe/Tallinn",
+    "mLanguages": [
+      "et"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Eesti"
+    ]
+  },
+  {
+    "mISO2": "sz",
+    "mISO3": "swz",
+    "mISONum": 748,
+    "mTLD": ".sz",
+    "mCallingCode": "+268",
+    "mLatitude": -26.55843045,
+    "mLongitude": 31.4819369,
+    "mTimezone": "Africa/Mbabane",
+    "mLanguages": [
+      "en",
+      "ss"
+    ],
+    "mContinent": "af",
+    "mCurrency": "szl",
+    "mLocalNames": [
+      "eSwatini"
+    ]
+  },
+  {
+    "mISO2": "et",
+    "mISO3": "eth",
+    "mISONum": 231,
+    "mTLD": ".et",
+    "mCallingCode": "+251",
+    "mLatitude": 8.622786793,
+    "mLongitude": 39.60080098,
+    "mTimezone": "Africa/Addis_Ababa",
+    "mLanguages": [
+      "am",
+      "om"
+    ],
+    "mContinent": "af",
+    "mCurrency": "etb",
+    "mLocalNames": [
+      "ኢትዮጵያ",
+      "Itoophiyaa"
+    ]
+  },
+  {
+    "mISO2": "fk",
+    "mISO3": "flk",
+    "mISONum": 238,
+    "mTLD": ".fk",
+    "mCallingCode": "+500",
+    "mLatitude": -51.74483954,
+    "mLongitude": -59.35238956,
+    "mTimezone": "Atlantic/Stanley",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "fkp",
+    "mLocalNames": [
+      "Falkland Islands"
+    ]
+  },
+  {
+    "mISO2": "fo",
+    "mISO3": "fro",
+    "mISONum": 234,
+    "mTLD": ".fo",
+    "mCallingCode": "+298",
+    "mLatitude": 62.05385403,
+    "mLongitude": -6.880954234,
+    "mTimezone": "Atlantic/Faeroe",
+    "mLanguages": [
+      "fo",
+      "da"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "dkk",
+    "mLocalNames": [
+      "Føroyar",
+      "Færøerne"
+    ]
+  },
+  {
+    "mISO2": "fj",
+    "mISO3": "fji",
+    "mISONum": 242,
+    "mTLD": ".fj",
+    "mCallingCode": "+679",
+    "mLatitude": -17.42858032,
+    "mLongitude": 165.4519543,
+    "mTimezone": "Pacific/Fiji",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "fjd",
+    "mLocalNames": [
+      "Fiji"
+    ]
+  },
+  {
+    "mISO2": "fi",
+    "mISO3": "fin",
+    "mISONum": 246,
+    "mTLD": ".fi",
+    "mCallingCode": "+358",
+    "mLatitude": 64.49884603,
+    "mLongitude": 26.2746656,
+    "mTimezone": "Europe/Helsinki",
+    "mLanguages": [
+      "fi",
+      "sv",
+      "se"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Suomi"
+    ]
+  },
+  {
+    "mISO2": "fr",
+    "mISO3": "fra",
+    "mISONum": 250,
+    "mTLD": ".fr",
+    "mCallingCode": "+33",
+    "mLatitude": 42.17344011,
+    "mLongitude": -2.761729445,
+    "mTimezone": "Europe/Paris",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "France"
+    ]
+  },
+  {
+    "mISO2": "gf",
+    "mISO3": "guf",
+    "mISONum": 254,
+    "mTLD": ".gf",
+    "mCallingCode": "+594",
+    "mLatitude": 3.9332383,
+    "mLongitude": -53.0875742,
+    "mTimezone": "America/Cayenne",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Guyane française"
+    ]
+  },
+  {
+    "mISO2": "pf",
+    "mISO3": "pyf",
+    "mISONum": 258,
+    "mTLD": ".pf",
+    "mCallingCode": "+689",
+    "mLatitude": -14.72227409,
+    "mLongitude": -144.9049439,
+    "mTimezone": "Pacific/Gambier",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "xpf",
+    "mLocalNames": [
+      "Polynésie française"
+    ]
+  },
+  {
+    "mISO2": "tf",
+    "mISO3": "atf",
+    "mISONum": 260,
+    "mTLD": ".tf",
+    "mCallingCode": "+262",
+    "mLatitude": -49.24895485,
+    "mLongitude": 69.22666758,
+    "mTimezone": "Indian/Kerguelen",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "an",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Terres australes et antarctiques françaises"
+    ]
+  },
+  {
+    "mISO2": "ga",
+    "mISO3": "gab",
+    "mISONum": 266,
+    "mTLD": ".ga",
+    "mCallingCode": "+241",
+    "mLatitude": -0.58660025,
+    "mLongitude": 11.7886287,
+    "mTimezone": "Africa/Libreville",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xaf",
+    "mLocalNames": [
+      "Gabon"
+    ]
+  },
+  {
+    "mISO2": "gm",
+    "mISO3": "gmb",
+    "mISONum": 270,
+    "mTLD": ".gm",
+    "mCallingCode": "+220",
+    "mLatitude": 13.44965244,
+    "mLongitude": -15.39601295,
+    "mTimezone": "Africa/Banjul",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "gmd",
+    "mLocalNames": [
+      "The Gambia"
+    ]
+  },
+  {
+    "mISO2": "ge",
+    "mISO3": "geo",
+    "mISONum": 268,
+    "mTLD": ".ge",
+    "mCallingCode": "+995",
+    "mLatitude": 42.16855755,
+    "mLongitude": 43.50780252,
+    "mTimezone": "Asia/Tbilisi",
+    "mLanguages": [
+      "ka"
+    ],
+    "mContinent": "as",
+    "mCurrency": "gel",
+    "mLocalNames": [
+      "საქართველო"
+    ]
+  },
+  {
+    "mISO2": "de",
+    "mISO3": "deu",
+    "mISONum": 276,
+    "mTLD": ".de",
+    "mCallingCode": "+49",
+    "mLatitude": 51.10698181,
+    "mLongitude": 10.38578051,
+    "mTimezone": "Europe/Berlin",
+    "mLanguages": [
+      "de"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Deutschland"
+    ]
+  },
+  {
+    "mISO2": "gh",
+    "mISO3": "gha",
+    "mISONum": 288,
+    "mTLD": ".gh",
+    "mCallingCode": "+233",
+    "mLatitude": 7.953456435,
+    "mLongitude": -1.216765658,
+    "mTimezone": "Africa/Accra",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "ghs",
+    "mLocalNames": [
+      "Ghana"
+    ]
+  },
+  {
+    "mISO2": "gi",
+    "mISO3": "gib",
+    "mISONum": 292,
+    "mTLD": ".gi",
+    "mCallingCode": "+350",
+    "mLatitude": 36.1319767,
+    "mLongitude": -5.3529174,
+    "mTimezone": "Europe/Gibraltar",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "gip",
+    "mLocalNames": [
+      "Gibraltar"
+    ]
+  },
+  {
+    "mISO2": "gr",
+    "mISO3": "grc",
+    "mISONum": 300,
+    "mTLD": ".gr",
+    "mCallingCode": "+30",
+    "mLatitude": 39.07469623,
+    "mLongitude": 22.95555794,
+    "mTimezone": "Europe/Athens",
+    "mLanguages": [
+      "el"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Ελλάδα"
+    ]
+  },
+  {
+    "mISO2": "gl",
+    "mISO3": "grl",
+    "mISONum": 304,
+    "mTLD": ".gl",
+    "mCallingCode": "+299",
+    "mLatitude": 74.71051289,
+    "mLongitude": -41.34191127,
+    "mTimezone": "America/Danmarkshavn",
+    "mLanguages": [
+      "kl",
+      "da"
+    ],
+    "mContinent": "na",
+    "mCurrency": "dkk",
+    "mLocalNames": [
+      "Kalaallit Nunaat",
+      "Grønland"
+    ]
+  },
+  {
+    "mISO2": "gd",
+    "mISO3": "grd",
+    "mISONum": 308,
+    "mTLD": ".gd",
+    "mCallingCode": "+1-473",
+    "mLatitude": 12.11725044,
+    "mLongitude": -61.68220189,
+    "mTimezone": "America/Grenada",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "xcd",
+    "mLocalNames": [
+      "Grenada"
+    ]
+  },
+  {
+    "mISO2": "gp",
+    "mISO3": "glp",
+    "mISONum": 312,
+    "mTLD": ".gp",
+    "mCallingCode": "+590",
+    "mLatitude": 16.1730949,
+    "mLongitude": -61.4054001,
+    "mTimezone": "America/Guadeloupe",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "na",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Guadeloupe"
+    ]
+  },
+  {
+    "mISO2": "gu",
+    "mISO3": "gum",
+    "mISONum": 316,
+    "mTLD": ".gu",
+    "mCallingCode": "+1-671",
+    "mLatitude": 13.44165626,
+    "mLongitude": 144.7679102,
+    "mTimezone": "Pacific/Guam",
+    "mLanguages": [
+      "en",
+      "ch"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Guam",
+      "Guåhån"
+    ]
+  },
+  {
+    "mISO2": "gt",
+    "mISO3": "gtm",
+    "mISONum": 320,
+    "mTLD": ".gt",
+    "mCallingCode": "+502",
+    "mLatitude": 15.69403664,
+    "mLongitude": -90.36482009,
+    "mTimezone": "America/Guatemala",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "na",
+    "mCurrency": "gtq",
+    "mLocalNames": [
+      "Guatemala"
+    ]
+  },
+  {
+    "mISO2": "gg",
+    "mISO3": "ggy",
+    "mISONum": 831,
+    "mTLD": ".gg",
+    "mCallingCode": "+44",
+    "mLatitude": 49.46809761,
+    "mLongitude": -2.572390636,
+    "mTimezone": "Europe/Guernsey",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "ggp",
+    "mLocalNames": [
+      "Guernsey"
+    ]
+  },
+  {
+    "mISO2": "gn",
+    "mISO3": "gin",
+    "mISONum": 324,
+    "mTLD": ".gn",
+    "mCallingCode": "+224",
+    "mLatitude": 10.43621593,
+    "mLongitude": -10.94066612,
+    "mTimezone": "Africa/Conakry",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "gnf",
+    "mLocalNames": [
+      "Guinée"
+    ]
+  },
+  {
+    "mISO2": "gw",
+    "mISO3": "gnb",
+    "mISONum": 624,
+    "mTLD": ".gw",
+    "mCallingCode": "+245",
+    "mLatitude": 12.04744948,
+    "mLongitude": -14.94972445,
+    "mTimezone": "Africa/Bissau",
+    "mLanguages": [
+      "pt"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xof",
+    "mLocalNames": [
+      "Guiné-Bissau"
+    ]
+  },
+  {
+    "mISO2": "gy",
+    "mISO3": "guy",
+    "mISONum": 328,
+    "mTLD": ".gy",
+    "mCallingCode": "+592",
+    "mLatitude": 4.79378034,
+    "mLongitude": -58.98202459,
+    "mTimezone": "America/Guyana",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "gyd",
+    "mLocalNames": [
+      "Guyana"
+    ]
+  },
+  {
+    "mISO2": "ht",
+    "mISO3": "hti",
+    "mISONum": 332,
+    "mTLD": ".ht",
+    "mCallingCode": "+509",
+    "mLatitude": 18.93502563,
+    "mLongitude": -72.68527509,
+    "mTimezone": "America/Port-au-Prince",
+    "mLanguages": [
+      "fr",
+      "ht"
+    ],
+    "mContinent": "na",
+    "mCurrency": "htg",
+    "mLocalNames": [
+      "Haïti",
+      "Ayiti"
+    ]
+  },
+  {
+    "mISO2": "hm",
+    "mISO3": "hmd",
+    "mISONum": 334,
+    "mTLD": ".hm",
+    "mCallingCode": "+672",
+    "mLatitude": -53.08724656,
+    "mLongitude": 73.5205171,
+    "mTimezone": "Indian/Kerguelen",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "an",
+    "mCurrency": "aud",
+    "mLocalNames": [
+      "Heard Island and McDonald Islands"
+    ]
+  },
+  {
+    "mISO2": "va",
+    "mISO3": "vat",
+    "mISONum": 336,
+    "mTLD": ".va",
+    "mCallingCode": "+418",
+    "mLatitude": 41.90174985,
+    "mLongitude": 12.43387177,
+    "mTimezone": "Europe/Vatican",
+    "mLanguages": [
+      "it"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Città del Vaticano"
+    ]
+  },
+  {
+    "mISO2": "hn",
+    "mISO3": "hnd",
+    "mISONum": 340,
+    "mTLD": ".hn",
+    "mCallingCode": "+504",
+    "mLatitude": 14.82688165,
+    "mLongitude": -86.6151661,
+    "mTimezone": "America/Tegucigalpa",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "na",
+    "mCurrency": "hnl",
+    "mLocalNames": [
+      "Honduras"
+    ]
+  },
+  {
+    "mISO2": "hk",
+    "mISO3": "hkg",
+    "mISONum": 344,
+    "mTLD": ".hk",
+    "mCallingCode": "+852",
+    "mLatitude": 22.39827737,
+    "mLongitude": 114.1138045,
+    "mTimezone": "Asia/Hong_Kong",
+    "mLanguages": [
+      "zh",
+      "en"
+    ],
+    "mContinent": "as",
+    "mCurrency": "hkd",
+    "mLocalNames": [
+      "香港",
+      "Hong Kong"
+    ]
+  },
+  {
+    "mISO2": "hu",
+    "mISO3": "hun",
+    "mISONum": 348,
+    "mTLD": ".hu",
+    "mCallingCode": "+36",
+    "mLatitude": 47.16277506,
+    "mLongitude": 19.39559116,
+    "mTimezone": "Europe/Budapest",
+    "mLanguages": [
+      "hu"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "huf",
+    "mLocalNames": [
+      "Magyarország"
+    ]
+  },
+  {
+    "mISO2": "is",
+    "mISO3": "isl",
+    "mISONum": 352,
+    "mTLD": ".is",
+    "mCallingCode": "+354",
+    "mLatitude": 64.99575386,
+    "mLongitude": -18.57396167,
+    "mTimezone": "Atlantic/Reykjavik",
+    "mLanguages": [
+      "is"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "isk",
+    "mLocalNames": [
+      "Ísland"
+    ]
+  },
+  {
+    "mISO2": "in",
+    "mISO3": "ind",
+    "mISONum": 356,
+    "mTLD": ".in",
+    "mCallingCode": "+91",
+    "mLatitude": 22.88578212,
+    "mLongitude": 79.6119761,
+    "mTimezone": "Asia/Calcutta",
+    "mLanguages": [
+      "hi",
+      "en"
+    ],
+    "mContinent": "as",
+    "mCurrency": "inr",
+    "mLocalNames": [
+      "भारत",
+      "India"
+    ]
+  },
+  {
+    "mISO2": "id",
+    "mISO3": "idn",
+    "mISONum": 360,
+    "mTLD": ".id",
+    "mCallingCode": "+62",
+    "mLatitude": -2.215054563,
+    "mLongitude": 117.2401137,
+    "mTimezone": "Asia/Jakarta",
+    "mLanguages": [
+      "id"
+    ],
+    "mContinent": "as",
+    "mCurrency": "idr",
+    "mLocalNames": [
+      "Indonesia"
+    ]
+  },
+  {
+    "mISO2": "ir",
+    "mISO3": "irn",
+    "mISONum": 364,
+    "mTLD": ".ir",
+    "mCallingCode": "+98",
+    "mLatitude": 32.57503292,
+    "mLongitude": 54.27407004,
+    "mTimezone": "Asia/Tehran",
+    "mLanguages": [
+      "fa"
+    ],
+    "mContinent": "as",
+    "mCurrency": "irr",
+    "mLocalNames": [
+      "ایران"
+    ]
+  },
+  {
+    "mISO2": "iq",
+    "mISO3": "irq",
+    "mISONum": 368,
+    "mTLD": ".iq",
+    "mCallingCode": "+964",
+    "mLatitude": 33.03970582,
+    "mLongitude": 43.74353149,
+    "mTimezone": "Asia/Baghdad",
+    "mLanguages": [
+      "ar",
+      "ku"
+    ],
+    "mContinent": "as",
+    "mCurrency": "iqd",
+    "mLocalNames": [
+      "العراق",
+      "Iraq"
+    ]
+  },
+  {
+    "mISO2": "ie",
+    "mISO3": "irl",
+    "mISONum": 372,
+    "mTLD": ".ie",
+    "mCallingCode": "+353",
+    "mLatitude": 53.1754487,
+    "mLongitude": -8.137935687,
+    "mTimezone": "Eire",
+    "mLanguages": [
+      "en",
+      "ga"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Ireland",
+      "Éire"
+    ]
+  },
+  {
+    "mISO2": "im",
+    "mISO3": "imn",
+    "mISONum": 833,
+    "mTLD": ".im",
+    "mCallingCode": "+44-1624",
+    "mLatitude": 54.22418911,
+    "mLongitude": -4.538739523,
+    "mTimezone": "Europe/Isle_of_Man",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "gbp",
+    "mLocalNames": [
+      "Isle of Man"
+    ]
+  },
+  {
+    "mISO2": "il",
+    "mISO3": "isr",
+    "mISONum": 376,
+    "mTLD": ".il",
+    "mCallingCode": "+972",
+    "mLatitude": 31.46110101,
+    "mLongitude": 35.00444693,
+    "mTimezone": "Asia/Jerusalem",
+    "mLanguages": [
+      "he"
+    ],
+    "mContinent": "as",
+    "mCurrency": "ils",
+    "mLocalNames": [
+      "ישראל"
+    ]
+  },
+  {
+    "mISO2": "it",
+    "mISO3": "ita",
+    "mISONum": 380,
+    "mTLD": ".it",
+    "mCallingCode": "+39",
+    "mLatitude": 42.79662641,
+    "mLongitude": 12.07001339,
+    "mTimezone": "Europe/Rome",
+    "mLanguages": [
+      "it",
+      "de",
+      "fr"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Italia"
+    ]
+  },
+  {
+    "mISO2": "jm",
+    "mISO3": "jam",
+    "mISONum": 388,
+    "mTLD": ".jm",
+    "mCallingCode": "+1-876",
+    "mLatitude": 18.15694878,
+    "mLongitude": -77.31482593,
+    "mTimezone": "America/Jamaica",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "jmd",
+    "mLocalNames": [
+      "Jamaica"
+    ]
+  },
+  {
+    "mISO2": "jp",
+    "mISO3": "jpn",
+    "mISONum": 392,
+    "mTLD": ".jp",
+    "mCallingCode": "+81",
+    "mLatitude": 37.59230135,
+    "mLongitude": 138.0308956,
+    "mTimezone": "Asia/Tokyo",
+    "mLanguages": [
+      "ja"
+    ],
+    "mContinent": "as",
+    "mCurrency": "jpy",
+    "mLocalNames": [
+      "日本"
+    ]
+  },
+  {
+    "mISO2": "je",
+    "mISO3": "jey",
+    "mISONum": 832,
+    "mTLD": ".je",
+    "mCallingCode": "+44-1534",
+    "mLatitude": 49.21837377,
+    "mLongitude": -2.126899379,
+    "mTimezone": "Europe/Jersey",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "gbp",
+    "mLocalNames": [
+      "Jersey"
+    ]
+  },
+  {
+    "mISO2": "jo",
+    "mISO3": "jor",
+    "mISONum": 400,
+    "mTLD": ".jo",
+    "mCallingCode": "+962",
+    "mLatitude": 31.24579091,
+    "mLongitude": 36.77136104,
+    "mTimezone": "Asia/Amman",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "as",
+    "mCurrency": "jod",
+    "mLocalNames": [
+      "الأُرْدُن"
+    ]
+  },
+  {
+    "mISO2": "kz",
+    "mISO3": "kaz",
+    "mISONum": 398,
+    "mTLD": ".kz",
+    "mCallingCode": "+7",
+    "mLatitude": 48.15688067,
+    "mLongitude": 67.29149357,
+    "mTimezone": "Asia/Almaty",
+    "mLanguages": [
+      "kk",
+      "ru"
+    ],
+    "mContinent": "as",
+    "mCurrency": "kzt",
+    "mLocalNames": [
+      "Қазақстан",
+      "Казахстан"
+    ]
+  },
+  {
+    "mISO2": "ke",
+    "mISO3": "ken",
+    "mISONum": 404,
+    "mTLD": ".ke",
+    "mCallingCode": "+254",
+    "mLatitude": 0.599880215,
+    "mLongitude": 37.79593973,
+    "mTimezone": "Africa/Nairobi",
+    "mLanguages": [
+      "sw",
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "kes",
+    "mLocalNames": [
+      "Kenya"
+    ]
+  },
+  {
+    "mISO2": "ki",
+    "mISO3": "kir",
+    "mISONum": 296,
+    "mTLD": ".ki",
+    "mCallingCode": "+686",
+    "mLatitude": 0.860015032,
+    "mLongitude": -45.61110513,
+    "mTimezone": "Pacific/Enderbury",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "aud",
+    "mLocalNames": [
+      "Kiribati"
+    ]
+  },
+  {
+    "mISO2": "kp",
+    "mISO3": "prk",
+    "mISONum": 408,
+    "mTLD": ".kp",
+    "mCallingCode": "+850",
+    "mLatitude": 40.15350311,
+    "mLongitude": 127.1924797,
+    "mTimezone": "Asia/Pyongyang",
+    "mLanguages": [
+      "ko"
+    ],
+    "mContinent": "as",
+    "mCurrency": "kpw",
+    "mLocalNames": [
+      "북조선"
+    ]
+  },
+  {
+    "mISO2": "kr",
+    "mISO3": "kor",
+    "mISONum": 410,
+    "mTLD": ".kr",
+    "mCallingCode": "+82",
+    "mLatitude": 36.38523983,
+    "mLongitude": 127.8391609,
+    "mTimezone": "Asia/Seoul",
+    "mLanguages": [
+      "ko",
+      "en"
+    ],
+    "mContinent": "as",
+    "mCurrency": "krw",
+    "mLocalNames": [
+      "대한민국"
+    ]
+  },
+  {
+    "mISO2": "kw",
+    "mISO3": "kwt",
+    "mISONum": 414,
+    "mTLD": ".kw",
+    "mCallingCode": "+965",
+    "mLatitude": 29.33431262,
+    "mLongitude": 47.58700459,
+    "mTimezone": "Asia/Kuwait",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "as",
+    "mCurrency": "kwd",
+    "mLocalNames": [
+      "الكويت"
+    ]
+  },
+  {
+    "mISO2": "kg",
+    "mISO3": "kgz",
+    "mISONum": 417,
+    "mTLD": ".kg",
+    "mCallingCode": "+996",
+    "mLatitude": 41.46221943,
+    "mLongitude": 74.54165513,
+    "mTimezone": "Asia/Bishkek",
+    "mLanguages": [
+      "ky",
+      "ru"
+    ],
+    "mContinent": "as",
+    "mCurrency": "kgs",
+    "mLocalNames": [
+      "Кыргызстан",
+      "Киргизия"
+    ]
+  },
+  {
+    "mISO2": "la",
+    "mISO3": "lao",
+    "mISONum": 418,
+    "mTLD": ".la",
+    "mCallingCode": "+856",
+    "mLatitude": 18.50217433,
+    "mLongitude": 103.7377241,
+    "mTimezone": "Asia/Vientiane",
+    "mLanguages": [
+      "lo"
+    ],
+    "mContinent": "as",
+    "mCurrency": "lak",
+    "mLocalNames": [
+      "ປະຊາຊົນລາວ"
+    ]
+  },
+  {
+    "mISO2": "lv",
+    "mISO3": "lva",
+    "mISONum": 428,
+    "mTLD": ".lv",
+    "mCallingCode": "+371",
+    "mLatitude": 56.85085163,
+    "mLongitude": 24.91235983,
+    "mTimezone": "Europe/Riga",
+    "mLanguages": [
+      "lv"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Latvija"
+    ]
+  },
+  {
+    "mISO2": "lb",
+    "mISO3": "lbn",
+    "mISONum": 422,
+    "mTLD": ".lb",
+    "mCallingCode": "+961",
+    "mLatitude": 33.92306631,
+    "mLongitude": 35.88016072,
+    "mTimezone": "Asia/Beirut",
+    "mLanguages": [
+      "ar",
+      "fr"
+    ],
+    "mContinent": "as",
+    "mCurrency": "lbp",
+    "mLocalNames": [
+      "لبنان",
+      "Liban"
+    ]
+  },
+  {
+    "mISO2": "ls",
+    "mISO3": "lso",
+    "mISONum": 426,
+    "mTLD": ".ls",
+    "mCallingCode": "+266",
+    "mLatitude": -29.58003188,
+    "mLongitude": 28.22723131,
+    "mTimezone": "Africa/Maseru",
+    "mLanguages": [
+      "en",
+      "st"
+    ],
+    "mContinent": "af",
+    "mCurrency": "lsl",
+    "mLocalNames": [
+      "Lesotho"
+    ]
+  },
+  {
+    "mISO2": "lr",
+    "mISO3": "lbr",
+    "mISONum": 430,
+    "mTLD": ".lr",
+    "mCallingCode": "+231",
+    "mLatitude": 6.452784917,
+    "mLongitude": -9.322075727,
+    "mTimezone": "Africa/Monrovia",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "lrd",
+    "mLocalNames": [
+      "Liberia"
+    ]
+  },
+  {
+    "mISO2": "ly",
+    "mISO3": "lby",
+    "mISONum": 434,
+    "mTLD": ".ly",
+    "mCallingCode": "+218",
+    "mLatitude": 27.03094495,
+    "mLongitude": 18.00866169,
+    "mTimezone": "Africa/Tripoli",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "af",
+    "mCurrency": "lyd",
+    "mLocalNames": [
+      "ليبيا"
+    ]
+  },
+  {
+    "mISO2": "li",
+    "mISO3": "lie",
+    "mISONum": 438,
+    "mTLD": ".li",
+    "mCallingCode": "+423",
+    "mLatitude": 47.13665835,
+    "mLongitude": 9.535743118,
+    "mTimezone": "Europe/Vaduz",
+    "mLanguages": [
+      "de"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "chf",
+    "mLocalNames": [
+      "Liechtenstein"
+    ]
+  },
+  {
+    "mISO2": "lt",
+    "mISO3": "ltu",
+    "mISONum": 440,
+    "mTLD": ".lt",
+    "mCallingCode": "+370",
+    "mLatitude": 55.32610984,
+    "mLongitude": 23.88719355,
+    "mTimezone": "Europe/Vilnius",
+    "mLanguages": [
+      "lt"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Lietuva"
+    ]
+  },
+  {
+    "mISO2": "lu",
+    "mISO3": "lux",
+    "mISONum": 442,
+    "mTLD": ".lu",
+    "mCallingCode": "+352",
+    "mLatitude": 49.76725361,
+    "mLongitude": 6.071822011,
+    "mTimezone": "Europe/Luxembourg",
+    "mLanguages": [
+      "lb",
+      "fr",
+      "de"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Lëtzebuerg",
+      "Luxembourg",
+      "Luxemburg"
+    ]
+  },
+  {
+    "mISO2": "mo",
+    "mISO3": "mac",
+    "mISONum": 446,
+    "mTLD": ".mo",
+    "mCallingCode": "+853",
+    "mLatitude": 22.22311688,
+    "mLongitude": 113.5093212,
+    "mTimezone": "Asia/Macao",
+    "mLanguages": [
+      "zh",
+      "pt"
+    ],
+    "mContinent": "as",
+    "mCurrency": "mop",
+    "mLocalNames": [
+      "澳門",
+      "Macau"
+    ]
+  },
+  {
+    "mISO2": "mk",
+    "mISO3": "mkd",
+    "mISONum": 807,
+    "mTLD": ".mk",
+    "mCallingCode": "+389",
+    "mLatitude": 41.59530893,
+    "mLongitude": 21.68211346,
+    "mTimezone": "Europe/Skopje",
+    "mLanguages": [
+      "mk"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "mkd",
+    "mLocalNames": [
+      "Северна Македонија"
+    ]
+  },
+  {
+    "mISO2": "mg",
+    "mISO3": "mdg",
+    "mISONum": 450,
+    "mTLD": ".mg",
+    "mCallingCode": "+261",
+    "mLatitude": -19.37189587,
+    "mLongitude": 46.70473674,
+    "mTimezone": "Indian/Antananarivo",
+    "mLanguages": [
+      "mg",
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "mga",
+    "mLocalNames": [
+      "Madagasikara",
+      "Madagascar"
+    ]
+  },
+  {
+    "mISO2": "mw",
+    "mISO3": "mwi",
+    "mISONum": 454,
+    "mTLD": ".mw",
+    "mCallingCode": "+265",
+    "mLatitude": -13.21808088,
+    "mLongitude": 34.28935599,
+    "mTimezone": "Africa/Blantyre",
+    "mLanguages": [
+      "en",
+      "ny"
+    ],
+    "mContinent": "af",
+    "mCurrency": "mwk",
+    "mLocalNames": [
+      "Malawi"
+    ]
+  },
+  {
+    "mISO2": "my",
+    "mISO3": "mys",
+    "mISONum": 458,
+    "mTLD": ".my",
+    "mCallingCode": "+60",
+    "mLatitude": 3.789868456,
+    "mLongitude": 109.6976228,
+    "mTimezone": "Asia/Kuala_Lumpur",
+    "mLanguages": [
+      "ms"
+    ],
+    "mContinent": "as",
+    "mCurrency": "myr",
+    "mLocalNames": [
+      "مليسيا"
+    ]
+  },
+  {
+    "mISO2": "mv",
+    "mISO3": "mdv",
+    "mISONum": 462,
+    "mTLD": ".mv",
+    "mCallingCode": "+960",
+    "mLatitude": 3.7287092,
+    "mLongitude": 73.45713004,
+    "mTimezone": "Indian/Maldives",
+    "mLanguages": [
+      "dv"
+    ],
+    "mContinent": "as",
+    "mCurrency": "mvr",
+    "mLocalNames": [
+      "ދިވެހިރާއްޖޭގެ ޖުމްހޫރިއްޔާ"
+    ]
+  },
+  {
+    "mISO2": "ml",
+    "mISO3": "mli",
+    "mISONum": 466,
+    "mTLD": ".ml",
+    "mCallingCode": "+223",
+    "mLatitude": 17.34581581,
+    "mLongitude": -3.542690649,
+    "mTimezone": "Africa/Bamako",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xof",
+    "mLocalNames": [
+      "Mali"
+    ]
+  },
+  {
+    "mISO2": "mt",
+    "mISO3": "mlt",
+    "mISONum": 470,
+    "mTLD": ".mt",
+    "mCallingCode": "+356",
+    "mLatitude": 35.92149632,
+    "mLongitude": 14.40523316,
+    "mTimezone": "Europe/Malta",
+    "mLanguages": [
+      "mt",
+      "en"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Malta"
+    ]
+  },
+  {
+    "mISO2": "mh",
+    "mISO3": "mhl",
+    "mISONum": 584,
+    "mTLD": ".mh",
+    "mCallingCode": "+692",
+    "mLatitude": 7.003763583,
+    "mLongitude": 170.3397612,
+    "mTimezone": "Kwajalein",
+    "mLanguages": [
+      "en",
+      "mh"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Marshall Islands"
+    ]
+  },
+  {
+    "mISO2": "mq",
+    "mISO3": "mtq",
+    "mISONum": 474,
+    "mTLD": ".mq",
+    "mCallingCode": "+596",
+    "mLatitude": 14.6336817,
+    "mLongitude": -61.0198104,
+    "mTimezone": "America/Martinique",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "na",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Martinique"
+    ]
+  },
+  {
+    "mISO2": "mr",
+    "mISO3": "mrt",
+    "mISONum": 478,
+    "mTLD": ".mr",
+    "mCallingCode": "+222",
+    "mLatitude": 20.25736706,
+    "mLongitude": -10.34779815,
+    "mTimezone": "Africa/Nouakchott",
+    "mLanguages": [
+      "ar",
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "mro",
+    "mLocalNames": [
+      "موريتانيا",
+      "Mauritanie"
+    ]
+  },
+  {
+    "mISO2": "mu",
+    "mISO3": "mus",
+    "mISONum": 480,
+    "mTLD": ".mu",
+    "mCallingCode": "+230",
+    "mLatitude": -20.27768704,
+    "mLongitude": 57.57120551,
+    "mTimezone": "Indian/Mauritius",
+    "mLanguages": [
+      "mfe",
+      "fr",
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "mur",
+    "mLocalNames": [
+      "Maurice",
+      "Mauritius"
+    ]
+  },
+  {
+    "mISO2": "yt",
+    "mISO3": "myt",
+    "mISONum": 175,
+    "mTLD": ".yt",
+    "mCallingCode": "+269",
+    "mLatitude": -12.8210325,
+    "mLongitude": 45.1590997,
+    "mTimezone": "Indian/Mayotte",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Mayotte"
+    ]
+  },
+  {
+    "mISO2": "mx",
+    "mISO3": "mex",
+    "mISONum": 484,
+    "mTLD": ".mx",
+    "mCallingCode": "+52",
+    "mLatitude": 23.94753724,
+    "mLongitude": -102.5234517,
+    "mTimezone": "America/Bahia_Banderas",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "na",
+    "mCurrency": "mxn",
+    "mLocalNames": [
+      "México"
+    ]
+  },
+  {
+    "mISO2": "fm",
+    "mISO3": "fsm",
+    "mISONum": 583,
+    "mTLD": ".fm",
+    "mCallingCode": "+691",
+    "mLatitude": 7.452468137,
+    "mLongitude": 153.2394379,
+    "mTimezone": "Pacific/Chuuk",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Micronesia"
+    ]
+  },
+  {
+    "mISO2": "md",
+    "mISO3": "mda",
+    "mISONum": 498,
+    "mTLD": ".md",
+    "mCallingCode": "+373",
+    "mLatitude": 47.19498804,
+    "mLongitude": 28.45673372,
+    "mTimezone": "Europe/Chisinau",
+    "mLanguages": [
+      "ro",
+      "ru",
+      "uk"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "mdl",
+    "mLocalNames": [
+      "Moldova",
+      "Молдавия"
+    ]
+  },
+  {
+    "mISO2": "mc",
+    "mISO3": "mco",
+    "mISONum": 492,
+    "mTLD": ".mc",
+    "mCallingCode": "+377",
+    "mLatitude": 43.75274627,
+    "mLongitude": 7.406276769,
+    "mTimezone": "Europe/Monaco",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Monaco"
+    ]
+  },
+  {
+    "mISO2": "mn",
+    "mISO3": "mng",
+    "mISONum": 496,
+    "mTLD": ".mn",
+    "mCallingCode": "+976",
+    "mLatitude": 46.82681544,
+    "mLongitude": 103.0529976,
+    "mTimezone": "Asia/Choibalsan",
+    "mLanguages": [
+      "mn"
+    ],
+    "mContinent": "as",
+    "mCurrency": "mnt",
+    "mLocalNames": [
+      "Монгол Улс"
+    ]
+  },
+  {
+    "mISO2": "me",
+    "mISO3": "mne",
+    "mISONum": 499,
+    "mTLD": ".me",
+    "mCallingCode": "+382",
+    "mLatitude": 42.78890259,
+    "mLongitude": 19.23883939,
+    "mTimezone": "Europe/Podgorica",
+    "mLanguages": [
+      "srp",
+      "sr",
+      "hr",
+      "bs",
+      "sq"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Crna Gora",
+      "Црна Гора"
+    ]
+  },
+  {
+    "mISO2": "ms",
+    "mISO3": "msr",
+    "mISONum": 500,
+    "mTLD": ".ms",
+    "mCallingCode": "+1-664",
+    "mLatitude": 16.73941406,
+    "mLongitude": -62.18518546,
+    "mTimezone": "America/Montserrat",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "xcd",
+    "mLocalNames": [
+      "Montserrat"
+    ]
+  },
+  {
+    "mISO2": "ma",
+    "mISO3": "mar",
+    "mISONum": 504,
+    "mTLD": ".ma",
+    "mCallingCode": "+212",
+    "mLatitude": 29.83762955,
+    "mLongitude": -8.456157948,
+    "mTimezone": "Africa/Casablanca",
+    "mLanguages": [
+      "fr",
+      "zgh",
+      "ar"
+    ],
+    "mContinent": "af",
+    "mCurrency": "mad",
+    "mLocalNames": [
+      "Maroc",
+      "ⵍⵎⵖⵔⵉⴱ",
+      "المغرب"
+    ]
+  },
+  {
+    "mISO2": "mz",
+    "mISO3": "moz",
+    "mISONum": 508,
+    "mTLD": ".mz",
+    "mCallingCode": "+258",
+    "mLatitude": -17.27381643,
+    "mLongitude": 35.53367543,
+    "mTimezone": "Africa/Maputo",
+    "mLanguages": [
+      "pt"
+    ],
+    "mContinent": "af",
+    "mCurrency": "mzn",
+    "mLocalNames": [
+      "Mozambique"
+    ]
+  },
+  {
+    "mISO2": "mm",
+    "mISO3": "mmr",
+    "mISONum": 104,
+    "mTLD": ".mm",
+    "mCallingCode": "+95",
+    "mLatitude": 21.18566599,
+    "mLongitude": 96.48843321,
+    "mTimezone": "Asia/Rangoon",
+    "mLanguages": [
+      "my"
+    ],
+    "mContinent": "as",
+    "mCurrency": "mmk",
+    "mLocalNames": [
+      "မြန်မာ"
+    ]
+  },
+  {
+    "mISO2": "na",
+    "mISO3": "nam",
+    "mISONum": 516,
+    "mTLD": ".na",
+    "mCallingCode": "+264",
+    "mLatitude": -22.13032568,
+    "mLongitude": 17.20963567,
+    "mTimezone": "Africa/Windhoek",
+    "mLanguages": [
+      "en",
+      "sf",
+      "de"
+    ],
+    "mContinent": "af",
+    "mCurrency": "nad",
+    "mLocalNames": [
+      "Namibia"
+    ]
+  },
+  {
+    "mISO2": "nr",
+    "mISO3": "nru",
+    "mISONum": 520,
+    "mTLD": ".nr",
+    "mCallingCode": "+674",
+    "mLatitude": -0.51912639,
+    "mLongitude": 166.9325682,
+    "mTimezone": "Pacific/Nauru",
+    "mLanguages": [
+      "na",
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "aud",
+    "mLocalNames": [
+      "Nauru"
+    ]
+  },
+  {
+    "mISO2": "np",
+    "mISO3": "npl",
+    "mISONum": 524,
+    "mTLD": ".np",
+    "mCallingCode": "+977",
+    "mLatitude": 28.24891365,
+    "mLongitude": 83.9158264,
+    "mTimezone": "Asia/Kathmandu",
+    "mLanguages": [
+      "ne"
+    ],
+    "mContinent": "as",
+    "mCurrency": "npr",
+    "mLocalNames": [
+      "सङ्घीय लोकतान्त्रिक गणतन्त्र नेपाल"
+    ]
+  },
+  {
+    "mISO2": "nl",
+    "mISO3": "nld",
+    "mISONum": 528,
+    "mTLD": ".nl",
+    "mCallingCode": "+31",
+    "mLatitude": 52.1007899,
+    "mLongitude": 5.28144793,
+    "mTimezone": "Europe/Amsterdam",
+    "mLanguages": [
+      "nl"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Nederland"
+    ]
+  },
+  {
+    "mISO2": "nc",
+    "mISO3": "ncl",
+    "mISONum": 540,
+    "mTLD": ".nc",
+    "mCallingCode": "+687",
+    "mLatitude": -21.29991806,
+    "mLongitude": 165.6849237,
+    "mTimezone": "Pacific/Noumea",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "xpf",
+    "mLocalNames": [
+      "Nouvelle-Calédonie"
+    ]
+  },
+  {
+    "mISO2": "nz",
+    "mISO3": "nzl",
+    "mISONum": 554,
+    "mTLD": ".nz",
+    "mCallingCode": "+64",
+    "mLatitude": -41.81113557,
+    "mLongitude": 171.4849235,
+    "mTimezone": "NZ",
+    "mLanguages": [
+      "mi",
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "nzd",
+    "mLocalNames": [
+      "New Zealand"
+    ]
+  },
+  {
+    "mISO2": "ni",
+    "mISO3": "nic",
+    "mISONum": 558,
+    "mTLD": ".ni",
+    "mCallingCode": "+505",
+    "mLatitude": 12.84709429,
+    "mLongitude": -85.0305297,
+    "mTimezone": "America/Managua",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "na",
+    "mCurrency": "nio",
+    "mLocalNames": [
+      "Nicaragua"
+    ]
+  },
+  {
+    "mISO2": "ne",
+    "mISO3": "ner",
+    "mISONum": 562,
+    "mTLD": ".ne",
+    "mCallingCode": "+227",
+    "mLatitude": 17.41912493,
+    "mLongitude": 9.385458815,
+    "mTimezone": "Africa/Niamey",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xof",
+    "mLocalNames": [
+      "Niger"
+    ]
+  },
+  {
+    "mISO2": "ng",
+    "mISO3": "nga",
+    "mISONum": 566,
+    "mTLD": ".ng",
+    "mCallingCode": "+234",
+    "mLatitude": 9.594114522,
+    "mLongitude": 8.089438948,
+    "mTimezone": "Africa/Lagos",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "ngn",
+    "mLocalNames": [
+      "Nigeria"
+    ]
+  },
+  {
+    "mISO2": "nu",
+    "mISO3": "niu",
+    "mISONum": 570,
+    "mTLD": ".nu",
+    "mCallingCode": "+683",
+    "mLatitude": -19.04945708,
+    "mLongitude": -169.8699468,
+    "mTimezone": "Pacific/Niue",
+    "mLanguages": [
+      "niu",
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "nzd",
+    "mLocalNames": [
+      "Niue"
+    ]
+  },
+  {
+    "mISO2": "nf",
+    "mISO3": "nfk",
+    "mISONum": 574,
+    "mTLD": ".nf",
+    "mCallingCode": "+672",
+    "mLatitude": -29.0514609,
+    "mLongitude": 167.9492168,
+    "mTimezone": "Pacific/Norfolk",
+    "mLanguages": [
+      "en",
+      "pih"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "aud",
+    "mLocalNames": [
+      "Norfolk Island"
+    ]
+  },
+  {
+    "mISO2": "mp",
+    "mISO3": "mnp",
+    "mISONum": 580,
+    "mTLD": ".mp",
+    "mCallingCode": "+1-670",
+    "mLatitude": 15.82927563,
+    "mLongitude": 145.6196965,
+    "mTimezone": "Pacific/Saipan",
+    "mLanguages": [
+      "en",
+      "ch"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Northern Mariana Islands"
+    ]
+  },
+  {
+    "mISO2": "no",
+    "mISO3": "nor",
+    "mISONum": 578,
+    "mTLD": ".no",
+    "mCallingCode": "+47",
+    "mLatitude": 68.75015572,
+    "mLongitude": 15.34834656,
+    "mTimezone": "Europe/Oslo",
+    "mLanguages": [
+      "nb",
+      "nn",
+      "no",
+      "se"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "nok",
+    "mLocalNames": [
+      "Norge",
+      "Noreg"
+    ]
+  },
+  {
+    "mISO2": "om",
+    "mISO3": "omn",
+    "mISONum": 512,
+    "mTLD": ".om",
+    "mCallingCode": "+968",
+    "mLatitude": 20.60515333,
+    "mLongitude": 56.09166155,
+    "mTimezone": "Asia/Muscat",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "as",
+    "mCurrency": "omr",
+    "mLocalNames": [
+      "سلطنة عُمان"
+    ]
+  },
+  {
+    "mISO2": "pk",
+    "mISO3": "pak",
+    "mISONum": 586,
+    "mTLD": ".pk",
+    "mCallingCode": "+92",
+    "mLatitude": 29.9497515,
+    "mLongitude": 69.33957937,
+    "mTimezone": "Asia/Karachi",
+    "mLanguages": [
+      "en",
+      "ur"
+    ],
+    "mContinent": "as",
+    "mCurrency": "pkr",
+    "mLocalNames": [
+      "پاکستان"
+    ]
+  },
+  {
+    "mISO2": "pw",
+    "mISO3": "plw",
+    "mISONum": 585,
+    "mTLD": ".pw",
+    "mCallingCode": "+680",
+    "mLatitude": 7.287427836,
+    "mLongitude": 134.4080797,
+    "mTimezone": "Pacific/Palau",
+    "mLanguages": [
+      "en",
+      "pau",
+      "ja",
+      "sov",
+      "tox"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Palau"
+    ]
+  },
+  {
+    "mISO2": "ps",
+    "mISO3": "pse",
+    "mISONum": 275,
+    "mTLD": ".ps",
+    "mCallingCode": "+970",
+    "mLatitude": 31.91613893,
+    "mLongitude": 35.19628705,
+    "mTimezone": "Asia/Gaza",
+    "mLanguages": [
+      "ar",
+      "he"
+    ],
+    "mContinent": "as",
+    "mCurrency": "jod",
+    "mLocalNames": [
+      "Palestinian Territory"
+    ]
+  },
+  {
+    "mISO2": "pa",
+    "mISO3": "pan",
+    "mISONum": 591,
+    "mTLD": ".pa",
+    "mCallingCode": "+507",
+    "mLatitude": 8.517507975,
+    "mLongitude": -80.11915156,
+    "mTimezone": "America/Panama",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "na",
+    "mCurrency": "pab",
+    "mLocalNames": [
+      "Panama"
+    ]
+  },
+  {
+    "mISO2": "pg",
+    "mISO3": "png",
+    "mISONum": 598,
+    "mTLD": ".pg",
+    "mCallingCode": "+675",
+    "mLatitude": -6.464166461,
+    "mLongitude": 145.2074475,
+    "mTimezone": "Pacific/Bougainville",
+    "mLanguages": [
+      "en",
+      "tpi",
+      "ho"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "pgk",
+    "mLocalNames": [
+      "Papua New Guinea"
+    ]
+  },
+  {
+    "mISO2": "py",
+    "mISO3": "pry",
+    "mISONum": 600,
+    "mTLD": ".py",
+    "mCallingCode": "+595",
+    "mLatitude": -23.22823913,
+    "mLongitude": -58.40013703,
+    "mTimezone": "America/Asuncion",
+    "mLanguages": [
+      "es",
+      "gn"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "pyg",
+    "mLocalNames": [
+      "Paraguay"
+    ]
+  },
+  {
+    "mISO2": "pe",
+    "mISO3": "per",
+    "mISONum": 604,
+    "mTLD": ".pe",
+    "mCallingCode": "+51",
+    "mLatitude": -9.152803813,
+    "mLongitude": -74.38242685,
+    "mTimezone": "America/Lima",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "pen",
+    "mLocalNames": [
+      "Perú"
+    ]
+  },
+  {
+    "mISO2": "ph",
+    "mISO3": "phl",
+    "mISONum": 608,
+    "mTLD": ".ph",
+    "mCallingCode": "+63",
+    "mLatitude": 11.77536778,
+    "mLongitude": 122.8839325,
+    "mTimezone": "Asia/Manila",
+    "mLanguages": [
+      "en",
+      "tl"
+    ],
+    "mContinent": "as",
+    "mCurrency": "php",
+    "mLocalNames": [
+      "Philippines"
+    ]
+  },
+  {
+    "mISO2": "pn",
+    "mISO3": "pcn",
+    "mISONum": 612,
+    "mTLD": ".pn",
+    "mCallingCode": "+64",
+    "mLatitude": -24.36500535,
+    "mLongitude": -128.317042,
+    "mTimezone": "Pacific/Pitcairn",
+    "mLanguages": [
+      "en",
+      "pih"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "nzd",
+    "mLocalNames": [
+      "Pitcairn"
+    ]
+  },
+  {
+    "mISO2": "xk",
+    "mISO3": "xkx",
+    "mISONum": -1,
+    "mTLD": "",
+    "mCallingCode": "+383",
+    "mLatitude": 42.5833,
+    "mLongitude": 21.0001,
+    "mTimezone": "Europe/Pristina",
+    "mLanguages": [
+      "sq",
+      "sr"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Republika e Kosovës",
+      "Republika Kosovo",
+      "Република Косово"
+    ]
+  },
+  {
+    "mISO2": "pl",
+    "mISO3": "pol",
+    "mISONum": 616,
+    "mTLD": ".pl",
+    "mCallingCode": "+48",
+    "mLatitude": 52.12759564,
+    "mLongitude": 19.39012835,
+    "mTimezone": "Europe/Warsaw",
+    "mLanguages": [
+      "pl"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "pln",
+    "mLocalNames": [
+      "Polska"
+    ]
+  },
+  {
+    "mISO2": "pt",
+    "mISO3": "prt",
+    "mISONum": 620,
+    "mTLD": ".pt",
+    "mCallingCode": "+351",
+    "mLatitude": 39.59550671,
+    "mLongitude": -8.501043613,
+    "mTimezone": "Atlantic/Azores",
+    "mLanguages": [
+      "pt"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Portugal"
+    ]
+  },
+  {
+    "mISO2": "pr",
+    "mISO3": "pri",
+    "mISONum": 630,
+    "mTLD": ".pr",
+    "mCallingCode": "+1-787; +1-939",
+    "mLatitude": 18.22813055,
+    "mLongitude": -66.47307604,
+    "mTimezone": "America/Puerto_Rico",
+    "mLanguages": [
+      "es",
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Puerto Rico"
+    ]
+  },
+  {
+    "mISO2": "qa",
+    "mISO3": "qat",
+    "mISONum": 634,
+    "mTLD": ".qa",
+    "mCallingCode": "+974",
+    "mLatitude": 25.30601188,
+    "mLongitude": 51.18479632,
+    "mTimezone": "Asia/Qatar",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "as",
+    "mCurrency": "qar",
+    "mLocalNames": [
+      "قطر"
+    ]
+  },
+  {
+    "mISO2": "re",
+    "mISO3": "reu",
+    "mISONum": 638,
+    "mTLD": ".re",
+    "mCallingCode": "+262",
+    "mLatitude": -21.1306889,
+    "mLongitude": 55.5264794,
+    "mTimezone": "Indian/Reunion",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "La Réunion"
+    ]
+  },
+  {
+    "mISO2": "ro",
+    "mISO3": "rou",
+    "mISONum": 642,
+    "mTLD": ".ro",
+    "mCallingCode": "+40",
+    "mLatitude": 45.85243127,
+    "mLongitude": 24.97293039,
+    "mTimezone": "Europe/Bucharest",
+    "mLanguages": [
+      "ro"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "ron",
+    "mLocalNames": [
+      "România"
+    ]
+  },
+  {
+    "mISO2": "ru",
+    "mISO3": "rus",
+    "mISONum": 643,
+    "mTLD": ".ru",
+    "mCallingCode": "+7",
+    "mLatitude": 61.98052209,
+    "mLongitude": 96.68656112,
+    "mTimezone": "Asia/Anadyr",
+    "mLanguages": [
+      "ru"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "rub",
+    "mLocalNames": [
+      "Россия"
+    ]
+  },
+  {
+    "mISO2": "rw",
+    "mISO3": "rwa",
+    "mISONum": 646,
+    "mTLD": ".rw",
+    "mCallingCode": "+250",
+    "mLatitude": -1.990338317,
+    "mLongitude": 29.91988515,
+    "mTimezone": "Africa/Kigali",
+    "mLanguages": [
+      "rw",
+      "fr",
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "rwf",
+    "mLocalNames": [
+      "Rwanda"
+    ]
+  },
+  {
+    "mISO2": "bl",
+    "mISO3": "blm",
+    "mISONum": 652,
+    "mTLD": ".bl",
+    "mCallingCode": "+590",
+    "mLatitude": 17.89880451,
+    "mLongitude": -62.84067779,
+    "mTimezone": "America/St_Barthelemy",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "na",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Saint-Barthélemy"
+    ]
+  },
+  {
+    "mISO2": "sh",
+    "mISO3": "shn",
+    "mISONum": 654,
+    "mTLD": ".sh",
+    "mCallingCode": "+290",
+    "mLatitude": -12.40355951,
+    "mLongitude": -9.547794159,
+    "mTimezone": "Atlantic/St_Helena",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "shp",
+    "mLocalNames": [
+      "Saint Helena"
+    ]
+  },
+  {
+    "mISO2": "kn",
+    "mISO3": "kna",
+    "mISONum": 659,
+    "mTLD": ".kn",
+    "mCallingCode": "+1-869",
+    "mLatitude": 17.2645995,
+    "mLongitude": -62.68755265,
+    "mTimezone": "America/St_Kitts",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "xcd",
+    "mLocalNames": [
+      "Saint Kitts and Nevis"
+    ]
+  },
+  {
+    "mISO2": "lc",
+    "mISO3": "lca",
+    "mISONum": 662,
+    "mTLD": ".lc",
+    "mCallingCode": "+1-758",
+    "mLatitude": 13.89479481,
+    "mLongitude": -60.96969923,
+    "mTimezone": "America/St_Lucia",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "xcd",
+    "mLocalNames": [
+      "Saint Lucia"
+    ]
+  },
+  {
+    "mISO2": "mf",
+    "mISO3": "maf",
+    "mISONum": 663,
+    "mTLD": ".mf",
+    "mCallingCode": "+590",
+    "mLatitude": 18.08888611,
+    "mLongitude": -63.05972851,
+    "mTimezone": "America/Marigot",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "na",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Saint-Martin"
+    ]
+  },
+  {
+    "mISO2": "pm",
+    "mISO3": "spm",
+    "mISONum": 666,
+    "mTLD": ".pm",
+    "mCallingCode": "+508",
+    "mLatitude": 46.91918789,
+    "mLongitude": -56.30319779,
+    "mTimezone": "America/Miquelon",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "na",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Saint-Pierre-et-Miquelon"
+    ]
+  },
+  {
+    "mISO2": "vc",
+    "mISO3": "vct",
+    "mISONum": 670,
+    "mTLD": ".vc",
+    "mCallingCode": "+1-784",
+    "mLatitude": 13.22472269,
+    "mLongitude": -61.20129695,
+    "mTimezone": "America/St_Vincent",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "xcd",
+    "mLocalNames": [
+      "Saint Vincent and the Grenadines"
+    ]
+  },
+  {
+    "mISO2": "ws",
+    "mISO3": "wsm",
+    "mISONum": 882,
+    "mTLD": ".ws",
+    "mCallingCode": "+685",
+    "mLatitude": -13.75324346,
+    "mLongitude": -172.1648506,
+    "mTimezone": "Pacific/Apia",
+    "mLanguages": [
+      "sm",
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Samoa"
+    ]
+  },
+  {
+    "mISO2": "sm",
+    "mISO3": "smr",
+    "mISONum": 674,
+    "mTLD": ".sm",
+    "mCallingCode": "+378",
+    "mLatitude": 43.94186747,
+    "mLongitude": 12.45922334,
+    "mTimezone": "Europe/San_Marino",
+    "mLanguages": [
+      "it"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "San Marino"
+    ]
+  },
+  {
+    "mISO2": "st",
+    "mISO3": "stp",
+    "mISONum": 678,
+    "mTLD": ".st",
+    "mCallingCode": "+239",
+    "mLatitude": 0.443914449,
+    "mLongitude": 6.724296579,
+    "mTimezone": "Africa/Sao_Tome",
+    "mLanguages": [
+      "pt"
+    ],
+    "mContinent": "af",
+    "mCurrency": "std",
+    "mLocalNames": [
+      "São Tomé e Príncipe"
+    ]
+  },
+  {
+    "mISO2": "sa",
+    "mISO3": "sau",
+    "mISONum": 682,
+    "mTLD": ".sa",
+    "mCallingCode": "+966",
+    "mLatitude": 24.12245841,
+    "mLongitude": 44.53686271,
+    "mTimezone": "Asia/Riyadh",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "as",
+    "mCurrency": "sar",
+    "mLocalNames": [
+      "السعودية"
+    ]
+  },
+  {
+    "mISO2": "sn",
+    "mISO3": "sen",
+    "mISONum": 686,
+    "mTLD": ".sn",
+    "mCallingCode": "+221",
+    "mLatitude": 14.36624173,
+    "mLongitude": -14.4734924,
+    "mTimezone": "Africa/Dakar",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xof",
+    "mLocalNames": [
+      "Sénégal"
+    ]
+  },
+  {
+    "mISO2": "rs",
+    "mISO3": "srb",
+    "mISONum": 688,
+    "mTLD": ".rs",
+    "mCallingCode": "+381",
+    "mLatitude": 44.2215032,
+    "mLongitude": 20.78958334,
+    "mTimezone": "Europe/Belgrade",
+    "mLanguages": [
+      "sr",
+      "sr-Latn"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "rsd",
+    "mLocalNames": [
+      "Србија"
+    ]
+  },
+  {
+    "mISO2": "sc",
+    "mISO3": "syc",
+    "mISONum": 690,
+    "mTLD": ".sc",
+    "mCallingCode": "+248",
+    "mLatitude": -4.660990935,
+    "mLongitude": 55.47603279,
+    "mTimezone": "Indian/Mahe",
+    "mLanguages": [
+      "fr",
+      "en",
+      "crs"
+    ],
+    "mContinent": "af",
+    "mCurrency": "scr",
+    "mLocalNames": [
+      "Seychelles"
+    ]
+  },
+  {
+    "mISO2": "sl",
+    "mISO3": "sle",
+    "mISONum": 694,
+    "mTLD": ".sl",
+    "mCallingCode": "+232",
+    "mLatitude": 8.56329593,
+    "mLongitude": -11.79271247,
+    "mTimezone": "Africa/Freetown",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "sll",
+    "mLocalNames": [
+      "Sierra Leone"
+    ]
+  },
+  {
+    "mISO2": "sg",
+    "mISO3": "sgp",
+    "mISONum": 702,
+    "mTLD": ".sg",
+    "mCallingCode": "+65",
+    "mLatitude": 1.358760871,
+    "mLongitude": 103.8172559,
+    "mTimezone": "Asia/Singapore",
+    "mLanguages": [
+      "zh",
+      "en",
+      "ms",
+      "ta"
+    ],
+    "mContinent": "as",
+    "mCurrency": "sgd",
+    "mLocalNames": [
+      "Singapore"
+    ]
+  },
+  {
+    "mISO2": "sx",
+    "mISO3": "sxm",
+    "mISONum": 534,
+    "mTLD": ".sx",
+    "mCallingCode": "+599",
+    "mLatitude": 18.05081728,
+    "mLongitude": -63.05713363,
+    "mTimezone": "America/Lower_Princes",
+    "mLanguages": [
+      "nl",
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "ang",
+    "mLocalNames": [
+      "Sint Maarten"
+    ]
+  },
+  {
+    "mISO2": "sk",
+    "mISO3": "svk",
+    "mISONum": 703,
+    "mTLD": ".sk",
+    "mCallingCode": "+421",
+    "mLatitude": 48.70547528,
+    "mLongitude": 19.47905218,
+    "mTimezone": "Europe/Bratislava",
+    "mLanguages": [
+      "sk"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Slovensko"
+    ]
+  },
+  {
+    "mISO2": "si",
+    "mISO3": "svn",
+    "mISONum": 705,
+    "mTLD": ".si",
+    "mCallingCode": "+386",
+    "mLatitude": 46.11554772,
+    "mLongitude": 14.80444238,
+    "mTimezone": "Europe/Ljubljana",
+    "mLanguages": [
+      "sl"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "Slovenija"
+    ]
+  },
+  {
+    "mISO2": "sb",
+    "mISO3": "slb",
+    "mISONum": 90,
+    "mTLD": ".sb",
+    "mCallingCode": "+677",
+    "mLatitude": -8.921780217,
+    "mLongitude": 159.6328767,
+    "mTimezone": "Pacific/Guadalcanal",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "sbd",
+    "mLocalNames": [
+      "Solomon Islands"
+    ]
+  },
+  {
+    "mISO2": "so",
+    "mISO3": "som",
+    "mISONum": 706,
+    "mTLD": ".so",
+    "mCallingCode": "+252",
+    "mLatitude": 4.750628761,
+    "mLongitude": 45.70714487,
+    "mTimezone": "Africa/Mogadishu",
+    "mLanguages": [
+      "so",
+      "ar"
+    ],
+    "mContinent": "af",
+    "mCurrency": "sos",
+    "mLocalNames": [
+      "Somalia",
+      "الصومال"
+    ]
+  },
+  {
+    "mISO2": "za",
+    "mISO3": "zaf",
+    "mISONum": 710,
+    "mTLD": ".za",
+    "mCallingCode": "+27",
+    "mLatitude": -29.00034095,
+    "mLongitude": 25.08390093,
+    "mTimezone": "Africa/Johannesburg",
+    "mLanguages": [
+      "en",
+      "af",
+      "st",
+      "tn",
+      "xh",
+      "zu"
+    ],
+    "mContinent": "af",
+    "mCurrency": "zar",
+    "mLocalNames": [
+      "South Africa"
+    ]
+  },
+  {
+    "mISO2": "gs",
+    "mISO3": "sgs",
+    "mISONum": 239,
+    "mTLD": ".gs",
+    "mCallingCode": "+500",
+    "mLatitude": -54.46488248,
+    "mLongitude": -36.43318388,
+    "mTimezone": "Atlantic/South_Georgia",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "an",
+    "mCurrency": "gbp",
+    "mLocalNames": [
+      "South Georgia and the South Sandwich Islands"
+    ]
+  },
+  {
+    "mISO2": "ss",
+    "mISO3": "ssd",
+    "mISONum": 728,
+    "mTLD": ".ss",
+    "mCallingCode": "+211",
+    "mLatitude": 7.308779449,
+    "mLongitude": 30.24790002,
+    "mTimezone": "Africa/Juba",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "ssp",
+    "mLocalNames": [
+      "South Sudan"
+    ]
+  },
+  {
+    "mISO2": "es",
+    "mISO3": "esp",
+    "mISONum": 724,
+    "mTLD": ".es",
+    "mCallingCode": "+34",
+    "mLatitude": 40.24448698,
+    "mLongitude": -3.647550473,
+    "mTimezone": "Africa/Ceuta",
+    "mLanguages": [
+      "ast",
+      "ca",
+      "es",
+      "eu",
+      "gl"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "eur",
+    "mLocalNames": [
+      "España"
+    ]
+  },
+  {
+    "mISO2": "lk",
+    "mISO3": "lka",
+    "mISONum": 144,
+    "mTLD": ".lk",
+    "mCallingCode": "+94",
+    "mLatitude": 7.612665092,
+    "mLongitude": 80.70108238,
+    "mTimezone": "Asia/Colombo",
+    "mLanguages": [
+      "si",
+      "ta"
+    ],
+    "mContinent": "as",
+    "mCurrency": "lkr",
+    "mLocalNames": [
+      "ශ්‍රී ලංකා",
+      "இலங்கை"
+    ]
+  },
+  {
+    "mISO2": "sd",
+    "mISO3": "sdn",
+    "mISONum": 729,
+    "mTLD": ".sd",
+    "mCallingCode": "+249",
+    "mLatitude": 15.99035669,
+    "mLongitude": 29.94046812,
+    "mTimezone": "Africa/Khartoum",
+    "mLanguages": [
+      "ar",
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "sdg",
+    "mLocalNames": [
+      "السودان"
+    ]
+  },
+  {
+    "mISO2": "sr",
+    "mISO3": "sur",
+    "mISONum": 740,
+    "mTLD": ".sr",
+    "mCallingCode": "+597",
+    "mLatitude": 4.13055413,
+    "mLongitude": -55.9123457,
+    "mTimezone": "America/Paramaribo",
+    "mLanguages": [
+      "nl"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "srd",
+    "mLocalNames": [
+      "Suriname"
+    ]
+  },
+  {
+    "mISO2": "sj",
+    "mISO3": "sjm",
+    "mISONum": 744,
+    "mTLD": "",
+    "mCallingCode": "+47",
+    "mLatitude": 71.046389,
+    "mLongitude": -8.230278,
+    "mTimezone": "Arctic/Longyearbyen",
+    "mLanguages": [
+      "no"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "nok",
+    "mLocalNames": [
+      "Svalbard and Jan Mayen"
+    ]
+  },
+  {
+    "mISO2": "se",
+    "mISO3": "swe",
+    "mISONum": 752,
+    "mTLD": ".se",
+    "mCallingCode": "+46",
+    "mLatitude": 62.77966519,
+    "mLongitude": 16.74558049,
+    "mTimezone": "Europe/Stockholm",
+    "mLanguages": [
+      "sv"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "sek",
+    "mLocalNames": [
+      "Sverige"
+    ]
+  },
+  {
+    "mISO2": "ch",
+    "mISO3": "che",
+    "mISONum": 756,
+    "mTLD": ".ch",
+    "mCallingCode": "+41",
+    "mLatitude": 46.79785878,
+    "mLongitude": 8.208674706,
+    "mTimezone": "Europe/Zurich",
+    "mLanguages": [
+      "de",
+      "fr",
+      "it",
+      "rm"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "chf",
+    "mLocalNames": [
+      "Schweiz",
+      "Suisse",
+      "Svizzera",
+      "Svizra"
+    ]
+  },
+  {
+    "mISO2": "sy",
+    "mISO3": "syr",
+    "mISONum": 760,
+    "mTLD": ".sy",
+    "mCallingCode": "+963",
+    "mLatitude": 35.02547389,
+    "mLongitude": 38.50788204,
+    "mTimezone": "Asia/Damascus",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "as",
+    "mCurrency": "syp",
+    "mLocalNames": [
+      "سوريا",
+      "Sūriyya"
+    ]
+  },
+  {
+    "mISO2": "tw",
+    "mISO3": "twn",
+    "mISONum": 158,
+    "mTLD": ".tw",
+    "mCallingCode": "+886",
+    "mLatitude": 23.7539928,
+    "mLongitude": 120.9542728,
+    "mTimezone": "Asia/Taipei",
+    "mLanguages": [
+      "zh"
+    ],
+    "mContinent": "as",
+    "mCurrency": "twd",
+    "mLocalNames": [
+      "Taiwan"
+    ]
+  },
+  {
+    "mISO2": "tj",
+    "mISO3": "tjk",
+    "mISONum": 762,
+    "mTLD": ".tj",
+    "mCallingCode": "+992",
+    "mLatitude": 38.5304539,
+    "mLongitude": 71.01362631,
+    "mTimezone": "Asia/Dushanbe",
+    "mLanguages": [
+      "tg",
+      "ru"
+    ],
+    "mContinent": "as",
+    "mCurrency": "tjs",
+    "mLocalNames": [
+      "Ҷумҳурии Тоҷикистон"
+    ]
+  },
+  {
+    "mISO2": "tz",
+    "mISO3": "tza",
+    "mISONum": 834,
+    "mTLD": ".tz",
+    "mCallingCode": "+255",
+    "mLatitude": -6.275654083,
+    "mLongitude": 34.81309981,
+    "mTimezone": "Africa/Dar_es_Salaam",
+    "mLanguages": [
+      "sw",
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "tzs",
+    "mLocalNames": [
+      "Tanzania"
+    ]
+  },
+  {
+    "mISO2": "th",
+    "mISO3": "tha",
+    "mISONum": 764,
+    "mTLD": ".th",
+    "mCallingCode": "+66",
+    "mLatitude": 15.11815794,
+    "mLongitude": 101.0028813,
+    "mTimezone": "Asia/Bangkok",
+    "mLanguages": [
+      "th"
+    ],
+    "mContinent": "as",
+    "mCurrency": "thb",
+    "mLocalNames": [
+      "ประเทศไทย"
+    ]
+  },
+  {
+    "mISO2": "tl",
+    "mISO3": "tls",
+    "mISONum": 626,
+    "mTLD": ".tl",
+    "mCallingCode": "+670",
+    "mLatitude": -8.82889162,
+    "mLongitude": 125.8443898,
+    "mTimezone": "Asia/Dili",
+    "mLanguages": [
+      "pt",
+      "tet"
+    ],
+    "mContinent": "as",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Timor-Leste",
+      "Timor Lorosa'e"
+    ]
+  },
+  {
+    "mISO2": "tg",
+    "mISO3": "tgo",
+    "mISONum": 768,
+    "mTLD": ".tg",
+    "mCallingCode": "+228",
+    "mLatitude": 8.525313561,
+    "mLongitude": 0.96232845,
+    "mTimezone": "Africa/Lome",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "xof",
+    "mLocalNames": [
+      "Togo"
+    ]
+  },
+  {
+    "mISO2": "tk",
+    "mISO3": "tkl",
+    "mISONum": 772,
+    "mTLD": ".tk",
+    "mCallingCode": "+690",
+    "mLatitude": -9.1668337,
+    "mLongitude": -171.8182111,
+    "mTimezone": "Pacific/Fakaofo",
+    "mLanguages": [
+      "tkl",
+      "en",
+      "sm"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "nzd",
+    "mLocalNames": [
+      "Tokelau"
+    ]
+  },
+  {
+    "mISO2": "to",
+    "mISO3": "ton",
+    "mISONum": 776,
+    "mTLD": ".to",
+    "mCallingCode": "+676",
+    "mLatitude": -20.42843174,
+    "mLongitude": -174.8098734,
+    "mTimezone": "Pacific/Tongatapu",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "top",
+    "mLocalNames": [
+      "Tonga"
+    ]
+  },
+  {
+    "mISO2": "tt",
+    "mISO3": "tto",
+    "mISONum": 780,
+    "mTLD": ".tt",
+    "mCallingCode": "+1-868",
+    "mLatitude": 10.45733408,
+    "mLongitude": -61.26567923,
+    "mTimezone": "America/Port_of_Spain",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "ttd",
+    "mLocalNames": [
+      "Trinidad and Tobago"
+    ]
+  },
+  {
+    "mISO2": "tn",
+    "mISO3": "tun",
+    "mISONum": 788,
+    "mTLD": ".tn",
+    "mCallingCode": "+216",
+    "mLatitude": 34.11956246,
+    "mLongitude": 9.552883589,
+    "mTimezone": "Africa/Tunis",
+    "mLanguages": [
+      "ar",
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "tnd",
+    "mLocalNames": [
+      "تونس",
+      "Tunisie"
+    ]
+  },
+  {
+    "mISO2": "tr",
+    "mISO3": "tur",
+    "mISONum": 792,
+    "mTLD": ".tr",
+    "mCallingCode": "+90",
+    "mLatitude": 39.0616029,
+    "mLongitude": 35.16895346,
+    "mTimezone": "Asia/Istanbul",
+    "mLanguages": [
+      "tr"
+    ],
+    "mContinent": "as",
+    "mCurrency": "try",
+    "mLocalNames": [
+      "Türkiye"
+    ]
+  },
+  {
+    "mISO2": "tm",
+    "mISO3": "tkm",
+    "mISONum": 795,
+    "mTLD": ".tm",
+    "mCallingCode": "+993",
+    "mLatitude": 39.11554137,
+    "mLongitude": 59.37100021,
+    "mTimezone": "Asia/Ashgabat",
+    "mLanguages": [
+      "tk"
+    ],
+    "mContinent": "as",
+    "mCurrency": "tmt",
+    "mLocalNames": [
+      "Türkmenistan"
+    ]
+  },
+  {
+    "mISO2": "tc",
+    "mISO3": "tca",
+    "mISONum": 796,
+    "mTLD": ".tc",
+    "mCallingCode": "+1-649",
+    "mLatitude": 21.83047572,
+    "mLongitude": -71.97387881,
+    "mTimezone": "America/Grand_Turk",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Turks and Caicos Islands"
+    ]
+  },
+  {
+    "mISO2": "tv",
+    "mISO3": "tuv",
+    "mISONum": 798,
+    "mTLD": ".tv",
+    "mCallingCode": "+688",
+    "mLatitude": -7.4784418,
+    "mLongitude": 178.6799214,
+    "mTimezone": "Pacific/Funafuti",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "aud",
+    "mLocalNames": [
+      "Tuvalu"
+    ]
+  },
+  {
+    "mISO2": "ug",
+    "mISO3": "uga",
+    "mISONum": 800,
+    "mTLD": ".ug",
+    "mCallingCode": "+256",
+    "mLatitude": 1.274692987,
+    "mLongitude": 32.36907971,
+    "mTimezone": "Africa/Kampala",
+    "mLanguages": [
+      "en",
+      "sw"
+    ],
+    "mContinent": "af",
+    "mCurrency": "ugx",
+    "mLocalNames": [
+      "Uganda"
+    ]
+  },
+  {
+    "mISO2": "ua",
+    "mISO3": "ukr",
+    "mISONum": 804,
+    "mTLD": ".ua",
+    "mCallingCode": "+380",
+    "mLatitude": 48.99656673,
+    "mLongitude": 31.38326469,
+    "mTimezone": "Europe/Kiev",
+    "mLanguages": [
+      "uk"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "uah",
+    "mLocalNames": [
+      "Україна"
+    ]
+  },
+  {
+    "mISO2": "ae",
+    "mISO3": "are",
+    "mISONum": 784,
+    "mTLD": ".ae",
+    "mCallingCode": "+971",
+    "mLatitude": 23.90528188,
+    "mLongitude": 54.3001671,
+    "mTimezone": "Asia/Dubai",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "as",
+    "mCurrency": "aed",
+    "mLocalNames": [
+      "دولة الإمارات العربيّة المتّحدة"
+    ]
+  },
+  {
+    "mISO2": "gb",
+    "mISO3": "gbr",
+    "mISONum": 826,
+    "mTLD": ".gb .uk",
+    "mCallingCode": "+44",
+    "mLatitude": 54.12387156,
+    "mLongitude": -2.865631641,
+    "mTimezone": "Europe/Belfast",
+    "mLanguages": [
+      "en",
+      "ga",
+      "cy",
+      "gd",
+      "kw"
+    ],
+    "mContinent": "eu",
+    "mCurrency": "gbp",
+    "mLocalNames": [
+      "United Kingdom"
+    ]
+  },
+  {
+    "mISO2": "um",
+    "mISO3": "umi",
+    "mISONum": 581,
+    "mTLD": "",
+    "mCallingCode": "+246",
+    "mLatitude": 19.295374,
+    "mLongitude": 166.6280441,
+    "mTimezone": "Pacific/Johnston",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "United States Minor Outlying Islands"
+    ]
+  },
+  {
+    "mISO2": "us",
+    "mISO3": "usa",
+    "mISONum": 840,
+    "mTLD": ".us",
+    "mCallingCode": "+1",
+    "mLatitude": 45.6795472,
+    "mLongitude": -112.4616737,
+    "mTimezone": "America/Adak",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "United States of America"
+    ]
+  },
+  {
+    "mISO2": "uy",
+    "mISO3": "ury",
+    "mISONum": 858,
+    "mTLD": ".uy",
+    "mCallingCode": "+598",
+    "mLatitude": -32.79951534,
+    "mLongitude": -56.01807053,
+    "mTimezone": "America/Montevideo",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "uyu",
+    "mLocalNames": [
+      "Uruguay"
+    ]
+  },
+  {
+    "mISO2": "uz",
+    "mISO3": "uzb",
+    "mISONum": 860,
+    "mTLD": ".uz",
+    "mCallingCode": "+998",
+    "mLatitude": 41.75554225,
+    "mLongitude": 63.14001528,
+    "mTimezone": "Asia/Samarkand",
+    "mLanguages": [
+      "uz",
+      "kaa"
+    ],
+    "mContinent": "as",
+    "mCurrency": "uzs",
+    "mLocalNames": [
+      "Oʻzbekiston Respublikasi"
+    ]
+  },
+  {
+    "mISO2": "vu",
+    "mISO3": "vut",
+    "mISONum": 548,
+    "mTLD": ".vu",
+    "mCallingCode": "+678",
+    "mLatitude": -16.22640909,
+    "mLongitude": 167.6864464,
+    "mTimezone": "Pacific/Efate",
+    "mLanguages": [
+      "bi",
+      "en",
+      "fr"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "vuv",
+    "mLocalNames": [
+      "Vanuatu"
+    ]
+  },
+  {
+    "mISO2": "ve",
+    "mISO3": "ven",
+    "mISONum": 862,
+    "mTLD": ".ve",
+    "mCallingCode": "+58",
+    "mLatitude": 7.124224213,
+    "mLongitude": -66.18184123,
+    "mTimezone": "America/Caracas",
+    "mLanguages": [
+      "es"
+    ],
+    "mContinent": "sa",
+    "mCurrency": "vef",
+    "mLocalNames": [
+      "Venezuela"
+    ]
+  },
+  {
+    "mISO2": "vn",
+    "mISO3": "vnm",
+    "mISONum": 704,
+    "mTLD": ".vn",
+    "mCallingCode": "+84",
+    "mLatitude": 16.6460167,
+    "mLongitude": 106.299147,
+    "mTimezone": "Asia/Ho_Chi_Minh",
+    "mLanguages": [
+      "vi"
+    ],
+    "mContinent": "as",
+    "mCurrency": "vnd",
+    "mLocalNames": [
+      "Việt Nam"
+    ]
+  },
+  {
+    "mISO2": "vg",
+    "mISO3": "vgb",
+    "mISONum": 92,
+    "mTLD": ".vg",
+    "mCallingCode": "+1-284",
+    "mLatitude": 18.52585755,
+    "mLongitude": -64.47146992,
+    "mTimezone": "America/Tortola",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "British Virgin Islands"
+    ]
+  },
+  {
+    "mISO2": "vi",
+    "mISO3": "vir",
+    "mISONum": 850,
+    "mTLD": ".vi",
+    "mCallingCode": "+1-340",
+    "mLatitude": 17.95500624,
+    "mLongitude": -64.80301538,
+    "mTimezone": "America/St_Thomas",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "na",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "United States Virgin Islands"
+    ]
+  },
+  {
+    "mISO2": "wf",
+    "mISO3": "wlf",
+    "mISONum": 876,
+    "mTLD": ".wf",
+    "mCallingCode": "+681",
+    "mLatitude": -13.88737039,
+    "mLongitude": -177.3483483,
+    "mTimezone": "Pacific/Wallis",
+    "mLanguages": [
+      "fr"
+    ],
+    "mContinent": "oc",
+    "mCurrency": "xpf",
+    "mLocalNames": [
+      "Wallis-et-Futuna"
+    ]
+  },
+  {
+    "mISO2": "eh",
+    "mISO3": "esh",
+    "mISONum": 732,
+    "mTLD": "",
+    "mCallingCode": "+212",
+    "mLatitude": 24.22956739,
+    "mLongitude": -12.21982755,
+    "mTimezone": "Africa/El_Aaiun",
+    "mLanguages": [
+      "ar",
+      "es",
+      "fr"
+    ],
+    "mContinent": "af",
+    "mCurrency": "mad",
+    "mLocalNames": [
+      "Sahara Occidental"
+    ]
+  },
+  {
+    "mISO2": "ye",
+    "mISO3": "yem",
+    "mISONum": 887,
+    "mTLD": ".ye",
+    "mCallingCode": "+967",
+    "mLatitude": 15.90928005,
+    "mLongitude": 47.58676189,
+    "mTimezone": "Asia/Aden",
+    "mLanguages": [
+      "ar"
+    ],
+    "mContinent": "as",
+    "mCurrency": "yer",
+    "mLocalNames": [
+      "اليَمَن"
+    ]
+  },
+  {
+    "mISO2": "zm",
+    "mISO3": "zmb",
+    "mISONum": 894,
+    "mTLD": ".zm",
+    "mCallingCode": "+260",
+    "mLatitude": -13.45824152,
+    "mLongitude": 27.77475946,
+    "mTimezone": "Africa/Lusaka",
+    "mLanguages": [
+      "en"
+    ],
+    "mContinent": "af",
+    "mCurrency": "zmw",
+    "mLocalNames": [
+      "Zambia"
+    ]
+  },
+  {
+    "mISO2": "zw",
+    "mISO3": "zwe",
+    "mISONum": 716,
+    "mTLD": ".zw",
+    "mCallingCode": "+263",
+    "mLatitude": -19.00420419,
+    "mLongitude": 29.8514412,
+    "mTimezone": "Africa/Harare",
+    "mLanguages": [
+      "en",
+      "sn",
+      "nd"
+    ],
+    "mContinent": "af",
+    "mCurrency": "usd",
+    "mLocalNames": [
+      "Zimbabwe"
+    ]
+  }
+]

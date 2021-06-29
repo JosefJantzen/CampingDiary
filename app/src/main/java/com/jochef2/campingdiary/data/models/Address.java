@@ -1,9 +1,13 @@
 package com.jochef2.campingdiary.data.models;
 
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.room.Ignore;
+
+import com.jochef2.androidworlddata.World;
+import com.jochef2.androidworlddata.models.Country;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +62,10 @@ public class Address {
         for (int i = 0; i <= address.getMaxAddressLineIndex(); i++) {
             mAddressLines.add(address.getAddressLine(i));
         }
+    }
+
+    public Country getCountry(Context context) {
+        return new World(context).getCountry(mCountryCode);
     }
 
     /**

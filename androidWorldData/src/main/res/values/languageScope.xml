@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="INDIVIDUAL">Individual</string>
+    <string name="COLLECTIVE">Collective</string>
+    <string name="MACROLANGUAGE">Macrolanguage</string>
+    <string name="UNKNOWN">Unknown</string>
+</resources>

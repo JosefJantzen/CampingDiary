@@ -1,5 +1,6 @@
 package com.jochef2.campingdiary.ui.choosePlace.searchPlace;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.util.TypedValue;
@@ -13,11 +14,13 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.github.wrdlbrnft.sortedlistadapter.SortedListAdapter;
+import com.jochef2.androidworlddata.World;
 import com.jochef2.campingdiary.data.relations.FullPlace;
 import com.jochef2.campingdiary.databinding.ItemPalceBinding;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 public class SearchAdapter extends SortedListAdapter<FullPlace> {
 
@@ -40,12 +43,15 @@ public class SearchAdapter extends SortedListAdapter<FullPlace> {
     public static class SearchViewHolder extends SortedListAdapter.ViewHolder<FullPlace> {
 
         private final ItemPalceBinding mBinding;
+        private final World mWorld;
 
         public SearchViewHolder(ItemPalceBinding binding) {
             super(binding.getRoot());
             mBinding = binding;
+            mWorld = new World(mFragmentActivity.getApplicationContext());
         }
 
+        @SuppressLint("UseCompatLoadingForDrawables")
         @Override
         protected void performBind(@NonNull FullPlace item) {
             mBinding.setModel(item);
@@ -54,6 +60,9 @@ public class SearchAdapter extends SortedListAdapter<FullPlace> {
             }
             mBinding.txPlace.setText(item.mPlace.getAddressString());
             mBinding.txDistance.setText(item.mPlace.getDistanceString());
+            if (item.mPlace.getAddressObject() != null) {
+                mBinding.imCountry.setImageDrawable(Objects.requireNonNull(mWorld.getCountry(item.mPlace.getAddressObject().getCountryCode())).getFlag(mFragmentActivity));
+            }
 
             // resets autosize
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

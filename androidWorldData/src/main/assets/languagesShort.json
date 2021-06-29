@@ -1,0 +1,2345 @@
+[
+  {
+    "mISO1": "aa",
+    "mISO2": "aar",
+    "mNativeNames": [
+      "Qafaraf",
+      "’Afar Af",
+      "Afaraf",
+      "Qafar af"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "dj"
+    ]
+  },
+  {
+    "mISO1": "ab",
+    "mISO2": "abk",
+    "mNativeNames": [
+      "Аҧсуа бызшәа Aƥsua bızšwa",
+      "Аҧсшәа",
+      "Aƥsua"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "af",
+    "mISO2": "afr",
+    "mNativeNames": [
+      "Afrikaans"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "za"
+    ]
+  },
+  {
+    "mISO1": "ak",
+    "mISO2": "aka",
+    "mNativeNames": [
+      "Akan"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "am",
+    "mISO2": "amh",
+    "mNativeNames": [
+      "አማርኛ Amârıñâ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "et"
+    ]
+  },
+  {
+    "mISO1": "ar",
+    "mISO2": "ara",
+    "mNativeNames": [
+      "العَرَبِيَّة al'Arabiyyeẗ"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ae",
+      "bh",
+      "dj",
+      "dz",
+      "eg",
+      "eh",
+      "er",
+      "iq",
+      "jo",
+      "km",
+      "kw",
+      "lb",
+      "ly",
+      "ma",
+      "mr",
+      "om",
+      "ps",
+      "qa",
+      "sa",
+      "sd",
+      "so",
+      "sy",
+      "td",
+      "tn",
+      "ye"
+    ]
+  },
+  {
+    "mISO1": "an",
+    "mISO2": "arg",
+    "mNativeNames": [
+      "aragonés"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "as",
+    "mISO2": "asm",
+    "mNativeNames": [
+      "অসমীয়া"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "av",
+    "mISO2": "ava",
+    "mNativeNames": [
+      "Магӏарул мацӏ",
+      "Авар мацӏ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ae",
+    "mISO2": "ave",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "ANCIENT",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ay",
+    "mISO2": "aym",
+    "mNativeNames": [
+      "Aymar aru"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "bo"
+    ]
+  },
+  {
+    "mISO1": "az",
+    "mISO2": "aze",
+    "mNativeNames": [
+      "Azərbaycan dili",
+      "آذربایجان دیلی",
+      "Азәрбајҹан дили"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "az"
+    ]
+  },
+  {
+    "mISO1": "ba",
+    "mISO2": "bak",
+    "mNativeNames": [
+      "Башҡорт теле",
+      "Başqort tele"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "bm",
+    "mISO2": "bam",
+    "mNativeNames": [
+      "ߓߊߡߊߣߊߣߞߊߣ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "be",
+    "mISO2": "bel",
+    "mNativeNames": [
+      "Беларуская мова Belaruskaâ mova"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "by"
+    ]
+  },
+  {
+    "mISO1": "bn",
+    "mISO2": "ben",
+    "mNativeNames": [
+      "বাংলা Bāŋlā"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "bd"
+    ]
+  },
+  {
+    "mISO1": "bh",
+    "mISO2": "bih",
+    "mNativeNames": [],
+    "mLanguageScope": "COLLECTIVE",
+    "mLanguageType": "UNKNOWN",
+    "mCountries": []
+  },
+  {
+    "mISO1": "bi",
+    "mISO2": "bis",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "vu"
+    ]
+  },
+  {
+    "mISO1": "bo",
+    "mISO2": "bod",
+    "mNativeNames": [
+      "བོད་སྐད་ Bodskad",
+      "ལྷ་སའི་སྐད་ Lhas'iskad"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "bs",
+    "mISO2": "bos",
+    "mNativeNames": [
+      "bosanski"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ba",
+      "me"
+    ]
+  },
+  {
+    "mISO1": "br",
+    "mISO2": "bre",
+    "mNativeNames": [
+      "Brezhoneg"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "bg",
+    "mISO2": "bul",
+    "mNativeNames": [
+      "български език bălgarski ezik"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "bg"
+    ]
+  },
+  {
+    "mISO1": "ca",
+    "mISO2": "cat",
+    "mNativeNames": [
+      "català",
+      "valencià"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ad",
+      "es"
+    ]
+  },
+  {
+    "mISO1": "cs",
+    "mISO2": "ces",
+    "mNativeNames": [
+      "čeština",
+      "český jazyk"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "cz"
+    ]
+  },
+  {
+    "mISO1": "ch",
+    "mISO2": "cha",
+    "mNativeNames": [
+      "Finu' Chamoru"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "gu",
+      "mp"
+    ]
+  },
+  {
+    "mISO1": "ce",
+    "mISO2": "che",
+    "mNativeNames": [
+      "Нохчийн мотт",
+      "نَاخچیین موٓتت",
+      "ნახჩიე მუოთთ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "cu",
+    "mISO2": "chu",
+    "mNativeNames": [
+      "Славе́нскїй ѧ҆зы́къ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "ANCIENT",
+    "mCountries": []
+  },
+  {
+    "mISO1": "cv",
+    "mISO2": "chv",
+    "mNativeNames": [
+      "Чӑвашла"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "kw",
+    "mISO2": "cor",
+    "mNativeNames": [
+      "Kernowek"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "gb"
+    ]
+  },
+  {
+    "mISO1": "co",
+    "mISO2": "cos",
+    "mNativeNames": [
+      "Corsu",
+      "Lingua corsa"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "cr",
+    "mISO2": "cre",
+    "mNativeNames": [],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "cy",
+    "mISO2": "cym",
+    "mNativeNames": [
+      "Cymraeg",
+      "y Gymraeg"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "gb"
+    ]
+  },
+  {
+    "mISO1": "da",
+    "mISO2": "dan",
+    "mNativeNames": [
+      "dansk"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "dk",
+      "fo",
+      "gl"
+    ]
+  },
+  {
+    "mISO1": "de",
+    "mISO2": "deu",
+    "mNativeNames": [
+      "Deutsch"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "at",
+      "be",
+      "ch",
+      "de",
+      "it",
+      "li",
+      "lu",
+      "na"
+    ]
+  },
+  {
+    "mISO1": "dv",
+    "mISO2": "div",
+    "mNativeNames": [
+      "ދިވެހި",
+      "ދިވެހިބަސް Divehi"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "mv"
+    ]
+  },
+  {
+    "mISO1": "dz",
+    "mISO2": "dzo",
+    "mNativeNames": [
+      "རྫོང་ཁ་ Ĵoŋkha"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "bt"
+    ]
+  },
+  {
+    "mISO1": "el",
+    "mISO2": "ell",
+    "mNativeNames": [
+      "Νέα Ελληνικά Néa Ellêniká"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "cy",
+      "gr"
+    ]
+  },
+  {
+    "mISO1": "en",
+    "mISO2": "eng",
+    "mNativeNames": [
+      "English"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ag",
+      "ai",
+      "aq",
+      "as",
+      "au",
+      "bb",
+      "bm",
+      "bs",
+      "bw",
+      "bz",
+      "ca",
+      "cc",
+      "ck",
+      "cm",
+      "cw",
+      "cx",
+      "dm",
+      "er",
+      "fj",
+      "fk",
+      "fm",
+      "gb",
+      "gd",
+      "gg",
+      "gh",
+      "gi",
+      "gm",
+      "gs",
+      "gu",
+      "gy",
+      "hk",
+      "hm",
+      "ie",
+      "im",
+      "in",
+      "io",
+      "je",
+      "jm",
+      "ke",
+      "ki",
+      "kn",
+      "kr",
+      "ky",
+      "lc",
+      "lr",
+      "ls",
+      "mh",
+      "mp",
+      "ms",
+      "mt",
+      "mu",
+      "mw",
+      "na",
+      "nf",
+      "ng",
+      "nr",
+      "nu",
+      "nz",
+      "pg",
+      "ph",
+      "pk",
+      "pn",
+      "pr",
+      "pw",
+      "rw",
+      "sb",
+      "sc",
+      "sd",
+      "sg",
+      "sh",
+      "sl",
+      "ss",
+      "sx",
+      "sz",
+      "tc",
+      "tk",
+      "to",
+      "tt",
+      "tv",
+      "tz",
+      "ug",
+      "um",
+      "us",
+      "vc",
+      "vg",
+      "vi",
+      "vu",
+      "ws",
+      "za",
+      "zm",
+      "zw"
+    ]
+  },
+  {
+    "mISO1": "eo",
+    "mISO2": "epo",
+    "mNativeNames": [
+      "Esperanto"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "CONSTRUCTED",
+    "mCountries": []
+  },
+  {
+    "mISO1": "et",
+    "mISO2": "est",
+    "mNativeNames": [
+      "eesti keel"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ee"
+    ]
+  },
+  {
+    "mISO1": "eu",
+    "mISO2": "eus",
+    "mNativeNames": [
+      "euskara"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "es"
+    ]
+  },
+  {
+    "mISO1": "ee",
+    "mISO2": "ewe",
+    "mNativeNames": [
+      "Èʋegbe"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "fo",
+    "mISO2": "fao",
+    "mNativeNames": [
+      "føroyskt"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "fo"
+    ]
+  },
+  {
+    "mISO1": "fa",
+    "mISO2": "fas",
+    "mNativeNames": [
+      "فارسی Fārsiy"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "af",
+      "ir"
+    ]
+  },
+  {
+    "mISO1": "fj",
+    "mISO2": "fij",
+    "mNativeNames": [
+      "Na Vosa Vakaviti"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "fi",
+    "mISO2": "fin",
+    "mNativeNames": [
+      "suomen kieli"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "fi"
+    ]
+  },
+  {
+    "mISO1": "fr",
+    "mISO2": "fra",
+    "mNativeNames": [
+      "français"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "aq",
+      "be",
+      "bf",
+      "bi",
+      "bj",
+      "bl",
+      "ca",
+      "cd",
+      "cf",
+      "cg",
+      "ch",
+      "ci",
+      "cm",
+      "dj",
+      "eh",
+      "fr",
+      "ga",
+      "gf",
+      "gn",
+      "gp",
+      "gq",
+      "ht",
+      "it",
+      "km",
+      "lb",
+      "lu",
+      "ma",
+      "mc",
+      "mf",
+      "mg",
+      "ml",
+      "mq",
+      "mr",
+      "mu",
+      "nc",
+      "ne",
+      "pf",
+      "pm",
+      "re",
+      "rw",
+      "sc",
+      "sn",
+      "td",
+      "tf",
+      "tg",
+      "tn",
+      "vu",
+      "wf",
+      "yt"
+    ]
+  },
+  {
+    "mISO1": "fy",
+    "mISO2": "fry",
+    "mNativeNames": [
+      "Frysk"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ff",
+    "mISO2": "ful",
+    "mNativeNames": [
+      "Fulfulde",
+      "Pulaar",
+      "Pular"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "gd",
+    "mISO2": "gla",
+    "mNativeNames": [
+      "Gàidhlig"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "gb"
+    ]
+  },
+  {
+    "mISO1": "ga",
+    "mISO2": "gle",
+    "mNativeNames": [
+      "Gaeilge"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "gb",
+      "ie"
+    ]
+  },
+  {
+    "mISO1": "gl",
+    "mISO2": "glg",
+    "mNativeNames": [
+      "galego"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "es"
+    ]
+  },
+  {
+    "mISO1": "gv",
+    "mISO2": "glv",
+    "mNativeNames": [
+      "Gaelg",
+      "Gailck"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "gn",
+    "mISO2": "grn",
+    "mNativeNames": [
+      "Avañe'ẽ"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "bo",
+      "py"
+    ]
+  },
+  {
+    "mISO1": "gu",
+    "mISO2": "guj",
+    "mNativeNames": [
+      "ગુજરાતી Gujarātī"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ht",
+    "mISO2": "hat",
+    "mNativeNames": [
+      "kreyòl ayisyen"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ht"
+    ]
+  },
+  {
+    "mISO1": "ha",
+    "mISO2": "hau",
+    "mNativeNames": [
+      "Harshen Hausa",
+      "هَرْشَن"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "he",
+    "mISO2": "heb",
+    "mNativeNames": [
+      "עברית 'Ivriyþ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "il",
+      "ps"
+    ]
+  },
+  {
+    "mISO1": "hz",
+    "mISO2": "her",
+    "mNativeNames": [
+      "Otjiherero"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "hi",
+    "mISO2": "hin",
+    "mNativeNames": [
+      "हिन्दी Hindī"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "in"
+    ]
+  },
+  {
+    "mISO1": "ho",
+    "mISO2": "hmo",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "pg"
+    ]
+  },
+  {
+    "mISO1": "hr",
+    "mISO2": "hrv",
+    "mNativeNames": [
+      "hrvatski"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ba",
+      "hr",
+      "me"
+    ]
+  },
+  {
+    "mISO1": "hu",
+    "mISO2": "hun",
+    "mNativeNames": [
+      "magyar nyelv"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "hu"
+    ]
+  },
+  {
+    "mISO1": "hy",
+    "mISO2": "hye",
+    "mNativeNames": [
+      "Հայերէն Hayerèn",
+      "Հայերեն Hayeren"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "am"
+    ]
+  },
+  {
+    "mISO1": "ig",
+    "mISO2": "ibo",
+    "mNativeNames": [
+      "Asụsụ Igbo"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "io",
+    "mISO2": "ido",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "CONSTRUCTED",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ii",
+    "mISO2": "iii",
+    "mNativeNames": [
+      "ꆈꌠꉙ Nuosuhxop"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "iu",
+    "mISO2": "iku",
+    "mNativeNames": [
+      "ᐃᓄᒃᑎᑐᑦ Inuktitut"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ie",
+    "mISO2": "ile",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "CONSTRUCTED",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ia",
+    "mISO2": "ina",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "CONSTRUCTED",
+    "mCountries": []
+  },
+  {
+    "mISO1": "id",
+    "mISO2": "ind",
+    "mNativeNames": [
+      "bahasa Indonesia"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "id"
+    ]
+  },
+  {
+    "mISO1": "ik",
+    "mISO2": "ipk",
+    "mNativeNames": [
+      "Iñupiaq"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "is",
+    "mISO2": "isl",
+    "mNativeNames": [
+      "íslenska"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "is"
+    ]
+  },
+  {
+    "mISO1": "it",
+    "mISO2": "ita",
+    "mNativeNames": [
+      "italiano",
+      "lingua italiana"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ch",
+      "it",
+      "sm",
+      "va"
+    ]
+  },
+  {
+    "mISO1": "jv",
+    "mISO2": "jav",
+    "mNativeNames": [
+      "ꦧꦱꦗꦮ",
+      "Basa Jawa"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ja",
+    "mISO2": "jpn",
+    "mNativeNames": [
+      "日本語 Nihongo"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "jp",
+      "pw"
+    ]
+  },
+  {
+    "mISO1": "kl",
+    "mISO2": "kal",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "gl"
+    ]
+  },
+  {
+    "mISO1": "kn",
+    "mISO2": "kan",
+    "mNativeNames": [
+      "ಕನ್ನಡ Kannađa"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ks",
+    "mISO2": "kas",
+    "mNativeNames": [
+      "कॉशुर",
+      "كأشُر"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ka",
+    "mISO2": "kat",
+    "mNativeNames": [
+      "ქართული Kharthuli"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ge"
+    ]
+  },
+  {
+    "mISO1": "kr",
+    "mISO2": "kau",
+    "mNativeNames": [],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "kk",
+    "mISO2": "kaz",
+    "mNativeNames": [
+      "қазақ тілі qazaq tili",
+      "қазақша qazaqşa"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "kz"
+    ]
+  },
+  {
+    "mISO1": "km",
+    "mISO2": "khm",
+    "mNativeNames": [
+      "ភាសាខ្មែរ Phiəsaakhmær"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "kh"
+    ]
+  },
+  {
+    "mISO1": "ki",
+    "mISO2": "kik",
+    "mNativeNames": [
+      "Gĩkũyũ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "rw",
+    "mISO2": "kin",
+    "mNativeNames": [
+      "Ikinyarwanda"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "rw"
+    ]
+  },
+  {
+    "mISO1": "ky",
+    "mISO2": "kir",
+    "mNativeNames": [
+      "кыргызча kırgızça",
+      "кыргыз тили kırgız tili"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "kg"
+    ]
+  },
+  {
+    "mISO1": "kv",
+    "mISO2": "kom",
+    "mNativeNames": [
+      "Коми кыв"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "kg",
+    "mISO2": "kon",
+    "mNativeNames": [],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ko",
+    "mISO2": "kor",
+    "mNativeNames": [
+      "한국어 Han'gug'ô"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "kp",
+      "kr"
+    ]
+  },
+  {
+    "mISO1": "kj",
+    "mISO2": "kua",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ku",
+    "mISO2": "kur",
+    "mNativeNames": [
+      "kurdî",
+      "کوردی"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "iq"
+    ]
+  },
+  {
+    "mISO1": "lo",
+    "mISO2": "lao",
+    "mNativeNames": [
+      "ພາສາລາວ Phasalaw"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "la"
+    ]
+  },
+  {
+    "mISO1": "la",
+    "mISO2": "lat",
+    "mNativeNames": [
+      "Lingua latīna"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "ANCIENT",
+    "mCountries": []
+  },
+  {
+    "mISO1": "lv",
+    "mISO2": "lav",
+    "mNativeNames": [
+      "Latviešu valoda"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "lv"
+    ]
+  },
+  {
+    "mISO1": "li",
+    "mISO2": "lim",
+    "mNativeNames": [
+      "Lèmburgs"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ln",
+    "mISO2": "lin",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "lt",
+    "mISO2": "lit",
+    "mNativeNames": [
+      "lietuvių kalba"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "lt"
+    ]
+  },
+  {
+    "mISO1": "lb",
+    "mISO2": "ltz",
+    "mNativeNames": [
+      "Lëtzebuergesch"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "lu"
+    ]
+  },
+  {
+    "mISO1": "lu",
+    "mISO2": "lub",
+    "mNativeNames": [
+      "Kiluba"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "lg",
+    "mISO2": "lug",
+    "mNativeNames": [
+      "Luganda"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "mh",
+    "mISO2": "mah",
+    "mNativeNames": [
+      "Kajin M̧ajeļ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "mh"
+    ]
+  },
+  {
+    "mISO1": "ml",
+    "mISO2": "mal",
+    "mNativeNames": [
+      "മലയാളം Malayāļã"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "mr",
+    "mISO2": "mar",
+    "mNativeNames": [
+      "मराठी Marāţhī"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "mk",
+    "mISO2": "mkd",
+    "mNativeNames": [
+      "македонски јазик makedonski jazik"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "mk"
+    ]
+  },
+  {
+    "mISO1": "mg",
+    "mISO2": "mlg",
+    "mNativeNames": [],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "mg"
+    ]
+  },
+  {
+    "mISO1": "mt",
+    "mISO2": "mlt",
+    "mNativeNames": [
+      "Malti"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "mt"
+    ]
+  },
+  {
+    "mISO1": "mn",
+    "mISO2": "mon",
+    "mNativeNames": [
+      "монгол хэл mongol xel",
+      "ᠮᠣᠩᠭᠣᠯ ᠬᠡᠯᠡ"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "mn"
+    ]
+  },
+  {
+    "mISO1": "mi",
+    "mISO2": "mri",
+    "mNativeNames": [
+      "Te Reo Māori"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "nz"
+    ]
+  },
+  {
+    "mISO1": "ms",
+    "mISO2": "msa",
+    "mNativeNames": [
+      "Bahasa Melayu"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "bn",
+      "my",
+      "sg"
+    ]
+  },
+  {
+    "mISO1": "my",
+    "mISO2": "mya",
+    "mNativeNames": [
+      "မြန်မာစာ Mrãmācā",
+      "မြန်မာစကား Mrãmākā:"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "mm"
+    ]
+  },
+  {
+    "mISO1": "na",
+    "mISO2": "nau",
+    "mNativeNames": [
+      "dorerin Naoero"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "nr"
+    ]
+  },
+  {
+    "mISO1": "nv",
+    "mISO2": "nav",
+    "mNativeNames": [
+      "Diné bizaad",
+      "Naabeehó bizaad"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "nr",
+    "mISO2": "nbl",
+    "mNativeNames": [
+      "isiNdebele seSewula"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "nd",
+    "mISO2": "nde",
+    "mNativeNames": [
+      "siNdebele saseNyakatho"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "zw"
+    ]
+  },
+  {
+    "mISO1": "ng",
+    "mISO2": "ndo",
+    "mNativeNames": [
+      "ndonga"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ne",
+    "mISO2": "nep",
+    "mNativeNames": [
+      "नेपाली भाषा Nepālī bhāśā"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "np"
+    ]
+  },
+  {
+    "mISO1": "nl",
+    "mISO2": "nld",
+    "mNativeNames": [
+      "Nederlands",
+      "Vlaams"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "aw",
+      "be",
+      "bq",
+      "cw",
+      "nl",
+      "sr",
+      "sx"
+    ]
+  },
+  {
+    "mISO1": "nn",
+    "mISO2": "nno",
+    "mNativeNames": [
+      "norsk nynorsk"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "no"
+    ]
+  },
+  {
+    "mISO1": "nb",
+    "mISO2": "nob",
+    "mNativeNames": [
+      "norsk bokmål"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "no"
+    ]
+  },
+  {
+    "mISO1": "no",
+    "mISO2": "nor",
+    "mNativeNames": [
+      "norsk"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "bv",
+      "no",
+      "sj"
+    ]
+  },
+  {
+    "mISO1": "ny",
+    "mISO2": "nya",
+    "mNativeNames": [
+      "Chichewa",
+      "Chinyanja"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "mw"
+    ]
+  },
+  {
+    "mISO1": "oc",
+    "mISO2": "oci",
+    "mNativeNames": [
+      "occitan",
+      "lenga d'òc"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "oj",
+    "mISO2": "oji",
+    "mNativeNames": [],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "or",
+    "mISO2": "ori",
+    "mNativeNames": [
+      "ଓଡ଼ିଆ"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "om",
+    "mISO2": "orm",
+    "mNativeNames": [
+      "Afaan Oromoo"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "et"
+    ]
+  },
+  {
+    "mISO1": "os",
+    "mISO2": "oss",
+    "mNativeNames": [
+      "Ирон æвзаг Iron ævzag"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "pa",
+    "mISO2": "pan",
+    "mNativeNames": [
+      "ਪੰਜਾਬੀ",
+      "پنجابی Pãjābī"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "pi",
+    "mISO2": "pli",
+    "mNativeNames": [
+      "Pāli"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "ANCIENT",
+    "mCountries": []
+  },
+  {
+    "mISO1": "pl",
+    "mISO2": "pol",
+    "mNativeNames": [
+      "Język polski"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "pl"
+    ]
+  },
+  {
+    "mISO1": "pt",
+    "mISO2": "por",
+    "mNativeNames": [
+      "português"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ao",
+      "br",
+      "cv",
+      "gq",
+      "gw",
+      "mo",
+      "mz",
+      "pt",
+      "st",
+      "tl"
+    ]
+  },
+  {
+    "mISO1": "ps",
+    "mISO2": "pus",
+    "mNativeNames": [
+      "پښتو Pax̌tow"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "af"
+    ]
+  },
+  {
+    "mISO1": "qu",
+    "mISO2": "que",
+    "mNativeNames": [
+      "Runa simi",
+      "kichwa simi",
+      "Nuna shimi"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "bo"
+    ]
+  },
+  {
+    "mISO1": "rm",
+    "mISO2": "roh",
+    "mNativeNames": [
+      "Rumantsch",
+      "Rumàntsch",
+      "Romauntsch",
+      "Romontsch"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ch"
+    ]
+  },
+  {
+    "mISO1": "ro",
+    "mISO2": "ron",
+    "mNativeNames": [
+      "limba română"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "md",
+      "ro"
+    ]
+  },
+  {
+    "mISO1": "rn",
+    "mISO2": "run",
+    "mNativeNames": [
+      "Ikirundi"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ru",
+    "mISO2": "rus",
+    "mNativeNames": [
+      "русский язык russkiĭ âzık"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "by",
+      "kg",
+      "kz",
+      "md",
+      "ru",
+      "tj"
+    ]
+  },
+  {
+    "mISO1": "sg",
+    "mISO2": "sag",
+    "mNativeNames": [
+      "yângâ tî sängö"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "cf"
+    ]
+  },
+  {
+    "mISO1": "sa",
+    "mISO2": "san",
+    "mNativeNames": [
+      "संस्कृतम् Sąskŕtam",
+      "𑌸𑌂𑌸𑍍𑌕𑍃𑌤𑌮𑍍"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "ANCIENT",
+    "mCountries": []
+  },
+  {
+    "mISO1": "si",
+    "mISO2": "sin",
+    "mNativeNames": [
+      "සිංහල Sĩhala"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "lk"
+    ]
+  },
+  {
+    "mISO1": "sk",
+    "mISO2": "slk",
+    "mNativeNames": [
+      "slovenčina",
+      "slovenský jazyk"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "sk"
+    ]
+  },
+  {
+    "mISO1": "sl",
+    "mISO2": "slv",
+    "mNativeNames": [
+      "slovenski jezik",
+      "slovenščina"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "si"
+    ]
+  },
+  {
+    "mISO1": "se",
+    "mISO2": "sme",
+    "mNativeNames": [
+      "davvisámegiella"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "fi",
+      "no"
+    ]
+  },
+  {
+    "mISO1": "sm",
+    "mISO2": "smo",
+    "mNativeNames": [
+      "Gagana faʻa Sāmoa"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "as",
+      "tk",
+      "ws"
+    ]
+  },
+  {
+    "mISO1": "sn",
+    "mISO2": "sna",
+    "mNativeNames": [
+      "chiShona"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "zw"
+    ]
+  },
+  {
+    "mISO1": "sd",
+    "mISO2": "snd",
+    "mNativeNames": [
+      "سنڌي",
+      "सिन्धी",
+      "ਸਿੰਧੀ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "so",
+    "mISO2": "som",
+    "mNativeNames": [
+      "af Soomaali"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "dj",
+      "so"
+    ]
+  },
+  {
+    "mISO1": "st",
+    "mISO2": "sot",
+    "mNativeNames": [
+      "Sesotho [southern]"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ls",
+      "za"
+    ]
+  },
+  {
+    "mISO1": "es",
+    "mISO2": "spa",
+    "mNativeNames": [
+      "español",
+      "castellano"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "aq",
+      "ar",
+      "bo",
+      "cl",
+      "co",
+      "cr",
+      "cu",
+      "do",
+      "ec",
+      "eh",
+      "es",
+      "gq",
+      "gt",
+      "hn",
+      "mx",
+      "ni",
+      "pa",
+      "pe",
+      "pr",
+      "py",
+      "sv",
+      "uy",
+      "ve"
+    ]
+  },
+  {
+    "mISO1": "sq",
+    "mISO2": "sqi",
+    "mNativeNames": [
+      "Shqip"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "al",
+      "me"
+    ]
+  },
+  {
+    "mISO1": "sc",
+    "mISO2": "srd",
+    "mNativeNames": [
+      "sardu",
+      "limba sarda",
+      "lingua sarda"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "sr",
+    "mISO2": "srp",
+    "mNativeNames": [
+      "српски",
+      "srpski"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ba",
+      "me",
+      "me",
+      "rs"
+    ]
+  },
+  {
+    "mISO1": "ss",
+    "mISO2": "ssw",
+    "mNativeNames": [
+      "siSwati"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "sz"
+    ]
+  },
+  {
+    "mISO1": "su",
+    "mISO2": "sun",
+    "mNativeNames": [
+      "ᮘᮞ ᮞᮥᮔ᮪ᮓ",
+      "Basa Sunda"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "sw",
+    "mISO2": "swa",
+    "mNativeNames": [
+      "Kiswahili"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ke",
+      "km",
+      "tz",
+      "ug"
+    ]
+  },
+  {
+    "mISO1": "sv",
+    "mISO2": "swe",
+    "mNativeNames": [
+      "svenska"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ax",
+      "fi",
+      "se"
+    ]
+  },
+  {
+    "mISO1": "ty",
+    "mISO2": "tah",
+    "mNativeNames": [
+      "Reo Tahiti",
+      "Reo Mā'ohi"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ta",
+    "mISO2": "tam",
+    "mNativeNames": [
+      "தமிழ் Tamił"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "lk",
+      "sg"
+    ]
+  },
+  {
+    "mISO1": "tt",
+    "mISO2": "tat",
+    "mNativeNames": [
+      "татар теле",
+      "tatar tele",
+      "تاتار"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "te",
+    "mISO2": "tel",
+    "mNativeNames": [
+      "తెలుగు Telugu"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "tg",
+    "mISO2": "tgk",
+    "mNativeNames": [
+      "тоҷикӣ toçikī"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "tj"
+    ]
+  },
+  {
+    "mISO1": "tl",
+    "mISO2": "tgl",
+    "mNativeNames": [
+      "Wikang Tagalog"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "ph"
+    ]
+  },
+  {
+    "mISO1": "th",
+    "mISO2": "tha",
+    "mNativeNames": [
+      "ภาษาไทย Phasathay"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "th"
+    ]
+  },
+  {
+    "mISO1": "ti",
+    "mISO2": "tir",
+    "mNativeNames": [
+      "ትግርኛ"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "er"
+    ]
+  },
+  {
+    "mISO1": "to",
+    "mISO2": "ton",
+    "mNativeNames": [
+      "lea faka-Tonga"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "tn",
+    "mISO2": "tsn",
+    "mNativeNames": [
+      "Setswana"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "bw",
+      "za"
+    ]
+  },
+  {
+    "mISO1": "ts",
+    "mISO2": "tso",
+    "mNativeNames": [
+      "Xitsonga"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "tk",
+    "mISO2": "tuk",
+    "mNativeNames": [
+      "Türkmençe",
+      "Түркменче",
+      "تورکمن تیلی تورکمنچ",
+      "türkmen dili",
+      "түркмен дили"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "tm"
+    ]
+  },
+  {
+    "mISO1": "tr",
+    "mISO2": "tur",
+    "mNativeNames": [
+      "Türkçe"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "cy",
+      "tr"
+    ]
+  },
+  {
+    "mISO1": "tw",
+    "mISO2": "twi",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "ug",
+    "mISO2": "uig",
+    "mNativeNames": [
+      "ئۇيغۇرچە  ",
+      "ئۇيغۇر تىلى"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "uk",
+    "mISO2": "ukr",
+    "mNativeNames": [
+      "Українська мова",
+      "Українська"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "md",
+      "ua"
+    ]
+  },
+  {
+    "mISO1": "ur",
+    "mISO2": "urd",
+    "mNativeNames": [
+      "اُردُو Urduw"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "pk"
+    ]
+  },
+  {
+    "mISO1": "uz",
+    "mISO2": "uzb",
+    "mNativeNames": [
+      "Oʻzbekcha",
+      "Ózbekça",
+      "ўзбекча",
+      "ئوزبېچه",
+      "oʻzbek tili",
+      "ўзбек тили",
+      "ئوبېک تیلی"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "uz"
+    ]
+  },
+  {
+    "mISO1": "ve",
+    "mISO2": "ven",
+    "mNativeNames": [
+      "Tshivenḓa"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "vi",
+    "mISO2": "vie",
+    "mNativeNames": [
+      "Tiếng Việt"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "vn"
+    ]
+  },
+  {
+    "mISO1": "vo",
+    "mISO2": "vol",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "CONSTRUCTED",
+    "mCountries": []
+  },
+  {
+    "mISO1": "wa",
+    "mISO2": "wln",
+    "mNativeNames": [
+      "Walon"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "wo",
+    "mISO2": "wol",
+    "mNativeNames": [],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "xh",
+    "mISO2": "xho",
+    "mNativeNames": [
+      "isiXhosa"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "za"
+    ]
+  },
+  {
+    "mISO1": "yi",
+    "mISO2": "yid",
+    "mNativeNames": [
+      "ייִדיש",
+      "יידיש",
+      "אידיש Yidiš"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "yo",
+    "mISO2": "yor",
+    "mNativeNames": [
+      "èdè Yorùbá"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "za",
+    "mISO2": "zha",
+    "mNativeNames": [
+      "Vahcuengh",
+      "話僮"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": []
+  },
+  {
+    "mISO1": "zh",
+    "mISO2": "zho",
+    "mNativeNames": [
+      "中文 Zhōngwén",
+      "汉语",
+      "漢語 Hànyǔ"
+    ],
+    "mLanguageScope": "MACROLANGUAGE",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "tw"
+    ]
+  },
+  {
+    "mISO1": "zu",
+    "mISO2": "zul",
+    "mNativeNames": [
+      "isiZulu"
+    ],
+    "mLanguageScope": "INDIVIDUAL",
+    "mLanguageType": "LIVING",
+    "mCountries": [
+      "za"
+    ]
+  }
+]

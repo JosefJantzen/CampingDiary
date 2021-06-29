@@ -1,0 +1,44 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="750dp"
+    android:height="500dp"
+    android:viewportWidth="750"
+    android:viewportHeight="500">
+    <path
+        android:fillColor="#fff"
+        android:fillType="evenOdd"
+        android:pathData="m0,0h750v500h-750z"
+        android:strokeWidth="1" />
+    <path
+        android:fillColor="#dc171d"
+        android:fillType="evenOdd"
+        android:pathData="m291.667,0h166.667v500h-166.667z" />
+    <path
+        android:fillColor="#012a87"
+        android:fillType="evenOdd"
+        android:pathData="m0,166.667h750v166.667h-750z"
+        android:strokeWidth="1" />
+    <path
+        android:fillColor="#fff"
+        android:fillType="evenOdd"
+        android:pathData="m346.158,326.389 l-12.947,-10.417 -12.879,10 5.111,-15.417 -12.943,-10.417h15.552l5.45,-15.417 4.95,15.417h15.714l-12.46,10.417z" />
+    <path
+        android:fillColor="#fff"
+        android:fillType="evenOdd"
+        android:pathData="m429.488,326.389l-12.947,-10.417 -12.879,10 5.111,-15.417 -12.943,-10.417h15.552l5.45,-15.417 4.95,15.417h15.714l-12.46,10.417z" />
+    <path
+        android:fillColor="#fff"
+        android:fillType="evenOdd"
+        android:pathData="m346.158,215.27l-12.947,-10.417 -12.879,10 5.111,-15.417 -12.943,-10.417h15.552l5.45,-15.417 4.95,15.417h15.714l-12.46,10.417z" />
+    <path
+        android:fillColor="#fff"
+        android:fillType="evenOdd"
+        android:pathData="m426.158,215.27l-12.947,-10.417 -12.879,10 5.111,-15.417 -12.943,-10.417h15.552l5.45,-15.417 4.95,15.417h15.714l-12.46,10.417z" />
+    <path
+        android:fillColor="#fff"
+        android:fillType="evenOdd"
+        android:pathData="m276.658,270.833l-12.947,-10.417 -12.879,10 5.111,-15.417 -12.943,-10.417h15.552l5.45,-15.417 4.95,15.417h15.714l-12.46,10.417z" />
+    <path
+        android:fillColor="#fff"
+        android:fillType="evenOdd"
+        android:pathData="m498.938,270.835l-12.947,-10.417 -12.879,10 5.111,-15.417 -12.943,-10.417h15.552l5.45,-15.417 4.95,15.417h15.714l-12.46,10.417z" />
+</vector>

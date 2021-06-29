@@ -93,6 +93,12 @@
     <string name="sort_by">Sort by</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="apply">Apply</string>
+    <string name="distance_in_km">Distance in km</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unnammed">Unnammend</string>
+    <string name="select">Select</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string-array name="sort_by_values">
         <item>name</item>
         <item>address</item>

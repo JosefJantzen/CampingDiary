@@ -238,4 +238,8 @@ public class Place {
     public void setDistance(double distance) {
         mDistance = distance;
     }
+
+    public void setPlaceId(String placeId) {
+        mPlaceId = placeId;
+    }
 }

@@ -24,6 +24,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
@@ -38,6 +39,7 @@ import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceFragment;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel.FIELDS;
 import com.jochef2.campingdiary.ui.choosePlace.searchPlace.SearchPlaceFragment;
+import com.jochef2.campingdiary.ui.maps.MapPlaceSelectFragment;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -162,6 +164,7 @@ public class NewPlaceFragment extends Fragment {
                     break;
                 case MAP:
                     cardMap.setCardBackgroundColor(R.attr.colorPrimaryVariant);
+                    etName.setText(mViewModel.mName.getValue());
                     break;
                 default:
                     break;
@@ -225,11 +228,24 @@ public class NewPlaceFragment extends Fragment {
         });
 
         btnMap.setOnClickListener(v -> {
-            //TODO: run ChoosePlaceOnMap
+            String name = mViewModel.getName();
+            if (name.equals("")) {
+                name = getString(R.string.unnammed);
+            }
+            MapPlaceSelectFragment.showDialog(getChildFragmentManager(), name, mViewModel.mSelectedMap.getValue().latLng).setInterface((poi) -> {
+                mViewModel.mSelectedMap.setValue(poi);
+                if (poi.name != null && mViewModel.mName.getValue().equals("")) {
+                    mViewModel.mName.setValue(poi.name);
+                }
+                if (mViewModel.getField() != FIELDS.MAP) {
+                    mViewModel.setField(FIELDS.MAP);
+                }
+            });
         });
 
         // observes selected map place and sets TextViews
-        mViewModel.getSelectedMap().observe(getViewLifecycleOwner(), latLng -> {
+        mViewModel.getSelectedMap().observe(getViewLifecycleOwner(), poi -> {
+            LatLng latLng = poi.latLng;
             txLatitude.setText(Double.toString(latLng.latitude));
             txLongitude.setText(Double.toString(latLng.longitude));
 
