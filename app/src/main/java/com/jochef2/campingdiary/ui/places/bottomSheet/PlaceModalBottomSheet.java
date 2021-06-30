@@ -1,4 +1,4 @@
-package com.jochef2.campingdiary.ui.nights.bottomSheet;
+package com.jochef2.campingdiary.ui.places.bottomSheet;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,7 +18,7 @@ import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Place;
 import com.jochef2.campingdiary.ui.maps.showPlace.MapShowPlaceDialogFragment;
 
-public class NightModalBottomSheet extends BottomSheetDialogFragment {
+public class PlaceModalBottomSheet extends BottomSheetDialogFragment {
 
     private final Place mPlace;
     private final NavDirections mAction;
@@ -29,7 +29,7 @@ public class NightModalBottomSheet extends BottomSheetDialogFragment {
     private LinearLayout edit;
     private LinearLayout delete;
 
-    public NightModalBottomSheet(Place place, NavDirections action, Context context) {
+    public PlaceModalBottomSheet(Place place, NavDirections action, Context context) {
         mPlace = place;
         mAction = action;
         mContext = context;
@@ -38,7 +38,7 @@ public class NightModalBottomSheet extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.night_modal_bottom_sheet, container, false);
+        return inflater.inflate(R.layout.place_modal_bottom_sheet, container, false);
     }
 
     @Override
@@ -61,12 +61,12 @@ public class NightModalBottomSheet extends BottomSheetDialogFragment {
         });
 
         edit.setOnClickListener(v -> {
-            //TODO: navigate to EditNight
+            //TODO: navigate to EditPlace
             this.dismiss();
         });
 
         delete.setOnClickListener(v -> {
-            //TODO: delete Night after Alert
+            //TODO: delete Place after Alert
             this.dismiss();
         });
     }

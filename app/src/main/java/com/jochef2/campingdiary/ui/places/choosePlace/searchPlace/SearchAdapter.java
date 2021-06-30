@@ -15,9 +15,12 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.github.wrdlbrnft.sortedlistadapter.SortedListAdapter;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.jochef2.androidworlddata.World;
 import com.jochef2.campingdiary.data.relations.FullPlace;
 import com.jochef2.campingdiary.databinding.ItemPlaceBinding;
+import com.jochef2.campingdiary.ui.places.bottomSheet.PlaceModalBottomSheet;
+import com.jochef2.campingdiary.ui.places.choosePlace.ChoosePlaceFragmentDirections;
 import com.jochef2.campingdiary.ui.places.choosePlace.ChoosePlaceViewModel;
 
 import java.util.Comparator;
@@ -92,6 +95,15 @@ public class SearchAdapter extends SortedListAdapter<FullPlace> {
                 mViewModel.mSelectedSearchPlaceId.setValue(item.mPlace.mId);
                 mViewModel.setField(ChoosePlaceViewModel.FIELDS.SEARCH);
                 Toast.makeText(mFragmentActivity.getApplicationContext(), "Selected palce: " + item.mPlace.getPlaceName(), Toast.LENGTH_SHORT).show();
+            });
+
+            mBinding.card.setOnLongClickListener(v -> {
+                ChoosePlaceFragmentDirections.ActionChoosePlaceFragmentToShowPlaceFragment action = ChoosePlaceFragmentDirections.actionChoosePlaceFragmentToShowPlaceFragment();
+                action.setPlaceId(item.mPlace.mId);
+
+                BottomSheetDialogFragment bottomSheet = new PlaceModalBottomSheet(item.mPlace, action, mFragmentActivity);
+                bottomSheet.show(mFragmentActivity.getSupportFragmentManager(), "PlaceModalBottomSheet");
+                return true;
             });
         }
     }

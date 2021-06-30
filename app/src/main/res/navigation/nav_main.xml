@@ -114,6 +114,18 @@
             android:name="cat"
             android:defaultValue="EVENT"
             app:argType="com.jochef2.campingdiary.data.values.Events" />
+        <action
+            android:id="@+id/action_choosePlaceFragment_to_showPlaceFragment"
+            app:destination="@id/showPlaceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showPlaceFragment"
+        android:name="com.jochef2.campingdiary.ui.places.showPlace.ShowPlaceFragment"
+        android:label="ShowPlaceFragment" >
+        <argument
+            android:name="placeId"
+            android:defaultValue="-1"
+            app:argType="integer" />
     </fragment>
 
 </navigation>

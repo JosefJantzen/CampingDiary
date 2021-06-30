@@ -67,7 +67,7 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
             action.setNightPosition(position);
 
             BottomSheetDialogFragment bottomSheet = new NightModalBottomSheet(Objects.requireNonNull(mDataset.getValue()).mNights.get(position).mPlace, action, mContext);
-            bottomSheet.show(mFragmentManager, "ModalBottomSheet");
+            bottomSheet.show(mFragmentManager, "NightModalBottomSheet");
             return true;
         });
     }
