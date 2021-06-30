@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:isScrollContainer="true"
-        tools:context=".ui.main.CurrentReiseFragment">
+        tools:context=".ui.reisen.currentReise.CurrentReiseFragment">
 
         <LinearLayout
             android:id="@+id/no_reise"

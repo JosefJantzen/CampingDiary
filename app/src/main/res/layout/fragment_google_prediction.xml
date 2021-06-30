@@ -5,7 +5,7 @@
     android:id="@+id/googlePrediction"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.choosePlace.newPlace.GooglePredictionFragment">
+    tools:context=".ui.places.choosePlace.newPlace.GooglePredictionFragment">
 
     <ProgressBar
         android:id="@+id/progress_google_predictions"

@@ -8,7 +8,7 @@
         android:id="@+id/newPlace"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.choosePlace.searchPlace.SearchPlaceFragment">
+        tools:context=".ui.places.choosePlace.searchPlace.SearchPlaceFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/filter"

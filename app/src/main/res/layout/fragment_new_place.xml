@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="75dp"
-            tools:context=".ui.choosePlace.newPlace.NewPlaceFragment">
+            tools:context=".ui.places.choosePlace.newPlace.NewPlaceFragment">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_predictions"
