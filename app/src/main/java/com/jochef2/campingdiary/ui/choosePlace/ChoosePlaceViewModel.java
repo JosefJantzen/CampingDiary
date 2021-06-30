@@ -207,6 +207,10 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
         return mAllPlaces;
     }
 
+    public void setSelectedSearchPlaceId(Integer selectedSearchPlaceId) {
+        mSelectedSearchPlaceId.setValue(selectedSearchPlaceId);
+    }
+
     public enum FIELDS {
         NULL,
         SEARCH,

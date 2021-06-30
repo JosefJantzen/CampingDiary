@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
+        android:checkable="true"
         android:clickable="true"
         android:focusable="auto"
         app:cardCornerRadius="15dp">
@@ -30,9 +32,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                app:layout_constraintTop_toTopOf="@+id/tx_place"
                 app:layout_constraintBottom_toBottomOf="@+id/tx_place"
                 app:layout_constraintEnd_toStartOf="@+id/tx_distance"
+                app:layout_constraintTop_toTopOf="@+id/tx_place"
                 app:srcCompat="@drawable/ic_compass"
                 app:tint="?attr/colorSecondary" />
 

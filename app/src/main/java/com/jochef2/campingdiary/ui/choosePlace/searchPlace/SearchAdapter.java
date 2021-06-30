@@ -7,6 +7,7 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.widget.TextViewCompat;
@@ -16,7 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.github.wrdlbrnft.sortedlistadapter.SortedListAdapter;
 import com.jochef2.androidworlddata.World;
 import com.jochef2.campingdiary.data.relations.FullPlace;
-import com.jochef2.campingdiary.databinding.ItemPalceBinding;
+import com.jochef2.campingdiary.databinding.ItemPlaceBinding;
 import com.jochef2.campingdiary.ui.choosePlace.ChoosePlaceViewModel;
 
 import java.util.Comparator;
@@ -36,22 +37,23 @@ public class SearchAdapter extends SortedListAdapter<FullPlace> {
     @NonNull
     @Override
     protected ViewHolder<? extends FullPlace> onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent, int viewType) {
-        final ItemPalceBinding binding = ItemPalceBinding.inflate(inflater, parent, false);
+        final ItemPlaceBinding binding = ItemPlaceBinding.inflate(inflater, parent, false);
         return new SearchViewHolder(binding);
     }
 
+
     public static class SearchViewHolder extends SortedListAdapter.ViewHolder<FullPlace> {
 
-        private final ItemPalceBinding mBinding;
+        private final ItemPlaceBinding mBinding;
         private final World mWorld;
 
-        public SearchViewHolder(ItemPalceBinding binding) {
+        public SearchViewHolder(ItemPlaceBinding binding) {
             super(binding.getRoot());
             mBinding = binding;
             mWorld = new World(mFragmentActivity.getApplicationContext());
         }
 
-        @SuppressLint("UseCompatLoadingForDrawables")
+        @SuppressLint({"UseCompatLoadingForDrawables", "ResourceAsColor"})
         @Override
         protected void performBind(@NonNull FullPlace item) {
             mBinding.setModel(item);
@@ -84,6 +86,13 @@ public class SearchAdapter extends SortedListAdapter<FullPlace> {
                     TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(mBinding.txPlace, 10, 18, 1, TypedValue.COMPLEX_UNIT_SP);
                 });
             }
+
+            mBinding.card.setOnClickListener(v -> {
+                //TODO: Checkable Cards
+                mViewModel.mSelectedSearchPlaceId.setValue(item.mPlace.mId);
+                mViewModel.setField(ChoosePlaceViewModel.FIELDS.SEARCH);
+                Toast.makeText(mFragmentActivity.getApplicationContext(), "Selected palce: " + item.mPlace.getPlaceName(), Toast.LENGTH_SHORT).show();
+            });
         }
     }
 }
