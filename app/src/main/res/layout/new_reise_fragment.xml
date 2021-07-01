@@ -5,7 +5,7 @@
     android:id="@+id/new_reise"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.newReise.NewReiseFragment">
+    tools:context=".ui.reisen.newReise.NewReiseFragment">
 
     <Button
         android:id="@+id/btn_back"

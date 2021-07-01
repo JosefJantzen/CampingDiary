@@ -5,7 +5,7 @@
     android:id="@+id/nights"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.allNights.AllNightsFragment">
+    tools:context=".ui.nights.allNights.AllNightsFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="wrap_content"

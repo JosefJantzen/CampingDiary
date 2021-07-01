@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="INDIVIDUAL">Einzelsprache</string>
+    <string name="COLLECTIVE">Sprachfamilie</string>
+    <string name="MACROLANGUAGE">Makrosprache</string>
+    <string name="UNKNOWN">Unbekannt</string>
+</resources>

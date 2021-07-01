@@ -25,8 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:menu="@menu/main_app_bar"
-                app:navigationIcon="@drawable/ic_menu"
-                app:title="Test" />
+                app:navigationIcon="@drawable/ic_menu" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <fragment

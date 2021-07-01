@@ -58,4 +58,53 @@
     <string name="none">None</string>
     <string name="new_night">New night</string>
     <string name="nights">Nights</string>
+    <string name="inspect">Inspect</string>
+    <string name="show_on_map">Show on map</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="action">Action</string>
+    <string name="place">Place</string>
+    <string name="place_dots">Place:</string>
+    <string name="select_place">Select Place</string>
+    <string name="search">Search</string>
+    <string name="new_place">New Place</string>
+    <string name="choose_place">Choose place</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="gps">GPS</string>
+    <string name="google">Google</string>
+    <string name="coordinates">Coordinates</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="only_cords">Only current coordinates</string>
+    <string name="google_search">Google search</string>
+    <string name="please_allow_gps">Please grant the location permission</string>
+    <string name="n_a">N/A</string>
+    <string name="not_selected">Not selected</string>
+    <string name="pick_on_map">Pick on map</string>
+    <string name="no_gps">No GPS</string>
+    <string name="err_gps_disabled">Your GPS seems to be disabled. Do you want to turn it on?</string>
+    <string name="err_no_place_selected">Please select or create a place</string>
+    <string name="err_no_name_place">Please name the place</string>
+    <string name="overview">Overview</string>
+    <string name="current_nights">Current nights</string>
+    <string name="current_events">Current events</string>
+    <string name="distance_points">Distance</string>
+    <string name="filter">Filter</string>
+    <string name="sort_by">Sort by</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="apply">Apply</string>
+    <string name="distance_in_km">Distance in km</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="unnammed">Unnammend</string>
+    <string name="select">Select</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="sort_by_values">
+        <item>name</item>
+        <item>address</item>
+        <item>distance</item>
+        <item>creation date</item>
+        <item>number of visits</item>
+        <item>last visited</item>
+    </string-array>
 </resources>

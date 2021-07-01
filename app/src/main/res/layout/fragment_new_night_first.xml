@@ -5,36 +5,43 @@
     android:id="@+id/new_night_first"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.newNight.NewNightFirstFragment">
+    tools:context=".ui.nights.newNight.NewNightFirstFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
+    <TextView
+        android:id="@+id/tx_place"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLines="2"
+        android:text="@string/not_selected"
+        android:textSize="24sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/place_dots"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ch_end" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_choose_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/select_place"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout3">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/change_currency"
-            android:textSize="16sp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_currency"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="EUR" />
-
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tx_place" />
 
     <TextView
         android:id="@+id/textView3"
@@ -92,22 +99,21 @@
         android:layout_width="wrap_content"
         android:layout_height="139dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="100dp"
         android:padding="24dp"
         android:textSize="18sp"
         app:cornerRadius="15dp"
         app:icon="@drawable/ic_close"
         app:iconPadding="0dp"
         app:iconSize="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_choose_place" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_check"
         android:layout_width="wrap_content"
         android:layout_height="139dp"
-        android:layout_marginTop="100dp"
         android:layout_marginEnd="20dp"
         android:padding="24dp"
         android:textSize="18sp"
@@ -116,9 +122,10 @@
         app:iconGravity="end"
         app:iconPadding="0dp"
         app:iconSize="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_choose_place" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/ch_end"
@@ -205,25 +212,6 @@
             android:lines="1"
             android:singleLine="true" />
 
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ch_end">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/price"
-            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

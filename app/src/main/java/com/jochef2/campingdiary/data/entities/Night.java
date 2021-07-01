@@ -46,6 +46,9 @@ public class Night {
     @Embedded
     public Price mPrice;
 
+    @ColumnInfo(name = "placeId")
+    public int mPlaceId;
+
     public Night(int reiseId, @NotNull String name, Calendar begin, Calendar end, NightCategory cat) {
         mReiseId = reiseId;
         mName = name;
@@ -128,6 +131,14 @@ public class Night {
 
     public void setCurrency(String ISO) {
         mPrice.setCurrency(ISO);
+    }
+
+    public int getPlaceId() {
+        return mPlaceId;
+    }
+
+    public void setPlaceId(int placeId) {
+        mPlaceId = placeId;
     }
 
     public String getBeginDate() {

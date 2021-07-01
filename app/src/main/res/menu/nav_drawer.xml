@@ -3,13 +3,26 @@
 
     <group>
         <item
-            android:id="@+id/group_reisen"
-            android:title="@string/trips">
+            android:id="@+id/group_current"
+            android:title="@string/current_trip">
             <menu>
                 <item
                     android:id="@+id/currentReiseFragment"
                     android:icon="@drawable/ic_today"
-                    android:title="@string/current_trip" />
+                    android:title="@string/overview" />
+                <item
+                    android:id="@+id/allNightsFragment"
+                    android:icon="@drawable/ic_night"
+                    android:title="@string/current_nights" />
+                <item
+                    android:icon="@drawable/ic_walk"
+                    android:title="@string/current_events" />
+            </menu>
+        </item>
+        <item
+            android:id="@+id/group_reisen"
+            android:title="@string/trips">
+            <menu>
                 <item
                     android:id="@+id/allReisenFragment"
                     android:icon="@drawable/ic_calendar"

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ANCIENT">Ancient</string>
+    <string name="CONSTRUCTED">Constructed</string>
+    <string name="EXTINCT">Extinct</string>
+    <string name="HISTORICAL">Historical</string>
+    <string name="LIVING">Living</string>
+    <string name="UNKNWON">Unknown</string>
+</resources>

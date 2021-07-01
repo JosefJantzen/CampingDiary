@@ -1,10 +1,13 @@
 package com.jochef2.campingdiary.data;
 
+import android.os.Bundle;
+
 import androidx.room.TypeConverter;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jochef2.campingdiary.data.values.EventCategory;
+import com.jochef2.campingdiary.data.values.Events;
 import com.jochef2.campingdiary.data.values.NightCategory;
 import com.jochef2.campingdiary.data.values.SADCategory;
 import com.mynameismidori.currencypicker.ExtendedCurrency;
@@ -12,6 +15,7 @@ import com.mynameismidori.currencypicker.ExtendedCurrency;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class Converters {
 
@@ -108,6 +112,46 @@ public class Converters {
     public static List<SADCategory> stringToSADCatList(String cats) {
         return cats == null ? null : new Gson().fromJson(cats, new TypeToken<ArrayList<SADCategory>>() {
         }.getType());
+    }
+
+    @TypeConverter
+    public static String EventsToString(Events events) {
+        return events == null ? null : events.toString();
+    }
+
+    @TypeConverter
+    public static Events StringToEvents(String events) {
+        return events == null ? null : Events.valueOf(events);
+    }
+
+    @TypeConverter
+    public static String LocaleToString(Locale locale) {
+        return locale == null ? null : locale.getISO3Language();
+    }
+
+    @TypeConverter
+    public static Locale StringToLocale(String locale) {
+        return locale == null ? null : new Locale(locale);
+    }
+
+    @TypeConverter
+    public static String ListToString(List<String> list) {
+        return list == null ? null : new Gson().toJson(list);
+    }
+
+    @TypeConverter
+    public static List<String> StringToHashMap(String list) {
+        return list == null ? null : new Gson().fromJson(list, List.class);
+    }
+
+    @TypeConverter
+    public static String BundleToString(Bundle bundle) {
+        return bundle == null ? null : new Gson().toJson(bundle);
+    }
+
+    @TypeConverter
+    public static Bundle StringToBundle(String bundle) {
+        return bundle == null ? null : new Gson().fromJson(bundle, Bundle.class);
     }
 
     /**

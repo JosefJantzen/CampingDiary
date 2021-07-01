@@ -26,7 +26,7 @@
     <string name="days">Tage</string>
     <string name="costs">Kosten</string>
     <string name="fuel">Kraftstoff</string>
-    <string name="distance">Strecke</string>
+    <string name="distance">Entfernung</string>
     <string name="water">Wasser</string>
     <string name="countries">Länder</string>
     <string name="last_night">Letzte Nacht</string>
@@ -58,4 +58,51 @@
     <string name="none">Keine</string>
     <string name="new_night">Neue Nacht</string>
     <string name="nights">Nächte</string>
+    <string name="inspect">Ansehen</string>
+    <string name="show_on_map">Auf Karte anzeigen</string>
+    <string name="edit">Bearbeiten</string>
+    <string name="delete">Löschen</string>
+    <string name="action">Aktion</string>
+    <string name="place">Ort</string>
+    <string name="place_dots">Ort:</string>
+    <string name="select_place">Ort auswählen</string>
+    <string name="search">Suche</string>
+    <string name="new_place">Neuen Ort</string>
+    <string name="choose_place">Ort wählen</string>
+    <string name="suggestions">Vorschläge</string>
+    <string name="gps">GPS</string>
+    <string name="google">Google</string>
+    <string name="coordinates">Koordinaten</string>
+    <string name="latitude">Breitengrad:</string>
+    <string name="longitude">Längengrad:</string>
+    <string name="only_cords">Nur aktuelle Koordinaten</string>
+    <string name="google_search">Google Suche</string>
+    <string name="please_allow_gps">Bitte erlauben sie den Standortzugriff</string>
+    <string name="n_a">N/A</string>
+    <string name="not_selected">Nicht ausgewählt</string>
+    <string name="pick_on_map">Auf Karte wählen</string>
+    <string name="no_gps">Kein GPS</string>
+    <string name="err_gps_disabled">Ihr GPS scheint ausgeschaltet zu sein. Wollen sie es anschalten?</string>
+    <string name="err_no_place_selected">Bitte wählen sie einen Ort aus oder erstellen sie einen neuen</string>
+    <string name="err_no_name_place">Bennenen sie bitte den Ort</string>
+    <string name="overview">Übersicht</string>
+    <string name="current_nights">Aktuelle Nächte</string>
+    <string name="current_events">Aktuelle Aktivitäten</string>
+    <string name="distance_points">Entfernung:</string>
+    <string name="filter">Filter</string>
+    <string name="sort_by">Sortieren nach</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="apply">Anwenden</string>
+    <string name="distance_in_km">Entfernung in km</string>
+    <string name="unnammed">Unbenannt</string>
+    <string name="select">Auswählen</string>
+    <string-array name="sort_by_values">
+        <item>Name</item>
+        <item>Adresse</item>
+        <item>Entfernung</item>
+        <item>Erstellungsdatum</item>
+        <item>Anzahl der Besuche</item>
+        <item>Zuletzt besucht</item>
+    </string-array>
 </resources>

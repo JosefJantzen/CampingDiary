@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="afaf">Africa</string>
+    <string name="asas">Asia</string>
+    <string name="eueu">Europe</string>
+    <string name="nana">North America</string>
+    <string name="sasa">South America</string>
+    <string name="anan">Antarctica</string>
+    <string name="ococ">Oceania</string>
+</resources>
