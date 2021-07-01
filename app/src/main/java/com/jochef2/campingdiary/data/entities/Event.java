@@ -9,6 +9,7 @@ import androidx.room.PrimaryKey;
 import com.jochef2.campingdiary.data.models.Price;
 import com.jochef2.campingdiary.data.values.EventCategory;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 @Entity(tableName = "events_table")
@@ -41,11 +42,15 @@ public class Event {
     @Embedded
     public Price mPrice;
 
-    public Event(int reiseId, String name, Calendar begin, EventCategory cat) {
+    @ColumnInfo(name = "placeId")
+    public int mPlaceId;
+
+    public Event(int reiseId, String name, Calendar begin, Calendar end, Price price) {
         mReiseId = reiseId;
         mName = name;
         mBegin = begin;
-        mCat = cat;
+        mEnd = end;
+        mPrice = price;
     }
 
     public EventCategory getCat() {
@@ -98,5 +103,56 @@ public class Event {
 
     public void setEnd(Calendar end) {
         mEnd = end;
+    }
+
+    public void setReiseId(int reiseId) {
+        mReiseId = reiseId;
+    }
+
+    public int getPlaceId() {
+        return mPlaceId;
+    }
+
+    public void setPlaceId(int placeId) {
+        mPlaceId = placeId;
+    }
+
+    public String getBeginDateTime() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY HH:mm");
+        return simpleDate.format(mBegin.getTime());
+    }
+
+    public String getBeginDate() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
+        return simpleDate.format(mBegin.getTime());
+    }
+
+    public String getBeginTime() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("HH:mm");
+        return simpleDate.format(mBegin.getTime());
+    }
+
+    public String getEndDate() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
+        return simpleDate.format(mEnd.getTime());
+    }
+
+    public String getEndTime() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("HH:mm");
+        return simpleDate.format(mEnd.getTime());
+    }
+
+    public String getEndDateTime() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY HH:mm");
+        return simpleDate.format(mEnd.getTime());
+    }
+
+    public String getDates() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
+        String end = "in die Ewigkeit";
+        if (mEnd != null) {
+            end = simpleDate.format(mEnd.getTime());
+        }
+        return simpleDate.format(mBegin.getTime()) + " - " + end;
     }
 }

@@ -1,6 +1,7 @@
 package com.jochef2.campingdiary;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -11,6 +12,8 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.jochef2.campingdiary.data.values.EventCategory;
+import com.jochef2.campingdiary.ui.events.newEvent.NewEventCategorySelectorFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,5 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
             }
         });
+    }
+
+    public void onClick(View v) {
+        for (EventCategory cat : EventCategory.values()){
+            if (cat.name().equals(v.getTag())) {
+                NewEventCategorySelectorFragment.onClick(v);
+                break;
+            }
+        }
     }
 }

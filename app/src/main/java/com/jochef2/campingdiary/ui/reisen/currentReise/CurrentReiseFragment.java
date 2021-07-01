@@ -95,7 +95,9 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 });
 
                 fabEvent.setOnClickListener(v -> {
-                    //TODO: remove this and set navigation to new Event
+                    CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToNewEventFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToNewEventFragment();
+                    action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                    Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(action);
 
                 });
 

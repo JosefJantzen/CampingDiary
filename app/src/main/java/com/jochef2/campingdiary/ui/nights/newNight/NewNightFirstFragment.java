@@ -56,7 +56,7 @@ public class NewNightFirstFragment extends Fragment {
         btnClose = view.findViewById(R.id.btn_back);
         btnNext = view.findViewById(R.id.btn_check);
         txEnd = view.findViewById(R.id.tx_end);
-        chEndCustom = view.findViewById(R.id.ch_end_custom);
+        chEndCustom = view.findViewById(R.id.ch_end_custom_day);
         chStart = view.findViewById(R.id.ch_start);
         chStartCustom = view.findViewById(R.id.ch_start_custom);
         txStart = view.findViewById(R.id.tx_start);
@@ -104,8 +104,8 @@ public class NewNightFirstFragment extends Fragment {
         });
 
         chStart.setOnCheckedChangeListener(((group, checkedId) -> {
-            Night night = NewNightFragment.mViewModel.mNight.getValue();
             if (checkedId != R.id.ch_start_custom) {
+                Night night = NewNightFragment.mViewModel.mNight.getValue();
                 Objects.requireNonNull(night).setBegin(Calendar.getInstance());
 
                 if (chEnd.getCheckedChipId() == R.id.ch_one || chEnd.getCheckedChipId() == R.id.ch_two) {
@@ -121,7 +121,7 @@ public class NewNightFirstFragment extends Fragment {
 
         chEnd.setOnCheckedChangeListener((group, checkedId) -> {
 
-            if (checkedId != R.id.ch_end_custom) {
+            if (checkedId != R.id.ch_end_custom_day) {
                 Night night = NewNightFragment.mViewModel.mNight.getValue();
                 Calendar c = night.getBegin();
                 c.add(Calendar.DAY_OF_MONTH, Integer.parseInt(view.findViewById(checkedId).getTag().toString()));
@@ -144,7 +144,7 @@ public class NewNightFirstFragment extends Fragment {
                     int addDays = 1;
                     if (chEnd.getCheckedChipId() == R.id.ch_two) {
                         addDays = 2;
-                    } else if (chEnd.getCheckedChipId() == R.id.ch_end_custom) {
+                    } else if (chEnd.getCheckedChipId() == R.id.ch_end_custom_day) {
                         chEnd.check(R.id.ch_one);
                     }
                     calendar.add(Calendar.DAY_OF_MONTH, addDays);
@@ -178,7 +178,7 @@ public class NewNightFirstFragment extends Fragment {
                 end.set(year, month, dayOfMonth);
                 night.setEnd(end);
                 NewNightFragment.mViewModel.mNight.setValue(night);
-                NewNightFragment.mViewModel.lastEndChip = R.id.ch_end_custom;
+                NewNightFragment.mViewModel.lastEndChip = R.id.ch_end_custom_day;
             }, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
 
             datePickerDialog.getDatePicker().setMinDate(night.getBegin().getTimeInMillis() + 24 * 60 * 60 * 1000);

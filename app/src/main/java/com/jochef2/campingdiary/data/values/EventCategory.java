@@ -9,5 +9,9 @@ public enum EventCategory {
     SWIMMING,
     SHOPPING,
     EATING,
-    OTHER
+    OTHER,
+
+    NIGHT,
+    FUEL,
+    SAD
 }

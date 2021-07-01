@@ -97,6 +97,29 @@
     <string name="distance_in_km">Entfernung in km</string>
     <string name="unnammed">Unbenannt</string>
     <string name="select">Auswählen</string>
+    <string name="night">Nacht</string>
+    <string name="to_fuel">Tanken</string>
+    <string name="sad">Ver- und Entsorgung</string>
+    <string name="sport">Sport</string>
+    <string name="sightseeing">Sehenswürdigkeit</string>
+    <string name="hiking">Wandern</string>
+    <string name="walking">Spazieren</string>
+    <string name="running">Laufen</string>
+    <string name="swimming">Schwimmen</string>
+    <string name="shopping">Einkaufen</string>
+    <string name="eating">Essen</string>
+    <string name="new_event">Neues Event</string>
+    <string name="day">Tag</string>
+    <string name="time">Uhrzeit</string>
+    <string name="now">Jetzt</string>
+    <string name="one_hour">1 Stunde</string>
+    <string name="two_hours">2 Stunden</string>
+    <string name="back">Zurück</string>
+    <string name="in_two_hours">In zwei Stunden</string>
+    <string name="in_one_hour">In einer Stunde</string>
+    <string name="toast_end_day_before_start">Please select a day after the beginning</string>
+    <string name="toast_start_and_end_one">Please select a later time.</string>
+    <string name="toast_end_time_before_start">" Please select a time after the beginning"</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

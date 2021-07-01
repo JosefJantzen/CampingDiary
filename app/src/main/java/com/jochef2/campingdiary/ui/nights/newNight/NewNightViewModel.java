@@ -38,7 +38,7 @@ public class NewNightViewModel extends AndroidViewModel {
         Night night = new Night(-1, application.getString(R.string.no_name), Calendar.getInstance(), c, NightCategory.MOTORHOME_AREA, new Price(0, ExtendedCurrency.getCurrencyByISO("EUR")));
         mNight.setValue(night);
         lastEndChip = R.id.ch_one;
-        lastStartChip = R.id.ch_today;
+        lastStartChip = R.id.ch_start_today;
     }
 
     public void setReiseId(int reiseId) {

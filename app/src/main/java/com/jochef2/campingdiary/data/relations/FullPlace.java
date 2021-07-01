@@ -5,6 +5,7 @@ import androidx.room.Embedded;
 import androidx.room.Relation;
 
 import com.github.wrdlbrnft.sortedlistadapter.SortedListAdapter;
+import com.jochef2.campingdiary.data.entities.Event;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.entities.Place;
 
@@ -25,13 +26,19 @@ public class FullPlace implements SortedListAdapter.ViewModel {
     )
     public List<Night> mNights;
 
+    @Relation(
+            parentColumn = "id",
+            entityColumn = "placeId"
+    )
+    public List<Event> mEvents;
+
     /**
      * counts number of all events with this FullPlace
      *
      * @return Integer with that number
      */
     public int getNumberOfVisits() {
-        return mNights.size(); //TODO: add sizes of other event types
+        return mNights.size() + mEvents.size(); //TODO: add sizes of other event types
     }
 
     /**
@@ -46,7 +53,11 @@ public class FullPlace implements SortedListAdapter.ViewModel {
             Collections.sort(mNights, nightComparator);
             lasts.add(mNights.get(0).getEnd().getTimeInMillis());
         }
-
+        if (!mEvents.isEmpty()) {
+            Comparator<Event> eventComparator = ((o1, o2) -> Long.compare(o1.getEnd().getTimeInMillis(), o2.getEnd().getTimeInMillis()));
+            Collections.sort(mEvents, eventComparator);
+            lasts.add(mEvents.get(0).getEnd().getTimeInMillis());
+        }
         //TODO: add Comparators for other event types
         if (!lasts.isEmpty()) {
             Collections.sort(lasts);

@@ -157,7 +157,7 @@
             android:text="@string/two_days" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/ch_end_custom"
+            android:id="@+id/ch_end_custom_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
@@ -170,7 +170,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:clipChildren="true"
-        app:checkedChip="@id/ch_today"
+        app:checkedChip="@id/ch_start_today"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
@@ -178,7 +178,7 @@
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/ch_today"
+            android:id="@+id/ch_start_today"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"

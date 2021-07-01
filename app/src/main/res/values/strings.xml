@@ -98,6 +98,29 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="unnammed">Unnammend</string>
     <string name="select">Select</string>
+    <string name="night">Night</string>
+    <string name="to_fuel">Fuel</string>
+    <string name="sad">Supply and Disposal</string>
+    <string name="sport">Sport</string>
+    <string name="sightseeing">Sightseeing</string>
+    <string name="hiking">Hiking</string>
+    <string name="walking">Walking</string>
+    <string name="running">Running</string>
+    <string name="swimming">Swimming</string>
+    <string name="shopping">Shopping</string>
+    <string name="eating">Eating</string>
+    <string name="new_event">New event</string>
+    <string name="day">Day</string>
+    <string name="time">Time</string>
+    <string name="now">Now</string>
+    <string name="one_hour">1 hour</string>
+    <string name="two_hours">2 hours</string>
+    <string name="back">Back</string>
+    <string name="in_two_hours">in two hours</string>
+    <string name="in_one_hour">in one hour</string>
+    <string name="toast_end_day_before_start">Please select a day after the beginning</string>
+    <string name="toast_start_and_end_one">Please select a later time.</string>
+    <string name="toast_end_time_before_start">" Please select a time after the beginning"</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="sort_by_values">
         <item>name</item>
