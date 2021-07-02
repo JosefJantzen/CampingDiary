@@ -82,4 +82,5 @@ dependencies {
     implementation 'com.github.JoChef2:currency-picker-android-german:1.2.20'
     implementation 'com.github.wrdlbrnft:sorted-list-adapter:0.3.0.27'
 
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
 }

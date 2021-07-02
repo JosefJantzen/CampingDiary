@@ -17,19 +17,16 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
-import com.google.android.material.textfield.TextInputEditText;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Event;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Calendar;
-import java.util.Objects;
 
 
 public class NewEventSecondFragment extends Fragment {
 
-    private TextInputEditText etName;
     private TextView txStart;
     private ChipGroup cgStartDay;
     private Chip chStartDayCustom;
@@ -55,7 +52,6 @@ public class NewEventSecondFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        etName = view.findViewById(R.id.et_name);
         txStart = view.findViewById(R.id.tx_start);
         cgStartDay = view.findViewById(R.id.cg_start_day);
         chStartDayCustom = view.findViewById(R.id.ch_custom_start_day);
@@ -69,9 +65,13 @@ public class NewEventSecondFragment extends Fragment {
         btnBack = view.findViewById(R.id.btn_back);
         btnNext = view.findViewById(R.id.btn_next);
 
-        if (savedInstanceState != null) {
-            etName.setText(savedInstanceState.getString("name"));
-        }
+        btnBack.setOnClickListener(v -> {
+            NewEventFragment.setTab(0);
+        });
+
+        btnNext.setOnClickListener(v -> {
+            NewEventFragment.setTab(2);
+        });
 
         cgStartDay.setOnCheckedChangeListener((group, checkedId) -> {
             Event event = NewEventFragment.mViewModel.mEvent.getValue();
@@ -84,7 +84,6 @@ public class NewEventSecondFragment extends Fragment {
                     NewEventFragment.mViewModel.lastStartDayChip = checkedId;
                 }
             }
-
         });
 
         chStartDayCustom.setOnClickListener(v -> {
@@ -152,7 +151,6 @@ public class NewEventSecondFragment extends Fragment {
                     NewEventFragment.mViewModel.lastStartTimeChip = checkedId;
                     break;
             }
-
         });
 
         chStartTimeCustom.setOnClickListener(v -> {
@@ -291,12 +289,5 @@ public class NewEventSecondFragment extends Fragment {
             });
             timePickerDialog.show();
         });
-    }
-
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        outState.putString("name", Objects.requireNonNull(etName.getText()).toString());
     }
 }

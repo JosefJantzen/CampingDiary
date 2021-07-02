@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.button.MaterialButton;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Event;
 import com.jochef2.campingdiary.data.values.EventCategory;
@@ -17,31 +18,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class NewEventCategorySelectorFragment extends Fragment {
 
-
-    public static void onClick(View v) {
-        EventCategory cat = EventCategory.valueOf(v.getTag().toString());
-
-        if (cat == EventCategory.NIGHT) {
-            //TODO: navigate to newNight
-        }
-        else if (cat == EventCategory.FUEL) {
-            //TODO: navigate to newFuel
-        }
-        else if (cat == EventCategory.SAD) {
-            //TODO: navigate to newSAD
-        }
-        else {
-            Event event = NewEventFragment.mViewModel.mEvent.getValue();
-            event.setCat(cat);
-            NewEventFragment.mViewModel.mEvent.setValue(event);
-            NewEventFragment.setTab(1);
-        }
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    FlexMaterialButtonToogleGroup mToogleGroup;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,5 +31,27 @@ public class NewEventCategorySelectorFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        mToogleGroup = view.findViewById(R.id.toggle_group);
+
+        mToogleGroup.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+            MaterialButton btn = view.findViewById(checkedId);
+            EventCategory cat = EventCategory.valueOf(btn.getTag().toString());
+
+            if (cat == EventCategory.NIGHT) {
+                //TODO: navigate to newNight
+            }
+            else if (cat == EventCategory.FUEL) {
+                //TODO: navigate to newFuel
+            }
+            else if (cat == EventCategory.SAD) {
+                //TODO: navigate to newSAD
+            }
+            else {
+                Event event = NewEventFragment.mViewModel.mEvent.getValue();
+                event.setCat(cat);
+                NewEventFragment.mViewModel.mEvent.setValue(event);
+                NewEventFragment.setTab(1);
+            }
+        });
     }
 }
