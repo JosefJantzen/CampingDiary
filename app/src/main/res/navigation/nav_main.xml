@@ -43,6 +43,15 @@
         <action
             android:id="@+id/action_currentReiseFragment_to_newEventFragment"
             app:destination="@id/newEventFragment" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_allEventsFragment"
+            app:destination="@id/allEventsFragment" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_allFuelsFragment"
+            app:destination="@id/allFuelsFragment" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_allSADsFragment"
+            app:destination="@id/allSADsFragment" />
     </fragment>
 
     <fragment
@@ -140,6 +149,124 @@
             android:name="reiseId"
             android:defaultValue="-1"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_newEventFragment_to_newNightFragment"
+            app:destination="@id/newNightFragment" />
+        <action
+            android:id="@+id/action_newEventFragment_to_newFuelFragment"
+            app:destination="@id/newFuelFragment" />
+        <action
+            android:id="@+id/action_newEventFragment_to_newSADFragment"
+            app:destination="@id/newSADFragment" />
     </fragment>
-
+    <fragment
+        android:id="@+id/allEventsFragment"
+        android:name="com.jochef2.campingdiary.ui.events.allEvents.AllEventsFragment"
+        android:label="all_events_fragment"
+        tools:layout="@layout/all_events_fragment" >
+        <action
+            android:id="@+id/action_allEventsFragment_to_showEventFragment"
+            app:destination="@id/showEventFragment" />
+        <action
+            android:id="@+id/action_allEventsFragment_to_newEventFragment"
+            app:destination="@id/newEventFragment" />
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/showEventFragment"
+        android:name="com.jochef2.campingdiary.ui.events.showEvent.ShowEventFragment"
+        android:label="show_event_fragment"
+        tools:layout="@layout/show_event_fragment" >
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="eventId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/allFuelsFragment"
+        android:name="com.jochef2.campingdiary.ui.fuel.allFuels.AllFuelsFragment"
+        android:label="all_fuels_fragment"
+        tools:layout="@layout/all_fuels_fragment" >
+        <action
+            android:id="@+id/action_allFuelsFragment_to_newFuelFragment"
+            app:destination="@id/newFuelFragment" />
+        <action
+            android:id="@+id/action_allFuelsFragment_to_showFuelFragment"
+            app:destination="@id/showFuelFragment" />
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/newFuelFragment"
+        android:name="com.jochef2.campingdiary.ui.fuel.newFuel.NewFuelFragment"
+        android:label="new_fuel_fragment"
+        tools:layout="@layout/new_fuel_fragment" >
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/showFuelFragment"
+        android:name="com.jochef2.campingdiary.ui.fuel.showFuel.ShowFuelFragment"
+        android:label="show_fuel_fragment"
+        tools:layout="@layout/show_fuel_fragment" >
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="fuelId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/allSADsFragment"
+        android:name="com.jochef2.campingdiary.ui.sad.allSads.AllSADsFragment"
+        android:label="all_sads_fragment"
+        tools:layout="@layout/all_sads_fragment" >
+        <action
+            android:id="@+id/action_allSADsFragment_to_newSADFragment"
+            app:destination="@id/newSADFragment" />
+        <action
+            android:id="@+id/action_allSADsFragment_to_showSADFragment"
+            app:destination="@id/showSADFragment" />
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/newSADFragment"
+        android:name="com.jochef2.campingdiary.ui.sad.newSad.NewSADFragment"
+        android:label="new_sad_fragment"
+        tools:layout="@layout/new_sad_fragment" >
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/showSADFragment"
+        android:name="com.jochef2.campingdiary.ui.sad.showSad.ShowSADFragment"
+        android:label="show_sad_fragment"
+        tools:layout="@layout/show_sad_fragment" >
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="sadId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
 </navigation>
