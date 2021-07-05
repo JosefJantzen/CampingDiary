@@ -25,6 +25,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jochef2.campingdiary.R;
+import com.jochef2.campingdiary.data.entities.Event;
 import com.jochef2.campingdiary.data.entities.Night;
 
 import java.util.Calendar;
@@ -44,6 +45,8 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private ImageView imNight;
     private MaterialCardView cardNight;
     private FloatingActionButton fabEvent;
+    private TextView txEvent;
+    private MaterialCardView cardEvent;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -65,6 +68,8 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         imNight = view.findViewById(R.id.im_night);
         cardNight = view.findViewById(R.id.card_night);
         fabEvent = view.findViewById(R.id.btn_event);
+        txEvent = view.findViewById(R.id.tx_event);
+        cardEvent = view.findViewById(R.id.card_event);
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -110,6 +115,15 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                         Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
                     });
                     //TODO: lastNight icon
+                }
+
+                if (!reise.mEvents.isEmpty()) {
+                    Event lastEvent = reise.getLastEvent();
+                    txEvent.setText(lastEvent.getName());
+                    cardEvent.setOnClickListener(v -> {
+                        //TODO: navigate to AllEvents
+                    });
+                    //TODO: lastEvent icon
                 }
             }
         });

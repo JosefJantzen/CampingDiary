@@ -254,7 +254,7 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
          * sets distances for places
          */
         mViewModel.getAllPlaces().observe(getViewLifecycleOwner(), places -> {
-            if (!distances.get() && places.get(0).mPlace.getDistance() == -1) {
+            if (!distances.get() && !places.isEmpty() && places.get(0).mPlace.getDistance() == -1) {
                 List<Boolean> success = new ArrayList<>();
                 for (FullPlace place : places) {
                     success.add(place.mPlace.setDistanceTo(mViewModel.mCurrentLocation.getValue()));

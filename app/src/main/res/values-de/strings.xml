@@ -117,9 +117,10 @@
     <string name="back">Zurück</string>
     <string name="in_two_hours">In zwei Stunden</string>
     <string name="in_one_hour">In einer Stunde</string>
-    <string name="toast_end_day_before_start">Please select a day after the beginning</string>
-    <string name="toast_start_and_end_one">Please select a later time.</string>
-    <string name="toast_end_time_before_start">" Please select a time after the beginning"</string>
+    <string name="toast_end_day_before_start">Bitte wählen sie einen Tag nach dem Starttag.</string>
+    <string name="toast_start_and_end_one">Bitte wählen sie einen späteren Zeitpunkt.</string>
+    <string name="toast_end_time_before_start">Bitte wählen sie einen Zeitpunkt nach dem Start.</string>
+    <string name="done">Fertig</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

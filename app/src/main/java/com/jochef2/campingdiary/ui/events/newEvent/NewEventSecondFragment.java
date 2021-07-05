@@ -63,7 +63,7 @@ public class NewEventSecondFragment extends Fragment {
         cgEndTime = view.findViewById(R.id.cg_end_time);
         chEndTimeCustom = view.findViewById(R.id.ch_end_custom_time);
         btnBack = view.findViewById(R.id.btn_back);
-        btnNext = view.findViewById(R.id.btn_next);
+        btnNext = view.findViewById(R.id.btn_done);
 
         btnBack.setOnClickListener(v -> {
             NewEventFragment.setTab(0);

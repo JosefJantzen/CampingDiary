@@ -26,10 +26,11 @@ public class FullReise {
     public List<NightAndPlace> mNights;
 
     @Relation(
+            entity = Event.class,
             parentColumn = "id",
             entityColumn = "reiseId"
     )
-    public List<Event> mEvents;
+    public List<EventAndPlace> mEvents;
 
     @Relation(
             parentColumn = "id",
@@ -59,6 +60,18 @@ public class FullReise {
             }
         }
         return lastNight;
+    }
+
+    public Event getLastEvent() {
+        Event lastEvent = mEvents.get(0).mEvent;
+
+        for (int i = 1; i < mEvents.size(); i++) {
+            Event event = mEvents.get(i).mEvent;
+            if (lastEvent.getBegin().before(event.getBegin())) {
+                lastEvent = event;
+            }
+        }
+        return lastEvent;
     }
 
     /**

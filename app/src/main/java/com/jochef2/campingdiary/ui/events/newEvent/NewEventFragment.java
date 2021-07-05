@@ -116,6 +116,8 @@ public class NewEventFragment extends Fragment implements LifecycleObserver {
                     return new NewEventCategorySelectorFragment();
                 case 1:
                     return new NewEventSecondFragment();
+                case 2:
+                    return new NewEventThirdFragment();
                 default:
                     return null;
             }
@@ -123,7 +125,7 @@ public class NewEventFragment extends Fragment implements LifecycleObserver {
 
         @Override
         public int getItemCount() {
-            return 2;
+            return 3;
         }
     }
 }

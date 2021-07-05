@@ -155,4 +155,13 @@ public class Event {
         }
         return simpleDate.format(mBegin.getTime()) + " - " + end;
     }
+
+    public void setCurrency(String ISO) {
+        mPrice.setCurrency(ISO);
+    }
+
+    public void setPriceNumber(double priceNumber) {
+        mPrice.setPrice(priceNumber);
+    }
+
 }

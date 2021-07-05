@@ -48,4 +48,17 @@ public class NewEventViewModel extends AndroidViewModel {
         Objects.requireNonNull(event).setReiseId(reiseId);
         mEvent.setValue(event);
     }
+
+    public void saveEvent() {
+        mReisenRepository.insertEvent(mEvent.getValue());
+    }
+
+    public void setPlace(int placeId) {
+        Event event = mEvent.getValue();
+        event.setPlaceId(placeId);
+        mEvent.setValue(event);
+        mPlaceRepository.getPlace(placeId).observeForever(place -> {
+            mPlace.setValue(place);
+        });
+    }
 }
