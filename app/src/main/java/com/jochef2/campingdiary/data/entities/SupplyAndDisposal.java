@@ -31,11 +31,8 @@ public class SupplyAndDisposal {
     @ColumnInfo(name = "description")
     public String mDescription;
 
-    @ColumnInfo(name = "begin")
-    public Calendar mBegin;
-
-    @ColumnInfo(name = "end")
-    public Calendar mEnd;
+    @ColumnInfo(name = "time")
+    public Calendar mTime;
 
     @ColumnInfo(name = "cats")
     public List<SADCategory> mCats;
@@ -43,10 +40,13 @@ public class SupplyAndDisposal {
     @Embedded
     public Price mPrice;
 
-    public SupplyAndDisposal(int reiseId, @NonNull String name, Calendar begin, List<SADCategory> cats) {
+    @ColumnInfo(name = "palceId")
+    public int mPlaceId;
+
+    public SupplyAndDisposal(int reiseId, @NonNull String name, Calendar time, List<SADCategory> cats) {
         mReiseId = reiseId;
         mName = name;
-        mBegin = begin;
+        mTime = time;
         mCats = cats;
     }
 
@@ -79,20 +79,12 @@ public class SupplyAndDisposal {
         mDescription = description;
     }
 
-    public Calendar getBegin() {
-        return mBegin;
+    public Calendar getTime() {
+        return mTime;
     }
 
-    public void setBegin(Calendar begin) {
-        mBegin = begin;
-    }
-
-    public Calendar getEnd() {
-        return mEnd;
-    }
-
-    public void setEnd(Calendar end) {
-        mEnd = end;
+    public void setTime(Calendar time) {
+        mTime = time;
     }
 
     public void addCats(List<SADCategory> cat) {
@@ -105,5 +97,13 @@ public class SupplyAndDisposal {
 
     public void setCats(List<SADCategory> cats) {
         mCats = cats;
+    }
+
+    public int getPlaceId() {
+        return mPlaceId;
+    }
+
+    public void setPlaceId(int placeId) {
+        mPlaceId = placeId;
     }
 }

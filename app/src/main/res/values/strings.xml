@@ -122,6 +122,12 @@
     <string name="toast_start_and_end_one">Please select a later time.</string>
     <string name="toast_end_time_before_start">" Please select a time after the beginning"</string>
     <string name="done">Done</string>
+    <string name="choose_date">Choose date</string>
+    <string name="choose_time">Choose time</string>
+    <string name="amount">Amount</string>
+    <string name="whole_price">Whole price</string>
+    <string name="price_liter">Price per liter</string>
+    <string name="new_fuel">New fuel stop</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="sort_by_values">
         <item>name</item>

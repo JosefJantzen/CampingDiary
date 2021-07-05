@@ -37,6 +37,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.ui.events.newEvent.NewEventViewModel;
+import com.jochef2.campingdiary.ui.fuel.newFuel.NewFuelViewModel;
 import com.jochef2.campingdiary.ui.nights.newNight.NewNightViewModel;
 import com.jochef2.campingdiary.ui.places.choosePlace.newPlace.NewPlaceFragment;
 import com.jochef2.campingdiary.ui.places.choosePlace.searchPlace.SearchPlaceFragment;
@@ -153,6 +154,9 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
                         break;
                     case EVENT:
                         new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewEventViewModel.class).setPlace(id);
+                        break;
+                    case FUEL:
+                        new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewFuelViewModel.class).setPlace(id);
                         break;
                 }
                 Navigation.findNavController(requireActivity(), R.id.nav_host).popBackStack();

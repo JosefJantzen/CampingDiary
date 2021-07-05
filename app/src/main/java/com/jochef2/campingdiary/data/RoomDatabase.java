@@ -20,7 +20,7 @@ import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Reise.class, Night.class, Event.class, SupplyAndDisposal.class, Fuel.class, Place.class}, version = 36, exportSchema = false)
+@Database(entities = {Reise.class, Night.class, Event.class, SupplyAndDisposal.class, Fuel.class, Place.class}, version = 37, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class RoomDatabase extends androidx.room.RoomDatabase {
 

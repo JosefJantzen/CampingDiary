@@ -121,6 +121,12 @@
     <string name="toast_start_and_end_one">Bitte wählen sie einen späteren Zeitpunkt.</string>
     <string name="toast_end_time_before_start">Bitte wählen sie einen Zeitpunkt nach dem Start.</string>
     <string name="done">Fertig</string>
+    <string name="choose_date">Datum wählen</string>
+    <string name="choose_time">Uhrzeit wählen</string>
+    <string name="amount">Menge</string>
+    <string name="whole_price">Gesamtpreis</string>
+    <string name="price_liter">Preis pro Liter</string>
+    <string name="new_fuel">Neuer Tankstop</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

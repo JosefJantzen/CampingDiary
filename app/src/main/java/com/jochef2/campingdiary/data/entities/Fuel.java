@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey;
 
 import com.jochef2.campingdiary.data.models.Price;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 @Entity(tableName = "fuel_table")
@@ -29,11 +30,8 @@ public class Fuel {
     @ColumnInfo(name = "description")
     public String mDescription;
 
-    @ColumnInfo(name = "begin")
-    public Calendar mBegin;
-
-    @ColumnInfo(name = "end")
-    public Calendar mEnd;
+    @ColumnInfo(name = "time")
+    public Calendar mTime;
 
     @ColumnInfo(name = "liter")
     public double mLiter;
@@ -41,10 +39,14 @@ public class Fuel {
     @Embedded
     public Price mPrice;
 
-    public Fuel(int reiseId, @NonNull String name, Calendar begin) {
+    @ColumnInfo(name = "palceId")
+    public int mPlaceId;
+
+    public Fuel(int reiseId, @NonNull String name, Calendar time, Price price) {
         mReiseId = reiseId;
         mName = name;
-        mBegin = begin;
+        mTime = time;
+        mPrice = price;
     }
 
     public int getId() {
@@ -76,20 +78,12 @@ public class Fuel {
         mDescription = description;
     }
 
-    public Calendar getBegin() {
-        return mBegin;
+    public Calendar getTime() {
+        return mTime;
     }
 
-    public void setBegin(Calendar begin) {
-        mBegin = begin;
-    }
-
-    public Calendar getEnd() {
-        return mEnd;
-    }
-
-    public void setEnd(Calendar end) {
-        mEnd = end;
+    public void setTime(Calendar time) {
+        mTime = time;
     }
 
     public double getLiter() {
@@ -106,5 +100,26 @@ public class Fuel {
 
     public void setPrice(Price price) {
         mPrice = price;
+    }
+
+    public int getPlaceId() {
+        return mPlaceId;
+    }
+
+    public void setPlaceId(int placeId) {
+        mPlaceId = placeId;
+    }
+
+    public void setPriceNumber(double price) {
+        mPrice.setPrice(price);
+    }
+
+    public void setCurrency(String code) {
+        mPrice.setCurrency(code);
+    }
+
+    public String getTimeString() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("HH:mm dd.MM.yyyy");
+        return simpleDate.format(mTime.getTime());
     }
 }

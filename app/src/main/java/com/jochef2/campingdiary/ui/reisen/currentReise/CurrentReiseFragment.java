@@ -47,6 +47,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private FloatingActionButton fabEvent;
     private TextView txEvent;
     private MaterialCardView cardEvent;
+    private MaterialCardView cardFuel;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -70,6 +71,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         fabEvent = view.findViewById(R.id.btn_event);
         txEvent = view.findViewById(R.id.tx_event);
         cardEvent = view.findViewById(R.id.card_event);
+        cardFuel = view.findViewById(R.id.card_fuel);
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -104,6 +106,13 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                     action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
                     Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(action);
 
+                });
+
+                cardFuel.setOnClickListener(v -> {
+                    //TODO: open AllFuels instead
+                    CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToNewFuelFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToNewFuelFragment();
+                    action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                    Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(action);
                 });
 
                 if (!reise.mNights.isEmpty()) {
