@@ -2,6 +2,7 @@ package com.jochef2.campingdiary.data.daos;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -61,6 +62,21 @@ public interface ReiseDao {
 
     @Update
     void updateFuel(Fuel... fuel);
+
+    @Delete
+    void deleteReise(Reise reise);
+
+    @Delete
+    void deleteNight(Night night);
+
+    @Delete
+    void deleteEvent(Event event);
+
+    @Delete
+    void deleteSAD(SupplyAndDisposal sad);
+
+    @Delete
+    void deleteFuel(Fuel fuel);
 
     @Query("DELETE FROM reisen_table")
     void deleteAll();

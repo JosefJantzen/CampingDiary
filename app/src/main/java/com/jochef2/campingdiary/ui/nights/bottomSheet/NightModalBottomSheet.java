@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -56,7 +57,11 @@ public class NightModalBottomSheet extends BottomSheetDialogFragment {
         });
 
         map.setOnClickListener(v -> {
-            MapShowPlaceDialogFragment.newInstance(getParentFragmentManager(), mPlace);
+            if (mPlace != null) {
+                MapShowPlaceDialogFragment.newInstance(getParentFragmentManager(), mPlace);
+            } else {
+                Toast.makeText(mContext, getString(R.string.toast_no_place), Toast.LENGTH_SHORT).show();
+            }
             this.dismiss();
         });
 

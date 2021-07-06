@@ -134,6 +134,8 @@
     <string name="gas">Gas</string>
     <string name="water_amount">Amount of water in liter</string>
     <string name="new_sad">New supply and disposal</string>
+    <string name="events">Events</string>
+    <string name="toast_no_place">No place available.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="sort_by_values">
         <item>name</item>

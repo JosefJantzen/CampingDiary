@@ -57,14 +57,14 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
         holder.mCard.setOnClickListener(v -> {
             AllNightsFragmentDirections.ActionAllNightsFragmentToShowNightFragment action = AllNightsFragmentDirections.actionAllNightsFragmentToShowNightFragment();
             action.setReiseId(Objects.requireNonNull(mDataset.getValue()).mReise.getId());
-            action.setNightPosition(position);
+            action.setNightId(mDataset.getValue().mNights.get(position).mNight.getId());
             Navigation.findNavController((Activity) mContext, R.id.nav_host).navigate(action);
         });
 
         holder.mCard.setOnLongClickListener(v -> {
             AllNightsFragmentDirections.ActionAllNightsFragmentToShowNightFragment action = AllNightsFragmentDirections.actionAllNightsFragmentToShowNightFragment();
             action.setReiseId(Objects.requireNonNull(mDataset.getValue()).mReise.getId());
-            action.setNightPosition(position);
+            action.setNightId(mDataset.getValue().mNights.get(position).mNight.getId());
 
             BottomSheetDialogFragment bottomSheet = new NightModalBottomSheet(Objects.requireNonNull(mDataset.getValue()).mNights.get(position).mPlace, action, mContext);
             bottomSheet.show(mFragmentManager, "NightModalBottomSheet");
@@ -90,7 +90,7 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
             mCard = itemView.findViewById(R.id.card);
             mName = itemView.findViewById(R.id.tx_name);
             mDate = itemView.findViewById(R.id.tx_date);
-            mIcon = itemView.findViewById(R.id.ic_cat);
+            mIcon = itemView.findViewById(R.id.im_cat);
         }
     }
 }

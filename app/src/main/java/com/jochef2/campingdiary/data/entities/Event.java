@@ -117,13 +117,17 @@ public class Event {
         mPlaceId = placeId;
     }
 
+    public int getId() {
+        return mId;
+    }
+
     public String getBeginDateTime() {
-        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY HH:mm");
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.yyyy HH:mm");
         return simpleDate.format(mBegin.getTime());
     }
 
     public String getBeginDate() {
-        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.yyyy");
         return simpleDate.format(mBegin.getTime());
     }
 
@@ -133,7 +137,7 @@ public class Event {
     }
 
     public String getEndDate() {
-        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.yyyy");
         return simpleDate.format(mEnd.getTime());
     }
 
@@ -143,17 +147,12 @@ public class Event {
     }
 
     public String getEndDateTime() {
-        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY HH:mm");
+        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.yyyy HH:mm");
         return simpleDate.format(mEnd.getTime());
     }
 
     public String getDates() {
-        SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
-        String end = "in die Ewigkeit";
-        if (mEnd != null) {
-            end = simpleDate.format(mEnd.getTime());
-        }
-        return simpleDate.format(mBegin.getTime()) + " - " + end;
+        return getBeginDateTime() + " - " + getEndDateTime();
     }
 
     public void setCurrency(String ISO) {

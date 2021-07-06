@@ -112,7 +112,7 @@
             android:defaultValue="-1"
             app:argType="integer" />
         <argument
-            android:name="nightPosition"
+            android:name="nightId"
             android:defaultValue="-1"
             app:argType="integer" />
     </fragment>

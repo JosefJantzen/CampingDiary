@@ -132,7 +132,9 @@
     <string name="garbage">Müll</string>
     <string name="gas">Gas</string>
     <string name="water_amount">Wassermenge in Liter</string>
-    <string name="new_sad">New supply and disposal</string>
+    <string name="new_sad">Neue Ver- und Entsorgung</string>
+    <string name="events">Aktivitäten</string>
+    <string name="toast_no_place">No place available.</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

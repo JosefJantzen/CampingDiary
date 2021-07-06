@@ -141,6 +141,10 @@ public class Night {
         mPlaceId = placeId;
     }
 
+    public int getId() {
+        return mId;
+    }
+
     public String getBeginDate() {
         SimpleDateFormat simpleDate = new SimpleDateFormat("dd.MM.YYYY");
         return simpleDate.format(mBegin.getTime());

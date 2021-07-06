@@ -20,5 +20,4 @@ public class AllNightsViewModel extends AndroidViewModel {
         mReisenRepository = CurrentReiseViewModel.mReisenRepository;
         mReise = mReisenRepository.getReise(reiseId);
     }
-
 }

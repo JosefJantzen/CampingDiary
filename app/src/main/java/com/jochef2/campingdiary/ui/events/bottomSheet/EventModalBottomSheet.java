@@ -1,4 +1,4 @@
-package com.jochef2.campingdiary.ui.places.bottomSheet;
+package com.jochef2.campingdiary.ui.events.bottomSheet;
 
 import android.app.Activity;
 import android.content.Context;
@@ -19,7 +19,7 @@ import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Place;
 import com.jochef2.campingdiary.ui.maps.showPlace.MapShowPlaceDialogFragment;
 
-public class PlaceModalBottomSheet extends BottomSheetDialogFragment {
+public class EventModalBottomSheet extends BottomSheetDialogFragment {
 
     private final Place mPlace;
     private final NavDirections mAction;
@@ -30,7 +30,7 @@ public class PlaceModalBottomSheet extends BottomSheetDialogFragment {
     private LinearLayout edit;
     private LinearLayout delete;
 
-    public PlaceModalBottomSheet(Place place, NavDirections action, Context context) {
+    public EventModalBottomSheet(Place place, NavDirections action, Context context) {
         mPlace = place;
         mAction = action;
         mContext = context;
@@ -39,7 +39,7 @@ public class PlaceModalBottomSheet extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.place_modal_bottom_sheet, container, false);
+        return inflater.inflate(R.layout.event_modal_bottom_sheet, container, false);
     }
 
     @Override
@@ -66,12 +66,12 @@ public class PlaceModalBottomSheet extends BottomSheetDialogFragment {
         });
 
         edit.setOnClickListener(v -> {
-            //TODO: navigate to EditPlace
+            //TODO: navigate to EditEvent
             this.dismiss();
         });
 
         delete.setOnClickListener(v -> {
-            //TODO: delete Place after Alert
+            //TODO: delete Event after Alert
             this.dismiss();
         });
     }

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host);
         AppBarConfiguration appBarConfiguration =
-                new AppBarConfiguration.Builder(R.id.currentReiseFragment, R.id.allReisenFragment, R.id.allNightsFragment)
+                new AppBarConfiguration.Builder(R.id.currentReiseFragment, R.id.allReisenFragment, R.id.allNightsFragment, R.id.allEventsFragment)
                         .setOpenableLayout(drawerLayout)
                         .build();
         NavigationUI.setupWithNavController(navigationView, navController);

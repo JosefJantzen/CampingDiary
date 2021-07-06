@@ -27,7 +27,7 @@
             app:tint="?attr/colorOnBackground" />
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imageView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:gravity="center"
-            android:text="Moos am Bodensee"
+            android:text="Event"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/im_cat"
             app:layout_constraintStart_toEndOf="@+id/im_cat"
@@ -55,11 +55,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="01.03.2021 - 02.03.2021"
+            android:text="11:02 06.07.2021 - 12:05 23.07.2021"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView6"
             app:layout_constraintStart_toStartOf="@+id/tx_name"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
-
+            app:layout_constraintTop_toTopOf="@+id/imageView6" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
