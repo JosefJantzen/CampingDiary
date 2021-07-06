@@ -154,13 +154,19 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_newEventFragment_to_newNightFragment"
-            app:destination="@id/newNightFragment" />
+            app:destination="@id/newNightFragment"
+            app:popUpTo="@id/currentReiseFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_newEventFragment_to_newFuelFragment"
-            app:destination="@id/newFuelFragment" />
+            app:destination="@id/newFuelFragment"
+            app:popUpTo="@id/currentReiseFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_newEventFragment_to_newSADFragment"
-            app:destination="@id/newSADFragment" />
+            app:destination="@id/newSADFragment"
+            app:popUpTo="@id/currentReiseFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/allEventsFragment"

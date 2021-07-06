@@ -20,6 +20,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.jochef2.campingdiary.R;
+import com.jochef2.campingdiary.data.values.EventCategory;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -46,6 +47,27 @@ public class NewEventFragment extends Fragment implements LifecycleObserver {
     public static void navigateBack() {
         mActivity.getViewModelStore().clear();
         Navigation.findNavController(mActivity, R.id.nav_host).popBackStack();
+    }
+
+    public static void navigate(EventCategory cat) {
+        mActivity.getViewModelStore().clear();
+        switch (cat) {
+            case NIGHT:
+                NewEventFragmentDirections.ActionNewEventFragmentToNewNightFragment a1 = NewEventFragmentDirections.actionNewEventFragmentToNewNightFragment();
+                a1.setReiseId(mViewModel.mReiseId);
+                Navigation.findNavController(mActivity, R.id.nav_host).navigate(a1);
+                break;
+            case FUEL:
+                NewEventFragmentDirections.ActionNewEventFragmentToNewFuelFragment a2 = NewEventFragmentDirections.actionNewEventFragmentToNewFuelFragment();
+                a2.setReiseId(mViewModel.mReiseId);
+                Navigation.findNavController(mActivity, R.id.nav_host).navigate(a2);
+                break;
+            case SAD:
+                NewEventFragmentDirections.ActionNewEventFragmentToNewSADFragment a3 = NewEventFragmentDirections.actionNewEventFragmentToNewSADFragment();
+                a3.setReiseId(mViewModel.mReiseId);
+                Navigation.findNavController(mActivity, R.id.nav_host).navigate(a3);
+                break;
+        }
     }
 
     @Override

@@ -37,14 +37,8 @@ public class NewEventCategorySelectorFragment extends Fragment {
             MaterialButton btn = view.findViewById(checkedId);
             EventCategory cat = EventCategory.valueOf(btn.getTag().toString());
 
-            if (cat == EventCategory.NIGHT) {
-                //TODO: navigate to newNight
-            }
-            else if (cat == EventCategory.FUEL) {
-                //TODO: navigate to newFuel
-            }
-            else if (cat == EventCategory.SAD) {
-                //TODO: navigate to newSAD
+            if (cat == EventCategory.NIGHT || cat == EventCategory.FUEL || cat == EventCategory.SAD) {
+                NewEventFragment.navigate(cat);
             }
             else {
                 Event event = NewEventFragment.mViewModel.mEvent.getValue();

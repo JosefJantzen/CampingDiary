@@ -48,6 +48,8 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private TextView txEvent;
     private MaterialCardView cardEvent;
     private MaterialCardView cardFuel;
+    private TextView txFuel;
+    private TextView txPrice;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -72,6 +74,8 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         txEvent = view.findViewById(R.id.tx_event);
         cardEvent = view.findViewById(R.id.card_event);
         cardFuel = view.findViewById(R.id.card_fuel);
+        txFuel = view.findViewById(R.id.tx_fuel);
+        txPrice = view.findViewById(R.id.tx_money);
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -108,12 +112,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
 
                 });
 
-                cardFuel.setOnClickListener(v -> {
-                    //TODO: open AllFuels instead
-                    CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToNewFuelFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToNewFuelFragment();
-                    action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
-                    Navigation.findNavController(requireActivity(), R.id.nav_host).navigate(action);
-                });
+                txPrice.setText(String.valueOf(reise.getTotalPrice()).replace(".", ",") + "€");
 
                 if (!reise.mNights.isEmpty()) {
                     Night lastNight = reise.getLastNight();
@@ -130,10 +129,22 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                     Event lastEvent = reise.getLastEvent();
                     txEvent.setText(lastEvent.getName());
                     cardEvent.setOnClickListener(v -> {
-                        //TODO: navigate to AllEvents
+                        CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToAllEventsFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToAllEventsFragment();
+                        action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                        Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
                     });
                     //TODO: lastEvent icon
                 }
+
+                if (!reise.mFuels.isEmpty()) {
+                    cardFuel.setOnClickListener(v -> {
+                        CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToAllFuelsFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToAllFuelsFragment();
+                        action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                        Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
+                    });
+                }
+                txFuel.setText(String.valueOf(reise.getTotalFuel()).replace(".", ",") + "l");
+
             }
         });
     }

@@ -139,7 +139,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:text="10000,56l"
                             android:textSize="32sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -316,7 +315,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:text="2900,65€"
                             android:textSize="36sp" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -490,7 +488,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="start"
                             android:maxLines="2"
-                            android:text="Spaziergang zum Bodensee"
+                            android:text="@string/none"
                             android:textSize="32sp"
                             app:autoSizeTextType="uniform" />
 

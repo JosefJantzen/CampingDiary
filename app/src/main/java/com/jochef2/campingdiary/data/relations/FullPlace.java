@@ -6,6 +6,7 @@ import androidx.room.Relation;
 
 import com.github.wrdlbrnft.sortedlistadapter.SortedListAdapter;
 import com.jochef2.campingdiary.data.entities.Event;
+import com.jochef2.campingdiary.data.entities.Fuel;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.entities.Place;
 
@@ -32,6 +33,12 @@ public class FullPlace implements SortedListAdapter.ViewModel {
     )
     public List<Event> mEvents;
 
+    @Relation(
+            parentColumn = "id",
+            entityColumn = "placeId"
+    )
+    public List<Fuel> mFuels;
+
     /**
      * counts number of all events with this FullPlace
      *
@@ -42,7 +49,7 @@ public class FullPlace implements SortedListAdapter.ViewModel {
     }
 
     /**
-     * searches for the last Event
+     * searches for the last Event in a FullPlace
      *
      * @return Millis of last Event End
      */
@@ -57,6 +64,11 @@ public class FullPlace implements SortedListAdapter.ViewModel {
             Comparator<Event> eventComparator = ((o1, o2) -> Long.compare(o1.getEnd().getTimeInMillis(), o2.getEnd().getTimeInMillis()));
             Collections.sort(mEvents, eventComparator);
             lasts.add(mEvents.get(0).getEnd().getTimeInMillis());
+        }
+        if (!mFuels.isEmpty()) {
+            Comparator<Fuel> fuelComparator = ((o1, o2) -> Long.compare(o1.getTime().getTimeInMillis(), o2.getTime().getTimeInMillis()));
+            Collections.sort(mFuels, fuelComparator);
+            lasts.add(mFuels.get(0).getTime().getTimeInMillis());
         }
         //TODO: add Comparators for other event types
         if (!lasts.isEmpty()) {

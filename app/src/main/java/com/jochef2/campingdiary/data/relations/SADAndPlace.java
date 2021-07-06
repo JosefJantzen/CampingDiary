@@ -17,7 +17,7 @@ public class SADAndPlace {
     )
     public Place mPlace;
 
-    public SADAndPlace(SupplyAndDisposal SAD) {
-        mSAD = SAD;
+    public SADAndPlace() {
+
     }
 }

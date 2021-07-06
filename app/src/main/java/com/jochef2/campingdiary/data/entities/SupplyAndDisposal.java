@@ -40,7 +40,7 @@ public class SupplyAndDisposal {
     @Embedded
     public Price mPrice;
 
-    @ColumnInfo(name = "palceId")
+    @ColumnInfo(name = "placeId")
     public int mPlaceId;
 
     public SupplyAndDisposal(int reiseId, @NonNull String name, Calendar time, List<SADCategory> cats) {

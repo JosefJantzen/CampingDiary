@@ -33,16 +33,18 @@ public class FullReise {
     public List<EventAndPlace> mEvents;
 
     @Relation(
+            entity = SupplyAndDisposal.class,
             parentColumn = "id",
             entityColumn = "reiseId"
     )
-    public List<SupplyAndDisposal> mSuppliesAndDisposals;
+    public List<SADAndPlace> mSuppliesAndDisposals;
 
     @Relation(
+            entity = Fuel.class,
             parentColumn = "id",
             entityColumn = "reiseId"
     )
-    public List<Fuel> mFuels;
+    public List<FuelAndPlace> mFuels;
 
 
     /**
@@ -88,5 +90,49 @@ public class FullReise {
             }
         }
         return currentNightIds;
+    }
+
+    /**
+     * adds all fuel amounts
+     * @return double of total fuel
+     */
+    public double getTotalFuel(){
+        double total = 0;
+        if (!mFuels.isEmpty()) {
+            for (FuelAndPlace fuel : mFuels) {
+                total = total + fuel.mFuel.getLiter();
+            }
+        }
+        return total;
+    }
+
+    /**
+     * adds all prices of every activity
+     * TODO: manage currencies
+     * @return
+     */
+    public double getTotalPrice() {
+        double total = 0;
+        if (!mNights.isEmpty()) {
+            for (NightAndPlace night : mNights) {
+                total = total + night.mNight.getPrice().getPrice();
+            }
+        }
+        if (!mEvents.isEmpty()) {
+            for (EventAndPlace event : mEvents) {
+                total += event.mEvent.getPrice().getPrice();
+            }
+        }
+        if (!mFuels.isEmpty()) {
+            for (FuelAndPlace fuel : mFuels) {
+                total += fuel.mFuel.getPrice().getPrice();
+            }
+        }
+        if (!mSuppliesAndDisposals.isEmpty()) {
+            for (SADAndPlace sad : mSuppliesAndDisposals) {
+                total += sad.mSAD.getPrice().getPrice();
+            }
+        }
+        return total;
     }
 }

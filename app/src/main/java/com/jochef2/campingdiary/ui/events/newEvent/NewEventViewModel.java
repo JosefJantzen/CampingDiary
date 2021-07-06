@@ -25,7 +25,7 @@ public class NewEventViewModel extends AndroidViewModel {
     private final PlaceRepository mPlaceRepository;
     private final ReisenRepository mReisenRepository;
     public MutableLiveData<Event> mEvent = new MutableLiveData<>();
-    public int reiseId;
+    public int mReiseId;
     public int lastStartDayChip = R.id.ch_start_today;
     public int lastStartTimeChip = R.id.ch_start_one;
     public int lastEndDayChip = R.id.ch_end_today;
@@ -44,6 +44,7 @@ public class NewEventViewModel extends AndroidViewModel {
     }
 
     public void setReiseId(int reiseId) {
+        mReiseId = reiseId;
         Event event = mEvent.getValue();
         Objects.requireNonNull(event).setReiseId(reiseId);
         mEvent.setValue(event);

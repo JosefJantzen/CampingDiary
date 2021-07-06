@@ -39,7 +39,7 @@ public class Fuel {
     @Embedded
     public Price mPrice;
 
-    @ColumnInfo(name = "palceId")
+    @ColumnInfo(name = "placeId")
     public int mPlaceId;
 
     public Fuel(int reiseId, @NonNull String name, Calendar time, Price price) {
