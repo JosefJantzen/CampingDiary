@@ -127,6 +127,12 @@
     <string name="whole_price">Gesamtpreis</string>
     <string name="price_liter">Preis pro Liter</string>
     <string name="new_fuel">Neuer Tankstop</string>
+    <string name="grey_water">Grauwasser</string>
+    <string name="toilette">Toilette</string>
+    <string name="garbage">Müll</string>
+    <string name="gas">Gas</string>
+    <string name="water_amount">Wassermenge in Liter</string>
+    <string name="new_sad">New supply and disposal</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

@@ -9,6 +9,8 @@ import androidx.room.PrimaryKey;
 import com.jochef2.campingdiary.data.models.Price;
 import com.jochef2.campingdiary.data.values.SADCategory;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -37,17 +39,21 @@ public class SupplyAndDisposal {
     @ColumnInfo(name = "cats")
     public List<SADCategory> mCats;
 
+    @ColumnInfo(name = "water")
+    public double mWater;
+
     @Embedded
     public Price mPrice;
 
     @ColumnInfo(name = "placeId")
     public int mPlaceId;
 
-    public SupplyAndDisposal(int reiseId, @NonNull String name, Calendar time, List<SADCategory> cats) {
+    public SupplyAndDisposal(int reiseId, @NonNull String name, Calendar time, Price price) {
         mReiseId = reiseId;
         mName = name;
         mTime = time;
-        mCats = cats;
+        mPrice = price;
+        mCats = new ArrayList<>();
     }
 
     public Price getPrice() {
@@ -105,5 +111,30 @@ public class SupplyAndDisposal {
 
     public void setPlaceId(int placeId) {
         mPlaceId = placeId;
+    }
+
+    public void setReiseId(int reiseId) {
+        mReiseId = reiseId;
+    }
+
+    public double getWater() {
+        return mWater;
+    }
+
+    public void setWater(double water) {
+        mWater = water;
+    }
+
+    public String getTimeString() {
+        SimpleDateFormat simpleDate = new SimpleDateFormat("HH:mm dd.MM.yyyy");
+        return simpleDate.format(mTime.getTime());
+    }
+
+    public void setCurrency(String code) {
+        mPrice.setCurrency(code);
+    }
+
+    public void setPriceNumber(double price) {
+        mPrice.setPrice(price);
     }
 }

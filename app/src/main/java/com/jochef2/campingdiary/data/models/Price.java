@@ -18,6 +18,9 @@ public class Price {
     }
 
     public double getPrice() {
+        if (mPrice == -1) {
+            return 0;
+        }
         return mPrice;
     }
 

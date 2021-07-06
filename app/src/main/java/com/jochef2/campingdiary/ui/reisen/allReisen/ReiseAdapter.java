@@ -79,7 +79,7 @@ public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> 
             super(itemView);
             mName = itemView.findViewById(R.id.tx_name);
             mDate = itemView.findViewById(R.id.tx_date);
-            mLand = itemView.findViewById(R.id.tx_land);
+            mLand = itemView.findViewById(R.id.tx_countries);
             mCard = itemView.findViewById(R.id.card);
         }
     }

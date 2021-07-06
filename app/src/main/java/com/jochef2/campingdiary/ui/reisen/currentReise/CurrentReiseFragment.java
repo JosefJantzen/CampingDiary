@@ -50,6 +50,9 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private MaterialCardView cardFuel;
     private TextView txFuel;
     private TextView txPrice;
+    private TextView txWater;
+    private MaterialCardView cardWater;
+    private TextView txCountries;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -76,6 +79,9 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         cardFuel = view.findViewById(R.id.card_fuel);
         txFuel = view.findViewById(R.id.tx_fuel);
         txPrice = view.findViewById(R.id.tx_money);
+        txWater = view.findViewById(R.id.tx_water);
+        cardWater = view.findViewById(R.id.card_water);
+        txCountries = view.findViewById(R.id.tx_countries);
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -145,6 +151,16 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 }
                 txFuel.setText(String.valueOf(reise.getTotalFuel()).replace(".", ",") + "l");
 
+                if (!reise.mSAD.isEmpty()) {
+                    cardWater.setOnClickListener(v -> {
+                        CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToAllSADsFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToAllSADsFragment();
+                        action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                        Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
+                    });
+                }
+                txWater.setText(String.valueOf(reise.getTotalWater()).replace(".", ",") + "l");
+
+                txCountries.setText(reise.getAllCountries());
             }
         });
     }

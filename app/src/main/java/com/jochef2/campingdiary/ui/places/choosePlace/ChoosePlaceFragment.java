@@ -41,6 +41,7 @@ import com.jochef2.campingdiary.ui.fuel.newFuel.NewFuelViewModel;
 import com.jochef2.campingdiary.ui.nights.newNight.NewNightViewModel;
 import com.jochef2.campingdiary.ui.places.choosePlace.newPlace.NewPlaceFragment;
 import com.jochef2.campingdiary.ui.places.choosePlace.searchPlace.SearchPlaceFragment;
+import com.jochef2.campingdiary.ui.sad.newSad.NewSADViewModel;
 
 import java.util.Objects;
 
@@ -157,6 +158,9 @@ public class ChoosePlaceFragment extends Fragment implements LifecycleObserver {
                         break;
                     case FUEL:
                         new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewFuelViewModel.class).setPlace(id);
+                        break;
+                    case SAD:
+                        new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(NewSADViewModel.class).setPlace(id);
                         break;
                 }
                 Navigation.findNavController(requireActivity(), R.id.nav_host).popBackStack();
