@@ -14,6 +14,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.OnLifecycleEvent;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -59,6 +60,12 @@ public class AllEventsFragment extends Fragment implements LifecycleObserver {
             linearLayoutManager.setReverseLayout(true);
             linearLayoutManager.setStackFromEnd(true);
             recyclerView.setLayoutManager(linearLayoutManager);
+        });
+
+        fabNewEvent.setOnClickListener(v -> {
+            AllEventsFragmentDirections.ActionAllEventsFragmentToNewEventFragment action = AllEventsFragmentDirections.actionAllEventsFragmentToNewEventFragment();
+            action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+            Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
         });
     }
 

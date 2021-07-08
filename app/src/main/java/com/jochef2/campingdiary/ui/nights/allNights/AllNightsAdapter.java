@@ -66,7 +66,7 @@ public class AllNightsAdapter extends RecyclerView.Adapter<AllNightsAdapter.View
             action.setReiseId(Objects.requireNonNull(mDataset.getValue()).mReise.getId());
             action.setNightId(mDataset.getValue().mNights.get(position).mNight.getId());
 
-            BottomSheetDialogFragment bottomSheet = new NightModalBottomSheet(Objects.requireNonNull(mDataset.getValue()).mNights.get(position).mPlace, action, mContext);
+            BottomSheetDialogFragment bottomSheet = new NightModalBottomSheet(Objects.requireNonNull(mDataset.getValue()).mNights.get(position).mPlace, mDataset.getValue().mNights.get(position).mNight.getId(), action, mContext);
             bottomSheet.show(mFragmentManager, "NightModalBottomSheet");
             return true;
         });

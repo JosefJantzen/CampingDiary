@@ -1,8 +1,7 @@
-package com.jochef2.campingdiary.ui.places.bottomSheet;
+package com.jochef2.campingdiary.ui.fuel.bottomSheet;
 
 import android.app.Activity;
 import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +19,12 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Place;
 import com.jochef2.campingdiary.ui.maps.showPlace.MapShowPlaceDialogFragment;
-import com.jochef2.campingdiary.ui.places.choosePlace.ChoosePlaceViewModel;
-import com.jochef2.campingdiary.ui.places.choosePlace.searchPlace.SearchPlaceFragment;
+import com.jochef2.campingdiary.ui.reisen.currentReise.CurrentReiseViewModel;
 
-public class PlaceModalBottomSheet extends BottomSheetDialogFragment {
+public class FuelModalBottomSheet extends BottomSheetDialogFragment {
 
     private final Place mPlace;
+    private final int mFuelId;
     private final NavDirections mAction;
     private final Context mContext;
 
@@ -34,8 +33,9 @@ public class PlaceModalBottomSheet extends BottomSheetDialogFragment {
     private LinearLayout edit;
     private LinearLayout delete;
 
-    public PlaceModalBottomSheet(Place place, NavDirections action, Context context) {
+    public FuelModalBottomSheet(Place place, int fuelId, NavDirections action, Context context) {
         mPlace = place;
+        mFuelId = fuelId;
         mAction = action;
         mContext = context;
     }
@@ -70,21 +70,18 @@ public class PlaceModalBottomSheet extends BottomSheetDialogFragment {
         });
 
         edit.setOnClickListener(v -> {
-            //TODO: navigate to EditPlace
+            //TODO: navigate to EditEvent
             this.dismiss();
         });
 
         delete.setOnClickListener(v -> {
             new MaterialAlertDialogBuilder(mContext)
                     .setTitle(getString(R.string.attention))
-                    .setMessage(getString(R.string.dialog_delete_palce))
+                    .setMessage(getString(R.string.dialog_delete_fuel))
                     .setIcon(android.R.drawable.stat_sys_warning)
                     .setNegativeButton(getString(R.string.no), (dialog, which) -> dismiss())
                     .setPositiveButton(getString(R.string.yes), (dialog, which) -> {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                            SearchPlaceFragment.distances.set(false);
-                        }
-                        ChoosePlaceViewModel.mPlaceRepository.deletePlace(mPlace);
+                        CurrentReiseViewModel.mReisenRepository.deleteFuel(mFuelId);
                         dialog.dismiss();
                     })
                     .show();

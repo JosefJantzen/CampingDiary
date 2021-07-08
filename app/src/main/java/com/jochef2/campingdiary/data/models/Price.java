@@ -1,8 +1,11 @@
 package com.jochef2.campingdiary.data.models;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 
 import com.mynameismidori.currencypicker.ExtendedCurrency;
+
+import org.jetbrains.annotations.NotNull;
 
 public class Price {
 
@@ -38,5 +41,12 @@ public class Price {
 
     public void setCurrency(String ISO) {
         mCurrency = ExtendedCurrency.getCurrencyByISO(ISO);
+    }
+
+    @NonNull
+    @NotNull
+    @Override
+    public String toString() {
+        return mPrice + mCurrency.getSymbol();
     }
 }

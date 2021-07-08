@@ -134,7 +134,14 @@
     <string name="water_amount">Wassermenge in Liter</string>
     <string name="new_sad">Neue Ver- und Entsorgung</string>
     <string name="events">Aktivitäten</string>
-    <string name="toast_no_place">No place available.</string>
+    <string name="toast_no_place">Kein Ort verfügbar.</string>
+    <string name="attention">Achtung</string>
+    <string name="dialog_delete_night">Sind sie sich sicher, dass sie die Nacht löschen wollen?</string>
+    <string name="dialog_delete_event">Sind sie sich sicher, dass sie die Aktivität löschen wollen?</string>
+    <string name="dialog_delete_fuel">Sind sie sich sicher, dass sie das Tanken löschen wollen?</string>
+    <string name="dialog_delete_sad">Sind sie sich sicher, dass sie die Ver- und Entsorgung löschen wollen?</string>
+    <string name="dialog_delete_palce">Sind sie sich sicher, dass sie den Ort löschen wollen?</string>
+    <string name="fuels">Tankstops</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

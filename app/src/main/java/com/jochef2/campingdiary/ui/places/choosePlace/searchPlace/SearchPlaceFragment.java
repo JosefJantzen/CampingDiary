@@ -84,7 +84,7 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
     private AutoCompleteTextView txSortBy;
     private MaterialButton btnSort;
 
-    private final AtomicBoolean distances = new AtomicBoolean(false);
+    public static AtomicBoolean distances = new AtomicBoolean(false);
 
     private FilterDialogFragment mFilterDialogFragment;
 
@@ -263,20 +263,21 @@ public class SearchPlaceFragment extends Fragment implements SortedListAdapter.C
             }
             searchFilter(mViewModel.mSearchQuery.getValue());
         });
-
-        mViewModel.mCurrentLocation.observe(getViewLifecycleOwner(), location -> {
-            if (location != null) {
-                List<FullPlace> places = mViewModel.getAllPlaces().getValue();
-                if (places != null) {
-                    List<Boolean> success = new ArrayList<>();
-                    for (FullPlace place : places) {
-                        success.add(place.mPlace.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
+        if (!mViewModel.mCurrentLocation.hasActiveObservers()) {
+            mViewModel.mCurrentLocation.observe(getViewLifecycleOwner(), location -> {
+                if (location != null) {
+                    List<FullPlace> places = mViewModel.getAllPlaces().getValue();
+                    if (places != null) {
+                        List<Boolean> success = new ArrayList<>();
+                        for (FullPlace place : places) {
+                            success.add(place.mPlace.setDistanceTo(mViewModel.mCurrentLocation.getValue()));
+                        }
+                        if (success.contains(true)) distances.set(true);
                     }
-                    if (success.contains(true)) distances.set(true);
+                    mAdapter.notifyDataSetChanged();
                 }
-                mAdapter.notifyDataSetChanged();
-            }
-        });
+            });
+        }
 
         // initialize SortBy View
         List<String> sortByStrings = Arrays.asList(getResources().getStringArray(R.array.sort_by_values));

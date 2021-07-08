@@ -65,4 +65,11 @@ public class PlaceRepository {
             RoomDatabase.databaseWriteExecutor.execute(() -> mPlaceDao.updatePlace(place));
         }
     }
+
+    public void deletePlace(Place place) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mPlaceDao.deletePlace(place));
+    }
+    public void deletePlace(int placeId) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mPlaceDao.deletePlace(placeId));
+    }
 }

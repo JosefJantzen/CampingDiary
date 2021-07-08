@@ -43,7 +43,7 @@ public class ChoosePlaceViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> mSelectedSearchPlaceId = new MutableLiveData<>(-1);
 
     public MutableLiveData<String> mName = new MutableLiveData<>("");
-    public final PlaceRepository mPlaceRepository;
+    public static PlaceRepository mPlaceRepository;
     public Events mEvent = Events.NIGHT;
 
     public MutableLiveData<PlaceSortBy> mPlaceSortBy = new MutableLiveData<>(PlaceSortBy.NAME);

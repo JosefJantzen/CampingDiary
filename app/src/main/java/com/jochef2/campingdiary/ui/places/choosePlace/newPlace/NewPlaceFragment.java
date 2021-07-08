@@ -25,6 +25,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
@@ -214,6 +215,10 @@ public class NewPlaceFragment extends Fragment {
         });
 
         btnAutocomplete.setOnClickListener(v -> {
+            if(!Places.isInitialized()) {
+                //TODO: API-KEY
+                Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
+            }
             // open AutoCompleteDialog if nothing yet selected
             Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, mPlaceFields)
                     .build(requireContext());

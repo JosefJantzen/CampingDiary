@@ -78,6 +78,21 @@ public interface ReiseDao {
     @Delete
     void deleteFuel(Fuel fuel);
 
+    @Query("DELETE FROM reisen_table WHERE id = :reiseId")
+    void deleteReise(int reiseId);
+
+    @Query("DELETE FROM nights_table WHERE id = :nightId")
+    void deleteNight(int nightId);
+
+    @Query("DELETE FROM events_table WHERE id = :eventId")
+    void deleteEvent(int eventId);
+
+    @Query("DELETE FROM supplyAndDisposal_table WHERE id = :sadId")
+    void deleteSAD(int sadId);
+
+    @Query("DELETE FROM fuel_table WHERE id = :fuelId")
+    void deleteFuel(int fuelId);
+
     @Query("DELETE FROM reisen_table")
     void deleteAll();
 }

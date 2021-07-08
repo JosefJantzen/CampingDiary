@@ -15,13 +15,16 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Place;
 import com.jochef2.campingdiary.ui.maps.showPlace.MapShowPlaceDialogFragment;
+import com.jochef2.campingdiary.ui.reisen.currentReise.CurrentReiseViewModel;
 
 public class EventModalBottomSheet extends BottomSheetDialogFragment {
 
     private final Place mPlace;
+    private final int mEventId;
     private final NavDirections mAction;
     private final Context mContext;
 
@@ -30,8 +33,9 @@ public class EventModalBottomSheet extends BottomSheetDialogFragment {
     private LinearLayout edit;
     private LinearLayout delete;
 
-    public EventModalBottomSheet(Place place, NavDirections action, Context context) {
+    public EventModalBottomSheet(Place place, int eventId, NavDirections action, Context context) {
         mPlace = place;
+        mEventId = eventId;
         mAction = action;
         mContext = context;
     }
@@ -39,7 +43,7 @@ public class EventModalBottomSheet extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.event_modal_bottom_sheet, container, false);
+        return inflater.inflate(R.layout.more_modal_bottom_sheet, container, false);
     }
 
     @Override
@@ -71,7 +75,16 @@ public class EventModalBottomSheet extends BottomSheetDialogFragment {
         });
 
         delete.setOnClickListener(v -> {
-            //TODO: delete Event after Alert
+            new MaterialAlertDialogBuilder(mContext)
+                    .setTitle(getString(R.string.attention))
+                    .setMessage(getString(R.string.dialog_delete_event))
+                    .setIcon(android.R.drawable.stat_sys_warning)
+                    .setNegativeButton(getString(R.string.no), (dialog, which) -> dismiss())
+                    .setPositiveButton(getString(R.string.yes), (dialog, which) -> {
+                        CurrentReiseViewModel.mReisenRepository.deleteEvent(mEventId);
+                        dialog.dismiss();
+                    })
+                    .show();
             this.dismiss();
         });
     }

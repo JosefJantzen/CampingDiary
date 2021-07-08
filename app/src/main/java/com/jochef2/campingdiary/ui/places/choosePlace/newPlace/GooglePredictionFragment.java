@@ -108,8 +108,10 @@ public class GooglePredictionFragment extends Fragment {
      * initializes List of Places from Places Api prediction in ViewModel
      */
     private void getCurrentPlace() {
-        //TODO: API-KEY
-        Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
+        if(!Places.isInitialized()) {
+            //TODO: API-KEY
+            Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
+        }
         placesClient = Places.createClient(requireActivity());
 
         FindCurrentPlaceRequest request = FindCurrentPlaceRequest.newInstance(mPlaceFields);

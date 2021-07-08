@@ -61,7 +61,7 @@ public class AllEventsAdapter  extends RecyclerView.Adapter<AllEventsAdapter.Vie
             action.setReiseId(Objects.requireNonNull(mDataset.getValue()).mReise.getId());
             action.setEventId(mDataset.getValue().mEvents.get(position).mEvent.getId());
 
-            BottomSheetDialogFragment bottomSheet = new EventModalBottomSheet(Objects.requireNonNull(mDataset.getValue()).mEvents.get(position).mPlace, action, mContext);
+            BottomSheetDialogFragment bottomSheet = new EventModalBottomSheet(Objects.requireNonNull(mDataset.getValue()).mEvents.get(position).mPlace, mDataset.getValue().mEvents.get(position).mEvent.getId(), action, mContext);
             bottomSheet.show(mFragmentManager, "EventModalBottomSheet");
             return true;
         });

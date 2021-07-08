@@ -99,22 +99,37 @@ public class ReisenRepository {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.updateFuel(fuel));
     }
 
-    public void delete(Reise reise) {
+    public void deleteReise(Reise reise) {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteReise(reise));
     }
-    public void delete(Night night) {
+    public void deleteReise(int reiseId) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteReise(reiseId));
+    }
+    public void deleteNight(Night night) {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteNight(night));
     }
-    public void delete(Event event) {
+    public void deleteNight(int nightId) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteNight(nightId));
+    }
+    public void deleteEvent(Event event) {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteEvent(event));
     }
-    public void delete(SupplyAndDisposal sad) {
+    public void deleteEvent(int eventId) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteEvent(eventId));
+    }
+    public void deleteSAD(SupplyAndDisposal sad) {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteSAD(sad));
     }
-    public void delete(Fuel fuel) {
+    public void deleteSAD(int sadId) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteSAD(sadId));
+    }
+    public void deleteFuel(Fuel fuel) {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteFuel(fuel));
     }
-
+    public void deleteFuel(int fuelId) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteFuel(fuelId));
+    }
+    
     /**
      * deletes all reisen in db
      */
