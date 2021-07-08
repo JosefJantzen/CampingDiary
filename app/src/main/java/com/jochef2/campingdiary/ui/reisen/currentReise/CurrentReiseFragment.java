@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ import androidx.navigation.Navigation;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.entities.Event;
@@ -53,6 +55,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private TextView txWater;
     private MaterialCardView cardWater;
     private TextView txCountries;
+    private Button btnStop;
 
     public static int mReiseId = -1;
 
@@ -84,6 +87,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         txWater = view.findViewById(R.id.tx_water);
         cardWater = view.findViewById(R.id.card_water);
         txCountries = view.findViewById(R.id.tx_countries);
+        btnStop = view.findViewById(R.id.btn_stop);
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -165,6 +169,22 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 txWater.setText(String.valueOf(reise.getTotalWater()).replace(".", ",") + "l");
 
                 txCountries.setText(reise.getAllCountries());
+
+                //TODO: Stop button wieder entfernen
+                btnStop.setOnLongClickListener(v -> {
+                    new MaterialAlertDialogBuilder(requireContext())
+                            .setTitle(getString(R.string.attention))
+                            .setMessage("Sind sie sich sicher, dass sie die Reise beenden wollen?")
+                            .setIcon(android.R.drawable.stat_sys_warning)
+                            .setNegativeButton(getString(R.string.no), (dialog, which) -> dialog.dismiss())
+                            .setPositiveButton(getString(R.string.yes), (dialog, which) -> {
+                                reise.mReise.setEnd(Calendar.getInstance());
+                                CurrentReiseViewModel.mReisenRepository.updateReise(reise.mReise);
+                                dialog.dismiss();
+                            })
+                            .show();
+                    return true;
+                });
             }
         });
     }

@@ -60,6 +60,11 @@ public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> 
         } else {
             holder.mDate.setText(mDataset.get(position).mReise.getDates());
             // TODO: new Activity: ShowReise for old Reisen
+            holder.mCard.setOnLongClickListener(v -> {
+                BottomSheetDialogFragment bottomSheet = new ReiseModalBottomSheet(mDataset.get(position).mReise.getId(), null, mContext);
+                bottomSheet.show(mFragmentManager, "ReiseModalBottomSheet");
+                return true;
+            });
         }
     }
 

@@ -49,7 +49,9 @@ public class ReiseModalBottomSheet extends BottomSheetDialogFragment {
         delete = view.findViewById(R.id.ll_delete);
 
         open.setOnClickListener(v -> {
-            Navigation.findNavController((Activity) mContext, R.id.nav_host).navigate(mAction);
+            if (mAction != null) {
+                Navigation.findNavController((Activity) mContext, R.id.nav_host).navigate(mAction);
+            }
             this.dismiss();
         });
 
@@ -61,7 +63,7 @@ public class ReiseModalBottomSheet extends BottomSheetDialogFragment {
         delete.setOnClickListener(v -> {
             new MaterialAlertDialogBuilder(mContext)
                     .setTitle(getString(R.string.attention))
-                    .setMessage(getString(R.string.dialog_delete_event))
+                    .setMessage(getString(R.string.dialog_delete_reise))
                     .setIcon(android.R.drawable.stat_sys_warning)
                     .setNegativeButton(getString(R.string.no), (dialog, which) -> dismiss())
                     .setPositiveButton(getString(R.string.yes), (dialog, which) -> {
