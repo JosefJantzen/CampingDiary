@@ -151,7 +151,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 }
                 txFuel.setText(String.valueOf(reise.getTotalFuel()).replace(".", ",") + "l");
 
-                if (!reise.mSAD.isEmpty()) {
+                if (!reise.mSADs.isEmpty()) {
                     cardWater.setOnClickListener(v -> {
                         CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToAllSADsFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToAllSADsFragment();
                         action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());

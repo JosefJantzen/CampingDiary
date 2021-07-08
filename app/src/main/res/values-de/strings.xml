@@ -142,6 +142,7 @@
     <string name="dialog_delete_sad">Sind sie sich sicher, dass sie die Ver- und Entsorgung löschen wollen?</string>
     <string name="dialog_delete_palce">Sind sie sich sicher, dass sie den Ort löschen wollen?</string>
     <string name="fuels">Tankstops</string>
+    <string name="sads">Ver- und Entsorgungen</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

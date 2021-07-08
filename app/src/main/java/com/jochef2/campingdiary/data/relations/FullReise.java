@@ -39,7 +39,7 @@ public class FullReise {
             parentColumn = "id",
             entityColumn = "reiseId"
     )
-    public List<SADAndPlace> mSAD;
+    public List<SADAndPlace> mSADs;
 
     @Relation(
             entity = Fuel.class,
@@ -122,8 +122,8 @@ public class FullReise {
      */
     public double getTotalWater() {
         double total = 0;
-        if (!mSAD.isEmpty()) {
-            for (SADAndPlace sad : mSAD) {
+        if (!mSADs.isEmpty()) {
+            for (SADAndPlace sad : mSADs) {
                 total = total + sad.mSAD.getWater();
             }
         }
@@ -152,8 +152,8 @@ public class FullReise {
                 total += fuel.mFuel.getPrice().getPrice();
             }
         }
-        if (!mSAD.isEmpty()) {
-            for (SADAndPlace sad : mSAD) {
+        if (!mSADs.isEmpty()) {
+            for (SADAndPlace sad : mSADs) {
                 total += sad.mSAD.getPrice().getPrice();
             }
         }
@@ -189,8 +189,8 @@ public class FullReise {
                 }
             }
         }
-        if (!mSAD.isEmpty()) {
-            for (SADAndPlace sad : mSAD) {
+        if (!mSADs.isEmpty()) {
+            for (SADAndPlace sad : mSADs) {
                 if (sad.mPlace != null && sad.mPlace.getAddressObject() != null) {
                     if (!mCountries.contains(sad.mPlace.getAddressObject().getCountryCode())) {
                         mCountries.add(sad.mPlace.getAddressObject().getCountryCode());

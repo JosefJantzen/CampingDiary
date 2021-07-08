@@ -143,6 +143,7 @@
     <string name="dialog_delete_sad">Are you sure you want to delete the supply and disposal?</string>
     <string name="dialog_delete_palce">Are you sure you want to delete the place?</string>
     <string name="fuels">Fuels</string>
+    <string name="sads">Supplies and disposals</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="sort_by_values">
         <item>name</item>

@@ -125,6 +125,13 @@ public class SupplyAndDisposal {
         mWater = water;
     }
 
+    public String getWaterString() {
+        if (mWater > 0) {
+            return mWater + "l";
+        }
+        return "";
+    }
+
     public String getTimeString() {
         SimpleDateFormat simpleDate = new SimpleDateFormat("HH:mm dd.MM.yyyy");
         return simpleDate.format(mTime.getTime());

@@ -1,4 +1,4 @@
-package com.jochef2.campingdiary.ui.fuel.bottomSheet;
+package com.jochef2.campingdiary.ui.sad.bottomSheet;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,10 +21,10 @@ import com.jochef2.campingdiary.data.entities.Place;
 import com.jochef2.campingdiary.ui.maps.showPlace.MapShowPlaceDialogFragment;
 import com.jochef2.campingdiary.ui.reisen.currentReise.CurrentReiseViewModel;
 
-public class FuelModalBottomSheet extends BottomSheetDialogFragment {
+public class SADModalBottomSheet extends BottomSheetDialogFragment {
 
     private final Place mPlace;
-    private final int mFuelId;
+    private final int mSADId;
     private final NavDirections mAction;
     private final Context mContext;
 
@@ -33,9 +33,9 @@ public class FuelModalBottomSheet extends BottomSheetDialogFragment {
     private LinearLayout edit;
     private LinearLayout delete;
 
-    public FuelModalBottomSheet(Place place, int fuelId, NavDirections action, Context context) {
+    public SADModalBottomSheet(Place place, int sadId, NavDirections action, Context context) {
         mPlace = place;
-        mFuelId = fuelId;
+        mSADId = sadId;
         mAction = action;
         mContext = context;
     }
@@ -70,18 +70,18 @@ public class FuelModalBottomSheet extends BottomSheetDialogFragment {
         });
 
         edit.setOnClickListener(v -> {
-            //TODO: navigate to EditFuel
+            //TODO: navigate to EditSAD
             this.dismiss();
         });
 
         delete.setOnClickListener(v -> {
             new MaterialAlertDialogBuilder(mContext)
                     .setTitle(getString(R.string.attention))
-                    .setMessage(getString(R.string.dialog_delete_fuel))
+                    .setMessage(getString(R.string.dialog_delete_sad))
                     .setIcon(android.R.drawable.stat_sys_warning)
                     .setNegativeButton(getString(R.string.no), (dialog, which) -> dismiss())
                     .setPositiveButton(getString(R.string.yes), (dialog, which) -> {
-                        CurrentReiseViewModel.mReisenRepository.deleteFuel(mFuelId);
+                        CurrentReiseViewModel.mReisenRepository.deleteSAD(mSADId);
                         dialog.dismiss();
                     })
                     .show();
