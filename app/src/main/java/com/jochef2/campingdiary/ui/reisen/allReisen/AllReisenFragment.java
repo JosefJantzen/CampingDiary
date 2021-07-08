@@ -60,7 +60,7 @@ public class AllReisenFragment extends Fragment implements LifecycleObserver {
 
         // changes recyclerView on reisen changes
         mViewModel.getAllReisen().observe(getViewLifecycleOwner(), reisen -> {
-            ReiseAdapter adapter = new ReiseAdapter(reisen, getContext());
+            ReiseAdapter adapter = new ReiseAdapter(reisen, getContext(), getChildFragmentManager());
             recyclerView.setAdapter(adapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

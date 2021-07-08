@@ -143,6 +143,8 @@
     <string name="dialog_delete_palce">Sind sie sich sicher, dass sie den Ort löschen wollen?</string>
     <string name="fuels">Tankstops</string>
     <string name="sads">Ver- und Entsorgungen</string>
+    <string name="current_fuels">Aktuelle Tankstops</string>
+    <string name="current_sads">Aktuelle Ver- und Entsorgungen</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

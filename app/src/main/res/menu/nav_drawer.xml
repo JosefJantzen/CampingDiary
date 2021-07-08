@@ -13,10 +13,19 @@
                 <item
                     android:id="@+id/allNightsFragment"
                     android:icon="@drawable/ic_night"
-                    android:title="@string/current_nights" />
+                    android:title="@string/nights" />
                 <item
+                    android:id="@+id/allEventsFragment"
                     android:icon="@drawable/ic_walk"
-                    android:title="@string/current_events" />
+                    android:title="@string/events" />
+                <item
+                    android:id="@+id/allFuelsFragment"
+                    android:icon="@drawable/ic_fuel"
+                    android:title="@string/fuels" />
+                <item
+                    android:id="@+id/allSADsFragment"
+                    android:icon="@drawable/ic_water"
+                    android:title="@string/sads" />
             </menu>
         </item>
         <item

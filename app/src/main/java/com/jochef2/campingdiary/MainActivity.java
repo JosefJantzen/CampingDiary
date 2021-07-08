@@ -11,8 +11,14 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+import com.jochef2.campingdiary.ui.reisen.currentReise.CurrentReiseFragment;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private List<Integer> mCurrents = Arrays.asList(R.id.allNightsFragment, R.id.allEventsFragment, R.id.allFuelsFragment, R.id.allSADsFragment);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
         // handel drawer selection
         navigationView.setNavigationItemSelectedListener(item -> {
             drawerLayout.close();
+            if(mCurrents.contains(item.getItemId())) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("reiseId", CurrentReiseFragment.mReiseId);
+                navController.popBackStack(R.id.currentReiseFragment, false);
+                navController.navigate(item.getItemId(), bundle);
+                return true;
+            }
             return NavigationUI.onNavDestinationSelected(item, navController)
                     || super.onOptionsItemSelected(item);
         });

@@ -54,6 +54,8 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private MaterialCardView cardWater;
     private TextView txCountries;
 
+    public static int mReiseId = -1;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
@@ -101,6 +103,8 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
             }
             // if current reise is right initial views
             else {
+                mReiseId = reise.mReise.getId();
+
                 reiseContainer.setVisibility(View.VISIBLE);
                 noReise.setVisibility(View.GONE);
 

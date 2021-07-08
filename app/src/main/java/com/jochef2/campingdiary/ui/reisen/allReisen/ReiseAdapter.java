@@ -11,11 +11,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.jochef2.campingdiary.R;
 import com.jochef2.campingdiary.data.relations.FullReise;
+import com.jochef2.campingdiary.ui.reisen.bottomSheet.ReiseModalBottomSheet;
 
 import java.util.Calendar;
 import java.util.List;
@@ -24,10 +27,12 @@ public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> 
 
     private List<FullReise> mDataset;
     private Context mContext;
+    private final FragmentManager mFragmentManager;
 
-    public ReiseAdapter(List<FullReise> dataset, Context c) {
+    public ReiseAdapter(List<FullReise> dataset, Context c, FragmentManager fragmentManager) {
         mDataset = dataset;
         mContext = c;
+        mFragmentManager = fragmentManager;
     }
 
     /**
@@ -47,6 +52,11 @@ public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> 
             holder.mCard.setCardBackgroundColor(R.attr.colorPrimaryVariant);
             holder.mCard.setOnClickListener(v -> Navigation.findNavController((Activity) mContext, R.id.nav_host).navigate(R.id.action_allReisenFragment_to_currentReiseFragment));
             holder.mDate.setText(mContext.getString(R.string.starting_time) + " " + mDataset.get(position).mReise.getBeginDate());
+            holder.mCard.setOnLongClickListener(v -> {
+                BottomSheetDialogFragment bottomSheet = new ReiseModalBottomSheet(mDataset.get(position).mReise.getId(), AllReisenFragmentDirections.actionAllReisenFragmentToCurrentReiseFragment(), mContext);
+                bottomSheet.show(mFragmentManager, "ReiseModalBottomSheet");
+                return true;
+            });
         } else {
             holder.mDate.setText(mDataset.get(position).mReise.getDates());
             // TODO: new Activity: ShowReise for old Reisen
