@@ -55,6 +55,12 @@
         <action
             android:id="@+id/action_currentReiseFragment_to_newFuelFragment"
             app:destination="@id/newFuelFragment" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_newRouteFragment"
+            app:destination="@id/newRouteFragment" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_allRoutesFragment"
+            app:destination="@id/allRoutesFragment" />
     </fragment>
 
     <fragment
@@ -275,6 +281,29 @@
             app:argType="integer" />
         <argument
             android:name="sadId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/newRouteFragment"
+        android:name="com.jochef2.campingdiary.ui.route.newRoute.NewRouteFragment"
+        android:label="new_route_fragment"
+        tools:layout="@layout/new_route_fragment" >
+        <argument
+            android:name="reiseId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/allRoutesFragment"
+        android:name="com.jochef2.campingdiary.ui.route.allRoutes.AllRoutesFragment"
+        android:label="all_routes_fragment"
+        tools:layout="@layout/all_routes_fragment" >
+        <action
+            android:id="@+id/action_allRoutesFragment_to_newRouteFragment"
+            app:destination="@id/newRouteFragment" />
+        <argument
+            android:name="reiseId"
             android:defaultValue="-1"
             app:argType="integer" />
     </fragment>

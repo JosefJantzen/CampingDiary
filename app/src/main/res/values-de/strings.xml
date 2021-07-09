@@ -146,6 +146,9 @@
     <string name="current_fuels">Aktuelle Tankstops</string>
     <string name="current_sads">Aktuelle Ver- und Entsorgungen</string>
     <string name="dialog_delete_reise">Sind sie sich sicher, dass sie die Reise löschen wollen?</string>
+    <string name="mileage">Mileage</string>
+    <string name="new_route">New Route</string>
+    <string name="all_routes">All routes</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

@@ -56,6 +56,8 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private MaterialCardView cardWater;
     private TextView txCountries;
     private Button btnStop;
+    private MaterialCardView cardRoute;
+    private TextView txRoute;
 
     public static int mReiseId = -1;
 
@@ -88,6 +90,8 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         cardWater = view.findViewById(R.id.card_water);
         txCountries = view.findViewById(R.id.tx_countries);
         btnStop = view.findViewById(R.id.btn_stop);
+        cardRoute = view.findViewById(R.id.card_route);
+        txRoute = view.findViewById(R.id.tx_route);
 
         mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -183,6 +187,23 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                                 dialog.dismiss();
                             })
                             .show();
+                    return true;
+                });
+
+                txRoute.setText(reise.getTotalDistance() + "km");
+
+                if (!reise.mRoutes.isEmpty()) {
+                    cardRoute.setOnClickListener(v -> {
+                        CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToAllRoutesFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToAllRoutesFragment();
+                        action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                        Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
+                    });
+                }
+
+                cardRoute.setOnLongClickListener(v -> {
+                    CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToNewRouteFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToNewRouteFragment();
+                    action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                    Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
                     return true;
                 });
             }

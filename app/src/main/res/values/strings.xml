@@ -147,6 +147,9 @@
     <string name="current_fuels">Current fuels</string>
     <string name="current_sads">Current supplies and disposals</string>
     <string name="dialog_delete_reise">Are you sure you want to delete the tour?</string>
+    <string name="mileage">Mileage</string>
+    <string name="new_route">New Route</string>
+    <string name="all_routes">All routes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="sort_by_values">
         <item>name</item>

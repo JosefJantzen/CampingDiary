@@ -164,7 +164,7 @@ public class NewFuelFragment extends Fragment implements LifecycleObserver {
 
         btnDone.setOnClickListener(v -> {
             save();
-            mViewModel.saveNight();
+            mViewModel.saveFuel();
             requireActivity().getViewModelStore().clear();
             Navigation.findNavController(requireActivity(), R.id.nav_host).popBackStack();
         });

@@ -15,12 +15,13 @@ import com.jochef2.campingdiary.data.entities.Fuel;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.entities.Place;
 import com.jochef2.campingdiary.data.entities.Reise;
+import com.jochef2.campingdiary.data.entities.Route;
 import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Reise.class, Night.class, Event.class, SupplyAndDisposal.class, Fuel.class, Place.class}, version = 39, exportSchema = false)
+@Database(entities = {Reise.class, Night.class, Event.class, SupplyAndDisposal.class, Fuel.class, Place.class, Route.class}, version = 40, exportSchema = false)
 @TypeConverters({Converters.class})
 public abstract class RoomDatabase extends androidx.room.RoomDatabase {
 

@@ -7,6 +7,7 @@ import com.jochef2.campingdiary.data.entities.Event;
 import com.jochef2.campingdiary.data.entities.Fuel;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.entities.Reise;
+import com.jochef2.campingdiary.data.entities.Route;
 import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
 
 import java.math.BigDecimal;
@@ -47,6 +48,12 @@ public class FullReise {
             entityColumn = "reiseId"
     )
     public List<FuelAndPlace> mFuels;
+
+    @Relation(
+            parentColumn = "id",
+            entityColumn = "reiseId"
+    )
+    public List<Route> mRoutes;
 
 
     /**
@@ -213,5 +220,12 @@ public class FullReise {
             }
         }
         return string.toString();
+    }
+
+    public int getTotalDistance() {
+        if (mRoutes.size() > 1) {
+            return (int) round(mRoutes.get(mRoutes.size() - 1).getMileage() - mRoutes.get(0).getMileage(), 0);
+        }
+        return 0;
     }
 }

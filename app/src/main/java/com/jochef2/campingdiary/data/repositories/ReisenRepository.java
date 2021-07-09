@@ -10,6 +10,7 @@ import com.jochef2.campingdiary.data.entities.Event;
 import com.jochef2.campingdiary.data.entities.Fuel;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.entities.Reise;
+import com.jochef2.campingdiary.data.entities.Route;
 import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
 import com.jochef2.campingdiary.data.relations.FullReise;
 
@@ -79,6 +80,10 @@ public class ReisenRepository {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.insertFuel(fuel));
     }
 
+    public void insertRoute(Route route) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.insertRoute(route));
+    }
+
     public void updateReise(Reise reise) {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.updateReise(reise));
     }
@@ -97,6 +102,10 @@ public class ReisenRepository {
 
     public void updateFuel(Fuel fuel) {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.updateFuel(fuel));
+    }
+
+    public void updateRoute(Route route) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.updateRoute(route));
     }
 
     public void deleteReise(Reise reise) {
@@ -128,6 +137,14 @@ public class ReisenRepository {
     }
     public void deleteFuel(int fuelId) {
         RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteFuel(fuelId));
+    }
+
+    public void deleteRoute(Route route) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteRoute(route));
+    }
+
+    public void deleteRoute(int routeId) {
+        RoomDatabase.databaseWriteExecutor.execute(() -> mReiseDao.deleteRoute(routeId));
     }
     
     /**

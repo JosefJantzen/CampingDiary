@@ -13,6 +13,7 @@ import com.jochef2.campingdiary.data.entities.Event;
 import com.jochef2.campingdiary.data.entities.Fuel;
 import com.jochef2.campingdiary.data.entities.Night;
 import com.jochef2.campingdiary.data.entities.Reise;
+import com.jochef2.campingdiary.data.entities.Route;
 import com.jochef2.campingdiary.data.entities.SupplyAndDisposal;
 import com.jochef2.campingdiary.data.relations.FullReise;
 
@@ -48,6 +49,9 @@ public interface ReiseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertFuel(Fuel fuel);
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertRoute(Route route);
+
     @Update
     void updateReise(Reise... reise);
 
@@ -59,6 +63,9 @@ public interface ReiseDao {
 
     @Update
     void updateSupplyAndDisposal(SupplyAndDisposal... supplyAndDisposal);
+
+    @Update
+    void updateRoute(Route... route);
 
     @Update
     void updateFuel(Fuel... fuel);
@@ -78,6 +85,9 @@ public interface ReiseDao {
     @Delete
     void deleteFuel(Fuel fuel);
 
+    @Delete
+    void deleteRoute(Route route);
+
     @Query("DELETE FROM reisen_table WHERE id = :reiseId")
     void deleteReise(int reiseId);
 
@@ -92,6 +102,9 @@ public interface ReiseDao {
 
     @Query("DELETE FROM fuel_table WHERE id = :fuelId")
     void deleteFuel(int fuelId);
+
+    @Query("DELETE FROM routes_table WHERE id = :routeId")
+    void deleteRoute(int routeId);
 
     @Query("DELETE FROM reisen_table")
     void deleteAll();

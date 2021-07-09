@@ -44,7 +44,7 @@ public class NewFuelViewModel extends AndroidViewModel {
         mFuel.setValue(fuel);
     }
 
-    public void saveNight() {
+    public void saveFuel() {
         mReisenRepository.insertFuel(mFuel.getValue());
     }
 
