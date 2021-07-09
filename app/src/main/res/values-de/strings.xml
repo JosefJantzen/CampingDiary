@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">CampingDiary</string>
+    <string name="app_name">Tagebuch</string>
     <string name="no_reisen">Sie haben noch keine Reise gemacht.</string>
     <string name="new_reise">Reise starten</string>
     <string name="name">Name</string>
