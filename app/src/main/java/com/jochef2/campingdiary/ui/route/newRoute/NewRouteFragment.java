@@ -59,7 +59,7 @@ public class NewRouteFragment extends Fragment implements LifecycleObserver {
         super.onViewCreated(view, savedInstanceState);
 
         etName = view.findViewById(R.id.et_name);
-        txTime = view.findViewById(R.id.tx_time);
+        txTime = view.findViewById(R.id.tx_name);
         btnTime = view.findViewById(R.id.btn_time);
         btnDate = view.findViewById(R.id.btn_date);
         btnCancel = view.findViewById(R.id.btn_cancel);

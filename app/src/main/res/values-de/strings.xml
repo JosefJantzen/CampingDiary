@@ -26,7 +26,7 @@
     <string name="days">Tage</string>
     <string name="costs">Kosten</string>
     <string name="fuel">Kraftstoff</string>
-    <string name="distance">Entfernung</string>
+    <string name="distance">Strecke</string>
     <string name="water">Wasser</string>
     <string name="countries">Länder</string>
     <string name="last_night">Letzte Nacht</string>
@@ -146,9 +146,10 @@
     <string name="current_fuels">Aktuelle Tankstops</string>
     <string name="current_sads">Aktuelle Ver- und Entsorgungen</string>
     <string name="dialog_delete_reise">Sind sie sich sicher, dass sie die Reise löschen wollen?</string>
-    <string name="mileage">Mileage</string>
-    <string name="new_route">New Route</string>
-    <string name="all_routes">All routes</string>
+    <string name="mileage">Kilometerstand</string>
+    <string name="new_route">Neue Strecke</string>
+    <string name="all_routes">Alle Strecken</string>
+    <string name="dialog_delete_route">Sind sie sich sicher, dass sie die Strecke löschen wollen?</string>
     <string-array name="sort_by_values">
         <item>Name</item>
         <item>Adresse</item>

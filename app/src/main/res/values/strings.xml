@@ -150,6 +150,7 @@
     <string name="mileage">Mileage</string>
     <string name="new_route">New Route</string>
     <string name="all_routes">All routes</string>
+    <string name="dialog_delete_route">Are you sure you want to delete the route?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="sort_by_values">
         <item>name</item>
