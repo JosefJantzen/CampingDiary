@@ -393,8 +393,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:paddingStart="10dp"
-                                android:src="@drawable/ic_womo"
-                                app:srcCompat="@drawable/ic_womo"
                                 app:tint="?attr/colorOnBackground" />
 
                         </LinearLayout>
@@ -476,8 +474,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:paddingStart="10dp"
-                                android:src="@drawable/ic_womo"
-                                app:srcCompat="@drawable/ic_walk"
                                 app:tint="?attr/colorOnBackground" />
 
                         </LinearLayout>
