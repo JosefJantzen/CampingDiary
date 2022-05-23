@@ -39,7 +39,7 @@ public class NewEventViewModel extends AndroidViewModel {
 
         Calendar c = Calendar.getInstance();
         c.add(Calendar.HOUR_OF_DAY, 2);
-        Event event = new Event(-1, application.getString(R.string.no_name), Calendar.getInstance(), c, new Price(-1, ExtendedCurrency.getCurrencyByISO("EUR")));
+        Event event = new Event(-1, application.getString(R.string.no_name), Calendar.getInstance(), c, new Price(0, ExtendedCurrency.getCurrencyByISO("EUR")));
         mEvent.setValue(event);
     }
 
