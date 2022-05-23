@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_currentReiseFragment_to_allRoutesFragment"
             app:destination="@id/allRoutesFragment" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_newSADFragment"
+            app:destination="@id/newSADFragment" />
     </fragment>
 
     <fragment

@@ -146,7 +146,7 @@ public class FullReise {
         double total = 0;
         if (!mNights.isEmpty()) {
             for (NightAndPlace night : mNights) {
-                total = total + night.mNight.getPrice().getPrice();
+                total += night.mNight.getPrice().getPrice();
             }
         }
         if (!mEvents.isEmpty()) {

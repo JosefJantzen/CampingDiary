@@ -163,6 +163,13 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                 }
                 txFuel.setText(String.valueOf(reise.getTotalFuel()).replace(".", ",") + "l");
 
+                cardFuel.setOnLongClickListener(view1 -> {
+                    CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToNewFuelFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToNewFuelFragment();
+                    action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                    Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
+                    return true;
+                });
+
                 if (!reise.mSADs.isEmpty()) {
                     cardWater.setOnClickListener(v -> {
                         CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToAllSADsFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToAllSADsFragment();
@@ -171,6 +178,13 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                     });
                 }
                 txWater.setText(String.valueOf(reise.getTotalWater()).replace(".", ",") + "l");
+
+                cardWater.setOnLongClickListener(view1 -> {
+                    CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToNewSADFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToNewSADFragment();
+                    action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                    Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
+                    return true;
+                });
 
                 txCountries.setText(reise.getAllCountries());
 
