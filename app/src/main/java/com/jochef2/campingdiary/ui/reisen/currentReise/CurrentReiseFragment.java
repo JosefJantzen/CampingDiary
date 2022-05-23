@@ -58,6 +58,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
     private Button btnStop;
     private MaterialCardView cardRoute;
     private TextView txRoute;
+    private MaterialCardView cardPrice;
 
     public static int mReiseId = -1;
 
@@ -92,6 +93,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         btnStop = view.findViewById(R.id.btn_stop);
         cardRoute = view.findViewById(R.id.card_route);
         txRoute = view.findViewById(R.id.tx_route);
+        cardPrice = view.findViewById(R.id.card_price);
 
         mViewModel = new ViewModelProvider(requireActivity(), (ViewModelProvider.Factory) ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
@@ -219,6 +221,12 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
                     action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
                     Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
                     return true;
+                });
+
+                cardPrice.setOnClickListener(view1 -> {
+                    CurrentReiseFragmentDirections.ActionCurrentReiseFragmentToAllPricesFragment action = CurrentReiseFragmentDirections.actionCurrentReiseFragmentToAllPricesFragment();
+                    action.setReiseId(Objects.requireNonNull(mViewModel.mReise.getValue()).mReise.getId());
+                    Navigation.findNavController(getActivity(), R.id.nav_host).navigate(action);
                 });
             }
         });

@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/josef/Documents/GitHub/CampingDiary4/app/src/main/res/layout/all_nights_fragment.xml" value="0.30085470085470084" />
         <entry key="..\:/Users/josef/Documents/GitHub/CampingDiary4/app/src/main/res/layout/current_reise_fragment.xml" value="0.264" />
+        <entry key="..\:/Users/josef/Documents/GitHub/CampingDiary4/app/src/main/res/layout/fragment_all_prices.xml" value="0.30085470085470084" />
+        <entry key="..\:/Users/josef/Documents/GitHub/CampingDiary4/app/src/main/res/layout/item_place.xml" value="0.30085470085470084" />
+        <entry key="..\:/Users/josef/Documents/GitHub/CampingDiary4/app/src/main/res/layout/item_price.xml" value="0.75" />
+        <entry key="..\:/Users/josef/Documents/GitHub/CampingDiary4/app/src/main/res/layout/list_item.xml" value="0.30085470085470084" />
       </map>
     </option>
   </component>

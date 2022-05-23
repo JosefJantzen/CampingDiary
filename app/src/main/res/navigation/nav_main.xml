@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_currentReiseFragment_to_newSADFragment"
             app:destination="@id/newSADFragment" />
+        <action
+            android:id="@+id/action_currentReiseFragment_to_allPricesFragment"
+            app:destination="@id/allPricesFragment" />
     </fragment>
 
     <fragment
@@ -309,5 +312,15 @@
             android:name="reiseId"
             android:defaultValue="-1"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/allPricesFragment"
+        android:name="com.jochef2.campingdiary.ui.prices.allPrices.AllPricesFragment"
+        android:label="fragment_all_prices"
+        tools:layout="@layout/fragment_all_prices" >
+        <argument
+            android:name="reiseId"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
 </navigation>
