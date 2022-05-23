@@ -25,8 +25,8 @@ import java.util.List;
 
 public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> {
 
-    private List<FullReise> mDataset;
-    private Context mContext;
+    private final List<FullReise> mDataset;
+    private final Context mContext;
     private final FragmentManager mFragmentManager;
 
     public ReiseAdapter(List<FullReise> dataset, Context c, FragmentManager fragmentManager) {
@@ -85,10 +85,10 @@ public class ReiseAdapter extends RecyclerView.Adapter<ReiseAdapter.ViewHolder> 
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView mName;
-        private TextView mDate;
-        private TextView mLand;
-        private CardView mCard;
+        private final TextView mName;
+        private final TextView mDate;
+        private final TextView mLand;
+        private final CardView mCard;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

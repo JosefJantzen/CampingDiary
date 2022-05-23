@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Integer> mCurrents = Arrays.asList(R.id.allNightsFragment, R.id.allEventsFragment, R.id.allFuelsFragment, R.id.allSADsFragment);
+    private final List<Integer> mCurrents = Arrays.asList(R.id.allNightsFragment, R.id.allEventsFragment, R.id.allFuelsFragment, R.id.allSADsFragment);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

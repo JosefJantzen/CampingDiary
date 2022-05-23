@@ -205,7 +205,7 @@ public class FullReise {
                 }
             }
         }
-        StringBuilder string = new StringBuilder("");
+        StringBuilder string = new StringBuilder();
         if (!mCountries.isEmpty()) {
             for (String country : mCountries) {
                 string.append(country + ", ");

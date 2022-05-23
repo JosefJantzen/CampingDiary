@@ -8,8 +8,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class AllEventsViewModelFactory implements ViewModelProvider.Factory{
 
-    private Application mApplication;
-    private int mReiseId;
+    private final Application mApplication;
+    private final int mReiseId;
 
     public AllEventsViewModelFactory(Application application, int reiseId) {
         mApplication = application;

@@ -93,7 +93,7 @@ public class CurrentReiseFragment extends Fragment implements LifecycleObserver 
         cardRoute = view.findViewById(R.id.card_route);
         txRoute = view.findViewById(R.id.tx_route);
 
-        mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity(), (ViewModelProvider.Factory) ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication())).get(CurrentReiseViewModel.class);
 
         mViewModel.mReise.observe(getViewLifecycleOwner(), reise -> {
             // if there isn't a current reise saved

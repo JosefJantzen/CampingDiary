@@ -28,7 +28,7 @@ public abstract class RoomDatabase extends androidx.room.RoomDatabase {
     private static final int NUMBER_OF_THREADS = 4;
     public static final ExecutorService databaseWriteExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
     private static volatile RoomDatabase INSTANCE;
-    private static Callback sRoomDatabaseCallback = new Callback() {
+    private static final Callback sRoomDatabaseCallback = new Callback() {
         @Override
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);

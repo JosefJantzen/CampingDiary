@@ -8,8 +8,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class AllNightsViewModelFactory implements ViewModelProvider.Factory {
 
-    private Application mApplication;
-    private int mReiseId;
+    private final Application mApplication;
+    private final int mReiseId;
 
     public AllNightsViewModelFactory(Application application, int reiseId) {
         mApplication = application;

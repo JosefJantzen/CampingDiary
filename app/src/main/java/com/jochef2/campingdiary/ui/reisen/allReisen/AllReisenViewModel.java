@@ -37,11 +37,7 @@ public class AllReisenViewModel extends AndroidViewModel {
     public boolean hasCurrentReise() {
         final boolean[] state = {false};
         mReisenRepository.getCurrentReise().observeForever(fullReise -> {
-            if (fullReise != null && fullReise.mReise.getBegin().before(Calendar.getInstance()) && fullReise.mReise.getEnd().after(Calendar.getInstance())) {
-                state[0] = true;
-            } else {
-                state[0] = false;
-            }
+            state[0] = fullReise != null && fullReise.mReise.getBegin().before(Calendar.getInstance()) && fullReise.mReise.getEnd().after(Calendar.getInstance());
         });
         return state[0];
 
