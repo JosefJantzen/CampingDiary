@@ -33,7 +33,7 @@ public class NewSADViewModel extends AndroidViewModel {
         mReisenRepository = CurrentReiseViewModel.mReisenRepository;
         mPlaceRepository = new PlaceRepository(application);
 
-        SupplyAndDisposal sad = new SupplyAndDisposal(-1 , application.getString(R.string.no_name), Calendar.getInstance(), new Price(-1, ExtendedCurrency.getCurrencyByISO("EUR")));
+        SupplyAndDisposal sad = new SupplyAndDisposal(-1 , application.getString(R.string.no_name), Calendar.getInstance(), new Price(0, ExtendedCurrency.getCurrencyByISO("EUR")));
         mSAD.setValue(sad);
     }
 

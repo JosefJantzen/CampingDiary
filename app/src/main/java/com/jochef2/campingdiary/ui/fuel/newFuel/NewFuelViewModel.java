@@ -34,7 +34,7 @@ public class NewFuelViewModel extends AndroidViewModel {
         mReisenRepository = CurrentReiseViewModel.mReisenRepository;
         mPlaceRepository = new PlaceRepository(application);
 
-        Fuel fuel = new Fuel(-1, application.getString(R.string.no_name), Calendar.getInstance(), new Price(-1, ExtendedCurrency.getCurrencyByISO("EUR")));
+        Fuel fuel = new Fuel(-1, application.getString(R.string.no_name), Calendar.getInstance(), new Price(0, ExtendedCurrency.getCurrencyByISO("EUR")));
         mFuel.setValue(fuel);
     }
 
