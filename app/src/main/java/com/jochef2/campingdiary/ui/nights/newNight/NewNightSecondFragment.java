@@ -2,6 +2,7 @@ package com.jochef2.campingdiary.ui.nights.newNight;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,6 +89,7 @@ public class NewNightSecondFragment extends Fragment {
         });
 
         btnCheck.setOnClickListener(v -> {
+            save();
             NewNightFragment.mViewModel.saveNight();
             NewNightFragment.navigateBack();
         });
@@ -98,8 +100,9 @@ public class NewNightSecondFragment extends Fragment {
         if (!etDescription.getText().toString().isEmpty()) {
             night.setDescription(etDescription.getText().toString());
         }
-        if (!etPrice.getText().toString().isEmpty())
+        if (!etPrice.getText().toString().isEmpty()) {
             night.setPriceNumber(Double.parseDouble(etPrice.getText().toString().replace(",", ".")));
+        }
         NewNightFragment.mViewModel.mNight.setValue(night);
     }
 
