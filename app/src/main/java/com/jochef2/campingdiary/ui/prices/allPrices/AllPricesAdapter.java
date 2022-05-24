@@ -41,7 +41,7 @@ public class AllPricesAdapter extends RecyclerView.Adapter<AllPricesAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull AllPricesAdapter.ViewHolder holder, int position) {
-        holder.mName
+        //holder.mName
     }
 
     @Override

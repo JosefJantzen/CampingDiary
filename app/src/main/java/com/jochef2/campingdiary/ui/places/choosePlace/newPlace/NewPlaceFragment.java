@@ -201,6 +201,10 @@ public class NewPlaceFragment extends Fragment {
         cardAutocomplete.setOnClickListener(v -> {
             // select card and open AutoCompleteDialog if nothing yet selected
             if (txAutocomplete.getText() == getString(R.string.not_selected)) {
+                if(!Places.isInitialized()) {
+                    //TODO: API-KEY
+                    Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
+                }
                 Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, mPlaceFields)
                         .build(requireContext());
                 startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
