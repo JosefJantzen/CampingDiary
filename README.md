@@ -2,7 +2,7 @@
 CampingDiary is an android diary app, especially for your camping trips around the world with a van or motorhome. <br>
 I developed the app quite some time ago, with the purpose to extend my knowledge in Java and bigger projects. The focused was more on the development acspects in Java and the functionality of the app rather then creating a very pretty user interface. <br>
 The app isn't 100% complete but can already be used and I reached anyway all my learning goals.<br>
-You can find all the todos ![here](#Todos).
+You can find all the todos [here](#todos).
 
 The app is completely written in Java and uses Room (SQLite) as a local database. <br>
 
