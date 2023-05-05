@@ -58,7 +58,7 @@ public class AllPricesAdapter extends RecyclerView.Adapter<AllPricesAdapter.View
             name = mDataset.getValue().mSADs.get(position).mSAD.mName;
         }
         holder.mName.setText(name);
-        holder.mPrice.setText(String.valueOf(price.getPrice()));
+        holder.mPrice.setText(String.valueOf(price.getPrice()).replace(".", ",") + price.getCurrency().getSymbol());
     }
 
     @Override
