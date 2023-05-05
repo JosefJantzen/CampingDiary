@@ -158,4 +158,5 @@
         <item>Anzahl der Besuche</item>
         <item>Zuletzt besucht</item>
     </string-array>
+    <string name="prices">Preise</string>
 </resources>

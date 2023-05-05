@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
 import com.jochef2.campingdiary.R;
+import com.jochef2.campingdiary.data.models.Price;
 import com.jochef2.campingdiary.data.relations.FullReise;
 
 import java.util.Objects;
@@ -41,7 +42,23 @@ public class AllPricesAdapter extends RecyclerView.Adapter<AllPricesAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull AllPricesAdapter.ViewHolder holder, int position) {
-        holder.mName
+        Price price;
+        String name;
+        if (position < mDataset.getValue().mNights.size()) {
+            price = mDataset.getValue().mNights.get(position).mNight.mPrice;
+            name = mDataset.getValue().mNights.get(position).mNight.mName;
+        } else if (position < mDataset.getValue().mEvents.size()) {
+            price = mDataset.getValue().mEvents.get(position).mEvent.mPrice;
+            name = mDataset.getValue().mEvents.get(position).mEvent.mName;
+        } else if (position < mDataset.getValue().mFuels.size()) {
+            price = mDataset.getValue().mFuels.get(position).mFuel.mPrice;
+            name = mDataset.getValue().mFuels.get(position).mFuel.mName;
+        } else {
+            price = mDataset.getValue().mSADs.get(position).mSAD.mPrice;
+            name = mDataset.getValue().mSADs.get(position).mSAD.mName;
+        }
+        holder.mName.setText(name);
+        holder.mPrice.setText(String.valueOf(price.getPrice()));
     }
 
     @Override

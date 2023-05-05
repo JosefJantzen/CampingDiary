@@ -160,4 +160,5 @@
         <item>number of visits</item>
         <item>last visited</item>
     </string-array>
+    <string name="prices">Prices</string>
 </resources>
