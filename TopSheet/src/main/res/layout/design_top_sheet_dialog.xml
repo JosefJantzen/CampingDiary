@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|top"
-            app:layout_behavior="com.jochef2.topsheet.TopSheetBehavior" />
+            app:layout_behavior="com.josefjantzen.topsheet.TopSheetBehavior" />
 
         <View
             android:id="@+id/touch_outside"

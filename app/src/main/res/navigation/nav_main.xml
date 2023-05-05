@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/allReisenFragment"
-        android:name="com.jochef2.campingdiary.ui.reisen.allReisen.AllReisenFragment"
+        android:name="com.josefjantzen.campingdiary.ui.reisen.allReisen.AllReisenFragment"
         android:label="fragment_all_reisen"
         tools:layout="@layout/all_reisen_fragment">
         <action
@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/currentReiseFragment"
-        android:name="com.jochef2.campingdiary.ui.reisen.currentReise.CurrentReiseFragment"
+        android:name="com.josefjantzen.campingdiary.ui.reisen.currentReise.CurrentReiseFragment"
         android:label="fragment_current_reise"
         tools:layout="@layout/current_reise_fragment">
         <action
@@ -71,7 +71,7 @@
 
     <fragment
         android:id="@+id/newReisenFragment"
-        android:name="com.jochef2.campingdiary.ui.reisen.newReise.NewReiseFragment"
+        android:name="com.josefjantzen.campingdiary.ui.reisen.newReise.NewReiseFragment"
         android:label="fragment_new_reise"
         tools:layout="@layout/new_reise_fragment">
         <action
@@ -84,7 +84,7 @@
 
     <fragment
         android:id="@+id/newNightFragment"
-        android:name="com.jochef2.campingdiary.ui.nights.newNight.NewNightFragment"
+        android:name="com.josefjantzen.campingdiary.ui.nights.newNight.NewNightFragment"
         android:label="fragment_new_night"
         tools:layout="@layout/new_night_fragment">
         <argument
@@ -95,7 +95,7 @@
 
     <fragment
         android:id="@+id/allNightsFragment"
-        android:name="com.jochef2.campingdiary.ui.nights.allNights.AllNightsFragment"
+        android:name="com.josefjantzen.campingdiary.ui.nights.allNights.AllNightsFragment"
         android:label="fragment_all_nights"
         tools:layout="@layout/all_nights_fragment">
         <action
@@ -115,7 +115,7 @@
 
     <fragment
         android:id="@+id/showNightFragment"
-        android:name="com.jochef2.campingdiary.ui.nights.showNight.ShowNightFragment"
+        android:name="com.josefjantzen.campingdiary.ui.nights.showNight.ShowNightFragment"
         android:label="fragment_show_night"
         tools:layout="@layout/show_night_fragment">
 
@@ -134,20 +134,20 @@
         app:destination="@id/choosePlaceFragment" />
     <fragment
         android:id="@+id/choosePlaceFragment"
-        android:name="com.jochef2.campingdiary.ui.places.choosePlace.ChoosePlaceFragment"
+        android:name="com.josefjantzen.campingdiary.ui.places.choosePlace.ChoosePlaceFragment"
         android:label="fragment_choose_place"
         tools:layout="@layout/choose_place_fragment">
         <argument
             android:name="cat"
             android:defaultValue="EVENT"
-            app:argType="com.jochef2.campingdiary.data.values.Events" />
+            app:argType="com.josefjantzen.campingdiary.data.values.Events" />
         <action
             android:id="@+id/action_choosePlaceFragment_to_showPlaceFragment"
             app:destination="@id/showPlaceFragment" />
     </fragment>
     <fragment
         android:id="@+id/showPlaceFragment"
-        android:name="com.jochef2.campingdiary.ui.places.showPlace.ShowPlaceFragment"
+        android:name="com.josefjantzen.campingdiary.ui.places.showPlace.ShowPlaceFragment"
         android:label="ShowPlaceFragment"
         tools:layout="@layout/show_place_fragment">
         <argument
@@ -157,7 +157,7 @@
     </fragment>
     <fragment
         android:id="@+id/newEventFragment"
-        android:name="com.jochef2.campingdiary.ui.events.newEvent.NewEventFragment"
+        android:name="com.josefjantzen.campingdiary.ui.events.newEvent.NewEventFragment"
         android:label="new_event_fragment"
         tools:layout="@layout/new_event_fragment" >
         <argument
@@ -182,7 +182,7 @@
     </fragment>
     <fragment
         android:id="@+id/allEventsFragment"
-        android:name="com.jochef2.campingdiary.ui.events.allEvents.AllEventsFragment"
+        android:name="com.josefjantzen.campingdiary.ui.events.allEvents.AllEventsFragment"
         android:label="all_events_fragment"
         tools:layout="@layout/all_events_fragment" >
         <action
@@ -198,7 +198,7 @@
     </fragment>
     <fragment
         android:id="@+id/showEventFragment"
-        android:name="com.jochef2.campingdiary.ui.events.showEvent.ShowEventFragment"
+        android:name="com.josefjantzen.campingdiary.ui.events.showEvent.ShowEventFragment"
         android:label="show_event_fragment"
         tools:layout="@layout/show_event_fragment" >
         <argument
@@ -212,7 +212,7 @@
     </fragment>
     <fragment
         android:id="@+id/allFuelsFragment"
-        android:name="com.jochef2.campingdiary.ui.fuel.allFuels.AllFuelsFragment"
+        android:name="com.josefjantzen.campingdiary.ui.fuel.allFuels.AllFuelsFragment"
         android:label="all_fuels_fragment"
         tools:layout="@layout/all_fuels_fragment" >
         <action
@@ -228,7 +228,7 @@
     </fragment>
     <fragment
         android:id="@+id/newFuelFragment"
-        android:name="com.jochef2.campingdiary.ui.fuel.newFuel.NewFuelFragment"
+        android:name="com.josefjantzen.campingdiary.ui.fuel.newFuel.NewFuelFragment"
         android:label="new_fuel_fragment"
         tools:layout="@layout/new_fuel_fragment" >
         <argument
@@ -238,7 +238,7 @@
     </fragment>
     <fragment
         android:id="@+id/showFuelFragment"
-        android:name="com.jochef2.campingdiary.ui.fuel.showFuel.ShowFuelFragment"
+        android:name="com.josefjantzen.campingdiary.ui.fuel.showFuel.ShowFuelFragment"
         android:label="show_fuel_fragment"
         tools:layout="@layout/show_fuel_fragment" >
         <argument
@@ -252,7 +252,7 @@
     </fragment>
     <fragment
         android:id="@+id/allSADsFragment"
-        android:name="com.jochef2.campingdiary.ui.sad.allSads.AllSADsFragment"
+        android:name="com.josefjantzen.campingdiary.ui.sad.allSads.AllSADsFragment"
         android:label="all_sads_fragment"
         tools:layout="@layout/all_sads_fragment" >
         <action
@@ -268,7 +268,7 @@
     </fragment>
     <fragment
         android:id="@+id/newSADFragment"
-        android:name="com.jochef2.campingdiary.ui.sad.newSad.NewSADFragment"
+        android:name="com.josefjantzen.campingdiary.ui.sad.newSad.NewSADFragment"
         android:label="new_sad_fragment"
         tools:layout="@layout/new_sad_fragment" >
         <argument
@@ -278,7 +278,7 @@
     </fragment>
     <fragment
         android:id="@+id/showSADFragment"
-        android:name="com.jochef2.campingdiary.ui.sad.showSad.ShowSADFragment"
+        android:name="com.josefjantzen.campingdiary.ui.sad.showSad.ShowSADFragment"
         android:label="show_sad_fragment"
         tools:layout="@layout/show_sad_fragment" >
         <argument
@@ -292,7 +292,7 @@
     </fragment>
     <fragment
         android:id="@+id/newRouteFragment"
-        android:name="com.jochef2.campingdiary.ui.route.newRoute.NewRouteFragment"
+        android:name="com.josefjantzen.campingdiary.ui.route.newRoute.NewRouteFragment"
         android:label="new_route_fragment"
         tools:layout="@layout/new_route_fragment" >
         <argument
@@ -302,7 +302,7 @@
     </fragment>
     <fragment
         android:id="@+id/allRoutesFragment"
-        android:name="com.jochef2.campingdiary.ui.route.allRoutes.AllRoutesFragment"
+        android:name="com.josefjantzen.campingdiary.ui.route.allRoutes.AllRoutesFragment"
         android:label="all_routes_fragment"
         tools:layout="@layout/all_routes_fragment" >
         <action
@@ -315,7 +315,7 @@
     </fragment>
     <fragment
         android:id="@+id/allPricesFragment"
-        android:name="com.jochef2.campingdiary.ui.prices.allPrices.AllPricesFragment"
+        android:name="com.josefjantzen.campingdiary.ui.prices.allPrices.AllPricesFragment"
         android:label="fragment_all_prices"
         tools:layout="@layout/fragment_all_prices" >
         <argument

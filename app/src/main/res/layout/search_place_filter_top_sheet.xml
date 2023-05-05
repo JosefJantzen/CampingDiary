@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     app:behavior_hideable="true"
     app:behavior_peekHeight="0dp"
-    app:layout_behavior="com.jochef2.topsheet.TopSheetBehavior">
+    app:layout_behavior="com.josefjantzen.topsheet.TopSheetBehavior">
 
     <TextView
         android:id="@+id/textView8"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jochef2.campingdiary">
+    package="com.josefjantzen.campingdiary">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CampingDiary">
         <activity
-            android:name=".MainActivity"
+            android:name="com.josefjantzen.campingdiary.MainActivity"
             android:windowSoftInputMode="adjustPan|stateHidden"
             android:exported="true">
             <intent-filter>
