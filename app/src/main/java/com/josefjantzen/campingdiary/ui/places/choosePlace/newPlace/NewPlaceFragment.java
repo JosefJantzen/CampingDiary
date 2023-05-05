@@ -106,7 +106,7 @@ public class NewPlaceFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mViewModel = new ViewModelProvider(requireActivity(), ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(ChoosePlaceViewModel.class);
+        mViewModel = new ViewModelProvider(requireActivity(), (ViewModelProvider.Factory) ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().getApplication())).get(ChoosePlaceViewModel.class);
 
         mPredictionsPager = view.findViewById(R.id.pager_predictions);
         mTabLayout = view.findViewById(R.id.tabs_prediction);
@@ -203,7 +203,7 @@ public class NewPlaceFragment extends Fragment {
             if (txAutocomplete.getText() == getString(R.string.not_selected)) {
                 if(!Places.isInitialized()) {
                     //TODO: API-KEY
-                    Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
+                    Places.initialize(requireActivity().getApplicationContext(), getString(R.string.MAPS_API_KEY));
                 }
                 Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, mPlaceFields)
                         .build(requireContext());
@@ -221,7 +221,7 @@ public class NewPlaceFragment extends Fragment {
         btnAutocomplete.setOnClickListener(v -> {
             if(!Places.isInitialized()) {
                 //TODO: API-KEY
-                Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
+                Places.initialize(requireActivity().getApplicationContext(), getString(R.string.MAPS_API_KEY));
             }
             // open AutoCompleteDialog if nothing yet selected
             Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY, mPlaceFields)

@@ -110,7 +110,7 @@ public class GooglePredictionFragment extends Fragment {
     private void getCurrentPlace() {
         if(!Places.isInitialized()) {
             //TODO: API-KEY
-            Places.initialize(requireActivity().getApplicationContext(), "AIzaSyBzZ_DJaH2cu3WN-30UY6BcabQIoT3bnG0");
+            Places.initialize(requireActivity().getApplicationContext(), getString(R.string.MAPS_API_KEY));
         }
         placesClient = Places.createClient(requireActivity());
 
