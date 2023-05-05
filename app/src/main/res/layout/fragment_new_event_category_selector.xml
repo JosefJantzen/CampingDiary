@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.jochef2.campingdiary.ui.events.newEvent.FlexMaterialButtonToogleGroup
+        <com.josefjantzen.campingdiary.ui.events.newEvent.FlexMaterialButtonToogleGroup
             android:id="@+id/toggle_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
                 android:tag="OTHER"
                 android:text="@string/other"
                 app:iconGravity="top" />
-        </com.jochef2.campingdiary.ui.events.newEvent.FlexMaterialButtonToogleGroup>
+        </com.josefjantzen.campingdiary.ui.events.newEvent.FlexMaterialButtonToogleGroup>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

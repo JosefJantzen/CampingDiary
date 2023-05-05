@@ -94,6 +94,6 @@
 
         <variable
             name="model"
-            type="com.jochef2.campingdiary.data.relations.FullPlace" />
+            type="com.josefjantzen.campingdiary.data.relations.FullPlace" />
     </data>
 </layout>
