@@ -5,6 +5,8 @@ The app isn't 100% complete but can already be used and I reached anyway all my 
 You can find all the todos [here](#todos).
 
 The app is completely written in Java and uses Room (SQLite) as a local database. <br>
+The App uses the [Places API](https://developers.google.com/maps/documentation/places/web-service) and [Maps SDK for Android](https://developers.google.com/maps/documentation/android-sdk/overview)
+to get informations about places, the user selected, view them on a map, etc. To compile and [use the app](#use-the-app), you need your own api key. 
 
 ## Brief overview
 The main page of the app gives you an overview during your trip. The app tracks where you spent your night and all the fun events you did, like sightseeing, hiking, etc. but also things like fueling, supply and disposal of your camping car and your mileage. In addition there is an overview of the money you spent in all the different types of activities during your trip.<br><br>
@@ -24,3 +26,14 @@ All the overview pages give you the most important informations about the event.
 * Pages to get a complete view of nights and events with all informations
 * Overall statistics of all trips
 * Settings and about page
+
+## Use the app
+Because of the necessary api key for the Places API and Maps SDK I can't provide an APK. You need to do the following steps to get your own api key:
+1. Create a project in the google console and create an api key for the places api as described [here](https://developers.google.com/maps/documentation/places/web-service/get-api-key). Select there not only the places api but also the Maps SDK for Android as described [here](https://developers.google.com/maps/documentation/android-sdk/get-api-key). In the end you should have only one api key for both APIs.
+2. Clone the project and open it in Android Studio.
+3. Create a local.properties file in the project root folder, if it doesn't exist.
+4. Create in that file the variable `MAPS_API_KEY` and initialize it with your api key<br>
+```properties
+MAPS_API_KEY=<API_KEY>
+```
+5. Compile the app and run it on your device.
